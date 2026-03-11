@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600;700&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Quicksand', system-ui, sans-serif;
+  color: #6a256f;
+}
+
+h1, h2, h3 {
+  font-family: 'Montserrat', system-ui, sans-serif;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-[#6a256f] via-[#EF4561] to-[#E07B20] text-white font-semibold px-6 py-3 rounded-full hover:opacity-90 transition-all duration-200 inline-block;
+  }
+  .btn-outline {
+    @apply border-2 border-[#E07B20] text-[#E07B20] font-semibold px-6 py-3 rounded-full hover:bg-[#E07B20] hover:text-white transition-all duration-200 inline-block;
+  }
+  .section-title {
+    @apply text-3xl md:text-4xl font-extrabold text-[#6a256f] mb-4 font-display tracking-tight;
+  }
+  .section-subtitle {
+    @apply text-lg text-gray-600 mb-10;
+  }
+}
