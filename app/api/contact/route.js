@@ -25,67 +25,59 @@ export async function POST(request) {
       replyTo: email,
       subject: `New Consultation Request — ${businessName} (${businessType || 'Unknown type'})`,
       html: `
-        <div style="font-family: Inter, sans-serif; max-width: 600px; margin: 0 auto; color: #222123;">
-          <div style="background: #222123; padding: 24px 32px;">
-            <h1 style="color: white; margin: 0; font-size: 22px;">
-              New Consultation Request
-            </h1>
-            <p style="color: #E07B20; margin: 4px 0 0; font-size: 14px;">Event Sphere Solutions</p>
+        <div style="font-family: Inter, -apple-system, sans-serif; max-width: 600px; margin: 0 auto; color: #222123; background: #ffffff;">
+          <!-- Header -->
+          <div style="background: linear-gradient(135deg, #1a0f40 0%, #6a256f 60%, #1a0f40 100%); padding: 28px 40px; border-radius: 12px 12px 0 0;">
+            <span style="color: white; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.7;">New Inquiry</span>
+            <h1 style="color: white; margin: 6px 0 0; font-size: 22px; font-weight: 800; letter-spacing: -0.5px;">Consultation Request</h1>
+            <p style="color: #E07B20; margin: 4px 0 0; font-size: 14px; font-weight: 600;">Event Sphere Solutions</p>
+          </div>
+          <div style="height: 4px; background: linear-gradient(90deg, #6a256f, #EF4561, #E07B20);"></div>
+
+          <!-- Alert banner -->
+          <div style="background: #fff8f0; border-left: 4px solid #E07B20; padding: 14px 20px; margin: 24px 40px 0; border-radius: 8px; font-size: 14px; color: #333;">
+            <strong style="color: #E07B20;">${name}</strong> from <strong>${businessName}</strong> wants a consultation.
           </div>
 
-          <div style="padding: 32px; background: #f9f9f9;">
-            <table style="width: 100%; border-collapse: collapse;">
-              <tr>
-                <td style="padding: 10px 0; border-bottom: 1px solid #eee; font-weight: 600; width: 35%; color: #555; font-size: 14px;">Name</td>
-                <td style="padding: 10px 0; border-bottom: 1px solid #eee; font-size: 14px;">${name}</td>
-              </tr>
-              <tr>
-                <td style="padding: 10px 0; border-bottom: 1px solid #eee; font-weight: 600; color: #555; font-size: 14px;">Email</td>
-                <td style="padding: 10px 0; border-bottom: 1px solid #eee; font-size: 14px;"><a href="mailto:${email}" style="color: #E07B20;">${email}</a></td>
-              </tr>
-              ${phone ? `
-              <tr>
-                <td style="padding: 10px 0; border-bottom: 1px solid #eee; font-weight: 600; color: #555; font-size: 14px;">Phone</td>
-                <td style="padding: 10px 0; border-bottom: 1px solid #eee; font-size: 14px;">${phone}</td>
-              </tr>` : ''}
-              <tr>
-                <td style="padding: 10px 0; border-bottom: 1px solid #eee; font-weight: 600; color: #555; font-size: 14px;">Business</td>
-                <td style="padding: 10px 0; border-bottom: 1px solid #eee; font-size: 14px;">${businessName}</td>
-              </tr>
-              <tr>
-                <td style="padding: 10px 0; border-bottom: 1px solid #eee; font-weight: 600; color: #555; font-size: 14px;">Business Type</td>
-                <td style="padding: 10px 0; border-bottom: 1px solid #eee; font-size: 14px;">${businessType || 'Not specified'}</td>
-              </tr>
-              ${servicesNeeded?.length > 0 ? `
-              <tr>
-                <td style="padding: 10px 0; border-bottom: 1px solid #eee; font-weight: 600; color: #555; font-size: 14px; vertical-align: top;">Services</td>
-                <td style="padding: 10px 0; border-bottom: 1px solid #eee; font-size: 14px;">${servicesNeeded.join('<br/>')}</td>
-              </tr>` : ''}
-              ${timeline ? `
-              <tr>
-                <td style="padding: 10px 0; border-bottom: 1px solid #eee; font-weight: 600; color: #555; font-size: 14px;">Timeline</td>
-                <td style="padding: 10px 0; border-bottom: 1px solid #eee; font-size: 14px;">${timelineLabels[timeline] || timeline}</td>
-              </tr>` : ''}
+          <!-- Details table -->
+          <div style="padding: 20px 40px 32px;">
+            <table style="width: 100%; border-collapse: collapse; background: #faf7ff; border-radius: 12px; overflow: hidden;">
+              ${[
+                ['Name', name],
+                ['Email', `<a href="mailto:${email}" style="color: #E07B20; text-decoration: none;">${email}</a>`],
+                phone ? ['Phone', phone] : null,
+                ['Business', businessName],
+                ['Type', businessType || 'Not specified'],
+                servicesNeeded?.length > 0 ? ['Services', servicesNeeded.join(', ')] : null,
+                timeline ? ['Timeline', timelineLabels[timeline] || timeline] : null,
+              ].filter(Boolean).map(([label, value], i) => `
+              <tr style="background: ${i % 2 === 0 ? '#faf7ff' : '#ffffff'};">
+                <td style="padding: 12px 16px; font-weight: 600; color: #6a256f; font-size: 13px; width: 35%; border-bottom: 1px solid #f0ebf8;">${label}</td>
+                <td style="padding: 12px 16px; font-size: 13px; color: #333; border-bottom: 1px solid #f0ebf8;">${value}</td>
+              </tr>`).join('')}
             </table>
 
             ${eventDetails ? `
-            <div style="margin-top: 24px;">
-              <p style="font-weight: 600; color: #555; font-size: 14px; margin-bottom: 8px;">Event Details / Goals</p>
-              <div style="background: white; border-left: 3px solid #E07B20; padding: 16px; border-radius: 4px; font-size: 14px; line-height: 1.6; color: #333;">
+            <div style="margin-top: 20px;">
+              <p style="font-weight: 700; color: #333; font-size: 13px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em;">Event Details / Goals</p>
+              <div style="background: #faf7ff; border-left: 4px solid #6a256f; padding: 16px; border-radius: 6px; font-size: 14px; line-height: 1.7; color: #333;">
                 ${eventDetails}
               </div>
             </div>` : ''}
 
-            <div style="margin-top: 32px; text-align: center;">
+            <div style="margin-top: 28px; text-align: center;">
               <a href="mailto:${email}?subject=Re: Your Event Sphere Consultation Request"
-                style="background: #E07B20; color: white; padding: 12px 28px; border-radius: 24px; text-decoration: none; font-weight: 600; font-size: 14px;">
+                style="background: linear-gradient(135deg, #6a256f, #EF4561, #E07B20); color: white; padding: 14px 32px; border-radius: 30px; text-decoration: none; font-weight: 700; font-size: 14px; display: inline-block;">
                 Reply to ${name.split(' ')[0]} →
               </a>
             </div>
           </div>
 
-          <div style="padding: 16px 32px; background: #eee; text-align: center; font-size: 12px; color: #999;">
-            Sent from eventspheresolutions.com contact form
+          <!-- Footer -->
+          <div style="padding: 20px 40px; background: #1a0f40; border-radius: 0 0 12px 12px; text-align: center;">
+            <p style="color: rgba(255,255,255,0.4); font-size: 12px; margin: 0;">
+              Sent from eventspheresolutions.com · <a href="https://eventspheresolutions.com" style="color: #E07B20; text-decoration: none;">eventspheresolutions.com</a>
+            </p>
           </div>
         </div>
       `,
