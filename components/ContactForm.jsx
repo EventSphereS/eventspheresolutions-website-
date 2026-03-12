@@ -3,12 +3,10 @@ import { useState } from 'react'
 
 const businessTypes = ['Restaurant', 'Bar / Nightlife', 'Venue', 'Hotel', 'Catering', 'Other']
 const services = [
-  'Full Event Sales Management',
-  'Platform Only',
-  'Event Strategy & Consulting',
-  'Event Marketing & Promotion',
-  'On-Site Event Support',
-  'Brand Partnerships',
+  'V1 — Platform + Expert Sales Team',
+  'V2 — Platform Only (Self-Serve)',
+  '360° Virtual Tour Add-On',
+  'Not sure yet — help me decide',
 ]
 
 const inputClass = "w-full border border-gray-200 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-[#E07B20] focus:ring-2 focus:ring-[#E07B20]/20 transition-all bg-white placeholder:text-gray-400"
