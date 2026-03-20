@@ -9,11 +9,11 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <Image
-              src="/images/logo-white.png"
+              src="/images/logo-mark.png"
               alt="Event Sphere Solutions"
-              width={480}
-              height={116}
-              className="h-12 w-auto object-contain"
+              width={80}
+              height={80}
+              className="h-16 w-auto object-contain"
             />
             <p className="mt-4 leading-relaxed text-white/70 text-sm">
               Empowering hospitality businesses with expert-driven event sales and smart tools that increase revenue, simplify operations, and create standout guest experiences.
