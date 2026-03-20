@@ -25,12 +25,12 @@ const services = [
   {
     id: 'v2',
     version: 'V2.',
-    title: 'Event Sales Platform License',
+    title: 'Sphere — Event Sales Platform',
     subtitle: 'Technology built specifically for hospitality event sales.',
-    desc: 'This service provides your venue with full access to the Event Sphere platform, enabling your team to manage private events efficiently and independently.',
+    desc: 'This service provides your venue with full access to Sphere, enabling your team to manage private events efficiently and independently.',
     ideal: 'Venues with an internal sales team that need a better system.',
     includes: [
-      { icon: '🛠️', title: 'Complete Tool', desc: 'Full access to the Event Sphere event booking & management platform.' },
+      { icon: '🛠️', title: 'Complete Tool', desc: 'Full access to Sphere — our event booking & management platform.' },
       { icon: '🌟', title: 'Special Features', desc: 'Tools with special features to promote, tour the space, and more.' },
       { icon: '🎓', title: 'Sales Training', desc: 'Onboarding and training for your in-house event sales team.' },
     ],
@@ -39,12 +39,12 @@ const services = [
   {
     id: 'v3',
     version: 'V3.',
-    title: 'Platform License with AI Automation',
+    title: 'Sphere AI — Platform with AI Automation',
     subtitle: 'Automated event sales workflows designed to save time.',
-    desc: 'This service enhances the Event Sphere platform with AI-driven automation to reduce manual work while maintaining sales momentum.',
+    desc: 'This service enhances Sphere with AI-driven automation to reduce manual work while maintaining sales momentum.',
     ideal: 'High-volume or busy team members needing speed, efficiency, and scalability.',
     includes: [
-      { icon: '🛠️', title: 'Complete Tool', desc: 'Full access to the Event Sphere event booking & management platform.' },
+      { icon: '🛠️', title: 'Complete Tool', desc: 'Full access to Sphere — our event booking & management platform.' },
       { icon: '🤖', title: 'AI Powered', desc: 'AI-powered lead capture, follow-ups, and booking automation.' },
       { icon: '⚡', title: 'Easy & Quick', desc: 'Faster response times, fewer manual tasks, and smarter sales workflows.' },
     ],
@@ -131,11 +131,12 @@ export default function ServicesPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30" />
             </div>
             <div className="relative z-10 flex flex-col h-full p-8 md:p-10 justify-end">
-              <div className="mb-auto">
+              <div className="mb-auto flex justify-between items-start">
                 <span className="inline-block text-white font-display font-black text-5xl leading-none opacity-20">V2</span>
+                <span className="inline-block bg-gradient-to-r from-[#6a256f] via-[#EF4561] to-[#E07B20] text-white text-xs font-bold px-3 py-1 rounded-full">Coming Soon</span>
               </div>
               <div>
-                <span className="inline-block bg-white text-[#6a256f] text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4">Platform License</span>
+                <span className="inline-block bg-white text-[#6a256f] text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4">Sphere</span>
                 <h3 className="text-white font-display font-extrabold text-2xl md:text-3xl tracking-tight mb-3 leading-tight">Event Sales<br />Platform</h3>
                 <p className="text-[#E07B20]/90 text-sm leading-relaxed mb-6">Your team, powered by our software. Manage leads, proposals, and bookings all in one place.</p>
                 <div className="space-y-2 mb-8">

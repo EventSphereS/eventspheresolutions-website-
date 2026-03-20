@@ -103,34 +103,38 @@ export default function PricingPage() {
                   </th>
                   <th className="p-5 text-center bg-[#E07B20]/5 border-x border-[#E07B20]/20">
                     <div className="text-[#222123] font-bold">Revenue Growth</div>
-                    <div className="text-[#E07B20] font-bold">$239/mo</div>
+                    <div className="text-[#E07B20] font-bold">$259/mo</div>
                   </th>
                   <th className="p-5 text-center text-[#222123] font-bold">
                     <div>Portfolio</div>
-                    <div className="text-[#E07B20] font-bold">$499/mo</div>
+                    <div className="text-[#E07B20] font-bold">Contact Us</div>
                   </th>
                 </tr>
               </thead>
               <tbody>
                 {[
                   // — Plan limits —
-                  { feature: 'Locations', e: '1', g: '1', p: '3+ (custom)' },
-                  { feature: 'Users', e: '2 (+$15 each)', g: '5 (+$15 each)', p: '10 (+$15 each)' },
+                  { feature: 'Locations', e: '1', g: '1', p: 'Multiple' },
+                  { feature: 'Users', e: '2 (+$15 each)', g: '5 (+$15 each)', p: 'Multiple' },
                   // — Included in all —
                   { feature: 'Branded lead capture forms', e: '✓', g: '✓', p: '✓' },
                   { feature: 'Visual sales pipeline', e: '✓', g: '✓', p: '✓' },
                   { feature: 'Event calendar & conflict prevention', e: '✓', g: '✓', p: '✓' },
                   { feature: 'Branded proposals & contracts', e: '✓', g: '✓', p: '✓' },
+                  { feature: 'Digital agreements & e-signature', e: '✓', g: '✓', p: '✓' },
+                  { feature: 'Online payment collection', e: '✓', g: '✓', p: '✓' },
                   { feature: 'Task reminders & notifications', e: '✓', g: '✓', p: '✓' },
                   { feature: 'Reporting dashboard', e: '✓', g: '✓', p: '✓' },
                   { feature: 'Internal team chatbox', e: '✓', g: '✓', p: '✓' },
                   { feature: 'Multi-location dashboard', e: '✓', g: '✓', p: '✓' },
                   { feature: 'Cross-location revenue analytics', e: '✓', g: '✓', p: '✓' },
-                  { feature: 'Email campaigns', e: '1,000/mo', g: '2,500/mo', p: '7,000/mo per location' },
-                  { feature: 'Promo codes', e: '2 active', g: '3/month', p: '10/month per location' },
+                  { feature: 'Email campaigns', e: '1,000/mo', g: '2,500/mo', p: '5,000/mo per location' },
+                  { feature: 'Email campaign analytics', e: '✓', g: '✓', p: '✓' },
+                  { feature: 'Promo codes', e: '2 active', g: '3/month', p: '6/month per location' },
                   { feature: 'Support', e: 'Email', g: 'Priority', p: 'Dedicated' },
                   // — Revenue Growth+ —
-                  { feature: 'Automated email & SMS follow-up', e: '—', g: '✓', p: '✓' },
+                  { feature: 'Automated email follow-up', e: '—', g: '✓', p: '✓' },
+                  { feature: 'AI email support', e: '—', g: '—', p: '✓' },
                   { feature: 'Revenue forecasting dashboard', e: '—', g: '✓', p: '✓' },
                   { feature: 'Conversion tracking (lead → booked)', e: '—', g: '✓', p: '✓' },
                   { feature: 'Branded client portal', e: '—', g: '✓', p: '✓' },
@@ -142,15 +146,17 @@ export default function PricingPage() {
                   { feature: 'Dedicated onboarding manager', e: '—', g: '—', p: '✓' },
                   { feature: 'Strategic review sessions', e: '—', g: '—', p: '✓' },
                   // — Coming Soon —
+                  { feature: '360° Virtual Tour', e: 'Add-On', g: 'Add-On', p: 'Add-On' },
+                  { feature: 'Guest review & feedback collection', e: '✓', g: '✓', p: '✓' },
                   { feature: 'Mobile app access', e: 'Coming Soon', g: 'Coming Soon', p: 'Coming Soon' },
                   { feature: 'SMS credit bundle', e: '—', g: 'Coming Soon', p: 'Coming Soon' },
-                  { feature: 'OpenTable integration', e: '—', g: 'Coming Soon', p: 'Coming Soon' },
+                  { feature: 'OpenTable integration', e: 'Coming Soon', g: 'Coming Soon', p: 'Coming Soon' },
                 ].map((row, i) => (
                   <tr key={row.feature} className={`border-b border-gray-50 ${i % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'}`}>
                     <td className="p-4 text-gray-700 font-medium">{row.feature}</td>
-                    <td className="p-4 text-center text-gray-600">{row.e}</td>
-                    <td className={`p-4 text-center text-gray-600 bg-[#E07B20]/5 border-x border-[#E07B20]/10 ${row.g === 'Coming Soon' ? 'text-orange-400 text-xs font-medium' : ''}`}>{row.g}</td>
-                    <td className={`p-4 text-center text-gray-600 ${row.p === 'Coming Soon' ? 'text-orange-400 text-xs font-medium' : ''}`}>{row.p}</td>
+                    <td className={`p-4 text-center ${row.e === 'Coming Soon' ? 'text-orange-400 text-xs font-medium' : row.e === 'Add-On' ? 'text-[#6a256f] text-xs font-bold' : 'text-gray-600'}`}>{row.e}</td>
+                    <td className={`p-4 text-center bg-[#E07B20]/5 border-x border-[#E07B20]/10 ${row.g === 'Coming Soon' ? 'text-orange-400 text-xs font-medium' : row.g === 'Add-On' ? 'text-[#6a256f] text-xs font-bold' : 'text-gray-600'}`}>{row.g}</td>
+                    <td className={`p-4 text-center ${row.p === 'Coming Soon' ? 'text-orange-400 text-xs font-medium' : row.p === 'Add-On' ? 'text-[#6a256f] text-xs font-bold' : 'text-gray-600'}`}>{row.p}</td>
                   </tr>
                 ))}
               </tbody>
@@ -196,7 +202,7 @@ export default function PricingPage() {
               <div className="inline-block bg-[#E07B20] text-white text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-widest w-fit">
                 V1 — Full Service
               </div>
-              <h3 className="text-2xl font-bold font-display text-[#6a256f] mb-2">Platform + Expert Sales Team</h3>
+              <h3 className="text-2xl font-bold font-display text-[#6a256f] mb-2">Sphere + Expert Sales Team</h3>
               <p className="text-gray-500 text-sm leading-relaxed mb-6 flex-1">
                 We do it all. Our expert sales team handles your private event inquiries, follow-ups, proposals, and closings — while you focus on running your venue. Best for businesses that want hands-on support from day one.
               </p>
@@ -224,11 +230,11 @@ export default function PricingPage() {
             {/* V2 */}
             <div className="bg-white/5 border border-white/15 rounded-2xl p-8 flex flex-col">
               <div className="inline-block bg-white/15 text-white text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-widest w-fit">
-                V2 — Self-Serve
+                V2 — Sphere
               </div>
-              <h3 className="text-2xl font-bold font-display text-white mb-2">Platform Only</h3>
+              <h3 className="text-2xl font-bold font-display text-white mb-2">Sphere</h3>
               <p className="text-gray-300 text-sm leading-relaxed mb-6 flex-1">
-                The full Event Sphere platform in your hands. Capture leads, send proposals, manage your calendar, run email campaigns, and track every booking — no sales team needed. Best for venues with an existing sales team or owner-operators who want the tools.
+                The full Sphere platform in your hands. Capture leads, send proposals, manage your calendar, run email campaigns, and track every booking — no sales team needed. Best for venues with an existing sales team or owner-operators who want the tools.
               </p>
               <ul className="space-y-2 mb-8">
                 {[

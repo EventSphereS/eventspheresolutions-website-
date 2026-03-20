@@ -8,7 +8,7 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
-      <div className="w-full px-4 sm:px-8 lg:px-16 py-3 flex items-center justify-between">
+      <div className="w-full px-4 sm:px-8 lg:px-16 py-1.5 flex items-center justify-between">
 
         {/* Logo */}
         <Link href="/" className="flex items-center shrink-0">
@@ -17,7 +17,7 @@ export default function Navbar() {
             alt="Event Sphere Solutions"
             width={480}
             height={116}
-            className="h-11 sm:h-14 w-auto object-contain"
+            className="h-[55px] sm:h-[64px] w-auto object-contain"
             priority
             quality={100}
           />
@@ -27,7 +27,7 @@ export default function Navbar() {
         <nav className="hidden md:flex items-center gap-6 lg:gap-7">
           <Link href="/about" className="text-[#6a256f] hover:text-[#E07B20] font-medium text-sm transition-colors">About</Link>
           <Link href="/services" className="text-[#6a256f] hover:text-[#E07B20] font-medium text-sm transition-colors">Services</Link>
-          <Link href="/platform" className="text-[#6a256f] hover:text-[#E07B20] font-medium text-sm transition-colors">Platform</Link>
+          <Link href="/platform" className="text-[#6a256f] hover:text-[#E07B20] font-medium text-sm transition-colors">Sphere</Link>
           <Link href="/pricing" className="text-[#6a256f] hover:text-[#E07B20] font-medium text-sm transition-colors">Pricing</Link>
           <Link href="/founding-partner" className="text-[#E07B20] font-bold text-sm hover:underline transition-colors">🏆 Founding Partner</Link>
           <Link href="/contact" className="btn-primary text-sm">Contact Us</Link>
@@ -65,7 +65,7 @@ export default function Navbar() {
         <div className="md:hidden bg-white border-t border-gray-100 px-6 py-6 flex flex-col gap-5 shadow-lg">
           <Link href="/about" className="text-[#6a256f] font-semibold text-base border-b border-gray-100 pb-4" onClick={() => setOpen(false)}>About</Link>
           <Link href="/services" className="text-[#6a256f] font-semibold text-base border-b border-gray-100 pb-4" onClick={() => setOpen(false)}>Services</Link>
-          <Link href="/platform" className="text-[#6a256f] font-semibold text-base border-b border-gray-100 pb-4" onClick={() => setOpen(false)}>Platform</Link>
+          <Link href="/platform" className="text-[#6a256f] font-semibold text-base border-b border-gray-100 pb-4" onClick={() => setOpen(false)}>Sphere</Link>
           <Link href="/pricing" className="text-[#6a256f] font-semibold text-base border-b border-gray-100 pb-4" onClick={() => setOpen(false)}>Pricing</Link>
           <Link href="/founding-partner" className="text-[#E07B20] font-bold text-base border-b border-gray-100 pb-4" onClick={() => setOpen(false)}>🏆 Founding Partner</Link>
           <Link href="/contact" className="btn-primary text-center text-sm mt-1" onClick={() => setOpen(false)}>Contact Us</Link>

@@ -39,7 +39,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li><Link href="/about" className="hover:text-[#E07B20] transition-colors text-sm text-white/70">About Us</Link></li>
               <li><Link href="/services" className="hover:text-[#E07B20] transition-colors text-sm text-white/70">Services</Link></li>
-              <li><Link href="/platform" className="hover:text-[#E07B20] transition-colors text-sm text-white/70">Platform</Link></li>
+              <li><Link href="/platform" className="hover:text-[#E07B20] transition-colors text-sm text-white/70">Sphere</Link></li>
               <li><Link href="/pricing" className="hover:text-[#E07B20] transition-colors text-sm text-white/70">Pricing</Link></li>
               <li><Link href="/founding-partner" className="text-[#E07B20] font-semibold transition-colors text-sm">🏆 Founding Partner</Link></li>
             </ul>

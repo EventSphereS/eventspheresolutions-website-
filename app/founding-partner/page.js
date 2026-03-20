@@ -4,7 +4,7 @@ import FoundingPartnerForm from '@/components/FoundingPartnerForm'
 
 export const metadata = {
   title: 'Founding Partner Program | Event Sphere Solutions',
-  description: 'Join the Event Sphere Founding Partner Program — 3 months free access to our Revenue Growth platform in exchange for your feedback. Limited to 20 venues.',
+  description: 'Join the Event Sphere Founding Partner Program — 3 months free access to Sphere Revenue Growth in exchange for your feedback. Limited to 20 venues.',
 }
 
 const perks = [
@@ -12,13 +12,13 @@ const perks = [
     icon: '🎁',
     gradient: 'from-[#6a256f] to-[#8a3a8f]',
     title: '3 Months Free Access',
-    desc: 'Full Revenue Growth tier — automated follow-ups, revenue forecasting, branded portal, email campaigns, and more. Zero cost for 90 days.',
+    desc: 'Full Sphere Revenue Growth tier — automated follow-ups, revenue forecasting, branded portal, email campaigns, and more. Zero cost for 90 days.',
   },
   {
     icon: '🔒',
     gradient: 'from-[#EF4561] to-[#E07B20]',
     title: 'Founder Pricing — Locked In Forever',
-    desc: 'After your free period, you keep a permanently discounted rate that never increases. Regular price is $239/mo — you pay less, always.',
+    desc: 'After your free period, you keep a permanently discounted rate that never increases. Regular price is $259/mo — you pay less, always.',
   },
   {
     icon: '⚡',
@@ -78,7 +78,7 @@ export default function FoundingPartnerPage() {
           </h1>
 
           <p className="text-gray-300 text-xl leading-relaxed max-w-2xl mx-auto mb-8">
-            Get 3 months of our Revenue Growth platform completely free — in exchange for your honest feedback. We build better. You grow faster. Everyone wins.
+            Get 3 months of Sphere completely free — in exchange for your honest feedback. We build better. You grow faster. Everyone wins.
           </p>
 
           {/* Stats Row */}

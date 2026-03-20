@@ -28,7 +28,7 @@ export default function V1V2CTA() {
 
           {/* V2 */}
           <div className="bg-gray-50 border border-gray-100 rounded-2xl p-8 flex flex-col items-center text-center hover:border-[#6a256f]/20 hover:shadow-md transition-all">
-            <div className="text-[#E07B20] text-xs font-bold uppercase tracking-widest mb-4">V2 — Platform Only</div>
+            <div className="text-[#E07B20] text-xs font-bold uppercase tracking-widest mb-4">V2 — Sphere</div>
             <p className="text-[#6a256f] text-xl font-bold leading-snug mb-2">
               "I just need a better system to manage everything."
             </p>
