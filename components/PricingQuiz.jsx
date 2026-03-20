@@ -102,12 +102,9 @@ export default function PricingQuiz() {
           <div className="inline-block bg-[#E07B20]/15 text-[#E07B20] text-xs font-bold px-4 py-1.5 rounded-full mb-5 uppercase tracking-widest">
             3 quick questions
           </div>
-          <h3 className="text-2xl md:text-3xl font-bold font-display tracking-tight text-[#6a256f] mb-4">
+          <h3 className="text-3xl md:text-5xl font-bold font-display tracking-tight text-[#6a256f] mb-4">
             Not sure which is right for you?
           </h3>
-          <p className="text-gray-500 mb-8 leading-relaxed">
-            Answer 3 questions and we'll tell you exactly which version fits your business — V1 with our expert sales team, or V2 with just the platform.
-          </p>
           <button
             onClick={() => setStep(1)}
             className="bg-gradient-to-r from-[#6a256f] via-[#EF4561] to-[#E07B20] text-white font-bold px-10 py-4 rounded-full hover:opacity-90 transition-all shadow-lg text-base"
