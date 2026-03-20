@@ -4,8 +4,8 @@ import V1V2CTA from '@/components/V1V2CTA'
 import FeatureSlider from '@/components/FeatureSlider'
 
 export const metadata = {
-  title: 'Platform | Event Sphere Solutions',
-  description: 'The Event Sphere platform — built by hospitality and event sales experts to make event booking stress-free.',
+  title: 'Sphere | Event Sphere Solutions',
+  description: 'Sphere by Event Sphere Solutions — the private event sales platform built for restaurants, bars, venues, and hotels.',
 }
 
 
@@ -50,12 +50,12 @@ export default function PlatformPage() {
             <div className="inline-flex items-center gap-2 bg-[#6a256f]/10 text-[#6a256f] text-xs font-bold px-4 py-1.5 rounded-full mb-6 uppercase tracking-widest">
               Built for Restaurants, Bars & Venues
             </div>
-            <p className="text-[#E07B20] text-xs font-bold uppercase tracking-[0.2em] mb-4">Private Event Platform</p>
+            <p className="text-[#E07B20] text-xs font-bold uppercase tracking-[0.2em] mb-4">Sphere — Private Event Platform by Event Sphere Solutions</p>
             <h1 className="text-4xl md:text-5xl font-extrabold font-display tracking-tight text-[#6a256f] leading-tight mb-5">
-              The Smarter Way to<br />Book & Manage<br />Private Events
+              <span className="text-[#E07B20]">Sphere</span> — A Smarter Way to<br />Book & Manage<br />Private Events
             </h1>
             <p className="text-gray-500 text-lg leading-relaxed mb-8">
-              Event Sphere gives your hospitality business the expert sales team and smart tools to turn empty calendars into consistent, high-revenue event programs — without the overhead.
+              Sphere gives your hospitality business the expert sales team and smart tools to turn empty calendars into consistent, high-revenue event programs — without the overhead.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/founding-partner" className="btn-primary text-base px-8 py-3.5">
@@ -103,7 +103,7 @@ export default function PlatformPage() {
       <section className="py-20 bg-gray-50 border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-14">
-            <p className="text-[#E07B20] text-xs font-bold uppercase tracking-[0.2em] mb-3">Why Event Sphere</p>
+            <p className="text-[#E07B20] text-xs font-bold uppercase tracking-[0.2em] mb-3">Why Sphere</p>
             <h2 className="text-3xl md:text-4xl font-bold font-display tracking-tight text-[#111827] mb-3">
               One system. Three results.
             </h2>
@@ -216,7 +216,7 @@ export default function PlatformPage() {
             </h2>
 
             <p className="text-white/50 text-lg leading-relaxed mb-10 max-w-sm">
-              Manage leads, send proposals, track bookings, and message clients — all from the Event Sphere mobile app.
+              Manage leads, send proposals, track bookings, and message clients — all from the Sphere mobile app.
             </p>
 
             {/* Feature pills */}

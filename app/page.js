@@ -42,7 +42,7 @@ export default function Home() {
             <span className="text-[#E07B20]">Hospitality & Venues</span>
           </h1>
           <p className="text-gray-300 text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-10">
-            Event Sphere gives hospitality businesses the expert sales team and smart tools to turn empty calendars into consistent, high-revenue event programs.
+            Event Sphere Solutions gives hospitality businesses <span className="text-white font-semibold">Sphere</span> — the expert sales team and smart tools to turn empty calendars into consistent, high-revenue event programs.
           </p>
           <Link href="/founding-partner"
             className="inline-block bg-gradient-to-r from-[#6a256f] via-[#EF4561] to-[#E07B20] text-white font-bold text-base md:text-lg px-8 md:px-10 py-4 rounded-full hover:opacity-90 transition-all shadow-2xl">
@@ -90,7 +90,7 @@ export default function Home() {
       <section className="py-28 bg-white">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-16">
-            <p className="text-[#E07B20] text-xs font-bold uppercase tracking-[0.2em] mb-3">Why Event Sphere</p>
+            <p className="text-[#E07B20] text-xs font-bold uppercase tracking-[0.2em] mb-3">Why Sphere</p>
             <h2 className="font-display font-extrabold text-4xl md:text-5xl tracking-tight text-[#6a256f] leading-tight">
               One system. Three results.
             </h2>
