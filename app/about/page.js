@@ -49,10 +49,10 @@ export default function AboutPage() {
                 Event Sphere Solutions was founded with a simple insight: hospitality businesses are sitting on untapped event potential. Restaurants with beautiful private dining rooms hosting one event a month. Hotels with stunning ballrooms that sit empty most weekends. Bars with perfect atmospheres but no strategy to fill them.
               </p>
               <p>
-                We built Event Sphere to change that. Our team brings together deep expertise in event planning, marketing, technology, and hospitality operations — creating a unique B2B2C model that serves both our business clients and the guests they serve.
+                We built Event Sphere Solutions to change that. Our team brings together deep expertise in event planning, marketing, technology, and hospitality operations — creating a unique B2B2C model that serves both our business clients and the guests they serve.
               </p>
               <p>
-                When you partner with Event Sphere, you're not hiring a vendor. You're gaining a dedicated team that cares as much about your guests' experience as you do — and has the skills and systems to deliver it, every time.
+                When you partner with Event Sphere Solutions, you're not hiring a vendor. You're gaining a dedicated team that cares as much about your guests' experience as you do — and has the skills and systems to deliver it, every time.
               </p>
             </div>
             <Link href="/contact" className="btn-primary mt-8 inline-block">Let's Work Together</Link>
@@ -105,10 +105,10 @@ export default function AboutPage() {
                   My expertise lies in building and leading sales teams, optimizing venue operations, and developing strategic sales systems that convert inquiries into booked events. From concept to close, I specialize in creating sales-driven solutions that streamline the process for venues and provide clients with a seamless, elevated experience.
                 </p>
                 <p>
-                  Resourceful, detail-obsessed, and passionate about hospitality, I launched Event Sphere to help venues unlock their full potential. We don't just manage leads — we turn them into lasting relationships and profitable results.
+                  Resourceful, detail-obsessed, and passionate about hospitality, I launched Event Sphere Solutions to help venues unlock their full potential. We don't just manage leads — we turn them into lasting relationships and profitable results.
                 </p>
                 <p>
-                  With our powerful platform and experienced sales team behind the scenes, Event Sphere Solutions offers a smarter, more profitable way to run private events — designed by industry pros, for industry pros.
+                  With Sphere — our powerful platform — and an experienced sales team behind the scenes, Event Sphere Solutions offers a smarter, more profitable way to run private events — designed by industry pros, for industry pros.
                 </p>
               </div>
             </div>

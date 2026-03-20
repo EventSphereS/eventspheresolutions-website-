@@ -66,7 +66,7 @@ export async function POST(request) {
             </div>` : ''}
 
             <div style="margin-top: 28px; text-align: center;">
-              <a href="mailto:${email}?subject=Re: Your Event Sphere Consultation Request"
+              <a href="mailto:${email}?subject=Re: Your Event Sphere Solutions Consultation Request"
                 style="background: linear-gradient(135deg, #6a256f, #EF4561, #E07B20); color: white; padding: 14px 32px; border-radius: 30px; text-decoration: none; font-weight: 700; font-size: 14px; display: inline-block;">
                 Reply to ${name.split(' ')[0]} →
               </a>
@@ -91,10 +91,8 @@ export async function POST(request) {
       html: `
         <div style="font-family: Inter, -apple-system, sans-serif; max-width: 600px; margin: 0 auto; color: #222123; background: #ffffff;">
           <!-- Header -->
-          <div style="background: linear-gradient(135deg, #1a0f40 0%, #6a256f 60%, #1a0f40 100%); padding: 32px 40px; border-radius: 12px 12px 0 0;">
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="color: white; font-size: 22px; font-weight: 800; letter-spacing: -0.5px;">Event<span style="color: #E07B20;">Sphere</span> Solutions</span>
-            </div>
+          <div style="background: linear-gradient(135deg, #1a0f40 0%, #6a256f 60%, #1a0f40 100%); padding: 28px 40px; border-radius: 12px 12px 0 0; text-align: center;">
+            <img src="https://www.eventspheresolutions.com/images/logo-main.png" alt="Event Sphere Solutions" style="height: 60px; width: auto;" />
           </div>
 
           <!-- Orange accent bar -->
@@ -123,7 +121,7 @@ export async function POST(request) {
             </div>
 
             <p style="color: #555; font-size: 14px; margin: 0;">Looking forward to working with you,<br/>
-            <strong style="color: #222123;">The Event Sphere Team</strong></p>
+            <strong style="color: #222123;">The Event Sphere Solutions Team</strong></p>
           </div>
 
           <!-- Footer -->

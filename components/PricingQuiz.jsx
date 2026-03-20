@@ -50,7 +50,7 @@ const results = {
     version: 'V2',
     label: 'Self-Serve Platform',
     headline: 'You need V2 — The Platform, Your Way.',
-    desc: 'You have the team or the drive — you just need the right system. Event Sphere gives you everything to capture leads, send proposals, manage your calendar, and run email campaigns, all in one place.',
+    desc: 'You have the team or the drive — you just need the right system. Sphere gives you everything to capture leads, send proposals, manage your calendar, and run email campaigns, all in one place.',
     perks: [
       'Full platform access — all features',
       'Lead pipeline, proposals, BEOs & invoices',

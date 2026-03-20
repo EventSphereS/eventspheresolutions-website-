@@ -4,7 +4,7 @@ import FoundingPartnerForm from '@/components/FoundingPartnerForm'
 
 export const metadata = {
   title: 'Founding Partner Program | Event Sphere Solutions',
-  description: 'Join the Event Sphere Founding Partner Program — 3 months free access to Sphere Revenue Growth in exchange for your feedback. Limited to 20 venues.',
+  description: 'Join the Event Sphere Solutions Founding Partner Program — 3 months free access to Sphere Revenue Growth in exchange for your feedback. Limited to 20 venues.',
 }
 
 const perks = [

@@ -65,7 +65,7 @@ export async function POST(request) {
             </div>` : ''}
 
             <div style="margin-top: 28px; text-align: center;">
-              <a href="mailto:${email}?subject=Your Event Sphere Founding Partner Application"
+              <a href="mailto:${email}?subject=Your Event Sphere Solutions Founding Partner Application"
                 style="background: #E07B20; color: white; padding: 12px 28px; border-radius: 24px; text-decoration: none; font-weight: 700; font-size: 14px;">
                 Reply to ${name.split(' ')[0]} →
               </a>
@@ -87,9 +87,9 @@ export async function POST(request) {
       html: `
         <div style="font-family: Inter, -apple-system, sans-serif; max-width: 600px; margin: 0 auto; color: #222123; background: #ffffff;">
           <!-- Header -->
-          <div style="background: linear-gradient(135deg, #1a0f40 0%, #6a256f 60%, #1a0f40 100%); padding: 32px 40px; border-radius: 12px 12px 0 0;">
-            <span style="color: white; font-size: 22px; font-weight: 800; letter-spacing: -0.5px;">Event<span style="color: #E07B20;">Sphere</span> Solutions</span>
-            <div style="margin-top: 8px; display: inline-block; background: #E07B20; color: white; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; letter-spacing: 0.08em; text-transform: uppercase;">Founding Partner Program</div>
+          <div style="background: linear-gradient(135deg, #1a0f40 0%, #6a256f 60%, #1a0f40 100%); padding: 28px 40px; border-radius: 12px 12px 0 0; text-align: center;">
+            <img src="https://www.eventspheresolutions.com/images/logo-main.png" alt="Event Sphere Solutions" style="height: 60px; width: auto;" />
+            <div style="margin-top: 10px; display: inline-block; background: #E07B20; color: white; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; letter-spacing: 0.08em; text-transform: uppercase;">Founding Partner Program</div>
           </div>
 
           <!-- Orange accent bar -->
@@ -105,7 +105,7 @@ export async function POST(request) {
             <!-- What you applied for -->
             <div style="background: linear-gradient(135deg, #6a256f, #EF4561); border-radius: 12px; padding: 24px 28px; margin-bottom: 20px; color: white;">
               <p style="margin: 0 0 14px; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.8;">What you applied for</p>
-              ${['3 months free access to Revenue Growth ($239/mo value)', 'Permanently locked Founding Partner pricing', 'First access to every new feature', 'Dedicated onboarding & setup'].map(item => `
+              ${['3 months free access to Revenue Growth ($259/mo value)', 'Permanently locked Founding Partner pricing', 'First access to every new feature', 'Dedicated onboarding & setup'].map(item => `
               <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px;">
                 <span style="color: #E07B20; font-weight: 700; font-size: 16px; line-height: 1.4;">✓</span>
                 <span style="font-size: 14px; line-height: 1.6; opacity: 0.95;">${item}</span>
@@ -123,7 +123,7 @@ export async function POST(request) {
             </div>
 
             <p style="color: #555; font-size: 14px; margin: 0 0 4px;">Questions? Just reply to this email — we read everything.</p>
-            <p style="color: #555; font-size: 14px; margin: 0;">— <strong style="color: #222123;">The Event Sphere Team</strong></p>
+            <p style="color: #555; font-size: 14px; margin: 0;">— <strong style="color: #222123;">The Event Sphere Solutions Team</strong></p>
           </div>
 
           <!-- Footer -->

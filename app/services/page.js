@@ -13,10 +13,10 @@ const services = [
     version: 'V1.',
     title: 'Fully Managed Event Sales',
     subtitle: 'Outsourced event sales, executed by experts.',
-    desc: 'Event Sphere operates as your commission-based event sales department. All private event inquiries are handled, qualified, and converted by our team using proven hospitality sales processes.',
+    desc: 'Event Sphere Solutions operates as your commission-based event sales department. All private event inquiries are handled, qualified, and converted by our team using proven hospitality sales processes.',
     ideal: 'Venues without internal event sales resources or those seeking a hands-off solution.',
     includes: [
-      { icon: '⚡', title: 'Event Sales Team', desc: 'A dedicated Event Sphere sales team managing all inquiries and bookings.' },
+      { icon: '⚡', title: 'Event Sales Team', desc: 'A dedicated Event Sphere Solutions sales team managing all inquiries and bookings.' },
       { icon: '🖥️', title: 'Complete Software', desc: 'Our proprietary platform to track leads, proposals, and confirmed events.' },
       { icon: '✨', title: 'Flawless Service', desc: 'Full visibility into performance, calendars, and reporting.' },
     ],
@@ -68,7 +68,7 @@ export default function ServicesPage() {
             <span className="text-[#E07B20]">Private Event Sales</span>
           </h1>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto mb-8">
-            Whether you want us to handle everything, empower your internal team, or let AI take the heavy lifting — Event Sphere adapts to how your venue operates.
+            Whether you want us to handle everything, empower your internal team, or let AI take the heavy lifting — Event Sphere Solutions adapts to how your venue operates.
           </p>
           <Link href="/founding-partner" className="btn-primary text-lg px-8 py-4">
             Get Started Free
@@ -85,7 +85,7 @@ export default function ServicesPage() {
           </h2>
           <div className="w-16 h-0.5 bg-[#E07B20] mx-auto mt-4 mb-4"></div>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Whether you want us to handle everything, empower your internal team, or let AI take the heavy lifting — Event Sphere adapts to how your venue operates.
+            Whether you want us to handle everything, empower your internal team, or let AI take the heavy lifting — Event Sphere Solutions adapts to how your venue operates.
           </p>
         </div>
       </section>
