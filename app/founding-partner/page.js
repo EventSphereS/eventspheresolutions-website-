@@ -74,7 +74,7 @@ export default function FoundingPartnerPage() {
           </div>
 
           <h1 className="text-4xl md:text-6xl font-extrabold font-display tracking-tight leading-tight mb-6">
-            Become a <span className="text-[#E07B20]">Founding Partner</span> of Event Sphere
+            Become a <span className="text-[#E07B20]">Founding Partner</span> of Sphere
           </h1>
 
           <p className="text-gray-300 text-xl leading-relaxed max-w-2xl mx-auto mb-8">
