@@ -58,6 +58,26 @@ const questions = [
       { label: 'We don\'t have anyone dedicated to it at all', points: { salesTeam: 2 } },
     ],
   },
+  {
+    id: 'afterhours',
+    question: 'When a lead comes in after hours or on a weekend, what typically happens?',
+    options: [
+      { label: 'Someone on our team picks it up quickly', points: { sphere: 2 } },
+      { label: 'It waits until the next business day', points: { ai: 1, salesTeam: 1 } },
+      { label: 'Honestly, some probably get missed', points: { ai: 2 } },
+      { label: 'We have no one to handle it at all', points: { salesTeam: 2 } },
+    ],
+  },
+  {
+    id: 'vision',
+    question: 'What best describes your vision for private events at your venue?',
+    options: [
+      { label: 'I want full control and visibility over every booking', points: { sphere: 2 } },
+      { label: 'I want to grow but need the right team to make it happen', points: { salesTeam: 2 } },
+      { label: 'I want to scale efficiently with smart tools and automation', points: { ai: 2 } },
+      { label: 'I want a bit of everything — tools, support, and efficiency', points: { sphere: 1, salesTeam: 1, ai: 1 } },
+    ],
+  },
 ]
 
 const results = {
