@@ -195,24 +195,27 @@ export default function FoundingPartnerPage() {
       </section>
 
       {/* How It Works */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-6">
+      <section className="py-20 bg-[#f4f0f5]">
+        <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-14">
             <h2 className="section-title">How It Works</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { step: '01', title: 'Apply', desc: 'Fill out the short application below. We review within 48 hours.' },
-              { step: '02', title: 'Onboarding Call', desc: 'We set up your entire account together — pipeline, forms, templates, campaigns.' },
-              { step: '03', title: 'Use It & Grow', desc: '90 days of full Revenue Growth access. Run events. Track results. Share feedback monthly.' },
-              { step: '04', title: 'Stay at Founder Rate', desc: 'After 3 months, continue at your permanently locked Founding Partner price.' },
-            ].map((item) => (
-              <div key={item.step} className="text-center">
-                <div className="w-14 h-14 rounded-full bg-[#E07B20]/10 text-[#E07B20] font-bold text-xl font-serif flex items-center justify-center mx-auto mb-4">
-                  {item.step}
-                </div>
-                <h3 className="font-bold text-[#222123] mb-2">{item.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+              { step: '01', icon: '📝', title: 'Apply', tag: '48hr review' },
+              { step: '02', icon: '🚀', title: 'Onboarding', tag: 'We set you up' },
+              { step: '03', icon: '📈', title: 'Use & Grow', tag: '90 days full access' },
+              { step: '04', icon: '🔒', title: 'Locked Rate', tag: 'Yours forever' },
+            ].map((item, i) => (
+              <div key={item.step} className="relative bg-white rounded-3xl p-6 flex flex-col items-center text-center shadow-sm border border-gray-100">
+                {/* Connector line */}
+                {i < 3 && (
+                  <div className="hidden md:block absolute top-10 left-full w-4 h-0.5 bg-gradient-to-r from-[#6a256f] to-[#E07B20] z-10" />
+                )}
+                <div className="text-4xl mb-4">{item.icon}</div>
+                <div className="text-[10px] font-black uppercase tracking-[0.2em] text-[#E07B20] mb-1">{item.step}</div>
+                <h3 className="font-extrabold text-[#6a256f] text-base mb-2">{item.title}</h3>
+                <span className="text-xs bg-[#6a256f]/8 text-[#6a256f] font-semibold px-3 py-1 rounded-full">{item.tag}</span>
               </div>
             ))}
           </div>

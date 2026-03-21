@@ -64,7 +64,7 @@ export default function PlatformPage() {
             </div>
             <p className="text-[#E07B20] text-xs font-bold uppercase tracking-[0.2em] mb-4">Sphere — Private Event Platform by Event Sphere Solutions</p>
             <h1 className="text-4xl md:text-5xl font-extrabold font-display tracking-tight text-[#6a256f] leading-tight mb-5">
-              <span className="text-[#E07B20]">Sphere</span> — Your private<br />event sales platform
+              <span className="text-[#E07B20]">Sphere</span> — Your private event<br />sales platform
             </h1>
             <p className="text-gray-500 text-lg leading-relaxed mb-8">
               Sphere gives your hospitality business the expert sales team and smart tools to turn empty calendars into consistent, high-revenue event programs — without the overhead.

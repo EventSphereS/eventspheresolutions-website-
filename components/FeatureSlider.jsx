@@ -8,18 +8,19 @@ const slides = [
     tag: 'Proposals & Payments',
     title: 'One link closes the deal.',
     desc: 'Send a stunning branded proposal, collect the e-signature, and process the deposit — all in a single link. No back-and-forth, no chasing.',
-    image: '/images/slide-proposal.png',
-    objectPosition: 'center 30%',
-    scale: 1.4,
+    image: '/images/slide-proposal-new.png',
+    objectFit: 'contain',
+    objectPosition: 'center center',
+    scale: 1.0,
   },
   {
     number: '02',
     tag: 'Team Communication',
     title: 'Your whole team, finally in sync.',
     desc: 'Stop losing event details across texts and emails. Every conversation, lead note, and team message lives in one place — visible to everyone who needs it.',
-    image: '/images/platform-chatbox.png',
+    image: '/images/slide-chat.png',
     objectFit: 'contain',
-    scale: 1,
+    scale: 1.0,
   },
   {
     number: '03',
@@ -27,8 +28,9 @@ const slides = [
     title: 'Proposals, BEOs, Invoices — one click.',
     desc: 'Generate polished, on-brand documents in seconds. No copy-pasting, no formatting headaches — just professional docs that impress every client.',
     image: '/images/slide-beo.png',
-    scale: 1.3,
-    objectPosition: 'center top',
+    scale: 1.2,
+    objectFit: 'contain',
+    objectPosition: '90% 25%',
   },
   {
     number: '04',
@@ -139,7 +141,7 @@ export default function FeatureSlider() {
             transition: 'opacity 0.25s ease, transform 0.25s ease',
           }}
         >
-          <div className="grid md:grid-cols-2 min-h-[520px]">
+          <div className="grid md:grid-cols-[60%_40%] min-h-[520px]">
 
             {/* Left — screenshot */}
             <div className="relative min-h-[300px] md:min-h-0 overflow-hidden" style={{ background: '#f0edf6' }}>
@@ -153,7 +155,7 @@ export default function FeatureSlider() {
                 fill
                 quality={100}
                 sizes="(max-width: 768px) 100vw, 50vw"
-                className={slide.objectFit === 'contain' ? 'object-contain p-6' : 'object-cover'}
+                className={slide.objectFit === 'contain' ? 'object-contain' : 'object-cover'}
                 style={{
                   objectPosition: slide.objectPosition || 'center center',
                   transform: `scale(${slide.scale || 1})`,
