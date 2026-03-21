@@ -30,7 +30,7 @@ const slides = [
     image: '/images/slide-beo.png',
     scale: 1.2,
     objectFit: 'contain',
-    objectPosition: '90% 25%',
+    objectPosition: '90% 40%',
   },
   {
     number: '04',
