@@ -7,65 +7,63 @@ const questions = [
     id: 'team',
     question: 'Do you have someone handling private event sales in-house?',
     options: [
-      { label: "No — it's mostly me or we're stretched thin", value: 'no', points: 'v1' },
-      { label: 'Yes — we have a sales person or coordinator', value: 'yes', points: 'v2' },
+      { label: "No — it's mostly me or we're stretched thin", value: 'no', points: 'sales-team' },
+      { label: 'Yes — we have a sales person or coordinator', value: 'yes', points: 'sphere' },
     ],
   },
   {
     id: 'involvement',
     question: 'How involved do you want to be in the day-to-day sales process?',
     options: [
-      { label: 'As little as possible — I want it handled for me', value: 'low', points: 'v1' },
-      { label: 'I want full control with the right tools', value: 'high', points: 'v2' },
+      { label: 'As little as possible — I want it handled for me', value: 'low', points: 'sales-team' },
+      { label: 'I want full control with the right tools', value: 'high', points: 'sphere' },
     ],
   },
   {
     id: 'challenge',
     question: "What's your biggest challenge right now?",
     options: [
-      { label: "I don't have the time or team to chase leads", value: 'time', points: 'v1' },
-      { label: 'I need a better system — the process is scattered', value: 'system', points: 'v2' },
+      { label: "I don't have the time or team to chase leads", value: 'time', points: 'sales-team' },
+      { label: 'I need a better system — the process is scattered', value: 'system', points: 'sphere' },
     ],
   },
 ]
 
 const results = {
-  v1: {
-    version: 'V1',
-    label: 'Full Service',
-    headline: 'You need V1 — Platform + Expert Sales Team.',
-    desc: 'You\'re running a busy venue and don\'t have the bandwidth to chase every lead, follow up on every inquiry, and close every deal. That\'s exactly what our expert sales team does — so you can focus on your guests.',
-    perks: [
-      'Dedicated sales team handles your private events end-to-end',
-      'Lead capture, follow-up, proposals & contract management',
-      'Full platform access included',
-      'First month free',
-    ],
-    cta: 'Get Started with V1',
-    href: '/contact',
-    free: '1 month free',
-    color: 'from-[#6a256f] via-[#EF4561] to-[#E07B20]',
-  },
-  v2: {
-    version: 'V2',
-    label: 'Self-Serve Platform',
-    headline: 'You need V2 — The Platform, Your Way.',
+  sphere: {
+    label: 'Sphere',
+    headline: 'Start with Sphere — your complete event sales platform.',
     desc: 'You have the team or the drive — you just need the right system. Sphere gives you everything to capture leads, send proposals, manage your calendar, and run email campaigns, all in one place.',
     perks: [
       'Full platform access — all features',
       'Lead pipeline, proposals, BEOs & invoices',
       'Smart calendar & email campaigns',
-      '3 months free',
+      '3 months free — Founding Partner Program',
     ],
-    cta: 'Get Started with V2',
+    cta: 'Get Sphere Free',
     href: '/founding-partner',
     free: '3 months free',
     color: 'from-[#6a256f] to-[#222123]',
   },
+  'sales-team': {
+    label: 'Sphere + Sales Team',
+    headline: 'You need Sphere + Sales Team — we handle everything.',
+    desc: "You're running a busy venue and don't have the bandwidth to chase every lead, follow up on every inquiry, and close every deal. That's exactly what our expert sales team does — so you can focus on your guests.",
+    perks: [
+      'Full Sphere platform included',
+      'Dedicated sales team handles events end-to-end',
+      'Lead capture, follow-up, proposals & contracts',
+      'First month free',
+    ],
+    cta: 'Contact Us',
+    href: '/contact',
+    free: '1st month free',
+    color: 'from-[#6a256f] via-[#EF4561] to-[#E07B20]',
+  },
 }
 
 export default function PricingQuiz() {
-  const [step, setStep] = useState(0) // 0 = intro, 1-3 = questions, 4 = result
+  const [step, setStep] = useState(0)
   const [answers, setAnswers] = useState([])
   const [selected, setSelected] = useState(null)
 
@@ -81,9 +79,9 @@ export default function PricingQuiz() {
   }
 
   function getResult() {
-    const v1 = answers.filter(a => a === 'v1').length
-    const v2 = answers.filter(a => a === 'v2').length
-    return v1 >= v2 ? results.v1 : results.v2
+    const salesTeam = answers.filter(a => a === 'sales-team').length
+    const sphere = answers.filter(a => a === 'sphere').length
+    return salesTeam >= sphere ? results['sales-team'] : results.sphere
   }
 
   function reset() {
@@ -117,7 +115,6 @@ export default function PricingQuiz() {
       {/* Questions */}
       {step >= 1 && step <= 3 && (
         <div>
-          {/* Progress */}
           <div className="flex items-center gap-3 mb-8">
             {questions.map((_, i) => (
               <div
@@ -157,7 +154,7 @@ export default function PricingQuiz() {
         return (
           <div className="text-center">
             <div className={`inline-block bg-gradient-to-r ${r.color} text-white text-xs font-bold px-4 py-1.5 rounded-full mb-5 uppercase tracking-widest`}>
-              {r.version} — {r.label}
+              {r.label}
             </div>
             <h3 className="text-2xl md:text-3xl font-bold font-display tracking-tight text-[#6a256f] mb-4 leading-snug">
               {r.headline}

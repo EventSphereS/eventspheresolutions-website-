@@ -63,129 +63,121 @@ export default function ServicesPage() {
           <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle at 60% 50%, #E07B20 0%, transparent 55%)' }} />
         </div>
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+          <div className="inline-block bg-[#E07B20] text-white text-xs font-bold px-4 py-1.5 rounded-full mb-6 uppercase tracking-widest">
+            The Platform
+          </div>
           <h1 className="text-4xl md:text-6xl font-extrabold font-display tracking-tight text-white mb-6 leading-tight">
-            Find Your Way to Power Your<br />
-            <span className="text-[#E07B20]">Private Event Sales</span>
+            <span className="text-[#E07B20]">Sphere</span> — Your Private Event<br />Sales Platform
           </h1>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto mb-8">
-            Whether you want us to handle everything, empower your internal team, or let AI take the heavy lifting — Event Sphere Solutions adapts to how your venue operates.
+            Start with Sphere and run your entire private event operation from one platform. Then add a dedicated sales team or AI automation when you're ready to scale.
           </p>
           <Link href="/founding-partner" className="btn-primary text-lg px-8 py-4">
-            Get Started Free
+            Get Sphere Free — 3 Months
           </Link>
         </div>
       </section>
 
-      {/* Three Ways */}
+      {/* Intro */}
       <section className="py-16 bg-white border-b border-gray-100">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <p className="text-[#E07B20] text-xs font-bold uppercase tracking-[0.2em] mb-3">Our Services</p>
-          <h2 className="text-3xl md:text-4xl font-bold font-display tracking-tight text-[#E07B20] mb-3">
-            Three Ways to Power<br />Your Private Events Sales
+          <p className="text-[#E07B20] text-xs font-bold uppercase tracking-[0.2em] mb-3">Sphere + Add-Ons</p>
+          <h2 className="text-3xl md:text-4xl font-bold font-display tracking-tight text-[#6a256f] mb-3">
+            Start with Sphere.<br />Enhance When You're Ready.
           </h2>
           <div className="w-16 h-0.5 bg-[#E07B20] mx-auto mt-4 mb-4"></div>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Whether you want us to handle everything, empower your internal team, or let AI take the heavy lifting — Event Sphere Solutions adapts to how your venue operates.
+            Every venue starts with Sphere. Add a dedicated expert sales team or AI automation to take your event revenue to the next level.
           </p>
         </div>
       </section>
 
-      {/* V1 / V2 / V3 — Full-width cards */}
+      {/* Sphere — Hero Card */}
       <section className="bg-[#0f0f0f] py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3">
+        <div className="max-w-6xl mx-auto px-6">
 
-          {/* V1 */}
-          <div className="relative group overflow-hidden flex flex-col min-h-[600px]">
+          {/* Sphere full-width hero */}
+          <div className="relative group overflow-hidden rounded-2xl min-h-[500px] mb-6">
             <div className="absolute inset-0">
-              <Image src="/images/team-working.jpg" alt="Fully Managed" fill className="object-cover object-center transition-transform duration-700 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30" />
+              <Image src="/images/dashboard-laptop.png" alt="Sphere Platform" fill className="object-cover object-center transition-transform duration-700 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/30" />
             </div>
-            <div className="relative z-10 flex flex-col h-full p-8 md:p-10 justify-end">
-              <div className="mb-auto">
-                <span className="inline-block text-[#E07B20] font-display font-black text-5xl leading-none opacity-30">V1</span>
-              </div>
-              <div>
-                <span className="inline-block bg-[#E07B20] text-black text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4">Full Service</span>
-                <h3 className="text-white font-display font-extrabold text-2xl md:text-3xl tracking-tight mb-3 leading-tight">Fully Managed<br />Event Sales</h3>
-                <p className="text-[#E07B20]/90 text-sm leading-relaxed mb-6">We become your event sales department — handling every inquiry, proposal, and booking end-to-end.</p>
-                <div className="space-y-2 mb-8">
-                  {['Dedicated sales team', 'Full platform access', 'Lead-to-close management'].map(f => (
+            <div className="relative z-10 flex flex-col md:flex-row h-full p-10 md:p-14 items-end md:items-center gap-8">
+              <div className="flex-1">
+                <span className="inline-block bg-white text-[#6a256f] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5">The Platform</span>
+                <h3 className="text-white font-display font-extrabold text-4xl md:text-5xl tracking-tight mb-4 leading-tight">Sphere</h3>
+                <p className="text-white/70 text-base leading-relaxed mb-6 max-w-lg">Your complete private event sales platform. Capture leads, send proposals, manage your calendar, run email campaigns, and track every booking — all in one place.</p>
+                <div className="grid grid-cols-2 gap-2 mb-8 max-w-md">
+                  {['Lead capture & pipeline', 'Proposals, BEOs & invoices', 'Smart calendar', 'Email campaigns', 'Online payments', 'Reporting dashboard'].map(f => (
                     <div key={f} className="flex items-center gap-2 text-white/80 text-sm">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#E07B20] shrink-0" />
                       {f}
                     </div>
                   ))}
                 </div>
-                <p className="text-white/40 text-xs italic mb-6">Ideal for: Venues without internal event sales resources.</p>
-                <Link href="/contact" className="inline-block bg-[#E07B20] text-black font-bold text-sm px-6 py-3 rounded-full hover:opacity-90 transition-all">
-                  Get Started with V1 →
+                <Link href="/founding-partner" className="inline-block bg-white text-[#6a256f] font-bold text-sm px-8 py-3.5 rounded-full hover:bg-gray-100 transition-all">
+                  Get Sphere Free — 3 Months →
                 </Link>
               </div>
             </div>
           </div>
 
-          {/* V2 */}
-          <div className="relative group overflow-hidden flex flex-col min-h-[600px] border-x border-white/10">
-            <div className="absolute inset-0">
-              <Image src="/images/dashboard-laptop.png" alt="Platform License" fill className="object-cover object-center transition-transform duration-700 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30" />
-            </div>
-            <div className="relative z-10 flex flex-col h-full p-8 md:p-10 justify-end">
-              <div className="mb-auto flex justify-between items-start">
-                <span className="inline-block text-white font-display font-black text-5xl leading-none opacity-20">V2</span>
-                <span className="inline-block bg-gradient-to-r from-[#6a256f] via-[#EF4561] to-[#E07B20] text-white text-xs font-bold px-3 py-1 rounded-full">Coming Soon</span>
-              </div>
-              <div>
-                <span className="inline-block bg-white text-[#6a256f] text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4">Sphere</span>
-                <h3 className="text-white font-display font-extrabold text-2xl md:text-3xl tracking-tight mb-3 leading-tight">Event Sales<br />Platform</h3>
-                <p className="text-[#E07B20]/90 text-sm leading-relaxed mb-6">Your team, powered by our software. Manage leads, proposals, and bookings all in one place.</p>
-                <div className="space-y-2 mb-8">
-                  {['Full platform access', 'Special venue tools', 'Team onboarding & training'].map(f => (
-                    <div key={f} className="flex items-center gap-2 text-white/80 text-sm">
-                      <span className="w-1.5 h-1.5 rounded-full bg-white shrink-0" />
-                      {f}
-                    </div>
-                  ))}
-                </div>
-                <p className="text-white/40 text-xs italic mb-6">Ideal for: Venues with an internal sales team needing a better system.</p>
-                <Link href="/founding-partner" className="inline-block bg-white text-[#6a256f] font-bold text-sm px-6 py-3 rounded-full hover:bg-gray-100 transition-all">
-                  Get Started with V2 →
-                </Link>
-              </div>
-            </div>
-          </div>
+          {/* Add-ons row */}
+          <p className="text-white/40 text-xs font-bold uppercase tracking-widest text-center mb-5">Enhance Sphere With</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-          {/* V3 */}
-          <div className="relative group overflow-hidden flex flex-col min-h-[600px]">
-            <div className="absolute inset-0">
-              <Image src="/images/gala-table.jpg" alt="AI Automation" fill className="object-cover object-center transition-transform duration-700 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/20" />
-            </div>
-            <div className="relative z-10 flex flex-col h-full p-8 md:p-10 justify-end">
-              <div className="mb-auto flex justify-between items-start">
-                <span className="inline-block text-white font-display font-black text-5xl leading-none opacity-20">V3</span>
-                <span className="inline-block bg-gradient-to-r from-[#6a256f] via-[#EF4561] to-[#E07B20] text-white text-xs font-bold px-3 py-1 rounded-full">Coming Soon</span>
+            {/* Sphere + Sales Team */}
+            <div className="relative group overflow-hidden rounded-2xl flex flex-col min-h-[420px]">
+              <div className="absolute inset-0">
+                <Image src="/images/team-working.jpg" alt="Sphere + Sales Team" fill className="object-cover object-center transition-transform duration-700 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/20" />
               </div>
-              <div>
-                <span className="inline-block bg-gradient-to-r from-[#EF4561] to-[#E07B20] text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4">AI Powered</span>
-                <h3 className="text-white font-display font-extrabold text-2xl md:text-3xl tracking-tight mb-3 leading-tight">Platform + AI<br />Automation</h3>
-                <p className="text-[#E07B20]/90 text-sm leading-relaxed mb-6">Supercharge your platform with AI-driven workflows — automated follow-ups, smart lead capture, and zero manual tasks.</p>
-                <div className="space-y-2 mb-8">
-                  {['AI lead capture & follow-up', 'Automated booking workflows', 'Faster responses, less work'].map(f => (
+              <div className="relative z-10 flex flex-col h-full p-8 justify-end">
+                <span className="inline-block bg-[#E07B20] text-black text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4 w-fit">Add-On</span>
+                <h3 className="text-white font-display font-extrabold text-2xl md:text-3xl tracking-tight mb-3 leading-tight">Sphere +<br />Sales Team</h3>
+                <p className="text-white/70 text-sm leading-relaxed mb-5">Add a dedicated expert sales team that handles every inquiry, follow-up, proposal, and close — while you focus on running your venue.</p>
+                <div className="space-y-2 mb-6">
+                  {['Dedicated sales team', 'Lead-to-close management', 'Full Sphere access included'].map(f => (
                     <div key={f} className="flex items-center gap-2 text-white/80 text-sm">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#E07B20] shrink-0" />
                       {f}
                     </div>
                   ))}
                 </div>
-                <p className="text-white/40 text-xs italic mb-6">Ideal for: High-volume venues needing speed and scalability.</p>
-                <Link href="/contact" className="inline-block bg-gradient-to-r from-[#EF4561] to-[#E07B20] text-white font-bold text-sm px-6 py-3 rounded-full hover:opacity-90 transition-all">
+                <Link href="/contact" className="inline-block bg-[#E07B20] text-black font-bold text-sm px-6 py-3 rounded-full hover:opacity-90 transition-all w-fit">
+                  Contact Us →
+                </Link>
+              </div>
+            </div>
+
+            {/* Sphere AI */}
+            <div className="relative group overflow-hidden rounded-2xl flex flex-col min-h-[420px]">
+              <div className="absolute inset-0">
+                <Image src="/images/gala-table.jpg" alt="Sphere AI" fill className="object-cover object-center transition-transform duration-700 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/20" />
+              </div>
+              <div className="relative z-10 flex flex-col h-full p-8 justify-end">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="inline-block bg-gradient-to-r from-[#EF4561] to-[#E07B20] text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full">Add-On</span>
+                  <span className="inline-block bg-white/15 text-white text-xs font-bold px-3 py-1 rounded-full">Coming Soon</span>
+                </div>
+                <h3 className="text-white font-display font-extrabold text-2xl md:text-3xl tracking-tight mb-3 leading-tight">Sphere AI</h3>
+                <p className="text-white/70 text-sm leading-relaxed mb-5">Layer AI automation on top of Sphere — automated lead capture, smart follow-ups, and 24/7 booking workflows with zero manual work.</p>
+                <div className="space-y-2 mb-6">
+                  {['AI lead capture & follow-up', 'Automated booking workflows', 'Full Sphere access included'].map(f => (
+                    <div key={f} className="flex items-center gap-2 text-white/80 text-sm">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#E07B20] shrink-0" />
+                      {f}
+                    </div>
+                  ))}
+                </div>
+                <Link href="/contact" className="inline-block bg-gradient-to-r from-[#EF4561] to-[#E07B20] text-white font-bold text-sm px-6 py-3 rounded-full hover:opacity-90 transition-all w-fit">
                   Join the Waitlist →
                 </Link>
               </div>
             </div>
-          </div>
 
+          </div>
         </div>
       </section>
 
