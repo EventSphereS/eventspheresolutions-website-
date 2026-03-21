@@ -13,43 +13,6 @@ export default function V1V2CTA() {
           Sphere is the platform every venue starts with. Then choose to add a dedicated sales team or AI automation — or both.
         </p>
 
-        {/* Sphere — Primary */}
-        <div className="bg-gradient-to-br from-[#6a256f] to-[#2d0a35] rounded-2xl p-8 md:p-10 text-white mb-6 text-left">
-          <div className="flex flex-col md:flex-row md:items-center gap-8">
-            <div className="flex-1">
-              <div className="inline-block bg-[#E07B20] text-white text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-widest">
-                The Platform
-              </div>
-              <h3 className="text-3xl font-extrabold font-display tracking-tight mb-3">Sphere</h3>
-              <p className="text-white/70 text-sm leading-relaxed mb-5 max-w-lg">
-                Everything your venue needs to capture leads, send proposals, manage your calendar, run email campaigns, and track every booking — all in one place.
-              </p>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-white/80 mb-6">
-                {[
-                  'Lead capture & pipeline',
-                  'Proposals, BEOs & invoices',
-                  'Smart calendar & conflict prevention',
-                  'Email campaigns & promo codes',
-                  'Online payments & e-signatures',
-                  'Reporting dashboard',
-                ].map((f) => (
-                  <li key={f} className="flex items-center gap-2">
-                    <span className="text-[#E07B20] font-bold">✓</span> {f}
-                  </li>
-                ))}
-              </ul>
-              <div className="text-[#E07B20] font-bold text-sm">3 months free — Founding Partner Program</div>
-            </div>
-            <div className="shrink-0 text-center md:text-right">
-              <Link href="/founding-partner"
-                className="inline-block bg-white text-[#6a256f] font-bold px-8 py-4 rounded-xl hover:bg-gray-100 transition-all text-sm">
-                Get Sphere Free →
-              </Link>
-              <p className="text-white/40 text-xs mt-3">Cancel anytime</p>
-            </div>
-          </div>
-        </div>
-
         {/* Add-ons */}
         <p className="text-gray-400 text-xs font-bold uppercase tracking-widest mb-4">Enhance Sphere With</p>
         <div className="grid md:grid-cols-2 gap-4">
