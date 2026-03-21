@@ -13,14 +13,18 @@ const plans = [
       'Visual sales pipeline',
       'Event calendar & conflict prevention',
       'Branded proposal & contract templates',
+      'Digital agreements & e-signature',
+      'Online payment collection',
       'Task reminders & notifications',
-      'Mobile app access (Coming Soon)',
       'Reporting dashboard',
       'Internal team chatbox',
       'Email campaigns (1,000/mo)',
+      'Email campaign analytics',
       'Promo codes (2 active)',
-      'Multi-location dashboard',
-      'Cross-location revenue analytics',
+      'Guest review & feedback collection',
+      '360° Virtual Tour (Add-On)',
+      'Mobile app access (Coming Soon)',
+      'OpenTable integration (Coming Soon)',
     ],
     limits: '1 location · 2 users (+$15/extra)',
     support: 'Email support',
@@ -29,21 +33,22 @@ const plans = [
   {
     name: 'Revenue Growth',
     tagline: 'Automate follow-up. Market smarter. Forecast revenue.',
-    price: { monthly: 239, annual: 199 },
+    price: { monthly: 259, annual: 215 },
     target: 'High-volume venues focused on driving bookings',
     highlight: true,
     badge: 'Most Popular',
     features: [
       'Everything in Venue Essentials',
-      'Automated email & SMS follow-up sequences',
-      'SMS credit bundle (Coming Soon)',
+      'Automated email follow-up sequences',
       'Revenue forecasting dashboard',
       'Conversion tracking (lead → booked)',
       'Branded client portal',
       'Email campaigns (2,500/mo)',
+      'Email campaign analytics',
       'Promo codes (3/month)',
-      'Multi-location dashboard',
-      'Cross-location revenue analytics',
+      'Guest review & feedback collection',
+      '360° Virtual Tour (Add-On)',
+      'SMS credit bundle (Coming Soon)',
       'OpenTable integration (Coming Soon)',
     ],
     limits: '1 location · 5 users (+$15/extra)',
@@ -53,14 +58,12 @@ const plans = [
   {
     name: 'Portfolio',
     tagline: 'Centralized visibility. Performance accountability. Scalable growth.',
-    price: { monthly: 499, annual: 415 },
+    price: null,
     target: 'Venue groups & hospitality portfolios',
     highlight: false,
     badge: 'Enterprise',
     features: [
       'Everything in Revenue Growth',
-      'Multi-location dashboard',
-      'Cross-location revenue analytics',
       'Sales rep performance tracking',
       'Commission tracking',
       'Advanced analytics & forecasting',
@@ -68,9 +71,15 @@ const plans = [
       'API access',
       'Dedicated onboarding manager',
       'Advanced role permissions',
-      'Email campaigns (7,000/mo per location)',
+      'Email campaigns (5,000/mo per location)',
+      'Email campaign analytics',
+      'Promo codes (6/month per location)',
+      'AI email support',
+      'Guest review & feedback collection',
+      '360° Virtual Tour (Add-On)',
+      'OpenTable integration (Coming Soon)',
     ],
-    limits: '3+ locations (custom) · 10 users (+$15/extra)',
+    limits: 'Multiple locations · Multiple users',
     support: 'Dedicated onboarding + strategic reviews',
     cta: 'Contact Sales',
   },
@@ -112,16 +121,30 @@ export default function PricingToggle() {
               <p className={`text-sm mb-5 leading-snug ${plan.highlight ? 'text-white/80' : 'text-gray-500'}`}>
                 {plan.tagline}
               </p>
-              <div className="flex items-end gap-1">
-                <span className={`text-5xl font-bold font-display ${plan.highlight ? 'text-white' : 'text-[#222123]'}`}>
-                  ${plan.price.monthly}
-                </span>
-                <span className={`text-sm mb-2 ${plan.highlight ? 'text-white/70' : 'text-gray-400'}`}>/mo</span>
-              </div>
-
-              <p className={`text-xs mt-2 ${plan.highlight ? 'text-white/70' : 'text-gray-500'}`}>
-                per location · {plan.limits}
-              </p>
+              {plan.price ? (
+                <>
+                  <div className="flex items-end gap-1">
+                    <span className={`text-5xl font-bold font-display ${plan.highlight ? 'text-white' : 'text-[#222123]'}`}>
+                      ${plan.price.monthly}
+                    </span>
+                    <span className={`text-sm mb-2 ${plan.highlight ? 'text-white/70' : 'text-gray-400'}`}>/mo</span>
+                  </div>
+                  <p className={`text-xs mt-2 ${plan.highlight ? 'text-white/70' : 'text-gray-500'}`}>
+                    per location · {plan.limits}
+                  </p>
+                </>
+              ) : (
+                <>
+                  <div className="flex items-end gap-1">
+                    <span className={`text-3xl font-bold font-display ${plan.highlight ? 'text-white' : 'text-[#222123]'}`}>
+                      Contact Us
+                    </span>
+                  </div>
+                  <p className={`text-xs mt-2 ${plan.highlight ? 'text-white/70' : 'text-gray-500'}`}>
+                    {plan.limits}
+                  </p>
+                </>
+              )}
             </div>
 
             {/* Features */}
@@ -132,7 +155,10 @@ export default function PricingToggle() {
                     <span className={`mt-0.5 shrink-0 font-bold ${f.includes('Coming Soon') ? 'text-orange-400' : 'text-[#E07B20]'}`}>
                       {f.includes('Coming Soon') ? '○' : '✓'}
                     </span>
-                    <span className={f.includes('Coming Soon') ? 'text-gray-400' : ''}>{f}</span>
+                    <span className={
+                      f.includes('Everything in') ? 'text-[#6a256f] font-bold' :
+                      f.includes('Coming Soon') ? 'text-gray-400' : ''
+                    }>{f}</span>
                   </li>
                 ))}
               </ul>

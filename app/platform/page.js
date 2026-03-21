@@ -12,7 +12,11 @@ export const metadata = {
 const pillars = [
   {
     icon: '📈',
+    stat: '189%',
+    statLabel: 'avg. increase in event sales',
     title: 'More Bookings',
+    accent: 'from-[#6a256f] to-[#9b3aa0]',
+    iconBg: 'bg-[#6a256f]/10',
     points: [
       'Expert sales team captures every lead',
       'Automated follow-up converts inquiries fast',
@@ -21,7 +25,11 @@ const pillars = [
   },
   {
     icon: '⚙️',
+    stat: '10hrs',
+    statLabel: 'saved per week per team',
     title: 'Less Manual Work',
+    accent: 'from-[#E07B20] to-[#F99F33]',
+    iconBg: 'bg-[#E07B20]/10',
     points: [
       'Proposals, contracts & BEOs auto-generated',
       'Follow-ups and campaigns run automatically',
@@ -30,7 +38,11 @@ const pillars = [
   },
   {
     icon: '⭐',
+    stat: '4.9★',
+    statLabel: 'average guest review score',
     title: 'Happier Guests',
+    accent: 'from-[#EF4561] to-[#E07B20]',
+    iconBg: 'bg-[#EF4561]/10',
     points: [
       'Seamless booking experience from first inquiry',
       '360° virtual tours build confidence before arrival',
@@ -52,7 +64,7 @@ export default function PlatformPage() {
             </div>
             <p className="text-[#E07B20] text-xs font-bold uppercase tracking-[0.2em] mb-4">Sphere — Private Event Platform by Event Sphere Solutions</p>
             <h1 className="text-4xl md:text-5xl font-extrabold font-display tracking-tight text-[#6a256f] leading-tight mb-5">
-              <span className="text-[#E07B20]">Sphere</span> — A Smarter Way to<br />Book & Manage<br />Private Events
+              <span className="text-[#E07B20]">Sphere</span> — A Smarter Way to Book<br />& Manage Private Events
             </h1>
             <p className="text-gray-500 text-lg leading-relaxed mb-8">
               Sphere gives your hospitality business the expert sales team and smart tools to turn empty calendars into consistent, high-revenue event programs — without the overhead.
@@ -100,27 +112,42 @@ export default function PlatformPage() {
       </section>
 
       {/* One system. Three results. */}
-      <section className="py-20 bg-gray-50 border-b border-gray-100">
+      <section className="py-24 bg-[#f4f0f5] border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-14">
+          <div className="text-center mb-16">
             <p className="text-[#E07B20] text-xs font-bold uppercase tracking-[0.2em] mb-3">Why Sphere</p>
-            <h2 className="text-3xl md:text-4xl font-bold font-display tracking-tight text-[#111827] mb-3">
+            <h2 className="text-3xl md:text-5xl font-extrabold font-display tracking-tight text-[#111827] mb-4">
               One system. Three results.
             </h2>
-            <p className="text-gray-500 text-lg">Everything you need to make events your most profitable revenue channel.</p>
+            <p className="text-gray-400 text-lg max-w-xl mx-auto">Everything you need to make events your most profitable revenue channel.</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6">
             {pillars.map((p) => (
-              <div key={p.title} className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
-                <div className="text-4xl mb-4">{p.icon}</div>
-                <h3 className="text-lg font-bold text-[#6a256f] mb-4">{p.title}</h3>
-                <ul className="space-y-2">
-                  {p.points.map((point) => (
-                    <li key={point} className="flex items-start gap-2 text-gray-600 text-sm">
-                      <span className="text-[#E07B20] font-bold mt-0.5">✓</span> {point}
-                    </li>
-                  ))}
-                </ul>
+              <div key={p.title} className="relative bg-white rounded-3xl overflow-hidden shadow-md border border-gray-100 flex flex-col">
+                {/* Gradient top bar */}
+                <div className={`h-1.5 w-full bg-gradient-to-r ${p.accent}`} />
+                <div className="p-8 flex flex-col flex-1">
+                  {/* Icon */}
+                  <div className={`w-12 h-12 rounded-2xl ${p.iconBg} flex items-center justify-center text-2xl mb-6`}>
+                    {p.icon}
+                  </div>
+                  {/* Stat */}
+                  <div className="mb-1">
+                    <span className={`text-5xl font-extrabold font-display bg-gradient-to-r ${p.accent} bg-clip-text text-transparent`}>
+                      {p.stat}
+                    </span>
+                  </div>
+                  <p className="text-gray-400 text-xs uppercase tracking-widest font-semibold mb-5">{p.statLabel}</p>
+                  <h3 className="text-lg font-bold text-[#111827] mb-4">{p.title}</h3>
+                  <ul className="space-y-2.5 mt-auto">
+                    {p.points.map((point) => (
+                      <li key={point} className="flex items-start gap-2.5 text-gray-500 text-sm">
+                        <span className="w-4 h-4 rounded-full bg-gray-100 text-gray-400 font-bold text-[10px] flex items-center justify-center shrink-0 mt-0.5">✓</span>
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             ))}
           </div>

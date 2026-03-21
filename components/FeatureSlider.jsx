@@ -10,7 +10,8 @@ const slides = [
     title: 'One link closes the deal.',
     desc: 'Send a branded proposal, collect the e-signature, and process the deposit — all in one link.',
     image: '/images/slide-proposal.png',
-    objectPosition: 'left top',
+    scale: 1.4,
+    objectPosition: 'center 30%',
   },
   {
     number: '02',
@@ -19,6 +20,7 @@ const slides = [
     desc: 'Every conversation, every lead, every team message in one place. Your whole team, in sync.',
     image: '/images/platform-chatbox.png',
     objectFit: 'contain',
+    scale: 1,
   },
   {
     number: '03',
@@ -26,6 +28,8 @@ const slides = [
     title: 'Proposals, BEOs, Invoices — one click.',
     desc: 'Professional documents generated instantly. No copy-paste, no manual formatting.',
     image: '/images/slide-beo.png',
+    scale: 1.3,
+    objectPosition: 'center top',
   },
   {
     number: '04',
@@ -33,6 +37,8 @@ const slides = [
     title: 'No double bookings. No missed leads.',
     desc: 'Smart calendar with conflict prevention built in. Every inquiry tracked, every slot protected.',
     image: '/images/platform-calendar.png',
+    scale: 1.2,
+    objectPosition: 'center top',
   },
   {
     number: '05',
@@ -40,6 +46,8 @@ const slides = [
     title: 'Fill slow seasons. Drive repeat bookings.',
     desc: 'Email campaigns, promo codes, and targeted outreach — all automated inside the platform.',
     image: '/images/platform-campaigns.png',
+    scale: 1.2,
+    objectPosition: 'center top',
   },
   {
     number: '06',
@@ -47,6 +55,8 @@ const slides = [
     title: 'Your venue, always on.',
     desc: 'Our AI assistant chats with leads in real time — answering questions, capturing event details, and moving them toward a booking. 24/7, zero staff required.',
     image: '/images/slide-ai-assistant.png',
+    scale: 1.2,
+    objectPosition: 'center top',
   },
 ]
 
@@ -120,7 +130,13 @@ export default function FeatureSlider() {
           <div className="grid md:grid-cols-2 min-h-[480px]">
 
             {/* Left — screenshot */}
-            <div className="relative bg-[#f5f3f8] min-h-[300px] md:min-h-0">
+            <div className="relative bg-[#f0edf6] min-h-[300px] md:min-h-0 overflow-hidden">
+              {/* Subtle top fade */}
+              <div className="absolute inset-x-0 top-0 h-10 z-10 pointer-events-none"
+                style={{ background: 'linear-gradient(to bottom, #f0edf6, transparent)' }} />
+              {/* Subtle bottom fade */}
+              <div className="absolute inset-x-0 bottom-0 h-16 z-10 pointer-events-none"
+                style={{ background: 'linear-gradient(to top, #f0edf6, transparent)' }} />
               <Image
                 src={slide.image}
                 alt={slide.title}
@@ -128,7 +144,12 @@ export default function FeatureSlider() {
                 quality={100}
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className={slide.objectFit === 'contain' ? 'object-contain p-6' : 'object-cover'}
-                style={{ objectPosition: slide.objectPosition || 'left center' }}
+                style={{
+                  objectPosition: slide.objectPosition || 'center center',
+                  transform: `scale(${slide.scale || 1})`,
+                  transformOrigin: 'center center',
+                  transition: 'transform 0.3s ease',
+                }}
               />
             </div>
 
