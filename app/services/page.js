@@ -66,7 +66,7 @@ export default function ServicesPage() {
           <div className="inline-block bg-[#E07B20] text-white text-xs font-bold px-4 py-1.5 rounded-full mb-6 uppercase tracking-widest">
             The Platform
           </div>
-          <h1 className="text-4xl md:text-6xl font-extrabold font-display tracking-tight text-white mb-6 leading-tight">
+          <h1 className="text-3xl md:text-5xl font-extrabold font-display tracking-tight text-white mb-6 leading-tight whitespace-nowrap">
             <span className="text-[#E07B20]">Sphere</span> — Your Private Event<br />Sales Platform
           </h1>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto mb-8">
