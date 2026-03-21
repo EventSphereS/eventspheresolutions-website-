@@ -7,7 +7,7 @@ const questions = [
     id: 'team',
     question: 'Do you have someone in-house handling private event sales?',
     options: [
-      { label: "No — it's me or we're stretched thin", points: { salesTeam: 2 } },
+      { label: "No — it's mostly me or we're stretched thin", points: { salesTeam: 2 } },
       { label: 'Yes — we have a coordinator or sales person', points: { sphere: 2 } },
     ],
   },
@@ -27,6 +27,35 @@ const questions = [
       { label: "I don't have the bandwidth to chase and close leads", points: { salesTeam: 2 } },
       { label: 'Too much manual work — follow-ups, emails, admin', points: { ai: 2 } },
       { label: 'No system — everything is scattered across emails and spreadsheets', points: { sphere: 2 } },
+    ],
+  },
+  {
+    id: 'response',
+    question: 'How quickly do you typically respond to a new event inquiry?',
+    options: [
+      { label: 'Within the hour — we\'re on it', points: { sphere: 2 } },
+      { label: 'Same day, usually', points: { sphere: 1, ai: 1 } },
+      { label: 'It varies — sometimes days go by', points: { salesTeam: 1, ai: 1 } },
+      { label: 'Honestly, some fall through the cracks', points: { salesTeam: 2 } },
+    ],
+  },
+  {
+    id: 'goal',
+    question: 'What would have the biggest impact on your event revenue?',
+    options: [
+      { label: 'Having an expert team close more deals for me', points: { salesTeam: 2 } },
+      { label: 'Automating the repetitive tasks so I can focus on guests', points: { ai: 2 } },
+      { label: 'A better system to manage and track everything', points: { sphere: 2 } },
+    ],
+  },
+  {
+    id: 'hours',
+    question: 'How many hours per week does your team spend on event admin (emails, proposals, follow-ups)?',
+    options: [
+      { label: 'Less than 5 hours — it\'s under control', points: { sphere: 2 } },
+      { label: '5–10 hours — it\'s eating into our time', points: { ai: 1, sphere: 1 } },
+      { label: 'More than 10 hours — it\'s a real problem', points: { ai: 2 } },
+      { label: 'We don\'t have anyone dedicated to it at all', points: { salesTeam: 2 } },
     ],
   },
 ]
