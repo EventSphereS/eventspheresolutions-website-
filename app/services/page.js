@@ -93,7 +93,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Sphere — Hero Card */}
-      <section className="bg-[#0f0f0f] py-16">
+      <section className="bg-[#2d0a35] py-16">
         <div className="max-w-6xl mx-auto px-6">
 
           {/* Sphere full-width hero */}
@@ -105,7 +105,7 @@ export default function ServicesPage() {
             <div className="relative z-10 flex flex-col md:flex-row h-full p-10 md:p-14 items-end md:items-center gap-8">
               <div className="flex-1">
                 <span className="inline-block bg-white text-[#6a256f] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5">The Platform</span>
-                <h3 className="text-white font-display font-extrabold text-4xl md:text-5xl tracking-tight mb-4 leading-tight">Sphere</h3>
+                <h3 className="font-display font-extrabold text-4xl md:text-5xl tracking-tight mb-4 leading-tight" style={{ background: 'linear-gradient(90deg, #6a256f, #EF4561, #E07B20)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Sphere</h3>
                 <p className="text-white/70 text-base leading-relaxed mb-6 max-w-lg">Your complete private event sales platform. Capture leads, send proposals, manage your calendar, run email campaigns, and track every booking — all in one place.</p>
                 <div className="grid grid-cols-2 gap-2 mb-8 max-w-md">
                   {['Lead capture & pipeline', 'Proposals, BEOs & invoices', 'Smart calendar', 'Email campaigns', 'Online payments', 'Reporting dashboard'].map(f => (
