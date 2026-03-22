@@ -28,9 +28,10 @@ const slides = [
     title: 'Proposals, BEOs, Invoices — one click.',
     desc: 'Generate polished, on-brand documents in seconds. No copy-pasting, no formatting headaches — just professional docs that impress every client.',
     image: '/images/slide-beo.png',
-    scale: 1.2,
-    objectFit: 'contain',
-    objectPosition: '90% 40%',
+    scale: 0.95,
+    objectFit: 'cover',
+    objectPosition: '100% 20%',
+    transformOrigin: 'right center',
   },
   {
     number: '04',
@@ -38,7 +39,7 @@ const slides = [
     title: 'Zero double bookings. Zero missed leads.',
     desc: 'A smart calendar that protects every slot and a pipeline that captures every inquiry. Nothing slips through the cracks — ever.',
     image: '/images/platform-calendar.png',
-    scale: 1.2,
+    scale: 1.0,
     objectPosition: 'center top',
   },
   {
@@ -47,8 +48,8 @@ const slides = [
     title: 'Fill slow seasons before they hit.',
     desc: 'Launch targeted email campaigns, drop promo codes, and drive repeat bookings — all from inside Sphere. No third-party tools needed.',
     image: '/images/platform-campaigns.png',
-    scale: 1.2,
-    objectPosition: 'center top',
+    scale: 1.0,
+    objectPosition: 'center center',
   },
   {
     number: '06',
@@ -56,8 +57,8 @@ const slides = [
     title: 'Your venue sells itself — 24/7.',
     desc: 'Sphere\'s AI assistant responds to leads in real time, captures event details, and moves prospects toward a booking — even while you sleep.',
     image: '/images/slide-ai-assistant.png',
-    scale: 1.2,
-    objectPosition: 'center top',
+    objectFit: 'contain',
+    scale: 1,
   },
 ]
 
@@ -159,7 +160,7 @@ export default function FeatureSlider() {
                 style={{
                   objectPosition: slide.objectPosition || 'center center',
                   transform: `scale(${slide.scale || 1})`,
-                  transformOrigin: 'center center',
+                  transformOrigin: slide.transformOrigin || 'center center',
                   transition: 'transform 0.3s ease',
                 }}
               />
