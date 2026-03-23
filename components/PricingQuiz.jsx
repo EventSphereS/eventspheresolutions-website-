@@ -101,7 +101,7 @@ export default function PricingQuiz() {
             3 quick questions
           </div>
           <h3 className="text-3xl md:text-5xl font-bold font-display tracking-tight text-[#6a256f] mb-4">
-            Not sure which is right for you?
+            Not sure which Sphere is right for you?
           </h3>
           <button
             onClick={() => setStep(1)}

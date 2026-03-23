@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import PricingToggle from '@/components/PricingToggle'
 import PricingQuiz from '@/components/PricingQuiz'
 
@@ -49,36 +50,60 @@ export default function PricingPage() {
       {/* 360 Tour Add-on */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="bg-gradient-to-r from-[#6a256f] to-[#222123] rounded-2xl p-8 md:p-12 text-white flex flex-col md:flex-row items-center gap-8">
-            <div className="text-6xl">🏛️</div>
-            <div className="flex-1">
-              <div className="flex items-center gap-3 mb-2">
-                <h3 className="text-2xl font-bold font-display">360° Virtual Tour Add-On</h3>
-                <span className="bg-[#E07B20] text-white text-xs font-bold px-3 py-1 rounded-full">Popular</span>
+          <div className="bg-gradient-to-r from-[#6a256f] to-[#222123] rounded-2xl overflow-hidden text-white">
+            <div className="flex flex-col md:flex-row items-center gap-0">
+
+              {/* Left — text */}
+              <div className="flex-1 p-8 md:p-12">
+                <div className="flex items-center gap-3 mb-4">
+                  <h3 className="text-2xl md:text-3xl font-bold font-display">360° Virtual Tour Add-On</h3>
+                  <span className="bg-[#E07B20] text-white text-xs font-bold px-3 py-1 rounded-full shrink-0">Popular</span>
+                </div>
+                <p className="text-gray-300 mb-6 leading-relaxed">
+                  Let clients explore your venue before they ever visit. Immersive 360° tours embedded directly
+                  in your booking flow — so prospects can walk every room, visualize their event, and book with
+                  confidence. Available for any tier.
+                </p>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-gray-300 mb-8">
+                  {[
+                    'Professional 360° photography',
+                    'Hosted & embedded in your portal',
+                    'Mobile, desktop & VR headsets',
+                    'Unlimited views, no extra fees',
+                    'Higher booking confidence',
+                    'Fewer "can we see the space?" calls',
+                  ].map((f) => (
+                    <li key={f} className="flex items-center gap-2">
+                      <span className="w-4 h-4 rounded-full bg-[#F99F33]/20 text-[#F99F33] font-bold text-[10px] flex items-center justify-center shrink-0">✓</span>
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                  <Link href="/contact" className="btn-primary text-sm shrink-0">
+                    Let's Discuss →
+                  </Link>
+                  <p className="text-gray-400 text-xs">Pricing depends on your venue size & setup.</p>
+                </div>
               </div>
-              <p className="text-gray-300 mb-4 leading-relaxed">
-                Let prospects virtually walk through your space before they ever pick up the phone.
-                Immersive 360° tours increase booking inquiries by giving clients the confidence to commit.
-                Available for any tier.
-              </p>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-gray-300">
-                {[
-                  'Professional 360° photography',
-                  'Hosted & embedded in your portal',
-                  'Mobile & desktop compatible',
-                  'Unlimited views, no extra fees',
-                ].map((f) => (
-                  <li key={f} className="flex items-center gap-2">
-                    <span className="text-[#E07B20]">✓</span> {f}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="text-center shrink-0">
-              <p className="text-gray-300 text-sm mb-4 max-w-[180px]">Pricing depends on your venue size & setup. Let's chat.</p>
-              <Link href="/contact" className="btn-primary block text-center text-sm">
-                Let's Discuss →
-              </Link>
+
+              {/* Right — phone mockup */}
+              <div className="relative shrink-0 flex items-end justify-center md:justify-end w-full md:w-auto px-8 md:px-0 pb-8 md:pb-0 md:pr-10">
+                <div className="relative">
+                  <Image
+                    src="/images/360-phone-mockup.png"
+                    alt="360° Virtual Tour on mobile"
+                    width={260}
+                    height={260}
+                    quality={100}
+                    className="h-auto object-contain drop-shadow-2xl max-h-64 md:max-h-72"
+                  />
+                  <div className="absolute -bottom-2 -right-2 bg-[#F99F33] text-white font-extrabold font-display text-sm px-4 py-2 rounded-full shadow-lg shadow-[#F99F33]/30 whitespace-nowrap">
+                    360° Immersive
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
@@ -98,15 +123,15 @@ export default function PricingPage() {
                 <tr className="border-b border-gray-100">
                   <th className="text-left p-5 text-[#222123] font-bold w-2/5">Feature</th>
                   <th className="p-5 text-center text-[#222123] font-bold">
-                    <div>Venue Essentials</div>
+                    <div>Sphere Essential</div>
                     <div className="text-[#E07B20] font-bold">$149/mo</div>
                   </th>
                   <th className="p-5 text-center bg-[#E07B20]/5 border-x border-[#E07B20]/20">
-                    <div className="text-[#222123] font-bold">Revenue Growth</div>
+                    <div className="text-[#222123] font-bold">Sphere Growth</div>
                     <div className="text-[#E07B20] font-bold">$259/mo</div>
                   </th>
                   <th className="p-5 text-center text-[#222123] font-bold">
-                    <div>Portfolio</div>
+                    <div>Sphere Hospitality Group</div>
                     <div className="text-[#E07B20] font-bold">Contact Us</div>
                   </th>
                 </tr>
@@ -198,56 +223,98 @@ export default function PricingPage() {
           </div>
 
           {/* Sphere — Primary */}
-          <div className="bg-white rounded-2xl p-8 mb-6">
+          <div className="bg-white rounded-2xl p-8 mb-6 shadow-xl shadow-black/10">
             <div className="inline-block bg-[#E07B20] text-white text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-widest">
               The Platform
             </div>
             <div className="flex flex-col md:flex-row md:items-center gap-8">
               <div className="flex-1">
-                <h3 className="text-2xl font-bold font-display text-[#6a256f] mb-2">Sphere</h3>
-                <p className="text-gray-500 text-sm leading-relaxed mb-4">
-                  The full Sphere platform in your hands. Capture leads, send proposals, manage your calendar, run email campaigns, and track every booking.
+                <h3 className="text-3xl font-extrabold font-display text-[#1a0f40] mb-1">Sphere</h3>
+                <p className="text-[#6a256f] font-semibold text-sm mb-3">Your complete private event sales platform.</p>
+                <p className="text-gray-500 text-sm leading-relaxed mb-4 line-clamp-2">
+                  Everything your venue needs to capture leads, send proposals, manage your calendar, run email campaigns, and track every booking — all in one place.
                 </p>
-                <ul className="grid grid-cols-2 gap-1.5">
-                  {['Lead capture & pipeline', 'Proposals, BEOs & invoices', 'Email campaigns & calendar', 'Payments & e-signatures'].map((f) => (
+                <ul className="grid grid-cols-2 gap-2">
+                  {['Lead capture & pipeline', 'Proposals, BEOs & invoices', 'Smart calendar & conflict prevention', 'Email campaigns & promo codes', 'Online payments & e-signatures', 'Reporting dashboard'].map((f) => (
                     <li key={f} className="flex items-center gap-2 text-sm text-gray-600">
-                      <span className="text-[#E07B20] font-bold">✓</span> {f}
+                      <span className="text-[#E07B20] font-bold text-base">✓</span> {f}
                     </li>
                   ))}
                 </ul>
               </div>
-              <div className="shrink-0 text-center">
-                <div className="text-[#E07B20] font-bold text-sm mb-3">3 months free</div>
+              <div className="shrink-0 text-center min-w-[200px]">
                 <Link href="/founding-partner"
-                  className="block bg-gradient-to-r from-[#6a256f] via-[#EF4561] to-[#E07B20] text-white font-bold py-3.5 px-8 rounded-xl hover:opacity-90 transition-all text-center">
+                  className="block bg-gradient-to-r from-[#6a256f] via-[#EF4561] to-[#E07B20] text-white font-bold py-4 px-8 rounded-xl hover:opacity-90 transition-all text-center text-base shadow-lg shadow-[#6a256f]/30">
                   Get Sphere Free →
                 </Link>
                 <p className="text-gray-400 text-xs mt-2">Cancel anytime</p>
+                <p className="text-[#E07B20] font-bold text-xs mt-1">
+                  <Link href="/founding-partner" className="hover:underline">3 months free — Founding Partner Program</Link>
+                </p>
               </div>
             </div>
           </div>
 
           {/* Add-ons */}
-          <p className="text-white/50 text-xs font-bold uppercase tracking-widest text-center mb-4">Enhance Sphere With</p>
-          <div className="grid md:grid-cols-2 gap-4">
-            <div className="bg-white/5 border border-white/15 rounded-2xl p-6 flex flex-col">
-              <div className="inline-block bg-white/15 text-white text-xs font-bold px-3 py-1 rounded-full mb-3 uppercase tracking-widest w-fit">Add-On</div>
-              <h4 className="text-lg font-bold text-white mb-2">Sphere + Sales Team</h4>
-              <p className="text-gray-300 text-sm leading-relaxed flex-1 mb-5">Add a dedicated expert sales team that handles every inquiry, follow-up, proposal, and close on your behalf.</p>
-              <Link href="/contact"
-                className="w-full bg-white text-[#6a256f] font-bold py-3 rounded-xl hover:bg-gray-100 transition-all text-sm text-center">
-                Contact Us →
-              </Link>
+          <p className="text-white/50 text-xs font-bold uppercase tracking-widest text-center mb-6">Enhance Sphere With</p>
+          <div className="grid md:grid-cols-2 gap-5">
+
+            {/* Sphere + Sales Team */}
+            <div className="relative rounded-2xl p-px overflow-hidden" style={{ background: 'linear-gradient(135deg, #E07B20, #EF4561, #6a256f)' }}>
+              <div className="relative bg-[#4a1555] rounded-2xl p-7 flex flex-col h-full">
+                {/* Glow */}
+                <div className="absolute top-0 right-0 w-40 h-40 rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(224,123,32,0.25) 0%, transparent 70%)', filter: 'blur(30px)' }} />
+                <div className="flex items-start justify-between mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#E07B20] to-[#EF4561] flex items-center justify-center text-2xl shadow-lg shadow-[#E07B20]/30">
+                    🎯
+                  </div>
+                  <span className="bg-[#E07B20] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">Add-On</span>
+                </div>
+                <h4 className="text-xl font-extrabold font-display text-white mb-2">Sphere + Sales Team</h4>
+                <p className="text-white/60 text-sm leading-relaxed mb-5">A dedicated expert sales team handles every inquiry, follow-up, proposal, and close — on your behalf.</p>
+                <ul className="space-y-2 mb-6 flex-1">
+                  {['Every lead captured & followed up', 'Proposals written & sent for you', 'Closes deals while you run your venue'].map(f => (
+                    <li key={f} className="flex items-center gap-2 text-white/80 text-sm">
+                      <span className="text-[#E07B20] font-bold">✓</span> {f}
+                    </li>
+                  ))}
+                </ul>
+                <Link href="/contact"
+                  className="w-full bg-gradient-to-r from-[#E07B20] to-[#EF4561] text-white font-bold py-3.5 rounded-xl hover:opacity-90 transition-all text-sm text-center shadow-lg shadow-[#E07B20]/30">
+                  Contact Us →
+                </Link>
+              </div>
             </div>
-            <div className="bg-white/5 border border-white/15 rounded-2xl p-6 flex flex-col">
-              <div className="inline-block bg-white/15 text-white text-xs font-bold px-3 py-1 rounded-full mb-3 uppercase tracking-widest w-fit">Add-On · Coming Soon</div>
-              <h4 className="text-lg font-bold text-white mb-2">Sphere AI</h4>
-              <p className="text-gray-300 text-sm leading-relaxed flex-1 mb-5">Layer AI automation on Sphere — automated lead capture, smart follow-ups, and 24/7 booking workflows.</p>
-              <Link href="/contact"
-                className="w-full bg-white/10 text-white font-bold py-3 rounded-xl hover:bg-white/20 transition-all text-sm text-center">
-                Join the Waitlist →
-              </Link>
+
+            {/* Sphere AI */}
+            <div className="relative rounded-2xl p-px overflow-hidden" style={{ background: 'linear-gradient(135deg, #6a256f, #EF4561, #9b3aa0)' }}>
+              <div className="relative bg-[#2d0a35] rounded-2xl p-7 flex flex-col h-full">
+                {/* Glow */}
+                <div className="absolute top-0 right-0 w-40 h-40 rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(239,69,97,0.25) 0%, transparent 70%)', filter: 'blur(30px)' }} />
+                <div className="flex items-start justify-between mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#EF4561] to-[#6a256f] flex items-center justify-center text-2xl shadow-lg shadow-[#EF4561]/30">
+                    ✨
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="bg-white/10 text-white/70 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">Coming Soon</span>
+                  </div>
+                </div>
+                <h4 className="text-xl font-extrabold font-display text-white mb-2">Sphere AI</h4>
+                <p className="text-white/60 text-sm leading-relaxed mb-5">Layer AI automation on Sphere — so your venue captures leads, follows up, and books events 24/7 without lifting a finger.</p>
+                <ul className="space-y-2 mb-6 flex-1">
+                  {['Automated lead capture & replies', 'Smart follow-up sequences', '24/7 booking workflows'].map(f => (
+                    <li key={f} className="flex items-center gap-2 text-white/80 text-sm">
+                      <span className="text-[#EF4561] font-bold">✓</span> {f}
+                    </li>
+                  ))}
+                </ul>
+                <Link href="/contact"
+                  className="w-full bg-white/10 border border-white/20 text-white font-bold py-3.5 rounded-xl hover:bg-white/20 transition-all text-sm text-center">
+                  Join the Waitlist →
+                </Link>
+              </div>
             </div>
+
           </div>
         </div>
       </section>
