@@ -157,6 +157,83 @@ export default function PlatformPage() {
       {/* Features Slider */}
       <FeatureSlider />
 
+      {/* Pricing Preview */}
+      <section className="py-24 bg-white border-b border-gray-100">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-14">
+            <p className="text-[#E07B20] text-xs font-bold uppercase tracking-[0.2em] mb-3">Sphere Pricing</p>
+            <h2 className="text-3xl md:text-4xl font-extrabold font-display tracking-tight text-[#111827] mb-4">
+              Simple pricing. Real results.
+            </h2>
+            <p className="text-gray-400 text-lg max-w-xl mx-auto">
+              Choose the Sphere plan that fits your venue. Every plan includes a 30-day free trial — no credit card required.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {/* Sphere Essentials */}
+            <div className="bg-gray-50 border border-gray-200 rounded-3xl p-8 flex flex-col">
+              <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Sphere Essentials</p>
+              <div className="flex items-end gap-1 mb-1">
+                <span className="text-4xl font-extrabold font-display text-[#111827]">$149</span>
+                <span className="text-gray-400 text-sm mb-1.5">/mo</span>
+              </div>
+              <p className="text-gray-500 text-sm mb-6">Perfect for single-location venues getting started.</p>
+              <ul className="space-y-2 mb-8 flex-1">
+                {['Lead capture & visual pipeline', 'Proposals, BEOs & e-signatures', 'Event calendar & conflict prevention', 'Email campaigns (1,000/mo)', 'Reporting dashboard'].map((f) => (
+                  <li key={f} className="flex items-start gap-2 text-gray-600 text-sm">
+                    <span className="text-[#6a256f] font-bold mt-0.5">✓</span> {f}
+                  </li>
+                ))}
+              </ul>
+              <Link href="/pricing" className="btn-outline text-sm text-center">See Full Plan →</Link>
+            </div>
+
+            {/* Sphere Growth */}
+            <div className="relative bg-white border-2 border-[#E07B20] rounded-3xl p-8 flex flex-col shadow-xl shadow-[#E07B20]/10">
+              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#E07B20] text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-widest whitespace-nowrap">Most Popular</div>
+              <p className="text-xs font-bold uppercase tracking-widest text-[#E07B20] mb-2">Sphere Growth</p>
+
+              <div className="flex items-end gap-1 mb-1">
+                <span className="text-4xl font-extrabold font-display text-[#111827]">$259</span>
+                <span className="text-gray-400 text-sm mb-1.5">/mo</span>
+              </div>
+              <p className="text-gray-500 text-sm mb-6">Built for venues serious about growing event revenue.</p>
+              <ul className="space-y-2 mb-8 flex-1">
+                {['Everything in Sphere Essentials', 'Automated email follow-up', 'Branded client portal', 'Revenue forecasting dashboard', 'Conversion tracking (lead → booked)', 'Priority support'].map((f) => (
+                  <li key={f} className="flex items-start gap-2 text-gray-600 text-sm">
+                    <span className="text-[#E07B20] font-bold mt-0.5">✓</span> {f}
+                  </li>
+                ))}
+              </ul>
+              <Link href="/pricing" className="btn-primary text-sm text-center">See Full Plan →</Link>
+            </div>
+
+            {/* Sphere Portfolio */}
+            <div className="bg-[#6a256f] rounded-3xl p-8 flex flex-col">
+              <p className="text-xs font-bold uppercase tracking-widest text-white/50 mb-2">Sphere Hospitality</p>
+              <div className="flex items-end gap-1 mb-1">
+                <span className="text-4xl font-extrabold font-display text-white">Custom</span>
+              </div>
+              <p className="text-white/60 text-sm mb-6">For groups and multi-location operators.</p>
+              <ul className="space-y-2 mb-8 flex-1">
+                {['Everything in Sphere Growth', 'Multiple locations & users', 'Sales rep & commission tracking', 'Custom workflow builder', 'API access', 'Dedicated onboarding manager'].map((f) => (
+                  <li key={f} className="flex items-start gap-2 text-white/80 text-sm">
+                    <span className="text-[#F99F33] font-bold mt-0.5">✓</span> {f}
+                  </li>
+                ))}
+              </ul>
+              <Link href="/contact" className="block text-center bg-white text-[#6a256f] font-bold py-3 px-6 rounded-xl hover:bg-gray-100 transition-all text-sm">Contact Us →</Link>
+            </div>
+          </div>
+
+          <p className="text-center text-gray-400 text-sm mt-8">
+            All plans include a 30-day free trial. No credit card required. &nbsp;
+            <Link href="/pricing" className="text-[#6a256f] font-semibold hover:underline">See full pricing & feature comparison →</Link>
+          </p>
+        </div>
+      </section>
+
       {/* 360° Virtual Tours */}
       <section className="py-24 bg-gray-50">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 md:gap-20 items-center">
@@ -200,7 +277,7 @@ export default function PlatformPage() {
               className="w-full max-w-sm md:max-w-md h-auto object-contain drop-shadow-2xl rounded-3xl"
             />
             {/* Badge */}
-            <div className="absolute -bottom-4 -right-4 bg-[#F99F33] text-white font-extrabold font-display text-sm px-5 py-3 rounded-2xl shadow-lg shadow-[#F99F33]/30">
+            <div className="absolute -bottom-4 -right-4 bg-[#F99F33] text-white font-extrabold font-display text-xl px-8 py-4 rounded-full shadow-lg shadow-[#F99F33]/30">
               360° Immersive
             </div>
           </div>

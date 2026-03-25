@@ -123,7 +123,7 @@ export default function PricingPage() {
                 <tr className="border-b border-gray-100">
                   <th className="text-left p-5 text-[#222123] font-bold w-2/5">Feature</th>
                   <th className="p-5 text-center text-[#222123] font-bold">
-                    <div>Sphere Essential</div>
+                    <div>Sphere Essentials</div>
                     <div className="text-[#E07B20] font-bold">$149/mo</div>
                   </th>
                   <th className="p-5 text-center bg-[#E07B20]/5 border-x border-[#E07B20]/20">
@@ -131,7 +131,7 @@ export default function PricingPage() {
                     <div className="text-[#E07B20] font-bold">$259/mo</div>
                   </th>
                   <th className="p-5 text-center text-[#222123] font-bold">
-                    <div>Sphere Hospitality Group</div>
+                    <div>Sphere Hospitality</div>
                     <div className="text-[#E07B20] font-bold">Contact Us</div>
                   </th>
                 </tr>
@@ -198,8 +198,8 @@ export default function PricingPage() {
             {[
               { q: 'Is the 30-day trial really free?', a: 'Yes. No credit card required. You get full access to your chosen tier for 30 days. If you love it, you stay. If not, you walk away with no charge.' },
               { q: 'Can I change plans later?', a: 'Absolutely. You can upgrade or downgrade at any time. Upgrades take effect immediately. Downgrades take effect at the next billing cycle.' },
-              { q: 'What does "per location" mean?', a: 'Each physical venue or location is billed separately. If you have multiple locations, each gets its own dashboard and tools. The Portfolio tier gives you a centralized view across all of them.' },
-              { q: 'What is the OpenTable integration?', a: "We're actively working on OpenTable integration. It's coming to Revenue Growth and Portfolio tiers. Existing customers will get it added automatically at no extra charge when it's live." },
+              { q: 'What does "per location" mean?', a: 'Each physical venue or location is billed separately. If you have multiple locations, each gets its own dashboard and tools. The Sphere Hospitality tier gives you a centralized view across all of them.' },
+              { q: 'What is the OpenTable integration?', a: "We're actively working on OpenTable integration. It's coming to Sphere Growth and Sphere Hospitality tiers. Existing customers will get it added automatically at no extra charge when it's live." },
             ].map((item) => (
               <div key={item.q} className="bg-white rounded-xl p-6 shadow-sm">
                 <h3 className="font-bold text-[#222123] mb-2">{item.q}</h3>

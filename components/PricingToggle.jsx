@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 const plans = [
   {
-    name: 'Venue Essentials',
+    name: 'Sphere Essentials',
     tagline: 'Organize sales. Capture demand. Convert faster.',
     price: { monthly: 149, annual: 124 },
     target: 'Independent restaurants & small event venues',
@@ -31,14 +31,14 @@ const plans = [
     cta: 'Start Free Trial',
   },
   {
-    name: 'Revenue Growth',
+    name: 'Sphere Growth',
     tagline: 'Automate follow-up. Market smarter. Forecast revenue.',
     price: { monthly: 259, annual: 215 },
     target: 'High-volume venues focused on driving bookings',
     highlight: true,
     badge: 'Most Popular',
     features: [
-      'Everything in Venue Essentials',
+      'Everything in Sphere Essentials',
       'Automated email follow-up sequences',
       'Revenue forecasting dashboard',
       'Conversion tracking (lead → booked)',
@@ -56,14 +56,14 @@ const plans = [
     cta: 'Start Free Trial',
   },
   {
-    name: 'Portfolio',
+    name: 'Sphere Hospitality',
     tagline: 'Centralized visibility. Performance accountability. Scalable growth.',
     price: null,
     target: 'Venue groups & hospitality portfolios',
     highlight: false,
     badge: 'Enterprise',
     features: [
-      'Everything in Revenue Growth',
+      'Everything in Sphere Growth',
       'Sales rep performance tracking',
       'Commission tracking',
       'Advanced analytics & forecasting',
