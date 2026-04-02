@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const baseUrl = 'https://eventspheresolutions.com'
+  const baseUrl = 'https://www.eventspheresolutions.com'
   const lastModified = new Date()
 
   return [
