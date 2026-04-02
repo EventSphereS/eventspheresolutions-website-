@@ -4,8 +4,19 @@ import PricingToggle from '@/components/PricingToggle'
 import PricingQuiz from '@/components/PricingQuiz'
 
 export const metadata = {
-  title: 'Pricing | Event Sphere Solutions',
-  description: 'Simple, transparent pricing for restaurants, bars, venues, and hotels. Start free for 30 days.',
+  title: 'Pricing | Sphere Private Event Sales Platform',
+  description: 'Simple, transparent pricing for restaurants, bars, and venues. Start free — 3 months for Founding Partners. Plans that scale with your private event revenue.',
+  openGraph: {
+    title: 'Pricing | Sphere Private Event Sales Platform',
+    description: 'Simple pricing for restaurants, bars, and venues. Start free — 3 months for Founding Partners.',
+    images: [{ url: '/feature-image.png', width: 1200, height: 630, alt: 'Sphere Pricing' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Pricing | Sphere Private Event Sales Platform',
+    description: 'Simple pricing for restaurants, bars, and venues. Start free — 3 months for Founding Partners.',
+    images: ['/feature-image.png'],
+  },
 }
 
 export default function PricingPage() {

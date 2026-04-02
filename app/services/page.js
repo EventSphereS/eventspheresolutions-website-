@@ -3,8 +3,19 @@ import Image from 'next/image'
 import V1V2CTA from '@/components/V1V2CTA'
 
 export const metadata = {
-  title: 'Services | Event Sphere Solutions',
-  description: 'Three ways to power your private event sales — fully managed, platform license, or AI-powered automation.',
+  title: 'Services | Private Event Sales Solutions for Hospitality',
+  description: 'Three ways to grow your private event revenue — fully managed event sales team, Sphere platform, or AI-powered automation. Built for restaurants, bars, and venues.',
+  openGraph: {
+    title: 'Services | Private Event Sales Solutions for Hospitality',
+    description: 'Fully managed event sales, Sphere platform, or AI automation — three ways to grow your private event revenue.',
+    images: [{ url: '/feature-image.png', width: 1200, height: 630, alt: 'Sphere Services' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Services | Private Event Sales Solutions for Hospitality',
+    description: 'Three ways to grow your private event revenue. Built for hospitality.',
+    images: ['/feature-image.png'],
+  },
 }
 
 const services = [

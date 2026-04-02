@@ -2,8 +2,19 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 export const metadata = {
-  title: 'About Us | Event Sphere Solutions',
-  description: 'We are a full-service event company built exclusively for the hospitality industry.',
+  title: 'About | Event Sphere Solutions — Built for Hospitality',
+  description: 'Event Sphere Solutions was built by a hospitality operator who lived the chaos. Sphere is the private event sales platform we wished existed — built for restaurants, bars, and venues.',
+  openGraph: {
+    title: 'About | Event Sphere Solutions — Built for Hospitality',
+    description: 'Built by a hospitality operator who lived the chaos. Sphere is the private event sales platform we wished existed.',
+    images: [{ url: '/feature-image.png', width: 1200, height: 630, alt: 'About Event Sphere Solutions' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About | Event Sphere Solutions',
+    description: 'Built by a hospitality operator who lived the chaos.',
+    images: ['/feature-image.png'],
+  },
 }
 
 const values = [

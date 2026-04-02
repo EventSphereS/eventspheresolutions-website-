@@ -4,8 +4,19 @@ import V1V2CTA from '@/components/V1V2CTA'
 import FeatureSlider from '@/components/FeatureSlider'
 
 export const metadata = {
-  title: 'Sphere | Event Sphere Solutions',
-  description: 'Sphere by Event Sphere Solutions — the private event sales platform built for restaurants, bars, venues, and hotels.',
+  title: 'Sphere Platform | Private Event Sales Software for Restaurants & Venues',
+  description: 'Sphere is the private event sales platform built for hospitality — instant branded proposals, digital BEOs, AI lead response, and built-in marketing tools. Not adapted for it. Built for it.',
+  openGraph: {
+    title: 'Sphere Platform | Private Event Sales Software for Restaurants & Venues',
+    description: 'Instant proposals, digital BEOs, AI that responds 24/7, and built-in marketing tools — all in one platform built for hospitality.',
+    images: [{ url: '/feature-image.png', width: 1200, height: 630, alt: 'Sphere Platform' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Sphere Platform | Private Event Sales Software',
+    description: 'Instant proposals, digital BEOs, AI that responds 24/7 — built for hospitality.',
+    images: ['/feature-image.png'],
+  },
 }
 
 

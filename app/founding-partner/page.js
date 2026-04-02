@@ -3,8 +3,19 @@ import Image from 'next/image'
 import FoundingPartnerForm from '@/components/FoundingPartnerForm'
 
 export const metadata = {
-  title: 'Founding Partner Program | Event Sphere Solutions',
-  description: 'Join the Event Sphere Solutions Founding Partner Program — 3 months free access to Sphere Revenue Growth in exchange for your feedback. Limited to 20 venues.',
+  title: 'Founding Partner Program | 3 Months Free — Sphere',
+  description: 'Join Sphere as a Founding Partner — 3 months completely free, pricing locked for life. Limited spots for restaurants, bars, and venues ready to grow their private event revenue.',
+  openGraph: {
+    title: 'Founding Partner Program | 3 Months Free — Sphere',
+    description: '3 months free, pricing locked for life. Limited spots for hospitality venues ready to grow private event revenue.',
+    images: [{ url: '/feature-image.png', width: 1200, height: 630, alt: 'Sphere Founding Partner Program' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Founding Partner Program | 3 Months Free — Sphere',
+    description: '3 months free, pricing locked for life. Limited spots.',
+    images: ['/feature-image.png'],
+  },
 }
 
 const perks = [
