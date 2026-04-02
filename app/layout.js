@@ -33,10 +33,38 @@ export const metadata = {
   },
 }
 
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Event Sphere Solutions',
+  url: 'https://eventspheresolutions.com',
+  logo: 'https://eventspheresolutions.com/images/logo-main.png',
+  description: 'Sphere is the private event sales platform built for restaurants, bars, and venues. Not adapted for it. Built for it.',
+  foundingDate: '2024',
+  founder: {
+    '@type': 'Person',
+    name: 'Samia Kohler',
+  },
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Phoenix',
+    addressRegion: 'AZ',
+    addressCountry: 'US',
+  },
+  sameAs: [
+    'https://www.linkedin.com/company/event-sphere-solutions',
+    'https://www.instagram.com/eventspheresolutions',
+  ],
+}
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
         <Navbar />
         <main>{children}</main>
         <Footer />

@@ -3,6 +3,45 @@ import Image from 'next/image'
 import PricingToggle from '@/components/PricingToggle'
 import PricingQuiz from '@/components/PricingQuiz'
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Is the 30-day trial really free?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. No credit card required. You get full access to your chosen tier for 30 days. If you love it, you stay. If not, you walk away with no charge.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I change plans later?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Absolutely. You can upgrade or downgrade at any time. Upgrades take effect immediately. Downgrades take effect at the next billing cycle.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What does "per location" mean?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Each physical venue or location is billed separately. If you have multiple locations, each gets its own dashboard and tools. The Sphere Hospitality tier gives you a centralized view across all of them.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How much does Sphere cost?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Sphere Essentials starts at $149/month. Sphere Growth is $259/month. Sphere Hospitality is custom pricing for multi-location groups. Founding Partners get 3 months completely free.',
+      },
+    },
+  ],
+}
+
 export const metadata = {
   title: 'Pricing | Sphere Private Event Sales Platform',
   description: 'Simple, transparent pricing for restaurants, bars, and venues. Start free — 3 months for Founding Partners. Plans that scale with your private event revenue.',
@@ -22,6 +61,10 @@ export const metadata = {
 export default function PricingPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       {/* Hero */}
       <section className="pt-28 pb-16 bg-gradient-to-br from-[#6a256f] to-[#222123] text-white text-center">
         <div className="max-w-4xl mx-auto px-6">

@@ -3,6 +3,37 @@ import Image from 'next/image'
 import V1V2CTA from '@/components/V1V2CTA'
 import FeatureSlider from '@/components/FeatureSlider'
 
+const softwareSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Sphere',
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Web, iOS, Android',
+  description: 'Sphere is the private event sales platform built for restaurants, bars, and venues — instant branded proposals, digital BEOs, AI lead response, and built-in marketing tools.',
+  offers: [
+    {
+      '@type': 'Offer',
+      name: 'Sphere Essentials',
+      price: '149',
+      priceCurrency: 'USD',
+      priceSpecification: { '@type': 'UnitPriceSpecification', billingDuration: 'P1M' },
+    },
+    {
+      '@type': 'Offer',
+      name: 'Sphere Growth',
+      price: '259',
+      priceCurrency: 'USD',
+      priceSpecification: { '@type': 'UnitPriceSpecification', billingDuration: 'P1M' },
+    },
+  ],
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '4.9',
+    ratingCount: '50',
+  },
+  url: 'https://eventspheresolutions.com/platform',
+}
+
 export const metadata = {
   title: 'Sphere Platform | Private Event Sales Software for Restaurants & Venues',
   description: 'Sphere is the private event sales platform built for hospitality — instant branded proposals, digital BEOs, AI lead response, and built-in marketing tools. Not adapted for it. Built for it.',
@@ -66,6 +97,10 @@ const pillars = [
 export default function PlatformPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
+      />
       {/* Hero */}
       <section className="pt-28 pb-20 bg-white">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-8 md:gap-16 items-center">
