@@ -32,7 +32,7 @@ function renderBlock(block, i) {
   switch (block.type) {
     case 'h2':
       return (
-        <h2 key={i} className="font-display font-extrabold text-2xl md:text-3xl text-[#1a0f40] mt-12 mb-4">
+        <h2 key={i} className="font-display font-extrabold text-2xl md:text-3xl text-[#1a0f40] mt-14 mb-4">
           {block.text}
         </h2>
       )
@@ -58,6 +58,59 @@ function renderBlock(block, i) {
             </li>
           ))}
         </ul>
+      )
+    case 'stat':
+      return (
+        <div key={i} className="my-10 py-10 px-8 bg-gradient-to-br from-[#1a0f40] to-[#2d0a35] rounded-2xl text-center">
+          <p className="font-display font-extrabold text-6xl md:text-7xl text-[#E07B20] leading-none mb-3">{block.number}</p>
+          <p className="text-white/70 text-lg max-w-sm mx-auto">{block.label}</p>
+        </div>
+      )
+    case 'quote':
+      return (
+        <blockquote key={i} className="my-10 pl-6 border-l-4 border-[#6a256f]">
+          <p className="font-display font-bold text-xl md:text-2xl text-[#1a0f40] leading-snug italic mb-3">"{block.text}"</p>
+          {block.attribution && (
+            <p className="text-sm text-gray-400 font-medium">{block.attribution}</p>
+          )}
+        </blockquote>
+      )
+    case 'tip':
+      return (
+        <div key={i} className="my-8 flex gap-4 bg-[#E07B20]/8 border border-[#E07B20]/25 rounded-2xl p-6">
+          <span className="text-2xl shrink-0 mt-0.5">💡</span>
+          <div>
+            <p className="font-display font-bold text-[#E07B20] text-sm uppercase tracking-widest mb-1">Pro Tip</p>
+            <p className="text-gray-700 leading-relaxed">{block.text}</p>
+          </div>
+        </div>
+      )
+    case 'highlight':
+      return (
+        <div key={i} className="my-8 bg-[#6a256f]/8 border border-[#6a256f]/20 rounded-2xl p-6">
+          <p className="font-display font-bold text-[#6a256f] text-sm uppercase tracking-widest mb-2">{block.label || 'Key Takeaway'}</p>
+          <p className="text-gray-700 text-lg leading-relaxed">{block.text}</p>
+        </div>
+      )
+    case 'steps':
+      return (
+        <ol key={i} className="mb-8 space-y-4">
+          {block.items.map((item, j) => (
+            <li key={j} className="flex gap-4 items-start">
+              <span className="shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-[#6a256f] to-[#2d0a35] text-white font-bold text-sm flex items-center justify-center mt-0.5">{j + 1}</span>
+              <div className="flex-1 pt-1">
+                {typeof item === 'string' ? (
+                  <p className="text-gray-600 text-lg">{item}</p>
+                ) : (
+                  <>
+                    <p className="font-semibold text-[#1a0f40] mb-1">{item.title}</p>
+                    <p className="text-gray-500">{item.body}</p>
+                  </>
+                )}
+              </div>
+            </li>
+          ))}
+        </ol>
       )
     case 'cta':
       return (
