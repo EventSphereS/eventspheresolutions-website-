@@ -30,6 +30,7 @@ export default function Navbar() {
           <Link href="/platform" className="text-[#6a256f] hover:text-[#E07B20] font-medium text-sm transition-colors">Sphere</Link>
           <Link href="/pricing" className="text-[#6a256f] hover:text-[#E07B20] font-medium text-sm transition-colors">Pricing</Link>
           <Link href="/founding-partner" className="text-[#E07B20] font-bold text-sm hover:underline transition-colors">🏆 Founding Partner</Link>
+          <a href="https://app.eventspheresolutions.com" target="_blank" rel="noopener noreferrer" className="text-[#6a256f] border border-[#6a256f] hover:bg-[#6a256f] hover:text-white font-semibold text-sm px-4 py-2 rounded-full transition-colors">Log In</a>
           <Link href="/contact" className="btn-primary text-sm">Contact Us</Link>
         </nav>
 
@@ -68,6 +69,7 @@ export default function Navbar() {
           <Link href="/platform" className="text-[#6a256f] font-semibold text-base border-b border-gray-100 pb-4" onClick={() => setOpen(false)}>Sphere</Link>
           <Link href="/pricing" className="text-[#6a256f] font-semibold text-base border-b border-gray-100 pb-4" onClick={() => setOpen(false)}>Pricing</Link>
           <Link href="/founding-partner" className="text-[#E07B20] font-bold text-base border-b border-gray-100 pb-4" onClick={() => setOpen(false)}>🏆 Founding Partner</Link>
+          <a href="https://app.eventspheresolutions.com" target="_blank" rel="noopener noreferrer" className="text-[#6a256f] border border-[#6a256f] font-semibold text-base text-center py-2 rounded-full" onClick={() => setOpen(false)}>Log In</a>
           <Link href="/contact" className="btn-primary text-center text-sm mt-1" onClick={() => setOpen(false)}>Contact Us</Link>
         </div>
       )}
