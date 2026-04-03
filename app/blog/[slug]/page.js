@@ -43,6 +43,17 @@ function renderBlock(block, i) {
         </h3>
       )
     case 'p':
+      if (block.segments) {
+        return (
+          <p key={i} className="text-gray-600 leading-relaxed mb-5 text-lg">
+            {block.segments.map((seg, j) =>
+              seg.href ? (
+                <Link key={j} href={seg.href} className="text-[#6a256f] font-semibold underline underline-offset-2 hover:text-[#E07B20] transition-colors">{seg.text}</Link>
+              ) : seg.text
+            )}
+          </p>
+        )
+      }
       return (
         <p key={i} className="text-gray-600 leading-relaxed mb-5 text-lg">
           {block.text}
