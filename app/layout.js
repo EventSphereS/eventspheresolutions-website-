@@ -8,11 +8,11 @@ export const metadata = {
     default: 'Sphere | Private Event Sales Platform for Hospitality',
     template: '%s | Sphere by Event Sphere Solutions',
   },
-  description: 'Sphere helps restaurants, bars, and venues sell more private events — instant proposals, digital BEOs, and AI that responds 24/7. Built for hospitality. Not adapted for it.',
+  description: 'Sphere helps restaurants, bars, and venues protect and grow their private event sales — instant proposals, digital BEOs, and AI that responds 24/7. Built for hospitality. Not adapted for it.',
   keywords: 'private event sales platform, restaurant event booking software, venue event management, private dining booking system, hospitality event software, BEO software, event sales automation, private event CRM',
   openGraph: {
     title: 'Sphere | Private Event Sales Platform for Hospitality',
-    description: 'Sphere helps restaurants, bars, and venues sell more private events — instant proposals, digital BEOs, and AI that responds 24/7. Built for hospitality. Not adapted for it.',
+    description: 'Sphere helps restaurants, bars, and venues protect and grow their private event sales — instant proposals, digital BEOs, and AI that responds 24/7. Built for hospitality. Not adapted for it.',
     url: 'https://eventspheresolutions.com',
     siteName: 'Sphere by Event Sphere Solutions',
     type: 'website',
@@ -28,7 +28,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Sphere | Private Event Sales Platform for Hospitality',
-    description: 'Sphere helps restaurants, bars, and venues sell more private events. Built for hospitality. Not adapted for it.',
+    description: 'Sphere helps restaurants, bars, and venues protect and grow their private event sales. Built for hospitality. Not adapted for it.',
     images: ['/feature-image.png'],
   },
 }

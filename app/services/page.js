@@ -4,16 +4,16 @@ import V1V2CTA from '@/components/V1V2CTA'
 
 export const metadata = {
   title: 'Services | Private Event Sales Solutions for Hospitality',
-  description: 'Three ways to grow your private event revenue — fully managed event sales team, Sphere platform, or AI-powered automation. Built for restaurants, bars, and venues.',
+  description: 'Three ways to protect and grow your private event sales — fully managed event sales team, Sphere platform, or AI-powered automation. Built for restaurants, bars, and venues.',
   openGraph: {
     title: 'Services | Private Event Sales Solutions for Hospitality',
-    description: 'Fully managed event sales, Sphere platform, or AI automation — three ways to grow your private event revenue.',
+    description: 'Fully managed event sales, Sphere platform, or AI automation — three ways to protect and grow your private event sales.',
     images: [{ url: '/feature-image.png', width: 1200, height: 630, alt: 'Sphere Services' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Services | Private Event Sales Solutions for Hospitality',
-    description: 'Three ways to grow your private event revenue. Built for hospitality.',
+    description: 'Three ways to protect and grow your private event sales. Built for hospitality.',
     images: ['/feature-image.png'],
   },
 }
@@ -98,7 +98,7 @@ export default function ServicesPage() {
           </h2>
           <div className="w-16 h-0.5 bg-[#E07B20] mx-auto mt-4 mb-4"></div>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Every venue starts with Sphere. Add a dedicated expert sales team or AI automation to take your event revenue to the next level.
+            Every venue starts with Sphere. Add a dedicated expert sales team or AI automation to take your event sales to the next level.
           </p>
         </div>
       </section>

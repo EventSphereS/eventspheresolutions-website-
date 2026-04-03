@@ -113,7 +113,7 @@ export default function PlatformPage() {
               <span className="text-[#E07B20]">Sphere</span> — Your private event<br />sales platform
             </h1>
             <p className="text-gray-500 text-lg leading-relaxed mb-8">
-              Sphere gives your hospitality business the expert sales team and smart tools to turn empty calendars into consistent, high-revenue event programs — without the overhead.
+              Sphere gives your hospitality business the expert sales team and smart tools to turn empty calendars into consistent, high-performing event sales programs — without the overhead.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/founding-partner" className="btn-primary text-base px-8 py-3.5">
@@ -165,7 +165,7 @@ export default function PlatformPage() {
             <h2 className="text-3xl md:text-5xl font-extrabold font-display tracking-tight text-[#111827] mb-4">
               One system. Three results.
             </h2>
-            <p className="text-gray-400 text-lg max-w-xl mx-auto">Everything you need to make events your most profitable revenue channel.</p>
+            <p className="text-gray-400 text-lg max-w-xl mx-auto">Everything you need to make events your most profitable sales channel.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {pillars.map((p) => (
@@ -244,9 +244,9 @@ export default function PlatformPage() {
                 <span className="text-4xl font-extrabold font-display text-[#111827]">$259</span>
                 <span className="text-gray-400 text-sm mb-1.5">/mo</span>
               </div>
-              <p className="text-gray-500 text-sm mb-6">Built for venues serious about growing event revenue.</p>
+              <p className="text-gray-500 text-sm mb-6">Built for venues serious about growing event sales.</p>
               <ul className="space-y-2 mb-8 flex-1">
-                {['Everything in Sphere Essentials', 'Automated email follow-up', 'Branded client portal', 'Revenue forecasting dashboard', 'Conversion tracking (lead → booked)', 'Priority support'].map((f) => (
+                {['Everything in Sphere Essentials', 'Automated email follow-up', 'Branded client portal', 'Sales forecasting dashboard', 'Conversion tracking (lead → booked)', 'Priority support'].map((f) => (
                   <li key={f} className="flex items-start gap-2 text-gray-600 text-sm">
                     <span className="text-[#E07B20] font-bold mt-0.5">✓</span> {f}
                   </li>

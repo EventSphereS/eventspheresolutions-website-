@@ -6,13 +6,13 @@ export const metadata = {
   description: 'Practical guides, tips, and insights for restaurant owners, venue managers, and hospitality operators looking to grow their private event revenue.',
   openGraph: {
     title: 'Blog | Private Event Sales Insights for Hospitality',
-    description: 'Practical guides and insights for hospitality operators growing their private event revenue.',
+    description: 'Practical guides and insights for hospitality operators protecting and growing their private event sales.',
     images: [{ url: '/feature-image.png', width: 1200, height: 630, alt: 'Sphere Blog' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Blog | Private Event Sales Insights for Hospitality',
-    description: 'Practical guides for hospitality operators growing their private event revenue.',
+    description: 'Practical guides for hospitality operators protecting and growing their private event sales.',
     images: ['/feature-image.png'],
   },
 }
@@ -30,7 +30,7 @@ export default function BlogPage() {
             Private Event Sales.<br />Insights for Hospitality.
           </h1>
           <p className="text-white/60 text-lg max-w-xl mx-auto">
-            Practical guides for restaurant owners, venue managers, and hospitality teams growing their private event revenue.
+            Practical guides for restaurant owners, venue managers, and hospitality teams protecting and growing their private event sales.
           </p>
         </div>
       </section>

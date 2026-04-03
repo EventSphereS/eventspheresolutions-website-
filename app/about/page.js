@@ -20,7 +20,7 @@ export const metadata = {
 const values = [
   { icon: '🎯', title: 'Hospitality-First', desc: 'Everything we do is built around the unique needs of restaurants, bars, venues, and hotels. We speak your language.' },
   { icon: '🤝', title: 'True Partnership', desc: 'We embed ourselves in your team. Your success is our success — and we operate with that mindset every single day.' },
-  { icon: '📈', title: 'Results-Driven', desc: 'We measure our work by your outcomes: attendance, revenue, and guest satisfaction. No vanity metrics here.' },
+  { icon: '📈', title: 'Results-Driven', desc: 'We measure our work by your outcomes: attendance, sales, and guest satisfaction. No vanity metrics here.' },
   { icon: '✨', title: 'Flawless Execution', desc: 'From the first planning call to the last guest out the door, we hold ourselves to the highest standards of delivery.' },
 ]
 
@@ -78,7 +78,7 @@ export default function AboutPage() {
               />
             </div>
             {[
-              { v: '189%', l: 'Avg. Revenue Increase' },
+              { v: '189%', l: 'Avg. Sales Increase' },
               { v: '120', l: 'Days to Results' },
               { v: '5+', l: 'Partners in Year 1' },
               { v: '100%', l: 'Satisfaction Rate' },
@@ -110,7 +110,7 @@ export default function AboutPage() {
               <h2 className="text-3xl font-bold font-display tracking-tight text-[#6a256f] mb-4">Samia Kohler</h2>
               <div className="space-y-4 text-gray-600 leading-relaxed text-sm">
                 <p>
-                  Originally from France, I bring over 18 years of hands-on experience in hospitality and private event sales across China, Hong Kong, France, and the U.S. My background spans high-volume nightlife, elevated food & beverage programs, and full-scale event management, giving me a deep understanding of what it takes to drive revenue while delivering five-star guest experiences.
+                  Originally from France, I bring over 18 years of hands-on experience in hospitality and private event sales across China, Hong Kong, France, and the U.S. My background spans high-volume nightlife, elevated food & beverage programs, and full-scale event management, giving me a deep understanding of what it takes to drive event sales while delivering five-star guest experiences.
                 </p>
                 <p>
                   My expertise lies in building and leading sales teams, optimizing venue operations, and developing strategic sales systems that convert inquiries into booked events. From concept to close, I specialize in creating sales-driven solutions that streamline the process for venues and provide clients with a seamless, elevated experience.
@@ -159,7 +159,7 @@ export default function AboutPage() {
 
           <div className="flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-white/15">
             {[
-              { label: 'Your Revenue', desc: 'More bookings, fuller calendars, higher spend per event. Events become your most reliable revenue channel.' },
+              { label: 'Your Sales', desc: 'More bookings, fuller calendars, higher spend per event. Events become your most reliable sales channel.' },
               { label: 'Your Guests', desc: 'Experiences they share, remember, and come back for. Loyalty that outlasts any single night.' },
               { label: 'Your Brand', desc: 'Every event makes your venue the place to be. Reputation compounds — we help you build it.' },
             ].map((item) => (

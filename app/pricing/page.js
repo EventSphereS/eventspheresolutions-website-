@@ -44,7 +44,7 @@ const faqSchema = {
 
 export const metadata = {
   title: 'Pricing | Sphere Private Event Sales Platform',
-  description: 'Simple, transparent pricing for restaurants, bars, and venues. Start free — 3 months for Founding Partners. Plans that scale with your private event revenue.',
+  description: 'Simple, transparent pricing for restaurants, bars, and venues. Start free — 3 months for Founding Partners. Plans that scale with your private event sales.',
   openGraph: {
     title: 'Pricing | Sphere Private Event Sales Platform',
     description: 'Simple pricing for restaurants, bars, and venues. Start free — 3 months for Founding Partners.',
@@ -206,7 +206,7 @@ export default function PricingPage() {
                   { feature: 'Reporting dashboard', e: '✓', g: '✓', p: '✓' },
                   { feature: 'Internal team chatbox', e: '✓', g: '✓', p: '✓' },
                   { feature: 'Multi-location dashboard', e: '✓', g: '✓', p: '✓' },
-                  { feature: 'Cross-location revenue analytics', e: '✓', g: '✓', p: '✓' },
+                  { feature: 'Cross-location sales analytics', e: '✓', g: '✓', p: '✓' },
                   { feature: 'Email campaigns', e: '1,000/mo', g: '2,500/mo', p: '5,000/mo per location' },
                   { feature: 'Email campaign analytics', e: '✓', g: '✓', p: '✓' },
                   { feature: 'Promo codes', e: '2 active', g: '3/month', p: '6/month per location' },
@@ -214,7 +214,7 @@ export default function PricingPage() {
                   // — Revenue Growth+ —
                   { feature: 'Automated email follow-up', e: '—', g: '✓', p: '✓' },
                   { feature: 'AI email support', e: '—', g: '—', p: '✓' },
-                  { feature: 'Revenue forecasting dashboard', e: '—', g: '✓', p: '✓' },
+                  { feature: 'Sales forecasting dashboard', e: '—', g: '✓', p: '✓' },
                   { feature: 'Conversion tracking (lead → booked)', e: '—', g: '✓', p: '✓' },
                   { feature: 'Branded client portal', e: '—', g: '✓', p: '✓' },
                   // — Portfolio only —

@@ -42,7 +42,7 @@ export default function Home() {
             <span className="text-[#E07B20]">Hospitality & Venues</span>
           </h1>
           <p className="text-gray-300 text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-10">
-            Event Sphere Solutions gives hospitality businesses <span className="text-white font-semibold">Sphere</span> — the expert sales team and smart tools to turn empty calendars into consistent, high-revenue event programs.
+            Event Sphere Solutions gives hospitality businesses <span className="text-white font-semibold">Sphere</span> — the expert sales team and smart tools to turn empty calendars into consistent, high-performing event sales programs.
           </p>
           <Link href="/founding-partner"
             className="inline-block bg-gradient-to-r from-[#6a256f] via-[#EF4561] to-[#E07B20] text-white font-bold text-base md:text-lg px-8 md:px-10 py-4 rounded-full hover:opacity-90 transition-all shadow-2xl">
@@ -146,7 +146,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-[#6a256f]/60" />
         <div className="absolute inset-0 flex items-center justify-center text-center px-6">
           <p className="font-display font-extrabold text-white text-2xl sm:text-3xl md:text-6xl leading-tight tracking-tight max-w-3xl px-4">
-            Every empty date is revenue{' '}
+            Every empty date is lost sales{' '}
             <span className="text-[#E07B20]">walking out the door.</span>
           </p>
         </div>
@@ -180,7 +180,7 @@ export default function Home() {
             {[
               { step: '01', title: 'We set everything up', desc: 'Your pipeline, proposals, lead forms, and campaigns — fully configured in a single onboarding call.' },
               { step: '02', title: 'You start taking bookings', desc: 'Leads come in, follow-ups go out automatically, and your calendar fills with confirmed events.' },
-              { step: '03', title: 'Revenue grows', desc: 'Track every lead, booking, and dollar in one dashboard. Watch your event revenue compound month after month.' },
+              { step: '03', title: 'Sales grow', desc: 'Track every lead, booking, and dollar in one dashboard. Watch your event sales compound month after month.' },
             ].map((item) => (
               <div key={item.step} className="flex flex-col items-center text-center">
                 <div className="w-16 h-16 rounded-full bg-[#E07B20]/10 flex items-center justify-center mb-5">

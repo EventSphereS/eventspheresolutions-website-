@@ -4,7 +4,7 @@ import FoundingPartnerForm from '@/components/FoundingPartnerForm'
 
 export const metadata = {
   title: 'Founding Partner Program | 3 Months Free — Sphere',
-  description: 'Join Sphere as a Founding Partner — 3 months completely free, pricing locked for life. Limited spots for restaurants, bars, and venues ready to grow their private event revenue.',
+  description: 'Join Sphere as a Founding Partner — 3 months completely free, pricing locked for life. Limited spots for restaurants, bars, and venues ready to protect and grow their private event sales.',
   openGraph: {
     title: 'Founding Partner Program | 3 Months Free — Sphere',
     description: '3 months free, pricing locked for life. Limited spots for hospitality venues ready to grow private event revenue.',
@@ -23,7 +23,7 @@ const perks = [
     icon: '🎁',
     gradient: 'from-[#6a256f] to-[#8a3a8f]',
     title: '3 Months Free Access',
-    desc: 'Full Sphere Revenue Growth tier — automated follow-ups, revenue forecasting, branded portal, email campaigns, and more. Zero cost for 90 days.',
+    desc: 'Full Sphere Sales Growth tier — automated follow-ups, sales forecasting, branded portal, email campaigns, and more. Zero cost for 90 days.',
   },
   {
     icon: '🔒',
@@ -166,7 +166,7 @@ export default function FoundingPartnerPage() {
             <div className="bg-[#6a256f] rounded-2xl p-8 text-white">
               <div className="text-4xl mb-4">🤝</div>
               <h3 className="text-xl font-extrabold font-display tracking-tight mb-3">A partnership, not a pitch.</h3>
-              <p className="text-white/60 text-sm leading-relaxed mb-5">We're selective. We want venues serious about growing event revenue — and willing to be honest with us.</p>
+              <p className="text-white/60 text-sm leading-relaxed mb-5">We're selective. We want venues serious about growing event sales — and willing to be honest with us.</p>
               <div className="bg-white/10 rounded-xl p-4 border border-white/15">
                 <p className="text-[#E07B20] font-bold text-xs uppercase tracking-widest mb-2">Not for you if:</p>
                 <ul className="text-white/50 text-sm space-y-1.5">

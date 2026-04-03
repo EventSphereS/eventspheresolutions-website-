@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export const metadata = {
   title: 'Book a Free Consultation | Event Sphere Solutions',
-  description: 'Stop losing private event revenue. Book a free consultation and we\'ll show you exactly how to fix it.',
+  description: 'Stop losing private event sales. Book a free consultation and we\'ll show you exactly how to fix it.',
 }
 
 export default function ContactPage() {
@@ -21,7 +21,7 @@ export default function ContactPage() {
             Free 30-Minute Consultation
           </div>
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold font-display tracking-tight text-white mb-5 leading-tight">
-            Every empty date is<br />revenue <span className="text-[#E07B20]">walking out the door.</span>
+            Every empty date is<br />lost sales <span className="text-[#E07B20]">walking out the door.</span>
           </h1>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">
             Book a free call and we'll show you exactly how much your venue is leaving on the table — and how to fix it.
@@ -41,7 +41,7 @@ export default function ContactPage() {
               <span className="text-[#6a256f]">what you're leaving on the table.</span>
             </h2>
             <p className="text-gray-500 text-base mb-10 leading-relaxed">
-              No pitch. No pressure. Just a clear picture of your event revenue potential and a roadmap to capture it.
+              No pitch. No pressure. Just a clear picture of your event sales potential and a roadmap to capture it.
             </p>
 
             {/* Value cards */}
@@ -50,8 +50,8 @@ export default function ContactPage() {
                 {
                   gradient: 'from-[#6a256f] to-[#8a3a8f]',
                   icon: '🎯',
-                  title: 'Custom Revenue Audit',
-                  desc: 'We analyze your current setup and show you exactly how much private event revenue you could be generating.',
+                  title: 'Custom Sales Audit',
+                  desc: 'We analyze your current setup and show you exactly how much private event sales you could be generating.',
                 },
                 {
                   gradient: 'from-[#EF4561] to-[#E07B20]',
