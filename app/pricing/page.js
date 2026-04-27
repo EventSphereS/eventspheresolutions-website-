@@ -212,6 +212,7 @@ export default function PricingPage() {
                   { feature: 'Promo codes', e: '2 active', g: '3/month', p: '6/month per location' },
                   { feature: 'Support', e: 'Email', g: 'Priority', p: 'Dedicated' },
                   // — Revenue Growth+ —
+                  { feature: 'Call system', e: '—', g: '✓', p: '✓' },
                   { feature: 'Automated email follow-up', e: '—', g: '✓', p: '✓' },
                   { feature: 'AI email support', e: '—', g: '—', p: '✓' },
                   { feature: 'Sales forecasting dashboard', e: '—', g: '✓', p: '✓' },
