@@ -39,7 +39,7 @@ const plans = [
     badge: 'Most Popular',
     features: [
       'Everything in Sphere Essentials',
-      'Call system',
+      'Leads call system',
       'Automated email follow-up sequences',
       'Revenue forecasting dashboard',
       'Conversion tracking (lead → booked)',
