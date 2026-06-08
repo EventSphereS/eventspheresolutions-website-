@@ -7,7 +7,7 @@ const slides = [
     number: '01',
     tag: 'Proposals & Payments',
     title: 'One link closes the deal.',
-    desc: 'Send a stunning branded proposal, collect the e-signature, and process the deposit — all in a single link. No back-and-forth, no chasing.',
+    desc: 'Send a stunning branded proposal, collect the e-signature, and process the deposit — all in a single link. No back-and-forth, no chasing. Payments are powered by Stripe, so every transaction is secure and PCI-compliant.',
     image: '/images/slide-proposal-new.png',
     objectFit: 'contain',
     objectPosition: 'center center',

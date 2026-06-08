@@ -61,11 +61,23 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/20 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-white/40">© {new Date().getFullYear()} Event Sphere Solutions. All rights reserved.</p>
-          <div className="flex gap-6">
-            <Link href="/terms" className="text-sm text-white/40 hover:text-white/70 transition-colors">Terms & Conditions</Link>
-            <Link href="/privacy" className="text-sm text-white/40 hover:text-white/70 transition-colors">Privacy Policy</Link>
+        <div className="border-t border-white/20 mt-12 pt-8 flex flex-col items-center gap-6">
+          <div className="flex items-center gap-2 text-white/50">
+            <span className="text-xs font-medium uppercase tracking-wider">Payments powered by</span>
+            <Image
+              src="/images/stripe-logo-white.svg"
+              alt="Stripe"
+              width={60}
+              height={25}
+              className="h-6 w-auto object-contain opacity-90"
+            />
+          </div>
+          <div className="w-full flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-sm text-white/40">© {new Date().getFullYear()} Event Sphere Solutions. All rights reserved.</p>
+            <div className="flex gap-6">
+              <Link href="/terms" className="text-sm text-white/40 hover:text-white/70 transition-colors">Terms & Conditions</Link>
+              <Link href="/privacy" className="text-sm text-white/40 hover:text-white/70 transition-colors">Privacy Policy</Link>
+            </div>
           </div>
         </div>
       </div>

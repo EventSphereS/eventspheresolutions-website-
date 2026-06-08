@@ -39,6 +39,14 @@ const faqSchema = {
         text: 'Sphere Essentials starts at $149/month. Sphere Growth is $259/month. Sphere Hospitality is custom pricing for multi-location groups. Founding Partners get 3 months completely free.',
       },
     },
+    {
+      '@type': 'Question',
+      name: 'How are payments processed?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'We partner with Stripe, the industry-leading payment platform, to process all payments securely. Your subscription billing and the online payments and deposits you collect from your clients are handled through Stripe — so card data is encrypted and PCI-compliant, and you never have to manage sensitive payment information yourself.',
+      },
+    },
   ],
 }
 
@@ -255,6 +263,7 @@ export default function PricingPage() {
               { q: 'Can I change plans later?', a: 'Absolutely. You can upgrade or downgrade at any time. Upgrades take effect immediately. Downgrades take effect at the next billing cycle.' },
               { q: 'What does "per location" mean?', a: 'Each physical venue or location is billed separately. If you have multiple locations, each gets its own dashboard and tools. The Sphere Hospitality tier gives you a centralized view across all of them.' },
               { q: 'What is the OpenTable integration?', a: "We're actively working on OpenTable integration. It's coming to Sphere Growth and Sphere Hospitality tiers. Existing customers will get it added automatically at no extra charge when it's live." },
+              { q: 'How are payments processed?', a: 'We partner with Stripe, the industry-leading payment platform, to process all payments securely. Your subscription billing and the online payments and deposits you collect from your clients are handled through Stripe — so card data is encrypted and PCI-compliant, and you never have to manage sensitive payment information yourself.' },
             ].map((item) => (
               <div key={item.q} className="bg-white rounded-xl p-6 shadow-sm">
                 <h3 className="font-bold text-[#222123] mb-2">{item.q}</h3>
