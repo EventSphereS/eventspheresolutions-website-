@@ -32,9 +32,9 @@ export default function Home() {
         </div>
 
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10 pt-32 pb-24">
-          <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-gray-300 text-sm px-4 py-1.5 rounded-full mb-8">
-            <span className="w-2 h-2 bg-[#E07B20] rounded-full animate-pulse"></span>
-            Best Private Event Booking Service
+          <div className="inline-flex items-center gap-2.5 bg-white/8 border border-white/15 text-white/70 text-xs px-5 py-2 rounded-full mb-8 backdrop-blur-sm tracking-wide font-medium">
+            <span className="w-1.5 h-1.5 bg-[#E07B20] rounded-full animate-pulse shrink-0"></span>
+            Now accepting Founding Partners
           </div>
           <h1 className="font-display font-extrabold text-4xl sm:text-5xl md:text-7xl leading-[1.05] tracking-tight text-white mb-6">
             The Future of Private
@@ -171,22 +171,22 @@ export default function Home() {
       {/* ── HOW IT WORKS ── */}
       <section className="py-28 bg-white">
         <div className="max-w-5xl mx-auto px-6">
-          <div className="text-center mb-16">
+          <div className="mb-20">
+            <p className="text-[#E07B20] text-xs font-bold uppercase tracking-[0.2em] mb-3">Simple by Design</p>
             <h2 className="font-display font-extrabold text-4xl md:text-5xl tracking-tight text-[#6a256f] leading-tight">
               How It Works
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
             {[
-              { step: '01', title: 'We set everything up', desc: 'Your pipeline, proposals, lead forms, and campaigns — fully configured in a single onboarding call.' },
+              { step: '01', title: 'We set everything up', desc: 'We migrate all your existing data for free, then configure your pipeline, proposals, lead forms, and campaigns — fully ready in a single onboarding call.' },
               { step: '02', title: 'You start taking bookings', desc: 'Leads come in, follow-ups go out automatically, and your calendar fills with confirmed events.' },
               { step: '03', title: 'Sales grow', desc: 'Track every lead, booking, and dollar in one dashboard. Watch your event sales compound month after month.' },
             ].map((item) => (
-              <div key={item.step} className="flex flex-col items-center text-center">
-                <div className="w-16 h-16 rounded-full bg-[#E07B20]/10 flex items-center justify-center mb-5">
-                  <span className="text-[#E07B20] font-bold text-lg font-display">{item.step}</span>
-                </div>
-                <h3 className="text-base font-bold text-[#222123] mb-2">{item.title}</h3>
+              <div key={item.step}>
+                <div className="font-display font-black text-[#6a256f]/8 text-[88px] leading-none mb-1 select-none">{item.step}</div>
+                <div className="w-6 h-0.5 bg-[#E07B20] mb-5" />
+                <h3 className="text-base font-bold text-[#222123] mb-3">{item.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
@@ -195,20 +195,58 @@ export default function Home() {
       </section>
 
       {/* ── BUILT FOR ── */}
-      <section className="py-24 bg-[#6a256f]">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <p className="text-white/50 text-xs font-bold uppercase tracking-[0.2em] mb-4">Built Exclusively For</p>
-          <h2 className="text-2xl md:text-4xl font-extrabold font-display tracking-tight text-white mb-12 whitespace-nowrap">The hospitality industry, and no one else.</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto">
+      <section className="py-28 bg-[#0d0818]">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="mb-16">
+            <p className="text-white/25 text-xs font-bold uppercase tracking-[0.25em] mb-4">Built Exclusively For</p>
+            <h2 className="text-3xl md:text-5xl font-extrabold font-display tracking-tight text-white leading-tight max-w-2xl">
+              The hospitality industry,<br className="hidden md:block" /> and no one else.
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
             {[
-              { icon: '🍽️', label: 'Restaurants' },
-              { icon: '🍺', label: 'Bars & Breweries' },
-              { icon: '🏛️', label: 'Venues' },
-              { icon: '🏨', label: 'Hotels' },
+              {
+                label: 'Restaurants',
+                sub: 'Fine dining to casual',
+                icon: (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M3 2v5c0 1.5 1.5 3 3 3s3-1.5 3-3V2"/><path d="M6 2v20"/><path d="M16 22V12.5c1.5-.5 4-2 4-6V2"/><path d="M20 2h-4"/>
+                  </svg>
+                ),
+              },
+              {
+                label: 'Bars & Breweries',
+                sub: 'Taprooms to nightlife',
+                icon: (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M8 22h8"/><path d="M12 11v11"/><path d="M5 2h14l-3.5 9a5.5 5.5 0 01-11 0L5 2z"/>
+                  </svg>
+                ),
+              },
+              {
+                label: 'Venues',
+                sub: 'Event spaces & halls',
+                icon: (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M3 22h18"/><path d="M4 22V11L12 4l8 7v11"/><path d="M9 22v-6h6v6"/><path d="M9 9h.01M12 9h.01M15 9h.01"/>
+                  </svg>
+                ),
+              },
+              {
+                label: 'Hotels',
+                sub: 'Ballrooms to boutiques',
+                icon: (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M3 22h18"/><path d="M4 22V4a1 1 0 011-1h14a1 1 0 011 1v18"/><path d="M7 8h2v2H7zM7 13h2v2H7zM15 8h2v2h-2zM15 13h2v2h-2zM11 18h2v4h-2z"/>
+                  </svg>
+                ),
+              },
             ].map((c) => (
-              <div key={c.label} className="flex flex-col items-center gap-3">
-                <div className="text-5xl">{c.icon}</div>
-                <span className="text-white/80 font-semibold text-sm">{c.label}</span>
+              <div key={c.label} className="group relative overflow-hidden bg-white/[0.04] border border-white/[0.07] rounded-2xl p-8 hover:bg-white/[0.07] hover:border-white/[0.13] transition-all duration-200 cursor-default">
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#E07B20]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="w-7 h-7 mb-6 text-[#E07B20]/70 group-hover:text-[#E07B20] transition-colors duration-200">{c.icon}</div>
+                <div className="font-semibold text-white text-base mb-1.5">{c.label}</div>
+                <div className="text-white/35 text-sm leading-relaxed">{c.sub}</div>
               </div>
             ))}
           </div>

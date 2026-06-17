@@ -18,8 +18,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        serif: ['Quicksand', 'system-ui', 'sans-serif'],
-        sans: ['Quicksand', 'system-ui', 'sans-serif'],
+        serif: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
         display: ['Montserrat', 'system-ui', 'sans-serif'],
       },
       animation: {

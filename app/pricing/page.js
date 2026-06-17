@@ -41,6 +41,14 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
+      name: 'Do you help migrate our existing data?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes — full migration is completely free on every plan. We move your contacts, leads, events, and history from Tripleseat, Gather, spreadsheets, or wherever you currently live. You don\'t lift a finger.',
+      },
+    },
+    {
+      '@type': 'Question',
       name: 'How are payments processed?',
       acceptedAnswer: {
         '@type': 'Answer',
@@ -88,9 +96,15 @@ export default function PricingPage() {
             <span className="text-[#E07B20] font-bold text-2xl">189% increase</span>{' '}
             in event sales within 90 days. At these prices, the ROI is immediate.
           </p>
-          <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-5 py-2.5 text-sm text-gray-300">
-            <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-            Cancel anytime
+          <div className="flex items-center justify-center gap-3 flex-wrap">
+            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-5 py-2.5 text-sm text-gray-300">
+              <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+              Cancel anytime
+            </div>
+            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-5 py-2.5 text-sm text-gray-300">
+              <span className="w-2 h-2 bg-[#E07B20] rounded-full"></span>
+              Free full migration included
+            </div>
           </div>
         </div>
       </section>
@@ -201,6 +215,7 @@ export default function PricingPage() {
               <tbody>
                 {[
                   // — Plan limits —
+                  { feature: 'Free data migration', e: '✓', g: '✓', p: '✓' },
                   { feature: 'Locations', e: '1', g: '1', p: 'Multiple' },
                   { feature: 'Users', e: '2 (+$15 each)', g: '5 (+$15 each)', p: 'Multiple' },
                   // — Included in all —
@@ -259,6 +274,7 @@ export default function PricingPage() {
           <h2 className="section-title font-display tracking-tight text-center mb-12">Frequently Asked Questions</h2>
           <div className="space-y-4">
             {[
+              { q: 'Do you help migrate our existing data?', a: "Yes — full migration is completely free on every plan. We move your contacts, leads, events, and history from Tripleseat, Gather, spreadsheets, or wherever you currently live. You don't lift a finger." },
               { q: 'Is the 30-day trial really free?', a: 'Yes. No credit card required. You get full access to your chosen tier for 30 days. If you love it, you stay. If not, you walk away with no charge.' },
               { q: 'Can I change plans later?', a: 'Absolutely. You can upgrade or downgrade at any time. Upgrades take effect immediately. Downgrades take effect at the next billing cycle.' },
               { q: 'What does "per location" mean?', a: 'Each physical venue or location is billed separately. If you have multiple locations, each gets its own dashboard and tools. The Sphere Hospitality tier gives you a centralized view across all of them.' },

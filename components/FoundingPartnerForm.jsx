@@ -4,6 +4,18 @@ import { useState } from 'react'
 const businessTypes = ['Restaurant', 'Bar / Nightlife', 'Venue', 'Hotel', 'Multiple locations']
 const eventFrequency = ['< 1/month', '1–3/month', '4–8/month', '8+/month']
 const currentTools = ['Spreadsheets / email', 'Tripleseat', 'Gather', 'Planning Pod', 'Another CRM', 'Nothing — we wing it']
+const sphereNeeds = [
+  'Lead capture & follow-up',
+  'Proposals & BEOs',
+  'Contracts & e-signatures',
+  'Online payments & deposits',
+  'Event calendar & availability',
+  'Email campaigns & promos',
+  'Sales pipeline visibility',
+  'Reporting & forecasting',
+  'Client portal',
+  'Team collaboration',
+]
 
 const inputClass = "w-full border border-gray-200 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-[#E07B20] focus:ring-2 focus:ring-[#E07B20]/20 transition-all bg-white placeholder:text-gray-400"
 const labelClass = "block text-sm font-semibold text-[#222123] mb-1.5"
@@ -13,7 +25,7 @@ export default function FoundingPartnerForm() {
   const [form, setForm] = useState({
     name: '', email: '', phone: '', city: '',
     businessName: '', businessType: '', eventFrequency: '',
-    currentTool: '', biggestChallenge: '', whyPartner: '', canProvideTestimonial: '',
+    currentTool: '', sphereNeeds: [], biggestChallenge: '', whyPartner: '', canProvideTestimonial: '',
   })
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
@@ -27,6 +39,15 @@ export default function FoundingPartnerForm() {
 
   const handleSelect = (field, value) => {
     setForm((prev) => ({ ...prev, [field]: value }))
+  }
+
+  const toggleNeed = (value) => {
+    setForm((prev) => ({
+      ...prev,
+      sphereNeeds: prev.sphereNeeds.includes(value)
+        ? prev.sphereNeeds.filter((n) => n !== value)
+        : [...prev.sphereNeeds, value],
+    }))
   }
 
   const validateStep1 = () => {
@@ -69,7 +90,7 @@ export default function FoundingPartnerForm() {
         <p className="text-gray-300 leading-relaxed max-w-md mb-6">
           Thank you, <strong className="text-white">{form.name.split(' ')[0]}</strong>. We review every application personally and will be in touch within <strong className="text-[#E07B20]">48 hours</strong>.
         </p>
-        <div className="bg-white/10 border border-white/20 rounded-xl p-5 text-sm text-gray-300 text-left max-w-sm">
+        <div className="bg-white/10 border border-white/20 rounded-xl p-5 text-sm text-gray-300 text-left max-w-sm mb-6">
           <p className="font-bold text-white mb-2">What happens next:</p>
           <ol className="space-y-1 list-decimal list-inside">
             <li>We review your application</li>
@@ -77,6 +98,18 @@ export default function FoundingPartnerForm() {
             <li>We schedule a 30-min onboarding call</li>
             <li>Your account goes live — free for 90 days</li>
           </ol>
+        </div>
+
+        <div className="text-center">
+          <p className="text-white/60 text-sm mb-3">Want to skip the wait? Book your demo directly.</p>
+          <a
+            href="https://calendly.com/hello-eventspheresolutions/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-gradient-to-r from-[#E07B20] to-[#EF4561] text-white font-bold px-8 py-3.5 rounded-full hover:opacity-90 transition-all text-sm shadow-lg shadow-[#E07B20]/30"
+          >
+            Schedule Your Demo →
+          </a>
         </div>
       </div>
     )
@@ -190,6 +223,20 @@ export default function FoundingPartnerForm() {
                     ? 'bg-[#6a256f] text-white border-[#6a256f]'
                     : 'border-gray-200 text-gray-600 hover:border-[#6a256f] hover:text-[#6a256f]'
                 }`}>{t}</button>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <label className={labelClass}>What do you need Sphere to help with? <span className="text-gray-400 font-normal">(select all that apply)</span></label>
+          <div className="flex flex-wrap gap-2">
+            {sphereNeeds.map((need) => (
+              <button key={need} type="button" onClick={() => toggleNeed(need)}
+                className={`px-4 py-2 rounded-full text-sm font-medium border transition-all ${
+                  form.sphereNeeds.includes(need)
+                    ? 'bg-[#6a256f] text-white border-[#6a256f]'
+                    : 'border-gray-200 text-gray-600 hover:border-[#6a256f] hover:text-[#6a256f]'
+                }`}>{need}</button>
             ))}
           </div>
         </div>
