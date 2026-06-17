@@ -184,7 +184,7 @@ export default function Home() {
               { step: '03', title: 'Sales grow', desc: 'Track every lead, booking, and dollar in one dashboard. Watch your event sales compound month after month.' },
             ].map((item) => (
               <div key={item.step}>
-                <div className="font-display font-black text-[#6a256f]/8 text-[88px] leading-none mb-1 select-none">{item.step}</div>
+                <div className="font-display font-black text-[#ee6603] text-[88px] leading-none mb-1 select-none">{item.step}</div>
                 <div className="w-6 h-0.5 bg-[#E07B20] mb-5" />
                 <h3 className="text-base font-bold text-[#222123] mb-3">{item.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
@@ -198,7 +198,7 @@ export default function Home() {
       <section className="py-28 bg-[#6a256f]">
         <div className="max-w-6xl mx-auto px-6">
           <div className="mb-16">
-            <p className="text-white/25 text-xs font-bold uppercase tracking-[0.25em] mb-4">Built Exclusively For</p>
+            <p className="text-[#ee6603] text-xs font-bold uppercase tracking-[0.25em] mb-4">Built Exclusively For</p>
             <h2 className="text-3xl md:text-5xl font-extrabold font-display tracking-tight text-white leading-tight max-w-2xl">
               The hospitality industry,<br className="hidden md:block" /> and no one else.
             </h2>
@@ -242,11 +242,10 @@ export default function Home() {
                 ),
               },
             ].map((c) => (
-              <div key={c.label} className="group relative overflow-hidden bg-white/[0.04] border border-white/[0.07] rounded-2xl p-8 hover:bg-white/[0.07] hover:border-white/[0.13] transition-all duration-200 cursor-default">
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#E07B20]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="w-7 h-7 mb-6 text-[#E07B20]/70 group-hover:text-[#E07B20] transition-colors duration-200">{c.icon}</div>
-                <div className="font-semibold text-white text-base mb-1.5">{c.label}</div>
-                <div className="text-white/35 text-sm leading-relaxed">{c.sub}</div>
+              <div key={c.label} className="flex flex-col items-center text-center py-10 px-6">
+                <div className="w-12 h-12 mb-6 text-[#ee6603]">{c.icon}</div>
+                <div className="font-bold text-white text-base mb-1.5">{c.label}</div>
+                <div className="text-white/50 text-sm leading-relaxed">{c.sub}</div>
               </div>
             ))}
           </div>
