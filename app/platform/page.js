@@ -138,19 +138,57 @@ export default function PlatformPage() {
       </section>
 
       {/* Built For */}
-      <section className="py-10 bg-[#6a256f]">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <p className="text-white/60 text-xs font-bold tracking-widest uppercase mb-6">Built Exclusively For</p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <section className="py-28 bg-[#6a256f]">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="mb-16">
+            <p className="text-[#ee6603] text-xs font-bold uppercase tracking-[0.25em] mb-4">Built Exclusively For</p>
+            <h2 className="text-3xl md:text-5xl font-extrabold font-display tracking-tight text-white leading-tight max-w-2xl">
+              The hospitality industry,<br className="hidden md:block" /> and no one else.
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
             {[
-              { icon: '🍽️', label: 'Restaurants' },
-              { icon: '🍺', label: 'Bars & Breweries' },
-              { icon: '🏛️', label: 'Venues' },
-              { icon: '🏨', label: 'Hotels' },
+              {
+                label: 'Restaurants',
+                sub: 'Fine dining to casual',
+                icon: (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M3 2v5c0 1.5 1.5 3 3 3s3-1.5 3-3V2"/><path d="M6 2v20"/><path d="M16 22V12.5c1.5-.5 4-2 4-6V2"/><path d="M20 2h-4"/>
+                  </svg>
+                ),
+              },
+              {
+                label: 'Bars & Breweries',
+                sub: 'Taprooms to nightlife',
+                icon: (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M8 22h8"/><path d="M12 11v11"/><path d="M5 2h14l-3.5 9a5.5 5.5 0 01-11 0L5 2z"/>
+                  </svg>
+                ),
+              },
+              {
+                label: 'Venues',
+                sub: 'Event spaces & halls',
+                icon: (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M3 22h18"/><path d="M4 22V11L12 4l8 7v11"/><path d="M9 22v-6h6v6"/><path d="M9 9h.01M12 9h.01M15 9h.01"/>
+                  </svg>
+                ),
+              },
+              {
+                label: 'Hotels',
+                sub: 'Ballrooms to boutiques',
+                icon: (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M3 22h18"/><path d="M4 22V4a1 1 0 011-1h14a1 1 0 011 1v18"/><path d="M7 8h2v2H7zM7 13h2v2H7zM15 8h2v2h-2zM15 13h2v2h-2zM11 18h2v4h-2z"/>
+                  </svg>
+                ),
+              },
             ].map((c) => (
-              <div key={c.label} className="flex flex-col items-center gap-2">
-                <div className="text-4xl">{c.icon}</div>
-                <span className="text-white font-semibold text-sm">{c.label}</span>
+              <div key={c.label} className="flex flex-col items-center text-center py-10 px-6">
+                <div className="w-12 h-12 mb-6 text-[#ee6603]">{c.icon}</div>
+                <div className="font-bold text-white text-base mb-1.5">{c.label}</div>
+                <div className="text-white/50 text-sm leading-relaxed">{c.sub}</div>
               </div>
             ))}
           </div>
@@ -274,7 +312,7 @@ export default function PlatformPage() {
           </div>
 
           <p className="text-center text-gray-400 text-sm mt-8">
-            All plans include a 30-day free trial. No credit card required. &nbsp;
+            All plans include a 30-day free trial. &nbsp;
             <Link href="/pricing" className="text-[#6a256f] font-semibold hover:underline">See full pricing & feature comparison →</Link>
           </p>
         </div>
