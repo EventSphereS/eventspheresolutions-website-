@@ -195,7 +195,7 @@ export default function Home() {
       </section>
 
       {/* ── BUILT FOR ── */}
-      <section className="py-28 bg-[#0d0818]">
+      <section className="py-28 bg-[#6a256f]">
         <div className="max-w-6xl mx-auto px-6">
           <div className="mb-16">
             <p className="text-white/25 text-xs font-bold uppercase tracking-[0.25em] mb-4">Built Exclusively For</p>
