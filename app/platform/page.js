@@ -123,12 +123,18 @@ export default function PlatformPage() {
                 See Pricing
               </Link>
             </div>
-            <p className="text-gray-400 text-xs mt-4">
-              Founding Partner spots are limited · Cancel anytime ·{' '}
-              <a href="/sphere-services.html" target="_blank" rel="noopener noreferrer" className="text-[#6a256f] font-semibold hover:underline">
-                Download One-Pager ↓
+            <div className="flex items-center gap-3 mt-5">
+              <a
+                href="/sphere-services.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-[#6a256f] bg-[#6a256f]/8 border border-[#6a256f]/20 px-4 py-2 rounded-full hover:bg-[#6a256f]/15 transition-all"
+              >
+                <span>⬇</span> Download One-Pager
               </a>
-            </p>
+              <span className="text-gray-300 text-xs">·</span>
+              <p className="text-gray-400 text-xs">Founding Partner spots are limited · Cancel anytime</p>
+            </div>
           </div>
           <div className="relative rounded-2xl overflow-hidden shadow-2xl">
             <Image
