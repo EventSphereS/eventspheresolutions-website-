@@ -123,7 +123,12 @@ export default function PlatformPage() {
                 See Pricing
               </Link>
             </div>
-            <p className="text-gray-400 text-xs mt-4">Founding Partner spots are limited · Cancel anytime</p>
+            <p className="text-gray-400 text-xs mt-4">
+              Founding Partner spots are limited · Cancel anytime ·{' '}
+              <a href="/sphere-services.html" target="_blank" rel="noopener noreferrer" className="text-[#6a256f] font-semibold hover:underline">
+                Download One-Pager ↓
+              </a>
+            </p>
           </div>
           <div className="relative rounded-2xl overflow-hidden shadow-2xl">
             <Image
