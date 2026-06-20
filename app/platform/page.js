@@ -250,7 +250,7 @@ export default function PlatformPage() {
               Simple pricing. Real results.
             </h2>
             <p className="text-gray-400 text-lg max-w-xl mx-auto">
-              Choose the Sphere plan that fits your venue. Every plan includes a 30-day free trial — no credit card required.
+              Choose the Sphere plan that fits your venue.
             </p>
           </div>
 
@@ -312,7 +312,6 @@ export default function PlatformPage() {
           </div>
 
           <p className="text-center text-gray-400 text-sm mt-8">
-            All plans include a 30-day free trial. &nbsp;
             <Link href="/pricing" className="text-[#6a256f] font-semibold hover:underline">See full pricing & feature comparison →</Link>
           </p>
         </div>

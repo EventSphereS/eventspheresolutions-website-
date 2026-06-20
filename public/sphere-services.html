@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sphere — Private Event Sales Platform</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=PT+Serif:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --purple: #6a256f;
+      --purple-dark: #2d0a35;
+      --purple-mid: #4a1555;
+      --orange: #E07B20;
+      --orange-light: #F99F33;
+      --red: #EF4561;
+      --dark: #111827;
+      --gray: #444;
+      --light-gray: #f5f5f7;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--dark);
+      background: #e8e8e8;
+      font-size: 10pt;
+      line-height: 1.5;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      background: white;
+      overflow: hidden;
+    }
+
+    @media print {
+      body { margin: 0; background: white; }
+      .page { width: 100%; margin: 0; }
+      .no-print { display: none !important; }
+    }
+
+    /* ── Print Bar ── */
+    .print-bar {
+      background: #f0f0f0;
+      padding: 11px 24px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+    }
+    .print-btn {
+      background: var(--purple);
+      color: white;
+      border: none;
+      padding: 9px 26px;
+      border-radius: 24px;
+      font-size: 9.5pt;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+    }
+    .print-btn:hover { background: var(--purple-mid); }
+    .back-btn {
+      background: var(--dark);
+      color: white;
+      border: none;
+      padding: 9px 22px;
+      border-radius: 24px;
+      font-size: 9.5pt;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: var(--purple-dark);
+      padding: 26px 34px 22px;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Decorative orbs */
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 240px; height: 240px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--orange) 0%, var(--red) 50%, transparent 70%);
+      opacity: 0.25;
+      filter: blur(20px);
+    }
+    .header::after {
+      content: '';
+      position: absolute;
+      bottom: -40px; left: 30%;
+      width: 180px; height: 180px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--purple) 0%, transparent 70%);
+      opacity: 0.4;
+      filter: blur(30px);
+    }
+    .header-inner {
+      position: relative;
+      z-index: 1;
+    }
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 18px;
+    }
+    .logo {
+      font-family: 'PT Serif', serif;
+      font-size: 18pt;
+      font-weight: 700;
+      color: white;
+      letter-spacing: -0.5px;
+    }
+    .logo-accent { color: var(--orange); }
+    .header-badge {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.85);
+      font-size: 6.5pt;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 4px 11px;
+      border-radius: 20px;
+    }
+    .header-eyebrow {
+      font-size: 6.5pt;
+      font-weight: 800;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 7px;
+    }
+    .header-title {
+      font-family: 'PT Serif', serif;
+      font-size: 28pt;
+      font-weight: 700;
+      color: white;
+      line-height: 1.1;
+      margin-bottom: 9px;
+    }
+    .header-title span {
+      background: linear-gradient(90deg, var(--orange), var(--red));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .header-sub {
+      color: rgba(255,255,255,0.6);
+      font-size: 9.5pt;
+      max-width: 380px;
+      line-height: 1.5;
+    }
+
+    /* ── Stat Bar ── */
+    .stat-bar {
+      background: linear-gradient(135deg, var(--purple), #9b3aa0);
+      padding: 13px 34px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .stat-item { text-align: center; color: white; flex: 1; }
+    .stat-item + .stat-item {
+      border-left: 1px solid rgba(255,255,255,0.15);
+    }
+    .stat-value {
+      font-family: 'PT Serif', serif;
+      font-size: 18pt;
+      font-weight: 700;
+      display: block;
+      line-height: 1.1;
+    }
+    .stat-label { font-size: 6.5pt; opacity: 0.7; text-transform: uppercase; letter-spacing: 0.8px; margin-top: 1px; display: block; }
+
+    /* ── Body ── */
+    .body { padding: 22px 34px; }
+
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+
+    /* ── Section Labels ── */
+    .section-label {
+      font-size: 6.5pt;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 5px;
+    }
+    h2 {
+      font-family: 'PT Serif', serif;
+      font-size: 14pt;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+    h3 {
+      font-family: 'PT Serif', serif;
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 4px;
+    }
+    p { color: #555; font-size: 8.5pt; line-height: 1.6; }
+
+    /* ── Feature List ── */
+    .feature-list { list-style: none; }
+    .feature-list li {
+      font-size: 8pt;
+      color: #444;
+      padding: 2.5px 0;
+      display: flex;
+      gap: 6px;
+      align-items: flex-start;
+    }
+    .feature-list li::before {
+      content: '✓';
+      color: var(--purple);
+      font-weight: 800;
+      flex-shrink: 0;
+      font-size: 8pt;
+      margin-top: 1px;
+    }
+    .feature-list.orange li::before { color: var(--orange); }
+
+    /* ── Pricing Cards ── */
+    .plan-card {
+      border-radius: 10px;
+      padding: 13px;
+      border: 1.5px solid #e8e8e8;
+    }
+    .plan-card.featured {
+      border-color: var(--orange);
+      background: #fff9f5;
+    }
+    .plan-card.dark {
+      background: var(--purple);
+      border-color: var(--purple);
+    }
+    .plan-tag {
+      font-size: 6pt;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 4px;
+    }
+    .plan-tag.featured { color: var(--orange); }
+    .plan-tag.dark { color: rgba(255,255,255,0.45); }
+    .plan-price {
+      font-family: 'PT Serif', serif;
+      font-size: 18pt;
+      font-weight: 700;
+      color: var(--dark);
+      line-height: 1;
+      margin-bottom: 1px;
+    }
+    .plan-price.dark { color: white; }
+    .plan-price span { font-size: 9pt; font-family: 'Inter', sans-serif; font-weight: 400; color: #999; }
+    .plan-desc { font-size: 7pt; color: #888; margin-bottom: 9px; }
+    .plan-desc.dark { color: rgba(255,255,255,0.5); }
+    .plan-pill {
+      display: inline-block;
+      background: var(--orange);
+      color: white;
+      font-size: 6pt;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 6px;
+    }
+    .plan-features { list-style: none; }
+    .plan-features li {
+      font-size: 7.5pt;
+      color: #555;
+      padding: 2px 0;
+      display: flex;
+      gap: 5px;
+    }
+    .plan-features li::before {
+      content: '✓';
+      color: var(--purple);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .plan-features.dark li { color: rgba(255,255,255,0.7); }
+    .plan-features.dark li::before { color: var(--orange-light); }
+
+    /* ── Divider ── */
+    .divider {
+      border: none;
+      border-top: 1px solid #eeeeee;
+      margin: 18px 0;
+    }
+
+    /* ── Add-on Cards ── */
+    .addon-card {
+      border-radius: 10px;
+      padding: 13px;
+      position: relative;
+      overflow: hidden;
+    }
+    .addon-card.sales {
+      background: var(--purple-mid);
+    }
+    .addon-card.ai {
+      background: var(--purple-dark);
+    }
+    .addon-card.tour {
+      background: var(--dark);
+    }
+    .addon-icon {
+      font-size: 16pt;
+      margin-bottom: 5px;
+      display: block;
+    }
+    .addon-tag {
+      font-size: 6pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 2px 7px;
+      border-radius: 8px;
+      display: inline-block;
+      margin-bottom: 6px;
+    }
+    .addon-tag.addon { background: rgba(224,123,32,0.25); color: var(--orange-light); }
+    .addon-tag.soon { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.5); }
+    .addon-card h3 { color: white; font-size: 9.5pt; margin-bottom: 4px; }
+    .addon-card p { color: rgba(255,255,255,0.55); font-size: 7.5pt; line-height: 1.5; }
+    .addon-card .feature-list li { color: rgba(255,255,255,0.7); font-size: 7.5pt; }
+    .addon-card .feature-list li::before { color: var(--orange); }
+    .addon-glow {
+      position: absolute;
+      top: -20px; right: -20px;
+      width: 100px; height: 100px;
+      border-radius: 50%;
+      filter: blur(25px);
+      pointer-events: none;
+    }
+    .addon-card.sales .addon-glow { background: radial-gradient(circle, var(--orange) 0%, transparent 70%); opacity: 0.3; }
+    .addon-card.ai .addon-glow { background: radial-gradient(circle, var(--red) 0%, transparent 70%); opacity: 0.3; }
+    .addon-card.tour .addon-glow { background: radial-gradient(circle, var(--purple) 0%, transparent 70%); opacity: 0.4; }
+
+    /* ── Steps ── */
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    .step { text-align: center; padding: 4px; }
+    .step-num {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: rgba(106,37,111,0.1);
+      color: var(--purple);
+      font-weight: 800;
+      font-family: 'PT Serif', serif;
+      font-size: 11pt;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 7px;
+    }
+    .step h4 { font-size: 8pt; font-weight: 700; color: var(--dark); margin-bottom: 2px; }
+    .step p { font-size: 7pt; color: #777; }
+
+    /* ── CTA Footer ── */
+    .cta-footer {
+      background: linear-gradient(135deg, var(--purple-dark) 0%, var(--purple-mid) 50%, #3a0e4a 100%);
+      padding: 18px 34px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-footer::before {
+      content: '';
+      position: absolute;
+      top: -30px; right: 10%;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--orange) 0%, var(--red) 50%, transparent 70%);
+      opacity: 0.2;
+      filter: blur(30px);
+    }
+    .cta-inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .cta-text { flex: 1; }
+    .cta-footer h3 {
+      font-family: 'PT Serif', serif;
+      font-size: 14pt;
+      color: white;
+      margin-bottom: 5px;
+    }
+    .cta-footer p { font-size: 8.5pt; color: rgba(255,255,255,0.6); margin-bottom: 0; }
+    .cta-contacts {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .cta-contact-item { text-align: center; }
+    .cta-contact-item strong {
+      display: block;
+      color: white;
+      font-size: 8.5pt;
+      font-weight: 700;
+      margin-bottom: 1px;
+    }
+    .cta-contact-item span {
+      color: rgba(255,255,255,0.55);
+      font-size: 7.5pt;
+    }
+    .cta-divider {
+      width: 1px;
+      height: 40px;
+      background: rgba(255,255,255,0.15);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Print Bar -->
+  <div class="print-bar no-print">
+    <a href="/" class="back-btn">← Back to Website</a>
+    <button class="print-btn" onclick="window.print()">⬇ Save as PDF / Print</button>
+  </div>
+
+  <div class="page">
+
+    <!-- Header -->
+    <div class="header">
+      <div class="header-inner">
+        <div class="header-top">
+          <img src="/images/logo-mark.png" alt="Event Sphere Solutions" style="height:36px; width:auto;" />
+          <div class="header-badge">Thank You for the Demo</div>
+        </div>
+        <div class="header-eyebrow">Sphere — Private Event Sales Platform</div>
+        <div class="header-title">
+          Everything you saw today,<br />
+          <span>in one place.</span>
+        </div>
+        <p class="header-sub">Sphere gives hospitality businesses the tools and expert support to turn event inquiries into booked revenue — without the overhead of a full sales team.</p>
+      </div>
+    </div>
+
+    <!-- Stat Bar -->
+    <div class="stat-bar">
+      <div class="stat-item">
+        <span class="stat-value">189%</span>
+        <span class="stat-label">avg. increase in event sales</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">10 hrs</span>
+        <span class="stat-label">saved per team per week</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">4.9 ★</span>
+        <span class="stat-label">average guest review score</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">Free</span>
+        <span class="stat-label">migration from any platform</span>
+      </div>
+    </div>
+
+    <!-- Body -->
+    <div class="body">
+
+      <!-- Section 1: What Sphere Does + Pricing -->
+      <div class="two-col" style="margin-bottom:18px;">
+
+        <!-- Left: What's Included -->
+        <div>
+          <div class="section-label">The Platform</div>
+          <h2>One system for your entire event sales operation</h2>
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:0 16px; margin-bottom:10px;">
+            <ul class="feature-list">
+              <li>Branded lead capture forms</li>
+              <li>Visual sales pipeline</li>
+              <li>Event calendar & conflict prevention</li>
+              <li>Instant branded proposals</li>
+              <li>Digital BEOs & e-signatures</li>
+              <li>Online payment collection</li>
+              <li>Email campaigns & promo codes</li>
+              <li>Automated follow-up sequences</li>
+              <li>Revenue forecasting dashboard</li>
+            </ul>
+            <ul class="feature-list">
+              <li>Conversion tracking (lead → booked)</li>
+              <li>Branded client portal</li>
+              <li>Task reminders & notifications</li>
+              <li>Internal team chatbox</li>
+              <li>Reporting dashboard</li>
+              <li>Guest review collection</li>
+              <li>Mobile app (coming soon)</li>
+              <li>360° Virtual Tour add-on</li>
+              <li>OpenTable integration (coming soon)</li>
+            </ul>
+          </div>
+
+          <div style="background:#f5f0f6; border-radius:8px; padding:10px 12px; border-left:3px solid var(--purple);">
+            <p style="font-size:7.5pt; color:var(--purple); font-weight:600; margin-bottom:3px;">Built exclusively for hospitality.</p>
+            <p style="font-size:7.5pt; color:#666;">Sphere works only with restaurants, bars, venues, and hotels — because the best results come from a platform that speaks your industry.</p>
+          </div>
+        </div>
+
+        <!-- Right: Pricing -->
+        <div>
+          <div class="section-label">Plans & Pricing</div>
+          <h2>Simple pricing. Real results.</h2>
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:8px;">
+
+            <!-- Essentials -->
+            <div class="plan-card">
+              <div class="plan-tag">Sphere Essentials</div>
+              <div class="plan-price">$149<span>/mo</span></div>
+              <div class="plan-desc">1 location · 2 users</div>
+              <ul class="plan-features">
+                <li>Lead capture & pipeline</li>
+                <li>Proposals, BEOs & contracts</li>
+                <li>Calendar & conflict prevention</li>
+                <li>Email campaigns (1,000/mo)</li>
+                <li>Reporting dashboard</li>
+                <li>Email support</li>
+              </ul>
+            </div>
+
+            <!-- Growth -->
+            <div class="plan-card featured">
+              <div class="plan-pill">Most Popular</div>
+              <div class="plan-tag featured">Sphere Growth</div>
+              <div class="plan-price" style="color:var(--orange);">$259<span>/mo</span></div>
+              <div class="plan-desc">1 location · 5 users</div>
+              <ul class="plan-features orange" style="list-style:none;">
+                <li style="display:flex;gap:5px;padding:2px 0;font-size:7.5pt;color:#555;"><span style="color:var(--orange);font-weight:700;flex-shrink:0;">✓</span>Everything in Essentials</li>
+                <li style="display:flex;gap:5px;padding:2px 0;font-size:7.5pt;color:#555;"><span style="color:var(--orange);font-weight:700;flex-shrink:0;">✓</span>Automated follow-up sequences</li>
+                <li style="display:flex;gap:5px;padding:2px 0;font-size:7.5pt;color:#555;"><span style="color:var(--orange);font-weight:700;flex-shrink:0;">✓</span>Branded client portal</li>
+                <li style="display:flex;gap:5px;padding:2px 0;font-size:7.5pt;color:#555;"><span style="color:var(--orange);font-weight:700;flex-shrink:0;">✓</span>Sales forecasting dashboard</li>
+                <li style="display:flex;gap:5px;padding:2px 0;font-size:7.5pt;color:#555;"><span style="color:var(--orange);font-weight:700;flex-shrink:0;">✓</span>Conversion tracking</li>
+                <li style="display:flex;gap:5px;padding:2px 0;font-size:7.5pt;color:#555;"><span style="color:var(--orange);font-weight:700;flex-shrink:0;">✓</span>Priority support</li>
+              </ul>
+            </div>
+
+          </div>
+
+          <!-- Hospitality / Full width -->
+          <div class="plan-card dark">
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:6px;">
+              <div>
+                <div class="plan-tag dark">Sphere Hospitality</div>
+                <div class="plan-price dark">Custom<span style="color:rgba(255,255,255,0.35);">&nbsp;pricing</span></div>
+              </div>
+              <div style="text-align:right;">
+                <div style="color:rgba(255,255,255,0.45); font-size:7pt;">Multi-location groups</div>
+              </div>
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:2px;">
+              <ul class="plan-features dark" style="list-style:none;">
+                <li style="display:flex;gap:5px;padding:2px 0;font-size:7.5pt;color:rgba(255,255,255,0.7);"><span style="color:var(--orange-light);font-weight:700;flex-shrink:0;">✓</span>Everything in Growth</li>
+                <li style="display:flex;gap:5px;padding:2px 0;font-size:7.5pt;color:rgba(255,255,255,0.7);"><span style="color:var(--orange-light);font-weight:700;flex-shrink:0;">✓</span>Multiple locations & users</li>
+                <li style="display:flex;gap:5px;padding:2px 0;font-size:7.5pt;color:rgba(255,255,255,0.7);"><span style="color:var(--orange-light);font-weight:700;flex-shrink:0;">✓</span>Custom workflow builder</li>
+              </ul>
+              <ul class="plan-features dark" style="list-style:none;">
+                <li style="display:flex;gap:5px;padding:2px 0;font-size:7.5pt;color:rgba(255,255,255,0.7);"><span style="color:var(--orange-light);font-weight:700;flex-shrink:0;">✓</span>Commission & rep tracking</li>
+                <li style="display:flex;gap:5px;padding:2px 0;font-size:7.5pt;color:rgba(255,255,255,0.7);"><span style="color:var(--orange-light);font-weight:700;flex-shrink:0;">✓</span>API access</li>
+                <li style="display:flex;gap:5px;padding:2px 0;font-size:7.5pt;color:rgba(255,255,255,0.7);"><span style="color:var(--orange-light);font-weight:700;flex-shrink:0;">✓</span>Dedicated onboarding manager</li>
+              </ul>
+            </div>
+          </div>
+
+          <p style="font-size:7pt; color:#999; margin-top:6px; text-align:center;">All plans include free data migration from Tripleseat, Gather, or any spreadsheet.</p>
+        </div>
+
+      </div>
+
+      <hr class="divider" />
+
+      <!-- Section 2: Add-Ons -->
+      <div style="margin-bottom:18px;">
+        <div class="section-label" style="margin-bottom:5px;">Enhance Sphere With</div>
+        <h2 style="margin-bottom:12px;">Layer in exactly what your venue needs.</h2>
+
+        <div class="three-col">
+
+          <!-- Sales Team -->
+          <div class="addon-card sales">
+            <div class="addon-glow"></div>
+            <div style="position:relative;z-index:1;">
+              <span class="addon-icon">🎯</span>
+              <div class="addon-tag addon">Add-On</div>
+              <h3>Sphere + Sales Team</h3>
+              <p style="margin-bottom:8px;">A dedicated expert sales team handles every inquiry, follow-up, proposal, and close — on your behalf.</p>
+              <ul class="feature-list">
+                <li>Every lead captured & responded to</li>
+                <li>Proposals written & sent for you</li>
+                <li>Deals closed while you run your venue</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Sphere AI -->
+          <div class="addon-card ai">
+            <div class="addon-glow"></div>
+            <div style="position:relative;z-index:1;">
+              <span class="addon-icon">✨</span>
+              <div class="addon-tag soon">Coming Soon</div>
+              <h3>Sphere AI</h3>
+              <p style="margin-bottom:8px;">Layer AI automation on Sphere — capture leads, follow up, and book events 24/7 without lifting a finger.</p>
+              <ul class="feature-list">
+                <li>Automated lead capture & replies</li>
+                <li>Smart follow-up sequences</li>
+                <li>24/7 booking workflows</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Mobile App -->
+          <div class="addon-card tour">
+            <div class="addon-glow"></div>
+            <div style="position:relative;z-index:1;">
+              <span class="addon-icon">📲</span>
+              <div class="addon-tag soon">Coming Soon</div>
+              <h3>Sphere Mobile App</h3>
+              <p style="margin-bottom:8px;">Manage leads, send proposals, track bookings, and message clients — all from your phone.</p>
+              <ul class="feature-list">
+                <li>Real-time lead notifications</li>
+                <li>Send proposals on the go</li>
+                <li>Calendar & client messaging</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <hr class="divider" />
+
+      <!-- Section 3: Next Steps -->
+      <div>
+        <div class="section-label" style="margin-bottom:5px;">What Happens Next</div>
+        <h2 style="margin-bottom:12px;">Up and running in days, not weeks.</h2>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">01</div>
+            <h4>Choose Your Plan</h4>
+            <p>Pick the tier that fits your venue and team. You can always upgrade as you grow.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">02</div>
+            <h4>We Migrate Your Data</h4>
+            <p>We move your contacts, leads, events, and history from wherever you live now. Free on every plan.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">03</div>
+            <h4>Onboarding Call</h4>
+            <p>We configure your pipeline, forms, proposals, and email campaigns together in one call.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">04</div>
+            <h4>Start Booking Events</h4>
+            <p>Your full Sphere account is live. Capture leads, send proposals, and track every booking from day one.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA Footer -->
+    <div class="cta-footer">
+      <div class="cta-inner">
+        <div class="cta-text">
+          <h3>Ready to get started?</h3>
+          <p>Questions, custom pricing, or just want to talk it through — we respond to every inquiry within 24 hours.</p>
+        </div>
+        <div class="cta-contacts">
+          <div class="cta-contact-item">
+            <strong>🌐 Website</strong>
+            <span>eventspheresolutions.com</span>
+          </div>
+          <div class="cta-divider"></div>
+          <div class="cta-contact-item">
+            <strong>✉️ Email</strong>
+            <span>hello@eventspheresolutions.com</span>
+          </div>
+          <div class="cta-divider"></div>
+          <div class="cta-contact-item">
+            <strong>⏰ Response</strong>
+            <span>Within 24 hours, always</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /page -->
+
+</body>
+</html>

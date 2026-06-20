@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Founding Partner Program — Event Sphere Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=PT+Serif:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --purple: #6a256f;
+      --purple-dark: #2d0a35;
+      --purple-mid: #4a1555;
+      --orange: #E07B20;
+      --orange-light: #F99F33;
+      --red: #EF4561;
+      --dark: #111827;
+      --gray: #444;
+      --light-gray: #f5f5f7;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--dark);
+      background: #e8e8e8;
+      font-size: 10pt;
+      line-height: 1.5;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      background: white;
+      overflow: hidden;
+    }
+
+    @media print {
+      body { margin: 0; background: white; }
+      .page { width: 100%; margin: 0; }
+      .no-print { display: none !important; }
+    }
+
+    /* ── Print Bar ── */
+    .print-bar {
+      background: #f0f0f0;
+      padding: 11px 24px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+    }
+    .print-btn {
+      background: var(--purple);
+      color: white;
+      border: none;
+      padding: 9px 26px;
+      border-radius: 24px;
+      font-size: 9.5pt;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+    }
+    .print-btn:hover { background: var(--purple-mid); }
+    .back-btn {
+      background: var(--dark);
+      color: white;
+      border: none;
+      padding: 9px 22px;
+      border-radius: 24px;
+      font-size: 9.5pt;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: var(--purple-dark);
+      padding: 26px 34px 22px;
+      position: relative;
+      overflow: hidden;
+    }
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 240px; height: 240px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--orange) 0%, var(--red) 50%, transparent 70%);
+      opacity: 0.25;
+      filter: blur(20px);
+    }
+    .header::after {
+      content: '';
+      position: absolute;
+      bottom: -40px; left: 30%;
+      width: 180px; height: 180px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--purple) 0%, transparent 70%);
+      opacity: 0.4;
+      filter: blur(30px);
+    }
+    .header-inner { position: relative; z-index: 1; }
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 18px;
+    }
+    .header-badge {
+      background: var(--orange);
+      color: white;
+      font-size: 6.5pt;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 4px 11px;
+      border-radius: 20px;
+    }
+    .header-eyebrow {
+      font-size: 6.5pt;
+      font-weight: 800;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 7px;
+    }
+    .header-title {
+      font-family: 'PT Serif', serif;
+      font-size: 28pt;
+      font-weight: 700;
+      color: white;
+      line-height: 1.1;
+      margin-bottom: 9px;
+    }
+    .header-title span {
+      background: linear-gradient(90deg, var(--orange), var(--red));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .header-sub {
+      color: rgba(255,255,255,0.6);
+      font-size: 9.5pt;
+      max-width: 400px;
+      line-height: 1.5;
+    }
+
+    /* ── Stat Bar ── */
+    .stat-bar {
+      background: linear-gradient(135deg, var(--purple), #9b3aa0);
+      padding: 13px 34px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .stat-item { text-align: center; color: white; flex: 1; }
+    .stat-item + .stat-item { border-left: 1px solid rgba(255,255,255,0.15); }
+    .stat-value {
+      font-family: 'PT Serif', serif;
+      font-size: 18pt;
+      font-weight: 700;
+      display: block;
+      line-height: 1.1;
+    }
+    .stat-label { font-size: 6.5pt; opacity: 0.7; text-transform: uppercase; letter-spacing: 0.8px; margin-top: 1px; display: block; }
+
+    /* ── Body ── */
+    .body { padding: 22px 34px; }
+
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+
+    /* ── Section Labels ── */
+    .section-label {
+      font-size: 6.5pt;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 5px;
+    }
+    h2 {
+      font-family: 'PT Serif', serif;
+      font-size: 14pt;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+    h3 {
+      font-family: 'PT Serif', serif;
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 4px;
+    }
+    p { color: #555; font-size: 8.5pt; line-height: 1.6; }
+
+    /* ── Feature List ── */
+    .feature-list { list-style: none; }
+    .feature-list li {
+      font-size: 8pt;
+      color: #444;
+      padding: 2.5px 0;
+      display: flex;
+      gap: 6px;
+      align-items: flex-start;
+    }
+    .feature-list li::before {
+      content: '✓';
+      color: var(--purple);
+      font-weight: 800;
+      flex-shrink: 0;
+      font-size: 8pt;
+      margin-top: 1px;
+    }
+
+    /* ── Perk Cards ── */
+    .perk-card {
+      border-radius: 10px;
+      padding: 12px;
+      border: 1.5px solid #e8e8e8;
+      background: #fafafa;
+    }
+    .perk-icon { font-size: 16pt; margin-bottom: 5px; display: block; }
+    .perk-card h3 { font-size: 8.5pt; color: var(--dark); margin-bottom: 3px; }
+    .perk-card p { font-size: 7.5pt; color: #777; }
+
+    /* ── Ask List ── */
+    .ask-list { list-style: none; }
+    .ask-list li {
+      font-size: 8pt;
+      color: #444;
+      padding: 5px 0;
+      border-bottom: 1px solid #f0f0f0;
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+    }
+    .ask-list li:last-child { border-bottom: none; }
+    .ask-num {
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      background: var(--orange);
+      color: white;
+      font-size: 7pt;
+      font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ── Not For Card ── */
+    .not-for-card {
+      background: var(--purple);
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-top: 12px;
+    }
+    .not-for-card h3 { color: white; font-size: 8.5pt; margin-bottom: 6px; }
+    .not-for-card ul { list-style: none; }
+    .not-for-card ul li {
+      font-size: 7.5pt;
+      color: rgba(255,255,255,0.6);
+      padding: 2px 0;
+      display: flex;
+      gap: 6px;
+    }
+    .not-for-card ul li::before {
+      content: '✕';
+      color: var(--red);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* ── Progress Bar ── */
+    .spots-section {
+      background: var(--dark);
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+    .spots-text { color: white; flex: 1; }
+    .spots-text h3 { color: white; font-size: 9.5pt; margin-bottom: 3px; }
+    .spots-text p { color: rgba(255,255,255,0.55); font-size: 7.5pt; }
+    .progress-wrap { flex: 1; }
+    .progress-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 7pt;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 5px;
+    }
+    .progress-bar {
+      background: rgba(255,255,255,0.12);
+      border-radius: 10px;
+      height: 9px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      background: linear-gradient(90deg, var(--orange), var(--red));
+      height: 100%;
+      width: 65%;
+      border-radius: 10px;
+    }
+
+    /* ── Divider ── */
+    .divider {
+      border: none;
+      border-top: 1px solid #eeeeee;
+      margin: 18px 0;
+    }
+
+    /* ── Steps ── */
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    .step { text-align: center; padding: 4px; }
+    .step-num {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: rgba(106,37,111,0.1);
+      color: var(--purple);
+      font-weight: 800;
+      font-family: 'PT Serif', serif;
+      font-size: 11pt;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 7px;
+    }
+    .step h4 { font-size: 8pt; font-weight: 700; color: var(--dark); margin-bottom: 2px; }
+    .step p { font-size: 7pt; color: #777; }
+
+    /* ── Pricing card (included section) ── */
+    .included-card {
+      background: var(--purple);
+      border-radius: 10px;
+      padding: 14px;
+      margin-top: 12px;
+    }
+
+    /* ── CTA Footer ── */
+    .cta-footer {
+      background: linear-gradient(135deg, var(--purple-dark) 0%, var(--purple-mid) 50%, #3a0e4a 100%);
+      padding: 18px 34px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-footer::before {
+      content: '';
+      position: absolute;
+      top: -30px; right: 10%;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--orange) 0%, var(--red) 50%, transparent 70%);
+      opacity: 0.2;
+      filter: blur(30px);
+    }
+    .cta-inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .cta-text { flex: 1; }
+    .cta-footer h3 {
+      font-family: 'PT Serif', serif;
+      font-size: 14pt;
+      color: white;
+      margin-bottom: 5px;
+    }
+    .cta-footer p { font-size: 8.5pt; color: rgba(255,255,255,0.6); margin-bottom: 0; }
+    .cta-contacts {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .cta-contact-item { text-align: center; }
+    .cta-contact-item strong {
+      display: block;
+      color: white;
+      font-size: 8.5pt;
+      font-weight: 700;
+      margin-bottom: 1px;
+    }
+    .cta-contact-item span { color: rgba(255,255,255,0.55); font-size: 7.5pt; }
+    .cta-divider { width: 1px; height: 40px; background: rgba(255,255,255,0.15); }
+  </style>
+</head>
+<body>
+
+  <!-- Print Bar -->
+  <div class="print-bar no-print">
+    <a href="/founding-partner" class="back-btn">← Back to Website</a>
+    <button class="print-btn" onclick="window.print()">⬇ Save as PDF / Print</button>
+  </div>
+
+  <div class="page">
+
+    <!-- Header -->
+    <div class="header">
+      <div class="header-inner">
+        <div class="header-top">
+          <img src="/images/logo-mark.png" alt="Event Sphere Solutions" style="height:36px; width:auto;" />
+          <div class="header-badge">Beta — Limited to 20 Venues</div>
+        </div>
+        <div class="header-eyebrow">Event Sphere Solutions — Founding Partner Program</div>
+        <div class="header-title">
+          Be part of building<br />
+          <span>something real.</span>
+        </div>
+        <p class="header-sub">3 months of Sphere's full Revenue Growth platform — completely free — in exchange for your feedback and partnership. This is not a free trial. It's a founding relationship.</p>
+      </div>
+    </div>
+
+    <!-- Stat Bar -->
+    <div class="stat-bar">
+      <div class="stat-item">
+        <span class="stat-value">189%</span>
+        <span class="stat-label">avg. increase in event sales</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">3 Months</span>
+        <span class="stat-label">completely free</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">7 Left</span>
+        <span class="stat-label">of 20 total spots</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">Locked</span>
+        <span class="stat-label">founder rate — never increases</span>
+      </div>
+    </div>
+
+    <!-- Body -->
+    <div class="body">
+
+      <!-- Spots Bar -->
+      <div class="spots-section">
+        <div class="spots-text">
+          <h3>Spots Are Filling Fast</h3>
+          <p>We are capping this program at 20 venues total — ever. When they're gone, there will be no second cohort at this level.</p>
+        </div>
+        <div class="progress-wrap">
+          <div class="progress-label">
+            <span>13 spots claimed</span>
+            <span>7 remaining</span>
+          </div>
+          <div class="progress-bar"><div class="progress-fill"></div></div>
+          <div style="text-align:right; font-size:6.5pt; color:rgba(255,255,255,0.4); margin-top:4px;">20 total founding partner spots</div>
+        </div>
+      </div>
+
+      <!-- Two Col: What You Get + What We Ask -->
+      <div class="two-col" style="margin-bottom:18px;">
+
+        <!-- Left: Perks -->
+        <div>
+          <div class="section-label">What Founding Partners Get</div>
+          <h2>Everything you need to win more events</h2>
+
+          <div class="three-col" style="margin-bottom:10px;">
+            <div class="perk-card">
+              <span class="perk-icon">🎁</span>
+              <h3>3 Months Free</h3>
+              <p>Full Revenue Growth access. Zero cost for 90 days.</p>
+            </div>
+            <div class="perk-card">
+              <span class="perk-icon">🔒</span>
+              <h3>Locked Pricing</h3>
+              <p>Permanent founder rate that never increases. Ever.</p>
+            </div>
+            <div class="perk-card">
+              <span class="perk-icon">⚡</span>
+              <h3>First Access</h3>
+              <p>Every new feature before anyone else — including OpenTable integration.</p>
+            </div>
+          </div>
+          <div class="three-col">
+            <div class="perk-card">
+              <span class="perk-icon">🎯</span>
+              <h3>Full Onboarding</h3>
+              <p>We set up your entire account with you in week one.</p>
+            </div>
+            <div class="perk-card">
+              <span class="perk-icon">🏆</span>
+              <h3>Founder Badge</h3>
+              <p>Permanent Founding Partner designation on your account.</p>
+            </div>
+            <div class="perk-card">
+              <span class="perk-icon">📊</span>
+              <h3>Case Study</h3>
+              <p>We document and promote your results to thousands of hospitality professionals.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: What We Ask -->
+        <div>
+          <div class="section-label">What We Ask In Return</div>
+          <h2>Just 4 simple things</h2>
+
+          <ul class="ask-list">
+            <li>
+              <div class="ask-num">1</div>
+              <div>A <strong>30-minute onboarding call</strong> to set up your account together — pipeline, forms, templates, campaigns.</div>
+            </li>
+            <li>
+              <div class="ask-num">2</div>
+              <div>A <strong>15-minute monthly check-in</strong> to share what's working and what needs improvement.</div>
+            </li>
+            <li>
+              <div class="ask-num">3</div>
+              <div><strong>Honest feedback</strong> on features, UX, and anything that could be better. No filter needed.</div>
+            </li>
+            <li>
+              <div class="ask-num">4</div>
+              <div>A <strong>testimonial or case study</strong> if your results are strong — no pressure if you prefer to stay private.</div>
+            </li>
+          </ul>
+
+          <div class="not-for-card">
+            <h3>This is NOT for everyone.</h3>
+            <ul>
+              <li>Venues not actively selling or planning events</li>
+              <li>Anyone who can't commit to a monthly 15-min call</li>
+              <li>Businesses looking for a free tool with no intention to give feedback</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <hr class="divider" />
+
+      <!-- Section 2: What's Included + Pricing -->
+      <div class="two-col" style="margin-bottom:18px;">
+
+        <!-- Left: Features -->
+        <div>
+          <div class="section-label">What's Included — Revenue Growth Tier</div>
+          <h2>Your full feature set, free for 90 days</h2>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:0 16px;">
+            <ul class="feature-list">
+              <li>Branded lead capture forms</li>
+              <li>Visual event sales pipeline</li>
+              <li>Event calendar & conflict prevention</li>
+              <li>Branded proposals & contracts</li>
+              <li>Digital BEOs & e-signatures</li>
+              <li>Online payment collection</li>
+              <li>Automated email follow-up</li>
+              <li>Email campaigns (2,500/mo)</li>
+              <li>3 promo codes/month</li>
+            </ul>
+            <ul class="feature-list">
+              <li>Revenue forecasting dashboard</li>
+              <li>Conversion tracking (lead → booked)</li>
+              <li>Branded client portal</li>
+              <li>Task reminders & notifications</li>
+              <li>Internal team chatbox</li>
+              <li>Reporting dashboard</li>
+              <li>Up to 5 users</li>
+              <li>Mobile app (coming soon)</li>
+              <li>Priority support</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Right: Pricing context -->
+        <div>
+          <div class="section-label">Regular Pricing — After Your Free Period</div>
+          <h2>Your rate is locked forever.</h2>
+          <p style="margin-bottom:12px;">After your 3 free months, continue at your permanently locked Founding Partner price — lower than anything we'll ever offer publicly.</p>
+
+          <div style="border-radius:10px; border:1.5px solid #e8e8e8; padding:14px; margin-bottom:10px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+              <div>
+                <div style="font-size:6.5pt; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; color:#aaa; margin-bottom:3px;">Standard Public Price</div>
+                <div style="font-family:'PT Serif',serif; font-size:16pt; font-weight:700; color:#ccc; text-decoration:line-through;">$259/month</div>
+              </div>
+              <div style="text-align:right;">
+                <div style="font-size:6.5pt; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; color:var(--orange); margin-bottom:3px;">Your Founder Rate</div>
+                <div style="font-family:'PT Serif',serif; font-size:20pt; font-weight:700; color:var(--purple);">Locked Forever</div>
+              </div>
+            </div>
+            <div style="background:#f5f0f6; border-radius:6px; padding:8px 10px;">
+              <p style="font-size:7.5pt; color:var(--purple); font-weight:600;">Permanently below market — the rate you negotiate as a Founding Partner is yours for life, regardless of where public pricing goes.</p>
+            </div>
+          </div>
+
+          <div style="background:var(--dark); border-radius:10px; padding:12px 14px;">
+            <div style="font-size:6.5pt; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; color:var(--orange); margin-bottom:6px;">Also Included</div>
+            <ul style="list-style:none;">
+              <li style="display:flex;gap:6px;padding:2px 0;font-size:7.5pt;color:rgba(255,255,255,0.7);"><span style="color:var(--orange-light);font-weight:700;flex-shrink:0;">✓</span>Free data migration from any platform</li>
+              <li style="display:flex;gap:6px;padding:2px 0;font-size:7.5pt;color:rgba(255,255,255,0.7);"><span style="color:var(--orange-light);font-weight:700;flex-shrink:0;">✓</span>OpenTable integration — you get it first</li>
+              <li style="display:flex;gap:6px;padding:2px 0;font-size:7.5pt;color:rgba(255,255,255,0.7);"><span style="color:var(--orange-light);font-weight:700;flex-shrink:0;">✓</span>Every future feature, free, before public launch</li>
+              <li style="display:flex;gap:6px;padding:2px 0;font-size:7.5pt;color:rgba(255,255,255,0.7);"><span style="color:var(--orange-light);font-weight:700;flex-shrink:0;">✓</span>Direct line to the founding team</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <hr class="divider" />
+
+      <!-- Steps -->
+      <div>
+        <div class="section-label" style="margin-bottom:5px;">How It Works</div>
+        <h2 style="margin-bottom:12px;">Up and running in one week.</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">01</div>
+            <h4>Apply</h4>
+            <p>Fill out the short form at eventspheresolutions.com/founding-partner. We review within 48 hours.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">02</div>
+            <h4>Onboarding Call</h4>
+            <p>We build your full account together — pipeline, forms, proposals, and campaigns. Done in one call.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">03</div>
+            <h4>Use It & Grow</h4>
+            <p>90 days of full access. Run events, fill your pipeline, track revenue, and share monthly feedback.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">04</div>
+            <h4>Stay at Founder Rate</h4>
+            <p>After 3 months, continue at your permanently locked Founding Partner price. Never increases.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA Footer -->
+    <div class="cta-footer">
+      <div class="cta-inner">
+        <div class="cta-text">
+          <h3>Ready to apply? 7 spots remaining.</h3>
+          <p>Visit the link below or email us directly — we respond to every inquiry within 24 hours.</p>
+        </div>
+        <div class="cta-contacts">
+          <div class="cta-contact-item">
+            <strong>🌐 Apply Online</strong>
+            <span>eventspheresolutions.com/founding-partner</span>
+          </div>
+          <div class="cta-divider"></div>
+          <div class="cta-contact-item">
+            <strong>✉️ Email Us</strong>
+            <span>hello@eventspheresolutions.com</span>
+          </div>
+          <div class="cta-divider"></div>
+          <div class="cta-contact-item">
+            <strong>⏰ Response</strong>
+            <span>Within 48 hours, always</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /page -->
+
+</body>
+</html>
