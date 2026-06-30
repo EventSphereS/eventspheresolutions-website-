@@ -343,6 +343,9 @@
     }
     .addon-tag.addon { background: rgba(224,123,32,0.25); color: var(--orange-light); }
     .addon-tag.soon { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.5); }
+    .addon-tag.free { background: rgba(80,200,120,0.18); color: #7ee0a0; }
+    .addon-tags { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 6px; }
+    .addon-tags .addon-tag { margin-bottom: 0; }
     .addon-card h3 { color: white; font-size: 9.5pt; margin-bottom: 4px; }
     .addon-card p { color: rgba(255,255,255,0.55); font-size: 7.5pt; line-height: 1.5; }
     .addon-card .feature-list li { color: rgba(255,255,255,0.7); font-size: 7.5pt; }
@@ -606,7 +609,10 @@
             <div class="addon-glow"></div>
             <div style="position:relative;z-index:1;">
               <span class="addon-icon">🎯</span>
-              <div class="addon-tag addon">Free</div>
+              <div class="addon-tags">
+                <div class="addon-tag addon">Add-On</div>
+                <div class="addon-tag free">Free</div>
+              </div>
               <h3>Sphere + Sales Team</h3>
               <p style="margin-bottom:8px;">A dedicated expert sales team handles every inquiry, follow-up, proposal, and close — on your behalf.</p>
               <ul class="feature-list">
@@ -622,7 +628,10 @@
             <div class="addon-glow"></div>
             <div style="position:relative;z-index:1;">
               <span class="addon-icon">✨</span>
-              <div class="addon-tag soon">Coming Soon</div>
+              <div class="addon-tags">
+                <div class="addon-tag addon">Add-On</div>
+                <div class="addon-tag soon">Coming Soon</div>
+              </div>
               <h3>Sphere AI</h3>
               <p style="margin-bottom:8px;">Layer AI automation on Sphere — capture leads, follow up, and book events 24/7 without lifting a finger.</p>
               <ul class="feature-list">
