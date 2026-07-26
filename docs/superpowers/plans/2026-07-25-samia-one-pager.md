@@ -15,7 +15,7 @@
 - Must reuse `/images/founder.jpg` — no new image asset, per spec.
 - Brand colors only: `#6a256f` (purple), `#EF4561` (pink), `#F99F33` / `#E07B20` (orange), matching existing usage in `app/about/page.js`.
 - Headings use `font-display` (Montserrat); body text uses default `font-sans` (Inter) — per `app/globals.css`.
-- Do not modify `/about` or any other existing page.
+- Do not modify `/about` or any other existing page. **Amended after Task 2 QA:** `app/layout.js` unconditionally renders the sitewide `Navbar`/`Footer` around every route, which was missed during planning and violates "no site Navbar/Footer on `/samia`." The user approved a route-group restructure (Task 3 below) to fix this: existing routes move under `app/(site)/` (file moves only, URLs and page content unchanged) so they keep `Navbar`/`Footer` via a new `app/(site)/layout.js`, while `/samia` stays outside that group and gets none. This supersedes the "do not modify other pages" constraint for the file-move mechanics only — no existing page's content/behavior changes.
 - Do not present the "underestimated" line as a verbatim press quote — per spec, it's paraphrased from Samia's notes, not from the CanvasRebel article.
 
 ---
@@ -387,6 +387,222 @@ EOF
 ```
 
 If no changes were needed in Step 5, skip this step — nothing to commit.
+
+---
+
+### Task 3: Isolate site chrome to a `(site)` route group
+
+**Why:** Task 2's QA pass found that `app/layout.js` unconditionally renders `Navbar`/`Footer` around every route via `{children}`, so they bleed onto `/samia` even though `app/samia/page.js` never imports them. Fix approved by the user: move `Navbar`/`Footer` into a new `app/(site)/layout.js` that wraps only the existing site pages; `app/samia/page.js` stays outside that route group and gets no site chrome. Next.js route groups (`(name)`) do not affect URLs — every existing route keeps its exact current path.
+
+**Files:**
+- Modify: `app/layout.js` — remove `Navbar`/`Footer` usage, keep everything else (metadata, JSON-LD schema, Apollo scripts) unchanged.
+- Create: `app/(site)/layout.js` — new nested layout rendering `Navbar` + `main` + `Footer` around `{children}`.
+- Move (via `git mv`, content unchanged): `app/page.js`, `app/about/`, `app/blog/`, `app/contact/`, `app/founding-partner/`, `app/platform/`, `app/pricing/`, `app/services/` → same paths under `app/(site)/`.
+- Do not move: `app/api/` (route handlers, not pages — unaffected by layout), `app/sitemap.js` (metadata route, doesn't consume `RootLayout`), `app/samia/` (must stay outside the group — that's the whole point), `app/globals.css`.
+
+**Interfaces:**
+- Consumes: existing `components/Navbar.jsx`, `components/Footer.jsx` (unchanged — only their call site moves).
+- Produces: `app/(site)/layout.js` exports a default `SiteLayout({ children })` component. No other task depends on this export's name (nothing imports it directly — Next.js wires it in by file convention).
+
+- [ ] **Step 1: Move existing routes into the `(site)` route group**
+
+```bash
+mkdir -p "app/(site)"
+git mv app/page.js "app/(site)/page.js"
+git mv app/about "app/(site)/about"
+git mv app/blog "app/(site)/blog"
+git mv app/contact "app/(site)/contact"
+git mv app/founding-partner "app/(site)/founding-partner"
+git mv app/platform "app/(site)/platform"
+git mv app/pricing "app/(site)/pricing"
+git mv app/services "app/(site)/services"
+```
+
+Expected: `git status` shows each as a rename (`R`), not a delete+add — confirms content is untouched, only the path changed. Verify no relative (`../`) imports exist that would break from the new depth (this repo already uses only `@/*` absolute imports per `jsconfig.json`, so none should):
+
+```bash
+grep -rn "from '\.\./" "app/(site)"
+```
+
+Expected: no output.
+
+- [ ] **Step 2: Create the new site-group layout**
+
+Create `app/(site)/layout.js`:
+
+```jsx
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
+
+export default function SiteLayout({ children }) {
+  return (
+    <>
+      <Navbar />
+      <main>{children}</main>
+      <Footer />
+    </>
+  )
+}
+```
+
+- [ ] **Step 3: Strip `Navbar`/`Footer` out of the root layout**
+
+Modify `app/layout.js` — remove the `Navbar`/`Footer` imports and their usage, and render `{children}` directly instead of wrapping it in `<main>`. The full resulting file:
+
+```jsx
+import './globals.css'
+import Script from 'next/script'
+
+export const metadata = {
+  metadataBase: new URL('https://eventspheresolutions.com'),
+  title: {
+    default: 'Sphere | Private Event Sales Platform for Hospitality',
+    template: '%s | Sphere by Event Sphere Solutions',
+  },
+  description: 'Sphere helps restaurants, bars, and venues protect and grow their private event sales — instant proposals, digital BEOs, and AI that responds 24/7. Built for hospitality. Not adapted for it.',
+  keywords: 'private event sales platform, restaurant event booking software, venue event management, private dining booking system, hospitality event software, BEO software, event sales automation, private event CRM',
+  openGraph: {
+    title: 'Sphere | Private Event Sales Platform for Hospitality',
+    description: 'Sphere helps restaurants, bars, and venues protect and grow their private event sales — instant proposals, digital BEOs, and AI that responds 24/7. Built for hospitality. Not adapted for it.',
+    url: 'https://eventspheresolutions.com',
+    siteName: 'Sphere by Event Sphere Solutions',
+    type: 'website',
+    images: [
+      {
+        url: '/feature-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Sphere — Private Event Sales Platform for Hospitality',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Sphere | Private Event Sales Platform for Hospitality',
+    description: 'Sphere helps restaurants, bars, and venues protect and grow their private event sales. Built for hospitality. Not adapted for it.',
+    images: ['/feature-image.png'],
+  },
+}
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Event Sphere Solutions',
+  url: 'https://eventspheresolutions.com',
+  logo: 'https://eventspheresolutions.com/images/logo-main.png',
+  description: 'Sphere is the private event sales platform built for restaurants, bars, and venues. Not adapted for it. Built for it.',
+  foundingDate: '2024',
+  founder: {
+    '@type': 'Person',
+    name: 'Samia Kohler',
+  },
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Phoenix',
+    addressRegion: 'AZ',
+    addressCountry: 'US',
+  },
+  sameAs: [
+    'https://www.linkedin.com/company/event-sphere-solutions',
+    'https://www.instagram.com/eventspheresolutions',
+  ],
+}
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body className="antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        {children}
+        <Script id="apollo-form-enrichment" strategy="beforeInteractive">
+          {`(function initApolloInbound(){var TIMEOUT_MS=15000;var timeoutId;var style=document.createElement('style');style.id='apollo-form-prehide-css';style.textContent='form:has(input[type="email" i]),form:has(input[name="email" i]),.hs-form-iframe{position:relative!important}form:has(input[type="email" i])::before,form:has(input[name="email" i])::before,.hs-form-iframe::before{content:"";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;width:50px;height:50px;margin:auto;border:2.5px solid #e1e1e1;border-top:2.5px solid #9ea3a6;border-radius:50%;animation:spin 1s linear infinite;background-color:transparent;pointer-events:auto;z-index:999999;opacity:1}form:has(input[type="email" i]) *,form:has(input[name="email" i]) *,.hs-form-iframe *{opacity:0!important;user-select:none!important;pointer-events:none!important}@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}';(document.head || document.documentElement).appendChild(style);function cleanup(){var styleEl=document.getElementById('apollo-form-prehide-css');if(styleEl)styleEl.remove();if(timeoutId)clearTimeout(timeoutId);}timeoutId=setTimeout(function(){console.warn('[Apollo] Form enrichment timeout after 5s - revealing forms. Check network and console for errors.');cleanup();},TIMEOUT_MS);var nocache=Math.random().toString(36).substring(7);var script=document.createElement('script');script.src='https://assets.apollo.io/js/apollo-inbound.js?nocache=' + nocache;script.defer=true;script.onerror=function(){console.error('[Apollo] Failed to load form enrichment script');cleanup();};script.onload=function(){try{window.ApolloInbound.formEnrichment.init({appId: '6a28e16fc77cc3000cb78b76',onReady: function(){cleanup();},onError: function(err){console.error('[Apollo] Form enrichment init error:',err);cleanup();}});}catch(err){console.error('[Apollo] Error initializing form enrichment:',err);cleanup();}};document.head.appendChild(script);})();`}
+        </Script>
+        <Script id="apollo-tracker" strategy="afterInteractive">
+          {`function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");
+o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,
+o.onload=function(){window.trackingFunctions.onLoad({appId:"6a27294c9521fc0018ce08b6"})},
+document.head.appendChild(o)}initApollo();`}
+        </Script>
+      </body>
+    </html>
+  )
+}
+```
+
+This is character-for-character the existing file with only the `Navbar`/`Footer` import lines and JSX removed, and `<main>{children}</main>` replaced with bare `{children}` — every other line (metadata, schema, both Script blocks) is unchanged.
+
+- [ ] **Step 4: Verify the build**
+
+Run: `npm run build`
+Expected: Build completes with no errors. Route output lists the same URLs as before (`/`, `/about`, `/blog`, `/blog/[slug]`, `/contact`, `/founding-partner`, `/platform`, `/pricing`, `/services`, `/samia`, `/sitemap.xml`, `/api/contact`, `/api/founding-partner`) — route groups don't add path segments, so no URL changes.
+
+- [ ] **Step 5: Commit**
+
+```bash
+git add -A
+git commit -m "$(cat <<'EOF'
+Isolate site Navbar/Footer to a (site) route group
+
+/samia needs no sitewide chrome. Moves existing routes under
+app/(site)/ (URLs unchanged) with their own layout carrying
+Navbar/Footer; root layout now renders children directly.
+
+Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>
+EOF
+)"
+```
+
+---
+
+### Task 4: Re-verify visual QA on `/samia` and unaffected routes
+
+**Why:** Task 2's original QA pass was blocked by the chrome-bleed issue Task 3 just fixed. This re-runs that verification now that `/samia` has no site chrome, plus a quick spot-check that Task 3's restructure didn't break any existing route.
+
+**Files:** None expected — verification only. Modify `app/samia/page.js` only if this pass finds a real remaining issue.
+
+- [ ] **Step 1: Start the dev server**
+
+Run: `npm run dev` (leave running in the background)
+
+- [ ] **Step 2: Screenshot `/samia` desktop and mobile**
+
+```bash
+npx playwright screenshot --viewport-size=1440,1200 --full-page http://localhost:3000/samia /tmp/samia-desktop.png
+npx playwright screenshot --viewport-size=390,844 --full-page http://localhost:3000/samia /tmp/samia-mobile.png
+```
+
+Expected: Open both PNGs and confirm — **no sitewide Navbar or Footer visible**, only the page's own minimal nav at the top and its own contact section at the bottom. All 7 sections present, brand colors correct, no layout overlap, mobile nav collapses correctly.
+
+- [ ] **Step 3: Verify all `/samia` links resolve**
+
+Same checklist as original Task 2 Step 4: `#story`/`#speaking`/`#press`/`#contact` anchors, CanvasRebel link, `mailto:` link, LinkedIn, Instagram, footer link to `/`.
+
+- [ ] **Step 4: Spot-check one moved route still renders its chrome correctly**
+
+```bash
+npx playwright screenshot --viewport-size=1440,1200 --full-page http://localhost:3000/about /tmp/about-check.png
+```
+
+Expected: `/about` still shows the sitewide `Navbar` at top and `Footer` at bottom (proving `app/(site)/layout.js` is wired correctly for the moved routes).
+
+- [ ] **Step 5: Fix any issues found, otherwise report clean**
+
+If Steps 2-4 surface problems, fix them (in `app/samia/page.js`, `app/(site)/layout.js`, or `app/layout.js` as appropriate), re-verify, then commit:
+
+```bash
+git add -A
+git commit -m "$(cat <<'EOF'
+Fix issues found in post-restructure QA pass
+
+Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>
+EOF
+)"
+```
+
+If nothing needed fixing, skip the commit — nothing to commit.
 
 ---
 
