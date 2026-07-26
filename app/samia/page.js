@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 export const metadata = {
-  title: 'Samia Kohler — Founder & CEO, Event Sphere Solutions',
+  title: { absolute: 'Samia Kohler — Founder & CEO, Event Sphere Solutions' },
   description: '18 years building private-events revenue for hospitality — now building the platform for it. Book Samia Kohler for your next podcast or panel.',
   openGraph: {
     title: 'Samia Kohler — Founder & CEO, Event Sphere Solutions',
@@ -50,7 +50,8 @@ export default function SamiaPage() {
         </div>
       </header>
 
-      {/* Hero */}
+      <main>
+        {/* Hero */}
       <section id="top" className="py-16 md:py-24 bg-gray-50 scroll-mt-16">
         <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-[280px_1fr] gap-10 items-center">
           <div className="relative rounded-2xl overflow-hidden shadow-xl h-72 md:h-80 mx-auto w-72 md:w-full">
@@ -58,6 +59,7 @@ export default function SamiaPage() {
               src="/images/founder.jpg"
               alt="Samia Kohler"
               fill
+              sizes="(min-width: 768px) 320px, 288px"
               className="object-cover"
               style={{ objectPosition: '50% 8%' }}
               priority
@@ -103,8 +105,7 @@ export default function SamiaPage() {
               other people&apos;s companies.
             </p>
             <p>
-              Starting Event Sphere Solutions wasn&apos;t a calculated pivot. It came out of a
-              breaking point. I was at a company whose values no longer matched mine, and I hit
+              It came out of a breaking point. I was at a company whose values no longer matched mine, and I hit
               a wall — not just tired, genuinely depleted. In that moment I had the clearest
               thought of my career: I&apos;d spent nearly two decades solving this exact problem
               for other people while capping my own potential. I had the expertise, the track
@@ -264,6 +265,7 @@ export default function SamiaPage() {
           </div>
         </div>
       </section>
+      </main>
     </>
   )
 }
