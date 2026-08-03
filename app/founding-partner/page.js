@@ -111,7 +111,7 @@ export default function FoundingPartnerPage() {
               className="btn-primary text-lg px-10 py-4 inline-block shadow-2xl shadow-[#E07B20]/30">
               Apply for a Founding Partner Spot →
             </a>
-            <a href="/founding-partner-program.html" target="_blank"
+            <a href="/founding-partner-one-pager.html" target="_blank"
               className="border-2 border-white text-white font-bold px-8 py-4 rounded-full hover:bg-white/10 transition-colors inline-block text-lg">
               ⬇ Download PDF One-Pager
             </a>
