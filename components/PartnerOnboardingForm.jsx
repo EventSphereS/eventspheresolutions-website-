@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import PartnerFileUpload from './PartnerFileUpload'
 
 const DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 const CURRENCIES = ['USD', 'CAD', 'EUR', 'GBP', 'AUD']
@@ -39,6 +40,21 @@ export default function PartnerOnboardingForm() {
       ...prev,
       businessHours: prev.businessHours.map((row, i) => (i === index ? { ...row, [field]: value } : row)),
     }))
+  }
+
+  const updateSpace = (index, field, value) => {
+    setForm((prev) => ({
+      ...prev,
+      spaces: prev.spaces.map((row, i) => (i === index ? { ...row, [field]: value } : row)),
+    }))
+  }
+
+  const addSpace = () => {
+    setForm((prev) => ({ ...prev, spaces: [...prev.spaces, { name: '', capacity: '' }] }))
+  }
+
+  const removeSpace = (index) => {
+    setForm((prev) => ({ ...prev, spaces: prev.spaces.filter((_, i) => i !== index) }))
   }
 
   const validateStep1 = () => {
@@ -193,6 +209,57 @@ export default function PartnerOnboardingForm() {
               ))}
             </div>
           </div>
+          <div className="flex gap-3">
+            <button type="button" onClick={handleBack}
+              className="px-6 py-4 rounded-xl border border-gray-200 text-gray-600 font-semibold text-sm hover:border-gray-300 transition-all">← Back</button>
+            <button type="button" onClick={handleNext}
+              className="flex-1 bg-gradient-to-r from-[#6a256f] via-[#EF4561] to-[#E07B20] text-white font-bold py-4 rounded-xl hover:opacity-90 transition-all text-sm">Continue →</button>
+          </div>
+        </div>
+      )}
+
+      {step === 3 && (
+        <div className="space-y-6">
+          <div>
+            <label className={labelClass}>Event Spaces</label>
+            <div className="space-y-3">
+              {form.spaces.map((space, i) => (
+                <div key={i} className="flex gap-2">
+                  <input type="text" value={space.name} onChange={(e) => updateSpace(i, 'name', e.target.value)}
+                    placeholder="Main Hall" className={inputClass} />
+                  <input type="number" value={space.capacity} onChange={(e) => updateSpace(i, 'capacity', e.target.value)}
+                    placeholder="Capacity" className={`${inputClass} w-32`} />
+                  {form.spaces.length > 1 && (
+                    <button type="button" onClick={() => removeSpace(i)}
+                      className="px-3 text-gray-400 hover:text-[#EF4561]">✕</button>
+                  )}
+                </div>
+              ))}
+            </div>
+            <button type="button" onClick={addSpace} className="text-sm font-semibold text-[#6a256f] mt-2">+ Add another space</button>
+          </div>
+
+          <PartnerFileUpload label="Logo" accept="image/png,image/jpeg,image/webp"
+            hint="PNG, JPG, or WebP" onUploaded={(url) => setForm((p) => ({ ...p, logoUrl: url }))} />
+
+          <div>
+            <label className={labelClass}>Brand Colors</label>
+            <input type="text" name="brandColors" value={form.brandColors} onChange={handleChange}
+              placeholder="#6a256f, #E07B20" className={inputClass} />
+          </div>
+
+          <PartnerFileUpload label="Policies Document" accept="application/pdf"
+            hint="PDF" onUploaded={(url) => setForm((p) => ({ ...p, policiesUrl: url }))} />
+
+          <PartnerFileUpload label="Menu Document" accept="application/pdf"
+            hint="PDF" onUploaded={(url) => setForm((p) => ({ ...p, menuUrl: url }))} />
+
+          <div>
+            <label className={labelClass}>Tax Rate(s) & Fees</label>
+            <input type="text" name="taxAndFees" value={form.taxAndFees} onChange={handleChange}
+              placeholder="8.5% sales tax, 20% service fee" className={inputClass} />
+          </div>
+
           <div className="flex gap-3">
             <button type="button" onClick={handleBack}
               className="px-6 py-4 rounded-xl border border-gray-200 text-gray-600 font-semibold text-sm hover:border-gray-300 transition-all">← Back</button>
