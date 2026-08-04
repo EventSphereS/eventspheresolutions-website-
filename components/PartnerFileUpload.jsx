@@ -2,6 +2,9 @@
 import { useState } from 'react'
 import { upload } from '@vercel/blob/client'
 
+// Lightweight deterrent against automated/opportunistic abuse of this unlisted endpoint — not a defense against a targeted attacker with page access, since any client-side value is technically inspectable.
+const UPLOAD_SECRET = process.env.NEXT_PUBLIC_PARTNER_UPLOAD_SECRET
+
 export default function PartnerFileUpload({ label, hint, accept, multiple = false, onUploaded }) {
   const [status, setStatus] = useState('idle')
   const [fileNames, setFileNames] = useState([])
@@ -12,22 +15,38 @@ export default function PartnerFileUpload({ label, hint, accept, multiple = fals
     if (files.length === 0) return
     setStatus('uploading')
     setError('')
-    try {
-      const urls = []
-      for (const file of files) {
-        const blob = await upload(file.name, file, {
+    const urls = []
+    const uploadedNames = []
+    let failedFileName = ''
+
+    // Upload each file individually so a mid-batch failure doesn't discard the
+    // files that already succeeded (which would orphan them in Blob storage).
+    for (const file of files) {
+      try {
+        const blob = await upload(`partner-onboarding/${file.name}`, file, {
           access: 'public',
           handleUploadUrl: '/api/partner-onboarding/upload',
+          clientPayload: UPLOAD_SECRET,
         })
         urls.push(blob.url)
+        uploadedNames.push(file.name)
+      } catch (err) {
+        console.error('Partner onboarding upload failed', err)
+        failedFileName = file.name
+        break
       }
-      setFileNames(files.map((f) => f.name))
-      setStatus('done')
+    }
+
+    if (urls.length > 0) {
+      setFileNames(uploadedNames)
       onUploaded(multiple ? urls : urls[0])
-    } catch (err) {
-      console.error('Partner onboarding upload failed', err)
+    }
+
+    if (failedFileName) {
       setStatus('error')
-      setError('Upload failed. Please try again or email the file to hello@eventspheresolutions.com.')
+      setError(`${failedFileName} failed to upload. ${urls.length ? 'Other files were saved. ' : ''}Please try again or email the file to hello@eventspheresolutions.com.`)
+    } else {
+      setStatus('done')
     }
   }
 
