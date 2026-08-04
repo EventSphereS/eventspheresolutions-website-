@@ -88,3 +88,13 @@ The page is unlisted (not linked from site navigation) — access is via a direc
 ## Testing
 
 Manual verification in a browser (dev server): click through all 5 steps, confirm per-step validation blocks advancement when required fields are empty, confirm file uploads succeed and produce a blob URL, confirm the final submit request succeeds and the success screen renders. Email deliverability itself is not verified in this pass (requires a live Resend key), but the request/response contract is confirmed.
+
+## Operational Notes
+
+**Uploaded files are public blobs with no automatic deletion.** Every file submitted through this form (logo, policies PDF, menu PDF, proposal/contract templates, and — most importantly — the **contacts/leads export**) is stored in Vercel Blob with `access: 'public'`. The URLs are unguessable (a random suffix is appended to every pathname), so they are not enumerable, but anyone holding a URL can read the file, and nothing expires it.
+
+The contacts export is personal data belonging to the partner's customers. **After completing a partner's migration into Sphere, the team must manually delete that partner's uploaded files from Vercel Blob storage** (Vercel dashboard → Storage → Blob → delete the objects under the `partner-onboarding/` prefix). The team notification email includes a one-line reminder of this step.
+
+This is a deliberate process control rather than a code control: automatic expiry was considered and explicitly deferred, since the retention window depends on how long a given migration takes and a premature deletion would lose data the team still needs.
+
+**Upload endpoint protection.** `/api/partner-onboarding/upload` is gated by a shared secret (`NEXT_PUBLIC_PARTNER_UPLOAD_SECRET`) sent as the `clientPayload` and verified server-side, plus a check that the upload pathname starts with `partner-onboarding/`. Because the form is public and unauthenticated, this secret necessarily ships to the browser — it is a deterrent against automated/opportunistic abuse of an unlisted endpoint, not a defense against a targeted attacker who has page access. Rotate it (both in the Vercel project env vars and `.env.local`) if abuse is observed.
