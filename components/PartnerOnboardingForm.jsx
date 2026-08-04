@@ -27,7 +27,7 @@ const initialForm = {
   spaces: [{ name: '', capacity: '' }],
   logoUrl: '', brandColors: '', policiesUrl: '', menuUrl: '', taxAndFees: '',
   welcomeEmail: '', firstResponseEmail: '', followUpEmail: '',
-  teamMembers: '', contactsExportUrl: '', upcomingEvents: '', templatesUrls: [], notes: '',
+  teamMembers: '', contactsExportUrl: '', upcomingEvents: '', upcomingEventsFileUrl: '', templatesUrls: [], notes: '',
 }
 
 const TOTAL_STEPS = 5
@@ -366,6 +366,10 @@ export default function PartnerOnboardingForm() {
             <textarea name="upcomingEvents" value={form.upcomingEvents} onChange={handleChange} rows={3}
               placeholder="List any already-booked events with dates and client names" className={`${inputClass} resize-none`} />
           </div>
+
+          <PartnerFileUpload label="Upcoming Events File (optional)" accept=".csv,.xls,.xlsx"
+            hint="CSV or spreadsheet export of upcoming bookings, if that's easier than typing them out"
+            onUploaded={(url) => setForm((p) => ({ ...p, upcomingEventsFileUrl: url }))} />
 
           <PartnerFileUpload label="Proposal & Contract Templates" accept=".pdf,.doc,.docx" multiple
             hint="PDF or Word docs, you can select multiple" onUploaded={(urls) => setForm((p) => ({ ...p, templatesUrls: urls }))} />

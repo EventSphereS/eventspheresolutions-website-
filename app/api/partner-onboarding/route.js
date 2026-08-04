@@ -11,7 +11,7 @@ export async function POST(request) {
       totalCapacity, description, currency, address, businessHours,
       spaces, logoUrl, brandColors, policiesUrl, menuUrl, taxAndFees,
       welcomeEmail, firstResponseEmail, followUpEmail,
-      teamMembers, contactsExportUrl, upcomingEvents, templatesUrls, notes,
+      teamMembers, contactsExportUrl, upcomingEvents, upcomingEventsFileUrl, templatesUrls, notes,
     } = body
 
     if (!adminName || !adminEmail || !businessName || !contactsExportUrl) {
@@ -65,6 +65,7 @@ export async function POST(request) {
                 menuUrl ? ['Menu Doc', `<a href="${menuUrl}" style="color:#E07B20;">${menuUrl}</a>`] : null,
                 taxAndFees ? ['Tax & Fees', taxAndFees] : null,
                 contactsExportUrl ? ['Contacts Export', `<a href="${contactsExportUrl}" style="color:#E07B20;">${contactsExportUrl}</a>`] : null,
+                upcomingEventsFileUrl ? ['Upcoming Events File', `<a href="${upcomingEventsFileUrl}" style="color:#E07B20;">${upcomingEventsFileUrl}</a>`] : null,
                 ['Proposal/Contract Templates', templatesLinks],
               ].filter(Boolean).map(([label, value]) => `
                 <tr>
