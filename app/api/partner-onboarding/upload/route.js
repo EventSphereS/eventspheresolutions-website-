@@ -24,7 +24,9 @@ export async function POST(request) {
       request,
       onBeforeGenerateToken: async (pathname, clientPayload) => {
         // Throwing here rejects the request before any token or blob is created.
-        if (clientPayload !== process.env.NEXT_PUBLIC_PARTNER_UPLOAD_SECRET) {
+        // Fail closed if the secret isn't configured, rather than letting two
+        // undefined values compare equal and silently disable the gate.
+        if (!process.env.NEXT_PUBLIC_PARTNER_UPLOAD_SECRET || clientPayload !== process.env.NEXT_PUBLIC_PARTNER_UPLOAD_SECRET) {
           throw new Error('Unauthorized upload request')
         }
         if (!pathname.startsWith(PATH_PREFIX)) {
