@@ -20,6 +20,26 @@ const initialForm = {
 
 const TOTAL_STEPS = 5
 const STEP_LABELS = ['Your Info', 'Venue Basics', 'Spaces & Branding', 'Emails', 'Team & Migration']
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+// Defined outside PartnerOnboardingForm so React keeps the same component type
+// across renders — otherwise it remounts and the width transition never animates.
+function Progress({ step }) {
+  return (
+    <div className="mb-8">
+      <div className="flex items-center justify-between mb-2">
+        <span className="text-xs font-semibold text-gray-400 uppercase tracking-widest">Step {step} of {TOTAL_STEPS}</span>
+        <span className="text-xs font-semibold text-[#E07B20]">{STEP_LABELS[step - 1]}</span>
+      </div>
+      <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
+        <div
+          className="h-full bg-gradient-to-r from-[#6a256f] to-[#E07B20] rounded-full transition-all duration-500"
+          style={{ width: `${(step / TOTAL_STEPS) * 100}%` }}
+        />
+      </div>
+    </div>
+  )
+}
 
 export default function PartnerOnboardingForm() {
   const [step, setStep] = useState(1)
@@ -61,6 +81,7 @@ export default function PartnerOnboardingForm() {
     const e = {}
     if (!form.adminName.trim()) e.adminName = 'Required'
     if (!form.adminEmail.trim()) e.adminEmail = 'Required'
+    else if (!EMAIL_PATTERN.test(form.adminEmail.trim())) e.adminEmail = 'Please enter a valid email'
     if (!form.businessName.trim()) e.businessName = 'Required'
     setErrors(e)
     return Object.keys(e).length === 0
@@ -82,6 +103,7 @@ export default function PartnerOnboardingForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    if (step !== TOTAL_STEPS) return
     if (!validateStep5()) return
     setLoading(true)
     setSubmitError('')
@@ -112,24 +134,13 @@ export default function PartnerOnboardingForm() {
     )
   }
 
-  const Progress = () => (
-    <div className="mb-8">
-      <div className="flex items-center justify-between mb-2">
-        <span className="text-xs font-semibold text-gray-400 uppercase tracking-widest">Step {step} of {TOTAL_STEPS}</span>
-        <span className="text-xs font-semibold text-[#E07B20]">{STEP_LABELS[step - 1]}</span>
-      </div>
-      <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
-        <div
-          className="h-full bg-gradient-to-r from-[#6a256f] to-[#E07B20] rounded-full transition-all duration-500"
-          style={{ width: `${(step / TOTAL_STEPS) * 100}%` }}
-        />
-      </div>
-    </div>
-  )
-
   return (
-    <form onSubmit={handleSubmit} className="max-w-2xl mx-auto">
-      <Progress />
+    // NOTE: this wrapper is deliberately a <div>, not a <form>. The global Apollo
+    // form-enrichment script in app/layout.js hides `form:has(input[type="email"])`
+    // behind a spinner until it initialises, which would blank this whole wizard on
+    // load. Only step 5 (which has no email input) is wrapped in a real <form>.
+    <div className="max-w-2xl mx-auto">
+      <Progress step={step} />
 
       {step === 1 && (
         <div className="space-y-5">
@@ -304,14 +315,16 @@ export default function PartnerOnboardingForm() {
       )}
 
       {step === 5 && (
-        <div className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label className={labelClass}>Team Members to Invite</label>
             <textarea name="teamMembers" value={form.teamMembers} onChange={handleChange} rows={3}
               placeholder="One per line: Name, email, role" className={`${inputClass} resize-none`} />
           </div>
 
-          <PartnerFileUpload label="Contacts/Leads Export *" accept=".csv,.xls,.xlsx"
+          <PartnerFileUpload
+            label={<>Contacts/Leads Export <span className="text-[#EF4561]">*</span></>}
+            accept=".csv,.xls,.xlsx"
             hint="CSV or spreadsheet export of your existing contacts"
             onUploaded={(url) => { setForm((p) => ({ ...p, contactsExportUrl: url })); setErrors((p) => ({ ...p, contactsExportUrl: '' })) }} />
           {errors.contactsExportUrl && <p className="text-[#EF4561] text-xs -mt-4">{errors.contactsExportUrl}</p>}
@@ -341,8 +354,8 @@ export default function PartnerOnboardingForm() {
               {loading ? 'Submitting...' : 'Submit →'}
             </button>
           </div>
-        </div>
+        </form>
       )}
-    </form>
+    </div>
   )
 }
