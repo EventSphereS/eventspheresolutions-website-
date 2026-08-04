@@ -267,8 +267,8 @@ export default function PartnerOnboardingForm() {
               placeholder="#6a256f, #E07B20" className={inputClass} />
           </div>
 
-          <PartnerFileUpload label="Policies Document" accept="application/pdf"
-            hint="PDF" onUploaded={(url) => setForm((p) => ({ ...p, policiesUrl: url }))} />
+          <PartnerFileUpload label="Policies Document" accept="application/pdf,image/jpeg,image/png"
+            hint="PDF, JPG, or PNG" onUploaded={(url) => setForm((p) => ({ ...p, policiesUrl: url }))} />
 
           <PartnerFileUpload label="Menu Document" accept="application/pdf"
             hint="PDF" onUploaded={(url) => setForm((p) => ({ ...p, menuUrl: url }))} />
