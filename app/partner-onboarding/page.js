@@ -1,8 +1,10 @@
 import PartnerOnboardingForm from '@/components/PartnerOnboardingForm'
 
 export const metadata = {
-  title: 'Partner Onboarding | Sphere',
+  title: { absolute: 'Partner Onboarding | Sphere' },
   description: 'Share your venue details so we can migrate you onto Sphere.',
+  // Unlisted, hand-delivered page — keep it out of search indexes.
+  robots: { index: false },
 }
 
 export default function PartnerOnboardingPage() {
