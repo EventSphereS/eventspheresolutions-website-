@@ -1,9 +1,10 @@
 import { Resend } from 'resend'
 
-export async function POST(request) {
-  const resend = new Resend(process.env.RESEND_API_KEY)
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
+export async function POST(request) {
   try {
+    const resend = new Resend(process.env.RESEND_API_KEY)
     const body = await request.json()
     const {
       adminName, adminEmail, adminPhone, businessName, subdomain,
@@ -15,6 +16,10 @@ export async function POST(request) {
 
     if (!adminName || !adminEmail || !businessName || !contactsExportUrl) {
       return Response.json({ error: 'Missing required fields' }, { status: 400 })
+    }
+
+    if (!EMAIL_PATTERN.test(String(adminEmail).trim())) {
+      return Response.json({ error: 'Invalid email address' }, { status: 400 })
     }
 
     const hoursRows = (businessHours || [])
@@ -30,7 +35,7 @@ export async function POST(request) {
       .map((url) => `<a href="${url}" style="color:#E07B20;">${url}</a>`)
       .join('<br>') || 'None provided'
 
-    await resend.emails.send({
+    const teamResult = await resend.emails.send({
       from: 'Event Sphere Website <hello@eventspheresolutions.com>',
       to: 'hello@eventspheresolutions.com',
       replyTo: adminEmail,
@@ -69,6 +74,10 @@ export async function POST(request) {
               `).join('')}
             </table>
 
+            <p style="margin: 12px 2px 0; font-size: 12px; color: #888; line-height: 1.5;">
+              🔒 Reminder: delete the contacts export file from Blob storage once you've imported it into Sphere.
+            </p>
+
             ${description ? `<div style="margin-top:20px;"><p style="font-weight:700;color:#333;font-size:14px;margin-bottom:8px;">Description:</p><div style="background:white;border-left:4px solid #E07B20;padding:14px 16px;border-radius:4px;font-size:14px;color:#444;line-height:1.6;">${description}</div></div>` : ''}
             ${teamMembers ? `<div style="margin-top:16px;"><p style="font-weight:700;color:#333;font-size:14px;margin-bottom:8px;">Team Members to Invite:</p><div style="background:white;border-left:4px solid #6a256f;padding:14px 16px;border-radius:4px;font-size:14px;color:#444;line-height:1.6;white-space:pre-line;">${teamMembers}</div></div>` : ''}
             ${upcomingEvents ? `<div style="margin-top:16px;"><p style="font-weight:700;color:#333;font-size:14px;margin-bottom:8px;">Upcoming Events & Bookings:</p><div style="background:white;border-left:4px solid #6a256f;padding:14px 16px;border-radius:4px;font-size:14px;color:#444;line-height:1.6;white-space:pre-line;">${upcomingEvents}</div></div>` : ''}
@@ -91,11 +100,22 @@ export async function POST(request) {
       `,
     })
 
-    await resend.emails.send({
-      from: 'Event Sphere Solutions <hello@eventspheresolutions.com>',
-      to: adminEmail,
-      subject: `We've got everything we need, ${adminName.split(' ')[0]}! 🚀`,
-      html: `
+    // The team notification carries the entire submission — there is no database
+    // behind this form, so if it fails the submission is lost. Never report success.
+    if (teamResult?.error) {
+      console.error('Partner onboarding team notification failed:', teamResult.error)
+      return Response.json({ error: 'Failed to send' }, { status: 500 })
+    }
+
+    // The confirmation email is a courtesy. The team already has the data at this
+    // point, so a failure here must NOT fail the request — a false 500 would make
+    // the partner retry and send a duplicate team notification.
+    try {
+      const confirmationResult = await resend.emails.send({
+        from: 'Event Sphere Solutions <hello@eventspheresolutions.com>',
+        to: adminEmail,
+        subject: `We've got everything we need, ${adminName.split(' ')[0]}! 🚀`,
+        html: `
         <div style="font-family: Inter, -apple-system, sans-serif; max-width: 600px; margin: 0 auto; color: #222123; background: #ffffff;">
           <div style="background: linear-gradient(135deg, #1a0f40 0%, #6a256f 60%, #1a0f40 100%); padding: 28px 40px; border-radius: 12px 12px 0 0; text-align: center;">
             <img src="https://www.eventspheresolutions.com/images/logo-main.png" alt="Event Sphere Solutions" style="height: 60px; width: auto;" />
@@ -117,7 +137,14 @@ export async function POST(request) {
           </div>
         </div>
       `,
-    })
+      })
+
+      if (confirmationResult?.error) {
+        console.error('Partner onboarding confirmation email failed:', confirmationResult.error)
+      }
+    } catch (confirmationError) {
+      console.error('Partner onboarding confirmation email threw:', confirmationError)
+    }
 
     return Response.json({ success: true })
   } catch (error) {
