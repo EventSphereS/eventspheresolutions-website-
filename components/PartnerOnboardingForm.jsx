@@ -66,6 +66,13 @@ export default function PartnerOnboardingForm() {
     return Object.keys(e).length === 0
   }
 
+  const validateStep5 = () => {
+    const e = {}
+    if (!form.contactsExportUrl) e.contactsExportUrl = 'Please upload your contacts/leads export'
+    setErrors(e)
+    return Object.keys(e).length === 0
+  }
+
   const handleNext = () => {
     if (step === 1 && !validateStep1()) return
     setStep((s) => Math.min(s + 1, TOTAL_STEPS))
@@ -75,6 +82,7 @@ export default function PartnerOnboardingForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    if (!validateStep5()) return
     setLoading(true)
     setSubmitError('')
     try {
@@ -291,6 +299,47 @@ export default function PartnerOnboardingForm() {
               className="px-6 py-4 rounded-xl border border-gray-200 text-gray-600 font-semibold text-sm hover:border-gray-300 transition-all">← Back</button>
             <button type="button" onClick={handleNext}
               className="flex-1 bg-gradient-to-r from-[#6a256f] via-[#EF4561] to-[#E07B20] text-white font-bold py-4 rounded-xl hover:opacity-90 transition-all text-sm">Continue →</button>
+          </div>
+        </div>
+      )}
+
+      {step === 5 && (
+        <div className="space-y-6">
+          <div>
+            <label className={labelClass}>Team Members to Invite</label>
+            <textarea name="teamMembers" value={form.teamMembers} onChange={handleChange} rows={3}
+              placeholder="One per line: Name, email, role" className={`${inputClass} resize-none`} />
+          </div>
+
+          <PartnerFileUpload label="Contacts/Leads Export *" accept=".csv,.xls,.xlsx"
+            hint="CSV or spreadsheet export of your existing contacts"
+            onUploaded={(url) => { setForm((p) => ({ ...p, contactsExportUrl: url })); setErrors((p) => ({ ...p, contactsExportUrl: '' })) }} />
+          {errors.contactsExportUrl && <p className="text-[#EF4561] text-xs -mt-4">{errors.contactsExportUrl}</p>}
+
+          <div>
+            <label className={labelClass}>Upcoming Events & Bookings</label>
+            <textarea name="upcomingEvents" value={form.upcomingEvents} onChange={handleChange} rows={3}
+              placeholder="List any already-booked events with dates and client names" className={`${inputClass} resize-none`} />
+          </div>
+
+          <PartnerFileUpload label="Proposal & Contract Templates" accept=".pdf,.doc,.docx" multiple
+            hint="PDF or Word docs, you can select multiple" onUploaded={(urls) => setForm((p) => ({ ...p, templatesUrls: urls }))} />
+
+          <div>
+            <label className={labelClass}>Anything else we should know?</label>
+            <textarea name="notes" value={form.notes} onChange={handleChange} rows={3}
+              className={`${inputClass} resize-none`} />
+          </div>
+
+          {submitError && <p className="text-[#EF4561] text-sm">{submitError}</p>}
+
+          <div className="flex gap-3">
+            <button type="button" onClick={handleBack}
+              className="px-6 py-4 rounded-xl border border-gray-200 text-gray-600 font-semibold text-sm hover:border-gray-300 transition-all">← Back</button>
+            <button type="submit" disabled={loading}
+              className="flex-1 bg-gradient-to-r from-[#6a256f] via-[#EF4561] to-[#E07B20] text-white font-bold py-4 rounded-xl hover:opacity-90 transition-all text-sm disabled:opacity-70">
+              {loading ? 'Submitting...' : 'Submit →'}
+            </button>
           </div>
         </div>
       )}
