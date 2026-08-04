@@ -268,6 +268,32 @@ export default function PartnerOnboardingForm() {
           </div>
         </div>
       )}
+
+      {step === 4 && (
+        <div className="space-y-6">
+          <div>
+            <label className={labelClass}>Welcome Email Copy</label>
+            <textarea name="welcomeEmail" value={form.welcomeEmail} onChange={handleChange} rows={4}
+              placeholder="What should new leads receive when they first reach out?" className={`${inputClass} resize-none`} />
+          </div>
+          <div>
+            <label className={labelClass}>First Response Email Copy</label>
+            <textarea name="firstResponseEmail" value={form.firstResponseEmail} onChange={handleChange} rows={4}
+              placeholder="Your team's standard first reply to a new lead" className={`${inputClass} resize-none`} />
+          </div>
+          <div>
+            <label className={labelClass}>Follow-Up Sequence Copy</label>
+            <textarea name="followUpEmail" value={form.followUpEmail} onChange={handleChange} rows={4}
+              placeholder="Any follow-up emails you'd like automated" className={`${inputClass} resize-none`} />
+          </div>
+          <div className="flex gap-3">
+            <button type="button" onClick={handleBack}
+              className="px-6 py-4 rounded-xl border border-gray-200 text-gray-600 font-semibold text-sm hover:border-gray-300 transition-all">← Back</button>
+            <button type="button" onClick={handleNext}
+              className="flex-1 bg-gradient-to-r from-[#6a256f] via-[#EF4561] to-[#E07B20] text-white font-bold py-4 rounded-xl hover:opacity-90 transition-all text-sm">Continue →</button>
+          </div>
+        </div>
+      )}
     </form>
   )
 }
