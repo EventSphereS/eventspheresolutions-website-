@@ -258,8 +258,8 @@ export default function PartnerOnboardingForm() {
             <button type="button" onClick={addSpace} className="text-sm font-semibold text-[#6a256f] mt-2">+ Add another space</button>
           </div>
 
-          <PartnerFileUpload label="Logo" accept="image/png,image/jpeg,image/webp"
-            hint="PNG, JPG, or WebP" onUploaded={(url) => setForm((p) => ({ ...p, logoUrl: url }))} />
+          <PartnerFileUpload label="Logo" accept="image/png,image/jpeg,image/webp,application/pdf"
+            hint="PNG, JPG, WebP, or PDF" onUploaded={(url) => setForm((p) => ({ ...p, logoUrl: url }))} />
 
           <div>
             <label className={labelClass}>Brand Colors</label>
