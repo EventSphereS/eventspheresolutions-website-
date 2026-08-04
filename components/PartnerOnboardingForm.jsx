@@ -34,6 +34,13 @@ export default function PartnerOnboardingForm() {
     setErrors((prev) => ({ ...prev, [name]: '' }))
   }
 
+  const updateBusinessHour = (index, field, value) => {
+    setForm((prev) => ({
+      ...prev,
+      businessHours: prev.businessHours.map((row, i) => (i === index ? { ...row, [field]: value } : row)),
+    }))
+  }
+
   const validateStep1 = () => {
     const e = {}
     if (!form.adminName.trim()) e.adminName = 'Required'
@@ -137,6 +144,61 @@ export default function PartnerOnboardingForm() {
             className="w-full bg-gradient-to-r from-[#6a256f] via-[#EF4561] to-[#E07B20] text-white font-bold py-4 rounded-xl hover:opacity-90 transition-all text-sm mt-2">
             Continue →
           </button>
+        </div>
+      )}
+
+      {step === 2 && (
+        <div className="space-y-6">
+          <div>
+            <label className={labelClass}>Total Capacity</label>
+            <input type="number" name="totalCapacity" value={form.totalCapacity} onChange={handleChange}
+              placeholder="150" className={inputClass} />
+          </div>
+          <div>
+            <label className={labelClass}>Description</label>
+            <textarea name="description" value={form.description} onChange={handleChange} rows={3}
+              placeholder="Tell us about your venue..." className={`${inputClass} resize-none`} />
+          </div>
+          <div>
+            <label className={labelClass}>Currency</label>
+            <select name="currency" value={form.currency} onChange={handleChange} className={inputClass}>
+              {CURRENCIES.map((c) => <option key={c} value={c}>{c}</option>)}
+            </select>
+          </div>
+          <div>
+            <label className={labelClass}>Business Address</label>
+            <input type="text" name="address" value={form.address} onChange={handleChange}
+              placeholder="123 Main St, New York, NY" className={inputClass} />
+          </div>
+          <div>
+            <label className={labelClass}>Business Hours</label>
+            <div className="border border-gray-200 rounded-xl divide-y divide-gray-100">
+              {form.businessHours.map((row, i) => (
+                <div key={row.day} className="flex items-center gap-3 px-4 py-3 flex-wrap">
+                  <span className="w-24 text-sm font-medium text-[#222123]">{row.day}</span>
+                  <label className="flex items-center gap-1.5 text-xs text-gray-500">
+                    <input type="checkbox" checked={row.closed} onChange={(e) => updateBusinessHour(i, 'closed', e.target.checked)} />
+                    Closed
+                  </label>
+                  {!row.closed && (
+                    <>
+                      <input type="time" value={row.open} onChange={(e) => updateBusinessHour(i, 'open', e.target.value)}
+                        className="border border-gray-200 rounded-lg px-2 py-1.5 text-sm" />
+                      <span className="text-gray-400 text-sm">to</span>
+                      <input type="time" value={row.close} onChange={(e) => updateBusinessHour(i, 'close', e.target.value)}
+                        className="border border-gray-200 rounded-lg px-2 py-1.5 text-sm" />
+                    </>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="flex gap-3">
+            <button type="button" onClick={handleBack}
+              className="px-6 py-4 rounded-xl border border-gray-200 text-gray-600 font-semibold text-sm hover:border-gray-300 transition-all">← Back</button>
+            <button type="button" onClick={handleNext}
+              className="flex-1 bg-gradient-to-r from-[#6a256f] via-[#EF4561] to-[#E07B20] text-white font-bold py-4 rounded-xl hover:opacity-90 transition-all text-sm">Continue →</button>
+          </div>
         </div>
       )}
     </form>
