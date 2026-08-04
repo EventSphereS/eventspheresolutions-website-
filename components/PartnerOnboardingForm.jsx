@@ -4,6 +4,18 @@ import PartnerFileUpload from './PartnerFileUpload'
 
 const DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 const CURRENCIES = ['USD', 'CAD', 'EUR', 'GBP', 'AUD']
+const BRAND_COLOR_OPTIONS = [
+  { label: 'Burgundy', hex: '#7B1E3A' },
+  { label: 'Navy', hex: '#1A2B4C' },
+  { label: 'Forest Green', hex: '#1F4E3D' },
+  { label: 'Gold', hex: '#D4A017' },
+  { label: 'Terracotta', hex: '#C1502E' },
+  { label: 'Teal', hex: '#0F6E6E' },
+  { label: 'Blush', hex: '#E8B4B8' },
+  { label: 'Slate Blue', hex: '#4A5D8A' },
+  { label: 'Charcoal', hex: '#222123' },
+  { label: 'Warm Gray', hex: '#8A8580' },
+]
 
 const inputClass = "w-full border border-gray-200 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-[#E07B20] focus:ring-2 focus:ring-[#E07B20]/20 transition-all bg-white placeholder:text-gray-400"
 const labelClass = "block text-sm font-semibold text-[#222123] mb-1.5"
@@ -75,6 +87,14 @@ export default function PartnerOnboardingForm() {
 
   const removeSpace = (index) => {
     setForm((prev) => ({ ...prev, spaces: prev.spaces.filter((_, i) => i !== index) }))
+  }
+
+  const toggleBrandColor = (hex) => {
+    setForm((prev) => {
+      const current = prev.brandColors ? prev.brandColors.split(',').map((c) => c.trim()).filter(Boolean) : []
+      const next = current.includes(hex) ? current.filter((c) => c !== hex) : [...current, hex]
+      return { ...prev, brandColors: next.join(', ') }
+    })
   }
 
   const validateStep1 = () => {
@@ -262,9 +282,21 @@ export default function PartnerOnboardingForm() {
             hint="PNG, JPG, WebP, or PDF" onUploaded={(url) => setForm((p) => ({ ...p, logoUrl: url }))} />
 
           <div>
-            <label className={labelClass}>Brand Colors</label>
-            <input type="text" name="brandColors" value={form.brandColors} onChange={handleChange}
-              placeholder="#6a256f, #E07B20" className={inputClass} />
+            <label className={labelClass}>Brand Colors <span className="text-gray-400 font-normal">(select all that apply)</span></label>
+            <div className="flex flex-wrap gap-2">
+              {BRAND_COLOR_OPTIONS.map(({ label, hex }) => {
+                const selected = form.brandColors.split(',').map((c) => c.trim()).includes(hex)
+                return (
+                  <button key={hex} type="button" onClick={() => toggleBrandColor(hex)}
+                    className={`flex items-center gap-2 px-3 py-2 rounded-full text-sm font-medium border transition-all ${
+                      selected ? 'border-[#222123] bg-gray-50' : 'border-gray-200 hover:border-gray-300'
+                    }`}>
+                    <span className="w-4 h-4 rounded-full border border-gray-300" style={{ backgroundColor: hex }} />
+                    {label}
+                  </button>
+                )
+              })}
+            </div>
           </div>
 
           <PartnerFileUpload label="Policies Document" accept="application/pdf,image/jpeg,image/png"
