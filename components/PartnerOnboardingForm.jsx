@@ -270,8 +270,8 @@ export default function PartnerOnboardingForm() {
           <PartnerFileUpload label="Policies Document" accept="application/pdf,image/jpeg,image/png"
             hint="PDF, JPG, or PNG" onUploaded={(url) => setForm((p) => ({ ...p, policiesUrl: url }))} />
 
-          <PartnerFileUpload label="Menu Document" accept="application/pdf"
-            hint="PDF" onUploaded={(url) => setForm((p) => ({ ...p, menuUrl: url }))} />
+          <PartnerFileUpload label="Menu Document" accept="application/pdf,image/jpeg,image/png"
+            hint="PDF, JPG, or PNG" onUploaded={(url) => setForm((p) => ({ ...p, menuUrl: url }))} />
 
           <div>
             <label className={labelClass}>Tax Rate(s) & Fees</label>
