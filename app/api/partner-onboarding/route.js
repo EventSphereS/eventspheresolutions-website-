@@ -1,26 +1,74 @@
 import { Resend } from 'resend'
+import { issueSignedToken, presignUrl, getDownloadUrl } from '@vercel/blob'
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+const READ_LINK_LIFETIME_MS = 7 * 24 * 60 * 60 * 1000 // 7 days — the maximum Vercel allows
+
+// Uploads are private, so the raw blob URL isn't clickable on its own. Exchange
+// it for a signed, time-limited link the team can use to download the file
+// directly from the notification email. getDownloadUrl() forces
+// Content-Disposition: attachment — without it, private images (logo, cover
+// photo) default to "inline" and just open in the browser instead of downloading.
+// Falls back to the raw URL if signing fails for any reason, so one bad link
+// can't take down the whole email.
+async function toReadableLink(url) {
+  if (!url) return null
+  try {
+    const pathname = new URL(url).pathname.replace(/^\//, '')
+    const signedToken = await issueSignedToken({
+      pathname,
+      operations: ['get'],
+      validUntil: Date.now() + READ_LINK_LIFETIME_MS,
+    })
+    const { presignedUrl } = await presignUrl(signedToken, {
+      operation: 'get',
+      pathname,
+      access: 'private',
+    })
+    return getDownloadUrl(presignedUrl)
+  } catch (error) {
+    console.error('Partner onboarding: failed to presign read link for', url, error)
+    return url
+  }
+}
 
 export async function POST(request) {
   try {
     const resend = new Resend(process.env.RESEND_API_KEY)
     const body = await request.json()
     const {
-      adminName, adminEmail, adminPhone, businessName, subdomain,
-      totalCapacity, description, currency, address, businessHours,
-      spaces, logoUrl, brandColors, policiesUrl, menuUrl, taxAndFees,
+      adminName, adminEmail, adminPhone, businessName,
+      totalCapacity, description, currency, businessHours,
+      streetAddress, city, state, zip, country,
+      spaces, spacePhotosUrls, logoUrl, coverPhotoUrl, brandColors, policiesUrl, menuUrl, taxAndFees,
       welcomeEmail, firstResponseEmail, followUpEmail,
       teamMembers, contactsExportUrl, upcomingEvents, upcomingEventsFileUrl, templatesUrls, notes,
     } = body
 
-    if (!adminName || !adminEmail || !businessName || !contactsExportUrl) {
+    if (!adminName || !adminEmail || !businessName) {
       return Response.json({ error: 'Missing required fields' }, { status: 400 })
     }
 
     if (!EMAIL_PATTERN.test(String(adminEmail).trim())) {
       return Response.json({ error: 'Invalid email address' }, { status: 400 })
     }
+
+    // Uploaded files are private blobs — swap each raw URL for a 7-day signed
+    // read link before it goes anywhere near the email.
+    const [
+      logoLink, coverPhotoLink, policiesLink, menuLink, contactsLink, upcomingEventsLink, templateLinks, spacePhotoLinks,
+    ] = await Promise.all([
+      toReadableLink(logoUrl),
+      toReadableLink(coverPhotoUrl),
+      toReadableLink(policiesUrl),
+      toReadableLink(menuUrl),
+      toReadableLink(contactsExportUrl),
+      toReadableLink(upcomingEventsFileUrl),
+      Promise.all((templatesUrls || []).map(toReadableLink)),
+      Promise.all((spacePhotosUrls || []).map(toReadableLink)),
+    ])
+
+    const address = [streetAddress, city, state, zip, country].filter(Boolean).join(', ')
 
     const hoursRows = (businessHours || [])
       .map((r) => `${r.day}: ${r.closed ? 'Closed' : `${r.open} – ${r.close}`}`)
@@ -31,9 +79,13 @@ export async function POST(request) {
       .map((s) => `${s.name}${s.capacity ? ` (capacity ${s.capacity})` : ''}`)
       .join('<br>') || 'Not specified'
 
-    const templatesLinks = (templatesUrls || [])
-      .map((url) => `<a href="${url}" style="color:#E07B20;">${url}</a>`)
+    const templatesLinks = templateLinks
+      .map((url, i) => `<a href="${url}" style="color:#E07B20;">Template ${i + 1}</a>`)
       .join('<br>') || 'None provided'
+
+    const spacePhotosLinks = spacePhotoLinks
+      .map((url, i) => `<a href="${url}" style="color:#E07B20;">Space Photo ${i + 1}</a>`)
+      .join('<br>')
 
     const teamResult = await resend.emails.send({
       from: 'Event Sphere Website <hello@eventspheresolutions.com>',
@@ -53,19 +105,20 @@ export async function POST(request) {
                 ['Admin Email', `<a href="mailto:${adminEmail}" style="color:#E07B20;">${adminEmail}</a>`],
                 adminPhone ? ['Admin Phone', adminPhone] : null,
                 ['Business Name', businessName],
-                subdomain ? ['Subdomain', `${subdomain}.eventspheresolutions.com`] : null,
                 totalCapacity ? ['Total Capacity', totalCapacity] : null,
                 ['Currency', currency || 'USD'],
                 address ? ['Address', address] : null,
                 ['Business Hours', hoursRows],
                 ['Event Spaces', spacesRows],
-                logoUrl ? ['Logo', `<a href="${logoUrl}" style="color:#E07B20;">${logoUrl}</a>`] : null,
+                spacePhotosLinks ? ['Space Photos', spacePhotosLinks] : null,
+                logoLink ? ['Logo', `<a href="${logoLink}" style="color:#E07B20;">Download file (link expires in 7 days)</a>`] : null,
+                coverPhotoLink ? ['Cover Photo', `<a href="${coverPhotoLink}" style="color:#E07B20;">Download file (link expires in 7 days)</a>`] : null,
                 brandColors ? ['Brand Colors', brandColors] : null,
-                policiesUrl ? ['Policies Doc', `<a href="${policiesUrl}" style="color:#E07B20;">${policiesUrl}</a>`] : null,
-                menuUrl ? ['Menu Doc', `<a href="${menuUrl}" style="color:#E07B20;">${menuUrl}</a>`] : null,
+                policiesLink ? ['Policies Doc', `<a href="${policiesLink}" style="color:#E07B20;">Download file (link expires in 7 days)</a>`] : null,
+                menuLink ? ['Menu Doc', `<a href="${menuLink}" style="color:#E07B20;">Download file (link expires in 7 days)</a>`] : null,
                 taxAndFees ? ['Tax & Fees', taxAndFees] : null,
-                contactsExportUrl ? ['Contacts Export', `<a href="${contactsExportUrl}" style="color:#E07B20;">${contactsExportUrl}</a>`] : null,
-                upcomingEventsFileUrl ? ['Upcoming Events File', `<a href="${upcomingEventsFileUrl}" style="color:#E07B20;">${upcomingEventsFileUrl}</a>`] : null,
+                contactsLink ? ['Contacts Export', `<a href="${contactsLink}" style="color:#E07B20;">Download file (link expires in 7 days)</a>`] : null,
+                upcomingEventsLink ? ['Upcoming Events File', `<a href="${upcomingEventsLink}" style="color:#E07B20;">Download file (link expires in 7 days)</a>`] : null,
                 ['Proposal/Contract Templates', templatesLinks],
               ].filter(Boolean).map(([label, value]) => `
                 <tr>
@@ -76,7 +129,7 @@ export async function POST(request) {
             </table>
 
             <p style="margin: 12px 2px 0; font-size: 12px; color: #888; line-height: 1.5;">
-              🔒 Reminder: delete the contacts export file from Blob storage once you've imported it into Sphere.
+              🔒 File links above expire in 7 days. Files are stored privately, but reminder: delete the contacts export from Blob storage once you've imported it into Sphere.
             </p>
 
             ${description ? `<div style="margin-top:20px;"><p style="font-weight:700;color:#333;font-size:14px;margin-bottom:8px;">Description:</p><div style="background:white;border-left:4px solid #E07B20;padding:14px 16px;border-radius:4px;font-size:14px;color:#444;line-height:1.6;">${description}</div></div>` : ''}

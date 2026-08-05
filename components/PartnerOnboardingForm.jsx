@@ -21,11 +21,12 @@ const inputClass = "w-full border border-gray-200 rounded-xl px-4 py-3.5 text-sm
 const labelClass = "block text-sm font-semibold text-[#222123] mb-1.5"
 
 const initialForm = {
-  adminName: '', adminEmail: '', adminPhone: '', businessName: '', subdomain: '',
-  totalCapacity: '', description: '', currency: 'USD', address: '',
+  adminName: '', adminEmail: '', adminPhone: '', businessName: '',
+  totalCapacity: '', description: '', currency: 'USD',
+  streetAddress: '', city: '', state: '', zip: '', country: '',
   businessHours: DAYS.map((day) => ({ day, closed: false, open: '09:00', close: '18:00' })),
-  spaces: [{ name: '', capacity: '' }],
-  logoUrl: '', brandColors: '', policiesUrl: '', menuUrl: '', taxAndFees: '',
+  spaces: [{ name: '', capacity: '' }], spacePhotosUrls: [],
+  logoUrl: '', coverPhotoUrl: '', brandColors: '', policiesUrl: '', menuUrl: '', taxAndFees: '',
   welcomeEmail: '', firstResponseEmail: '', followUpEmail: '',
   teamMembers: '', contactsExportUrl: '', upcomingEvents: '', upcomingEventsFileUrl: '', templatesUrls: [], notes: '',
 }
@@ -107,13 +108,6 @@ export default function PartnerOnboardingForm() {
     return Object.keys(e).length === 0
   }
 
-  const validateStep5 = () => {
-    const e = {}
-    if (!form.contactsExportUrl) e.contactsExportUrl = 'Please upload your contacts/leads export'
-    setErrors(e)
-    return Object.keys(e).length === 0
-  }
-
   const handleNext = () => {
     if (step === 1 && !validateStep1()) return
     setStep((s) => Math.min(s + 1, TOTAL_STEPS))
@@ -124,7 +118,6 @@ export default function PartnerOnboardingForm() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     if (step !== TOTAL_STEPS) return
-    if (!validateStep5()) return
     setLoading(true)
     setSubmitError('')
     try {
@@ -144,8 +137,8 @@ export default function PartnerOnboardingForm() {
 
   if (submitted) {
     return (
-      <div className="bg-gradient-to-br from-[#6a256f] to-[#222123] rounded-2xl p-14 flex flex-col items-center justify-center text-center text-white max-w-2xl mx-auto">
-        <div className="w-16 h-16 bg-gradient-to-br from-[#6a256f] to-[#E07B20] rounded-full flex items-center justify-center text-white text-2xl mb-6">✓</div>
+      <div className="bg-gradient-to-br from-[#6a256f] to-[#3d1640] rounded-2xl p-14 flex flex-col items-center justify-center text-center text-white max-w-2xl mx-auto">
+        <div className="w-16 h-16 bg-gradient-to-br from-[#6a256f] via-[#EF4561] to-[#E07B20] rounded-full flex items-center justify-center text-white text-2xl mb-6">✓</div>
         <h3 className="text-2xl font-extrabold font-display tracking-tight mb-3">You're all set, {form.adminName.split(' ')[0]}!</h3>
         <p className="text-gray-300 leading-relaxed max-w-md mb-2">
           We've got everything we need for <strong className="text-white">{form.businessName}</strong>. Your account will be live within <strong className="text-[#E07B20]">2 business days</strong>.
@@ -187,14 +180,6 @@ export default function PartnerOnboardingForm() {
               placeholder="The Grand Venue" className={`${inputClass} ${errors.businessName ? 'border-[#EF4561]' : ''}`} />
             {errors.businessName && <p className="text-[#EF4561] text-xs mt-1">{errors.businessName}</p>}
           </div>
-          <div>
-            <label className={labelClass}>Subdomain Preference</label>
-            <div className="flex items-center gap-2">
-              <input type="text" name="subdomain" value={form.subdomain} onChange={handleChange}
-                placeholder="yourvenue" className={inputClass} />
-              <span className="text-sm text-gray-400 whitespace-nowrap">.eventspheresolutions.com</span>
-            </div>
-          </div>
           <button type="button" onClick={handleNext}
             className="w-full bg-gradient-to-r from-[#6a256f] via-[#EF4561] to-[#E07B20] text-white font-bold py-4 rounded-xl hover:opacity-90 transition-all text-sm mt-2">
             Continue →
@@ -221,9 +206,33 @@ export default function PartnerOnboardingForm() {
             </select>
           </div>
           <div>
-            <label className={labelClass}>Business Address</label>
-            <input type="text" name="address" value={form.address} onChange={handleChange}
-              placeholder="123 Main St, New York, NY" className={inputClass} />
+            <label className={labelClass}>Street Address</label>
+            <input type="text" name="streetAddress" value={form.streetAddress} onChange={handleChange}
+              placeholder="1524 South Sangamon Street" className={inputClass} />
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <label className={labelClass}>City</label>
+              <input type="text" name="city" value={form.city} onChange={handleChange}
+                placeholder="Chicago" className={inputClass} />
+            </div>
+            <div>
+              <label className={labelClass}>State</label>
+              <input type="text" name="state" value={form.state} onChange={handleChange}
+                placeholder="Illinois" className={inputClass} />
+            </div>
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <label className={labelClass}>Zip Code</label>
+              <input type="text" name="zip" value={form.zip} onChange={handleChange}
+                placeholder="60608" className={inputClass} />
+            </div>
+            <div>
+              <label className={labelClass}>Country</label>
+              <input type="text" name="country" value={form.country} onChange={handleChange}
+                placeholder="United States" className={inputClass} />
+            </div>
           </div>
           <div>
             <label className={labelClass}>Business Hours</label>
@@ -278,8 +287,14 @@ export default function PartnerOnboardingForm() {
             <button type="button" onClick={addSpace} className="text-sm font-semibold text-[#6a256f] mt-2">+ Add another space</button>
           </div>
 
+          <PartnerFileUpload label="Space Photos (optional, if any)" accept="image/png,image/jpeg,image/webp" multiple
+            hint="Photos of your event spaces — you can select multiple" onUploaded={(urls) => setForm((p) => ({ ...p, spacePhotosUrls: urls }))} />
+
           <PartnerFileUpload label="Logo" accept="image/png,image/jpeg,image/webp,application/pdf"
             hint="PNG, JPG, WebP, or PDF" onUploaded={(url) => setForm((p) => ({ ...p, logoUrl: url }))} />
+
+          <PartnerFileUpload label="Cover Photo" accept="image/png,image/jpeg,image/webp"
+            hint="A photo of your venue — e.g. the dining room or event space" onUploaded={(url) => setForm((p) => ({ ...p, coverPhotoUrl: url }))} />
 
           <div>
             <label className={labelClass}>Brand Colors <span className="text-gray-400 font-normal">(select all that apply)</span></label>
@@ -355,11 +370,10 @@ export default function PartnerOnboardingForm() {
           </div>
 
           <PartnerFileUpload
-            label={<>Contacts/Leads Export <span className="text-[#EF4561]">*</span></>}
+            label="Contacts/Leads Export (optional)"
             accept=".csv,.xls,.xlsx"
             hint="CSV or spreadsheet export of your existing contacts"
-            onUploaded={(url) => { setForm((p) => ({ ...p, contactsExportUrl: url })); setErrors((p) => ({ ...p, contactsExportUrl: '' })) }} />
-          {errors.contactsExportUrl && <p className="text-[#EF4561] text-xs -mt-4">{errors.contactsExportUrl}</p>}
+            onUploaded={(url) => setForm((p) => ({ ...p, contactsExportUrl: url }))} />
 
           <div>
             <label className={labelClass}>Upcoming Events & Bookings</label>

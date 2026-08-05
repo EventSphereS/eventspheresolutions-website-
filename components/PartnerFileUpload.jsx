@@ -24,7 +24,7 @@ export default function PartnerFileUpload({ label, hint, accept, multiple = fals
     for (const file of files) {
       try {
         const blob = await upload(`partner-onboarding/${file.name}`, file, {
-          access: 'public',
+          access: 'private',
           handleUploadUrl: '/api/partner-onboarding/upload',
           clientPayload: UPLOAD_SECRET,
         })
