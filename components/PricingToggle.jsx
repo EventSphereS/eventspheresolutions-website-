@@ -180,7 +180,9 @@ export default function PricingToggle() {
               >
                 {plan.cta} →
               </Link>
-              <p className="text-center text-xs text-gray-400 mt-3">Cancel anytime</p>
+              {plan.price && (
+                <p className="text-center text-xs text-gray-400 mt-3">Cancel anytime</p>
+              )}
             </div>
           </div>
         ))}
