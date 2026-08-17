@@ -54,7 +54,7 @@ const plans = [
     ],
     limits: '1 location · 5 users (+$15/extra)',
     support: 'Priority support',
-    cta: 'Start Free Trial',
+    cta: 'Get Started',
   },
   {
     name: 'Sphere Hospitality',
