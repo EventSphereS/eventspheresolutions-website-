@@ -9,7 +9,6 @@ const partners = [
   { name: 'XICO Arte y Cultura', logo: '/images/logo-xico.png' },
   { name: 'RECREO Cantina', logo: '/images/logo-recreo.png' },
   { name: 'The Uncommon', logo: '/images/logo-uncommon.png' },
-  { name: 'Hundred Mile Brewing Co.', logo: '/images/logo-hundredmile.jpeg' },
   { name: 'Tipsy Egg', logo: '/images/logo-tipsy.png' },
   { name: 'Tokyo Lima', logo: '/images/logo-tokyolima.png' },
   { name: 'Lomas Cocina de México', logo: '/images/logo-lomas.png' },
@@ -17,6 +16,7 @@ const partners = [
   { name: 'Course Restaurant', logo: '/images/logo-course.png' },
   { name: 'Shiso Sushi Sake', logo: '/images/logo-shiso.jpg' },
   { name: 'TAMC', logo: '/images/logo-tamc.jpg' },
+  { name: 'Hundred Mile Brewing Co.', logo: '/images/logo-hundredmile.jpeg' },
 ]
 
 
@@ -61,9 +61,9 @@ export default function Home() {
       {/* ── PARTNERS ── */}
       <section className="py-14 bg-[#6a256f] overflow-hidden">
         <p className="text-white/40 text-xs font-bold uppercase tracking-[0.2em] text-center mb-8">Trusted By</p>
-        <div className="flex animate-marquee gap-12 w-max">
+        <div className="flex items-center animate-marquee gap-16 w-max">
           {[...partners, ...partners].map((p, i) => (
-            <div key={i} className="flex items-center justify-center shrink-0" style={{ width: 328, height: 163 }}>
+            <div key={i} className="flex items-center justify-center shrink-0" style={{ height: 112 }}>
               {p.logo.includes('hundredmile') || p.logo.includes('tokyolima') || p.logo.includes('lomas') || p.logo.includes('shiso') || p.logo.includes('tamc') ? (
                 <div className="rounded-full overflow-hidden" style={{ width: 112, height: 112 }}>
                   <Image
