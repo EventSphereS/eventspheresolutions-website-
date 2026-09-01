@@ -16,6 +16,7 @@ const partners = [
   { name: 'Padeland', logo: '/images/logo-padeland.png' },
   { name: 'Course Restaurant', logo: '/images/logo-course.png' },
   { name: 'Shiso Sushi Sake', logo: '/images/logo-shiso.jpg' },
+  { name: 'TAMC', logo: '/images/logo-tamc.jpg' },
 ]
 
 
@@ -63,7 +64,7 @@ export default function Home() {
         <div className="flex animate-marquee gap-12 w-max">
           {[...partners, ...partners].map((p, i) => (
             <div key={i} className="flex items-center justify-center shrink-0" style={{ width: 328, height: 163 }}>
-              {p.logo.includes('hundredmile') || p.logo.includes('tokyolima') || p.logo.includes('lomas') || p.logo.includes('shiso') ? (
+              {p.logo.includes('hundredmile') || p.logo.includes('tokyolima') || p.logo.includes('lomas') || p.logo.includes('shiso') || p.logo.includes('tamc') ? (
                 <div className="rounded-full overflow-hidden" style={{ width: 112, height: 112 }}>
                   <Image
                     src={p.logo}
