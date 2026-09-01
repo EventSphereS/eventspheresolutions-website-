@@ -11,6 +11,10 @@ const partners = [
   { name: 'The Uncommon', logo: '/images/logo-uncommon.png' },
   { name: 'Hundred Mile Brewing Co.', logo: '/images/logo-hundredmile.jpeg' },
   { name: 'Tipsy Egg', logo: '/images/logo-tipsy.png' },
+  { name: 'Tokyo Lima', logo: '/images/logo-tokyolima.png' },
+  { name: 'Lomas Cocina de México', logo: '/images/logo-lomas.png' },
+  { name: 'Padeland', logo: '/images/logo-padeland.png' },
+  { name: 'Course Restaurant', logo: '/images/logo-course.png' },
 ]
 
 
@@ -58,7 +62,7 @@ export default function Home() {
         <div className="flex animate-marquee gap-12 w-max">
           {[...partners, ...partners].map((p, i) => (
             <div key={i} className="flex items-center justify-center shrink-0" style={{ width: 328, height: 163 }}>
-              {p.logo.includes('hundredmile') ? (
+              {p.logo.includes('hundredmile') || p.logo.includes('tokyolima') || p.logo.includes('lomas') ? (
                 <div className="rounded-full overflow-hidden" style={{ width: 112, height: 112 }}>
                   <Image
                     src={p.logo}
