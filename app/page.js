@@ -7,16 +7,16 @@ import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 const partners = [
   { name: 'BARCOA Agaveria', logo: '/images/logo-barcoa.png' },
   { name: 'XICO Arte y Cultura', logo: '/images/logo-xico.png' },
-  { name: 'RECREO Cantina', logo: '/images/logo-recreo.png' },
-  { name: 'The Uncommon', logo: '/images/logo-uncommon.png' },
-  { name: 'Tipsy Egg', logo: '/images/logo-tipsy.png' },
   { name: 'Tokyo Lima', logo: '/images/logo-tokyolima.png' },
+  { name: 'RECREO Cantina', logo: '/images/logo-recreo.png' },
   { name: 'Lomas Cocina de México', logo: '/images/logo-lomas.png' },
-  { name: 'Padeland', logo: '/images/logo-padeland.png' },
-  { name: 'Course Restaurant', logo: '/images/logo-course.png' },
+  { name: 'The Uncommon', logo: '/images/logo-uncommon.png' },
   { name: 'Shiso Sushi Sake', logo: '/images/logo-shiso.jpg' },
+  { name: 'Tipsy Egg', logo: '/images/logo-tipsy.png' },
   { name: 'TAMC', logo: '/images/logo-tamc.jpg' },
+  { name: 'Padeland', logo: '/images/logo-padeland.png' },
   { name: 'Hundred Mile Brewing Co.', logo: '/images/logo-hundredmile.jpeg' },
+  { name: 'Course Restaurant', logo: '/images/logo-course.png' },
 ]
 
 
