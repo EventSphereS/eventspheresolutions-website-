@@ -18,10 +18,92 @@ export const metadata = {
 }
 
 const values = [
-  { icon: '🎯', title: 'Hospitality-First', desc: 'Everything we do is built around the unique needs of restaurants, bars, venues, and hotels. We speak your language.' },
-  { icon: '🤝', title: 'True Partnership', desc: 'We embed ourselves in your team. Your success is our success — and we operate with that mindset every single day.' },
-  { icon: '📈', title: 'Results-Driven', desc: 'We measure our work by your outcomes: attendance, sales, and guest satisfaction. No vanity metrics here.' },
-  { icon: '✨', title: 'Flawless Execution', desc: 'From the first planning call to the last guest out the door, we hold ourselves to the highest standards of delivery.' },
+  {
+    icon: (
+      <svg width="56" height="56" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="grad-hosp" x1="0" y1="64" x2="64" y2="0" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stopColor="#6a256f"/>
+            <stop offset="50%" stopColor="#EF4561"/>
+            <stop offset="100%" stopColor="#F99F33"/>
+          </linearGradient>
+        </defs>
+        <g stroke="url(#grad-hosp)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+          <line x1="15" y1="10" x2="15" y2="24"/>
+          <line x1="20" y1="10" x2="20" y2="24"/>
+          <line x1="25" y1="10" x2="25" y2="24"/>
+          <path d="M15 24 Q20 30 25 24"/>
+          <line x1="20" y1="30" x2="20" y2="54"/>
+          <line x1="44" y1="10" x2="44" y2="54"/>
+          <path d="M38 10 L44 10 Q52 16 52 26 L44 26"/>
+        </g>
+      </svg>
+    ),
+    title: 'Hospitality-First',
+    desc: 'Everything we do is built around the unique needs of restaurants, bars, venues, and hotels. We speak your language.',
+  },
+  {
+    icon: (
+      <svg width="56" height="56" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="grad-part" x1="0" y1="64" x2="64" y2="0" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stopColor="#6a256f"/>
+            <stop offset="50%" stopColor="#EF4561"/>
+            <stop offset="100%" stopColor="#F99F33"/>
+          </linearGradient>
+        </defs>
+        <g stroke="url(#grad-part)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="18" cy="20" r="8"/>
+          <path d="M4 54 C4 40 10 36 18 36 C22 36 26 37.5 29 40"/>
+          <circle cx="46" cy="20" r="8"/>
+          <path d="M60 54 C60 40 54 36 46 36 C42 36 38 37.5 35 40"/>
+          <path d="M29 40 L35 40"/>
+        </g>
+      </svg>
+    ),
+    title: 'True Partnership',
+    desc: 'We embed ourselves in your team. Your success is our success — and we operate with that mindset every single day.',
+  },
+  {
+    icon: (
+      <svg width="56" height="56" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="grad-res" x1="0" y1="64" x2="64" y2="0" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stopColor="#6a256f"/>
+            <stop offset="50%" stopColor="#EF4561"/>
+            <stop offset="100%" stopColor="#F99F33"/>
+          </linearGradient>
+        </defs>
+        <g stroke="url(#grad-res)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+          <line x1="12" y1="10" x2="12" y2="52"/>
+          <line x1="12" y1="52" x2="54" y2="52"/>
+          <polyline points="16,44 26,34 36,38 50,18"/>
+          <polyline points="45,13 50,18 45,23"/>
+        </g>
+      </svg>
+    ),
+    title: 'Results-Driven',
+    desc: 'We measure our work by your outcomes: attendance, sales, and guest satisfaction. No vanity metrics here.',
+  },
+  {
+    icon: (
+      <svg width="56" height="56" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="grad-exec" x1="0" y1="64" x2="64" y2="0" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stopColor="#6a256f"/>
+            <stop offset="50%" stopColor="#EF4561"/>
+            <stop offset="100%" stopColor="#F99F33"/>
+          </linearGradient>
+        </defs>
+        <g stroke="url(#grad-exec)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M32 8 L52 16 L52 34 C52 46 43 54 32 58 C21 54 12 46 12 34 L12 16 Z"/>
+          <polyline points="22,32 29,39 42,24"/>
+        </g>
+      </svg>
+    ),
+    title: 'Flawless Execution',
+    desc: 'From the first planning call to the last guest out the door, we hold ourselves to the highest standards of delivery.',
+  },
 ]
 
 export default function AboutPage() {
@@ -110,7 +192,7 @@ export default function AboutPage() {
               <h2 className="text-3xl font-bold font-display tracking-tight text-[#6a256f] mb-4">Samia Kohler</h2>
               <div className="space-y-4 text-gray-600 leading-relaxed text-sm">
                 <p>
-                  Originally from France, I bring over 18 years of hands-on experience in hospitality and private event sales across China, Hong Kong, France, and the U.S. My background spans high-volume nightlife, elevated food & beverage programs, and full-scale event management, giving me a deep understanding of what it takes to drive event sales while delivering five-star guest experiences.
+                  Originally from France, I bring over 18 years of hands-on experience in hospitality and private event sales across China, Hong Kong, France, and the U.S. My background spans the full spectrum of the hospitality business — restaurants, bars, nightclubs, luxury hotels, private yacht clubs, event venues, and catering — giving me a deep understanding of what it takes to drive event sales while delivering five-star guest experiences.
                 </p>
                 <p>
                   My expertise lies in building and leading sales teams, optimizing venue operations, and developing strategic sales systems that convert inquiries into booked events. From concept to close, I specialize in creating sales-driven solutions that streamline the process for venues and provide clients with a seamless, elevated experience.
@@ -138,7 +220,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((v) => (
               <div key={v.title} className="bg-gray-50 rounded-2xl p-8 hover:shadow-md transition-all text-center border border-gray-100">
-                <div className="text-4xl mb-4">{v.icon}</div>
+                <div className="mb-4 flex justify-center">{v.icon}</div>
                 <h3 className="text-xl font-bold text-[#6a256f] mb-3">{v.title}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{v.desc}</p>
               </div>
