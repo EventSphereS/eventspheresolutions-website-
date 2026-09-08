@@ -3,36 +3,21 @@ import { useState } from 'react'
 import PartnerFileUpload from './PartnerFileUpload'
 
 const DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
-const CURRENCIES = ['USD', 'CAD', 'EUR', 'GBP', 'AUD']
-const BRAND_COLOR_OPTIONS = [
-  { label: 'Burgundy', hex: '#7B1E3A' },
-  { label: 'Navy', hex: '#1A2B4C' },
-  { label: 'Forest Green', hex: '#1F4E3D' },
-  { label: 'Gold', hex: '#D4A017' },
-  { label: 'Terracotta', hex: '#C1502E' },
-  { label: 'Teal', hex: '#0F6E6E' },
-  { label: 'Blush', hex: '#E8B4B8' },
-  { label: 'Slate Blue', hex: '#4A5D8A' },
-  { label: 'Charcoal', hex: '#222123' },
-  { label: 'Warm Gray', hex: '#8A8580' },
-]
-
 const inputClass = "w-full border border-gray-200 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-[#E07B20] focus:ring-2 focus:ring-[#E07B20]/20 transition-all bg-white placeholder:text-gray-400"
 const labelClass = "block text-sm font-semibold text-[#222123] mb-1.5"
 
 const initialForm = {
   adminName: '', adminEmail: '', adminPhone: '', businessName: '',
-  totalCapacity: '', description: '', currency: 'USD',
+  totalCapacity: '', description: '',
   streetAddress: '', city: '', state: '', zip: '', country: '',
   businessHours: DAYS.map((day) => ({ day, closed: false, open: '09:00', close: '18:00' })),
-  spaces: [{ name: '', capacity: '', minimumSpend: '' }], spacePhotosUrls: [],
-  logoUrl: '', coverPhotoUrl: '', brandColors: '', policiesUrl: '', menuUrl: '', taxAndFees: '', extraServices: '',
-  welcomeEmail: '', firstResponseEmail: '',
-  teamMembers: '', contactsExportUrl: '', upcomingEvents: '', upcomingEventsFileUrl: '', bookedEventContractsUrls: [], templatesUrls: [], notes: '',
+  spaces: [{ name: '', capacity: '', minimumSpendLowTime: '', minimumSpendHighTime: '' }], spacePhotosUrls: [],
+  logoUrl: '', coverPhotoUrl: '', policiesUrl: '', menuUrl: '', taxAndFees: '', extraServices: '',
+  teamMembers: [{ name: '', email: '', role: '' }], contactsExportUrl: '', upcomingEvents: '', upcomingEventsFileUrl: '', bookedEventContractsUrls: [], templatesUrls: [], notes: '',
 }
 
-const TOTAL_STEPS = 5
-const STEP_LABELS = ['Your Info', 'Venue Basics', 'Spaces & Branding', 'Emails', 'Team & Migration']
+const TOTAL_STEPS = 4
+const STEP_LABELS = ['Your Info', 'Venue Basics', 'Spaces & Branding', 'Team & Migration']
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 // Defined outside PartnerOnboardingForm so React keeps the same component type
@@ -83,19 +68,26 @@ export default function PartnerOnboardingForm() {
   }
 
   const addSpace = () => {
-    setForm((prev) => ({ ...prev, spaces: [...prev.spaces, { name: '', capacity: '', minimumSpend: '' }] }))
+    setForm((prev) => ({ ...prev, spaces: [...prev.spaces, { name: '', capacity: '', minimumSpendLowTime: '', minimumSpendHighTime: '' }] }))
   }
 
   const removeSpace = (index) => {
     setForm((prev) => ({ ...prev, spaces: prev.spaces.filter((_, i) => i !== index) }))
   }
 
-  const toggleBrandColor = (hex) => {
-    setForm((prev) => {
-      const current = prev.brandColors ? prev.brandColors.split(',').map((c) => c.trim()).filter(Boolean) : []
-      const next = current.includes(hex) ? current.filter((c) => c !== hex) : [...current, hex]
-      return { ...prev, brandColors: next.join(', ') }
-    })
+  const updateTeamMember = (index, field, value) => {
+    setForm((prev) => ({
+      ...prev,
+      teamMembers: prev.teamMembers.map((row, i) => (i === index ? { ...row, [field]: value } : row)),
+    }))
+  }
+
+  const addTeamMember = () => {
+    setForm((prev) => ({ ...prev, teamMembers: [...prev.teamMembers, { name: '', email: '', role: '' }] }))
+  }
+
+  const removeTeamMember = (index) => {
+    setForm((prev) => ({ ...prev, teamMembers: prev.teamMembers.filter((_, i) => i !== index) }))
   }
 
   const validateStep1 = () => {
@@ -151,7 +143,7 @@ export default function PartnerOnboardingForm() {
     // NOTE: this wrapper is deliberately a <div>, not a <form>. The global Apollo
     // form-enrichment script in app/layout.js hides `form:has(input[type="email"])`
     // behind a spinner until it initialises, which would blank this whole wizard on
-    // load. Only step 5 (which has no email input) is wrapped in a real <form>.
+    // load. Only step 4 (which has no input[type="email"]) is wrapped in a real <form>.
     <div className="max-w-2xl mx-auto">
       <Progress step={step} />
 
@@ -198,12 +190,6 @@ export default function PartnerOnboardingForm() {
             <label className={labelClass}>Description</label>
             <textarea name="description" value={form.description} onChange={handleChange} rows={3}
               placeholder="Tell us about your venue..." className={`${inputClass} resize-none`} />
-          </div>
-          <div>
-            <label className={labelClass}>Currency</label>
-            <select name="currency" value={form.currency} onChange={handleChange} className={inputClass}>
-              {CURRENCIES.map((c) => <option key={c} value={c}>{c}</option>)}
-            </select>
           </div>
           <div>
             <label className={labelClass}>Street Address</label>
@@ -270,20 +256,26 @@ export default function PartnerOnboardingForm() {
         <div className="space-y-6">
           <div>
             <label className={labelClass}>Event Spaces</label>
-            <p className="text-xs text-gray-400 mb-2">Name, capacity, and minimum spend for each room/area (leave minimum spend blank if it doesn't apply)</p>
-            <div className="space-y-3">
+            <p className="text-xs text-gray-400 mb-2">Name, capacity, and minimum spend for each room/area — separate minimums for off-peak (low time) and peak (high time), if they differ. Leave blank if it doesn't apply.</p>
+            <div className="space-y-4">
               {form.spaces.map((space, i) => (
-                <div key={i} className="flex gap-2">
-                  <input type="text" value={space.name} onChange={(e) => updateSpace(i, 'name', e.target.value)}
-                    placeholder="Main Hall" className={inputClass} />
-                  <input type="number" value={space.capacity} onChange={(e) => updateSpace(i, 'capacity', e.target.value)}
-                    placeholder="Capacity" className={`${inputClass} w-28`} />
-                  <input type="text" value={space.minimumSpend} onChange={(e) => updateSpace(i, 'minimumSpend', e.target.value)}
-                    placeholder="Min. spend" className={`${inputClass} w-32`} />
-                  {form.spaces.length > 1 && (
-                    <button type="button" onClick={() => removeSpace(i)}
-                      className="px-3 text-gray-400 hover:text-[#EF4561]">✕</button>
-                  )}
+                <div key={i} className="border border-gray-200 rounded-xl p-3 space-y-2">
+                  <div className="flex gap-2">
+                    <input type="text" value={space.name} onChange={(e) => updateSpace(i, 'name', e.target.value)}
+                      placeholder="Main Hall" className={inputClass} />
+                    <input type="number" value={space.capacity} onChange={(e) => updateSpace(i, 'capacity', e.target.value)}
+                      placeholder="Capacity" className={`${inputClass} w-28`} />
+                    {form.spaces.length > 1 && (
+                      <button type="button" onClick={() => removeSpace(i)}
+                        className="px-3 text-gray-400 hover:text-[#EF4561]">✕</button>
+                    )}
+                  </div>
+                  <div className="flex gap-2">
+                    <input type="text" value={space.minimumSpendLowTime} onChange={(e) => updateSpace(i, 'minimumSpendLowTime', e.target.value)}
+                      placeholder="Min. spend — off-peak" className={inputClass} />
+                    <input type="text" value={space.minimumSpendHighTime} onChange={(e) => updateSpace(i, 'minimumSpendHighTime', e.target.value)}
+                      placeholder="Min. spend — peak" className={inputClass} />
+                  </div>
                 </div>
               ))}
             </div>
@@ -299,24 +291,6 @@ export default function PartnerOnboardingForm() {
           <PartnerFileUpload label="Cover Photo" accept="image/png,image/jpeg,image/webp"
             hint="A photo of your venue — e.g. the dining room or event space" onUploaded={(url) => setForm((p) => ({ ...p, coverPhotoUrl: url }))} />
 
-          <div>
-            <label className={labelClass}>Brand Colors <span className="text-gray-400 font-normal">(select all that apply)</span></label>
-            <div className="flex flex-wrap gap-2">
-              {BRAND_COLOR_OPTIONS.map(({ label, hex }) => {
-                const selected = form.brandColors.split(',').map((c) => c.trim()).includes(hex)
-                return (
-                  <button key={hex} type="button" onClick={() => toggleBrandColor(hex)}
-                    className={`flex items-center gap-2 px-3 py-2 rounded-full text-sm font-medium border transition-all ${
-                      selected ? 'border-[#222123] bg-gray-50' : 'border-gray-200 hover:border-gray-300'
-                    }`}>
-                    <span className="w-4 h-4 rounded-full border border-gray-300" style={{ backgroundColor: hex }} />
-                    {label}
-                  </button>
-                )
-              })}
-            </div>
-          </div>
-
           <PartnerFileUpload label="Terms & Conditions / Policies Document" accept="application/pdf,image/jpeg,image/png"
             hint="PDF, JPG, or PNG" onUploaded={(url) => setForm((p) => ({ ...p, policiesUrl: url }))} />
 
@@ -324,15 +298,15 @@ export default function PartnerOnboardingForm() {
             hint="PDF, JPG, or PNG" onUploaded={(url) => setForm((p) => ({ ...p, menuUrl: url }))} />
 
           <div>
-            <label className={labelClass}>Tax Rate(s) & Gratuity/Service Fee</label>
+            <label className={labelClass}>Tax Rate & Gratuity %</label>
             <input type="text" name="taxAndFees" value={form.taxAndFees} onChange={handleChange}
               placeholder="8.5% sales tax, 20% gratuity" className={inputClass} />
           </div>
 
           <div>
-            <label className={labelClass}>Extra Services Offered</label>
-            <textarea name="extraServices" value={form.extraServices} onChange={handleChange} rows={2}
-              placeholder="e.g. DJ, live chef stations, valet, AV/lighting..." className={`${inputClass} resize-none`} />
+            <label className={labelClass}>Extra Services Offered <span className="text-gray-400 font-normal">(one line per service, with price)</span></label>
+            <textarea name="extraServices" value={form.extraServices} onChange={handleChange} rows={3}
+              placeholder={"DJ, $500\nLive chef station, $300\nValet, $250"} className={`${inputClass} resize-none`} />
           </div>
 
           <div className="flex gap-3">
@@ -345,32 +319,29 @@ export default function PartnerOnboardingForm() {
       )}
 
       {step === 4 && (
-        <div className="space-y-6">
-          <div>
-            <label className={labelClass}>Welcome Email Copy <span className="text-gray-400 font-normal">(if any — otherwise we'll create one)</span></label>
-            <textarea name="welcomeEmail" value={form.welcomeEmail} onChange={handleChange} rows={4}
-              placeholder="What should new leads receive when they first reach out?" className={`${inputClass} resize-none`} />
-          </div>
-          <div>
-            <label className={labelClass}>First Response Email Copy <span className="text-gray-400 font-normal">(if any — otherwise we'll create one)</span></label>
-            <textarea name="firstResponseEmail" value={form.firstResponseEmail} onChange={handleChange} rows={4}
-              placeholder="Your team's standard first reply to a new lead" className={`${inputClass} resize-none`} />
-          </div>
-          <div className="flex gap-3">
-            <button type="button" onClick={handleBack}
-              className="px-6 py-4 rounded-xl border border-gray-200 text-gray-600 font-semibold text-sm hover:border-gray-300 transition-all">← Back</button>
-            <button type="button" onClick={handleNext}
-              className="flex-1 bg-gradient-to-r from-[#6a256f] via-[#EF4561] to-[#E07B20] text-white font-bold py-4 rounded-xl hover:opacity-90 transition-all text-sm">Continue →</button>
-          </div>
-        </div>
-      )}
-
-      {step === 5 && (
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label className={labelClass}>Team Members to Invite <span className="text-gray-400 font-normal">(one line per member)</span></label>
-            <textarea name="teamMembers" value={form.teamMembers} onChange={handleChange} rows={3}
-              placeholder={"Jane Smith, jane@yourvenue.com, Sales Manager\nJohn Doe, john@yourvenue.com, Event Coordinator"} className={`${inputClass} resize-none`} />
+            <label className={labelClass}>Team Members to Invite</label>
+            <div className="space-y-3">
+              {form.teamMembers.map((member, i) => (
+                <div key={i} className="flex gap-2">
+                  <input type="text" value={member.name} onChange={(e) => updateTeamMember(i, 'name', e.target.value)}
+                    placeholder="Full name" className={inputClass} />
+                  {/* type="text" not "email" — this step renders inside a real <form>, and the
+                      global Apollo form-enrichment script hides any form:has(input[type="email"])
+                      behind a spinner until it initializes (see note above). */}
+                  <input type="text" value={member.email} onChange={(e) => updateTeamMember(i, 'email', e.target.value)}
+                    placeholder="Email" className={inputClass} />
+                  <input type="text" value={member.role} onChange={(e) => updateTeamMember(i, 'role', e.target.value)}
+                    placeholder="Position" className={`${inputClass} w-32`} />
+                  {form.teamMembers.length > 1 && (
+                    <button type="button" onClick={() => removeTeamMember(i)}
+                      className="px-3 text-gray-400 hover:text-[#EF4561]">✕</button>
+                  )}
+                </div>
+              ))}
+            </div>
+            <button type="button" onClick={addTeamMember} className="text-sm font-semibold text-[#6a256f] mt-2">+ Add another team member</button>
           </div>
 
           <PartnerFileUpload
@@ -390,8 +361,8 @@ export default function PartnerOnboardingForm() {
             hint="BEO PDFs, a calendar export, or a spreadsheet of upcoming bookings — whatever's easiest"
             onUploaded={(url) => setForm((p) => ({ ...p, upcomingEventsFileUrl: url }))} />
 
-          <PartnerFileUpload label="Proposals & Contracts for Booked Events (optional)" accept=".pdf,.doc,.docx" multiple
-            hint="Signed proposals/contracts for events you've already booked, so we can enter them into your calendar"
+          <PartnerFileUpload label="Proposal & Contract Confirmed (if any)" accept=".pdf,.doc,.docx" multiple
+            hint="Signed proposals/contracts for events already booked, so we can add them to the system for accuracy"
             onUploaded={(urls) => setForm((p) => ({ ...p, bookedEventContractsUrls: urls }))} />
 
           <PartnerFileUpload label="Proposal & Contract Templates" accept=".pdf,.doc,.docx" multiple

@@ -38,10 +38,9 @@ export async function POST(request) {
     const body = await request.json()
     const {
       adminName, adminEmail, adminPhone, businessName,
-      totalCapacity, description, currency, businessHours,
+      totalCapacity, description, businessHours,
       streetAddress, city, state, zip, country,
-      spaces, spacePhotosUrls, logoUrl, coverPhotoUrl, brandColors, policiesUrl, menuUrl, taxAndFees, extraServices,
-      welcomeEmail, firstResponseEmail,
+      spaces, spacePhotosUrls, logoUrl, coverPhotoUrl, policiesUrl, menuUrl, taxAndFees, extraServices,
       teamMembers, contactsExportUrl, upcomingEvents, upcomingEventsFileUrl, bookedEventContractsUrls, templatesUrls, notes,
     } = body
 
@@ -77,12 +76,23 @@ export async function POST(request) {
 
     const spacesRows = (spaces || [])
       .filter((s) => s.name)
-      .map((s) => `${s.name}${s.capacity ? ` (capacity ${s.capacity})` : ''}${s.minimumSpend ? `, min. spend ${s.minimumSpend}` : ''}`)
+      .map((s) => {
+        const minimums = [
+          s.minimumSpendLowTime ? `off-peak min. ${s.minimumSpendLowTime}` : null,
+          s.minimumSpendHighTime ? `peak min. ${s.minimumSpendHighTime}` : null,
+        ].filter(Boolean).join(', ')
+        return `${s.name}${s.capacity ? ` (capacity ${s.capacity})` : ''}${minimums ? `, ${minimums}` : ''}`
+      })
       .join('<br>') || 'Not specified'
 
     const templatesLinks = templateLinks
       .map((url, i) => `<a href="${url}" style="color:#E07B20;">Template ${i + 1}</a>`)
       .join('<br>') || 'None provided'
+
+    const teamMembersRows = (teamMembers || [])
+      .filter((m) => m.name || m.email)
+      .map((m) => [m.name, m.email, m.role].filter(Boolean).join(', '))
+      .join('<br>')
 
     const bookedEventContractsLinks = bookedEventContractLinks
       .map((url, i) => `<a href="${url}" style="color:#E07B20;">Contract ${i + 1}</a>`)
@@ -111,14 +121,12 @@ export async function POST(request) {
                 adminPhone ? ['Admin Phone', adminPhone] : null,
                 ['Business Name', businessName],
                 totalCapacity ? ['Total Capacity', totalCapacity] : null,
-                ['Currency', currency || 'USD'],
                 address ? ['Address', address] : null,
                 ['Business Hours', hoursRows],
                 ['Event Spaces', spacesRows],
                 spacePhotosLinks ? ['Space Photos', spacePhotosLinks] : null,
                 logoLink ? ['Logo', `<a href="${logoLink}" style="color:#E07B20;">Download file (link expires in 7 days)</a>`] : null,
                 coverPhotoLink ? ['Cover Photo', `<a href="${coverPhotoLink}" style="color:#E07B20;">Download file (link expires in 7 days)</a>`] : null,
-                brandColors ? ['Brand Colors', brandColors] : null,
                 policiesLink ? ['Terms & Conditions / Policies', `<a href="${policiesLink}" style="color:#E07B20;">Download file (link expires in 7 days)</a>`] : null,
                 menuLink ? ['Menu Doc', `<a href="${menuLink}" style="color:#E07B20;">Download file (link expires in 7 days)</a>`] : null,
                 taxAndFees ? ['Tax & Fees', taxAndFees] : null,
@@ -140,10 +148,8 @@ export async function POST(request) {
             </p>
 
             ${description ? `<div style="margin-top:20px;"><p style="font-weight:700;color:#333;font-size:14px;margin-bottom:8px;">Description:</p><div style="background:white;border-left:4px solid #E07B20;padding:14px 16px;border-radius:4px;font-size:14px;color:#444;line-height:1.6;">${description}</div></div>` : ''}
-            ${teamMembers ? `<div style="margin-top:16px;"><p style="font-weight:700;color:#333;font-size:14px;margin-bottom:8px;">Team Members to Invite:</p><div style="background:white;border-left:4px solid #6a256f;padding:14px 16px;border-radius:4px;font-size:14px;color:#444;line-height:1.6;white-space:pre-line;">${teamMembers}</div></div>` : ''}
+            ${teamMembersRows ? `<div style="margin-top:16px;"><p style="font-weight:700;color:#333;font-size:14px;margin-bottom:8px;">Team Members to Invite:</p><div style="background:white;border-left:4px solid #6a256f;padding:14px 16px;border-radius:4px;font-size:14px;color:#444;line-height:1.6;">${teamMembersRows}</div></div>` : ''}
             ${upcomingEvents ? `<div style="margin-top:16px;"><p style="font-weight:700;color:#333;font-size:14px;margin-bottom:8px;">Upcoming Events & Bookings:</p><div style="background:white;border-left:4px solid #6a256f;padding:14px 16px;border-radius:4px;font-size:14px;color:#444;line-height:1.6;white-space:pre-line;">${upcomingEvents}</div></div>` : ''}
-            ${welcomeEmail ? `<div style="margin-top:16px;"><p style="font-weight:700;color:#333;font-size:14px;margin-bottom:8px;">Welcome Email Copy:</p><div style="background:white;border-left:4px solid #EF4561;padding:14px 16px;border-radius:4px;font-size:14px;color:#444;line-height:1.6;white-space:pre-line;">${welcomeEmail}</div></div>` : ''}
-            ${firstResponseEmail ? `<div style="margin-top:16px;"><p style="font-weight:700;color:#333;font-size:14px;margin-bottom:8px;">First Response Email Copy:</p><div style="background:white;border-left:4px solid #EF4561;padding:14px 16px;border-radius:4px;font-size:14px;color:#444;line-height:1.6;white-space:pre-line;">${firstResponseEmail}</div></div>` : ''}
             ${notes ? `<div style="margin-top:16px;"><p style="font-weight:700;color:#333;font-size:14px;margin-bottom:8px;">Additional Notes:</p><div style="background:white;border-left:4px solid #222123;padding:14px 16px;border-radius:4px;font-size:14px;color:#444;line-height:1.6;white-space:pre-line;">${notes}</div></div>` : ''}
 
             <div style="margin-top: 28px; text-align: center;">
