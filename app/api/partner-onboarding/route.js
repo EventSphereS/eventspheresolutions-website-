@@ -40,7 +40,7 @@ export async function POST(request) {
       adminName, adminEmail, adminPhone, businessName,
       totalCapacity, description, currency, businessHours,
       streetAddress, city, state, zip, country,
-      spaces, spacePhotosUrls, logoUrl, coverPhotoUrl, brandColors, policiesUrl, menuUrl, taxAndFees,
+      spaces, spacePhotosUrls, logoUrl, coverPhotoUrl, brandColors, policiesUrl, menuUrl, taxAndFees, extraServices,
       welcomeEmail, firstResponseEmail, followUpEmail,
       teamMembers, contactsExportUrl, upcomingEvents, upcomingEventsFileUrl, templatesUrls, notes,
     } = body
@@ -76,7 +76,7 @@ export async function POST(request) {
 
     const spacesRows = (spaces || [])
       .filter((s) => s.name)
-      .map((s) => `${s.name}${s.capacity ? ` (capacity ${s.capacity})` : ''}`)
+      .map((s) => `${s.name}${s.capacity ? ` (capacity ${s.capacity})` : ''}${s.minimumSpend ? `, min. spend ${s.minimumSpend}` : ''}`)
       .join('<br>') || 'Not specified'
 
     const templatesLinks = templateLinks
@@ -114,9 +114,10 @@ export async function POST(request) {
                 logoLink ? ['Logo', `<a href="${logoLink}" style="color:#E07B20;">Download file (link expires in 7 days)</a>`] : null,
                 coverPhotoLink ? ['Cover Photo', `<a href="${coverPhotoLink}" style="color:#E07B20;">Download file (link expires in 7 days)</a>`] : null,
                 brandColors ? ['Brand Colors', brandColors] : null,
-                policiesLink ? ['Policies Doc', `<a href="${policiesLink}" style="color:#E07B20;">Download file (link expires in 7 days)</a>`] : null,
+                policiesLink ? ['Terms & Conditions / Policies', `<a href="${policiesLink}" style="color:#E07B20;">Download file (link expires in 7 days)</a>`] : null,
                 menuLink ? ['Menu Doc', `<a href="${menuLink}" style="color:#E07B20;">Download file (link expires in 7 days)</a>`] : null,
                 taxAndFees ? ['Tax & Fees', taxAndFees] : null,
+                extraServices ? ['Extra Services', extraServices] : null,
                 contactsLink ? ['Contacts Export', `<a href="${contactsLink}" style="color:#E07B20;">Download file (link expires in 7 days)</a>`] : null,
                 upcomingEventsLink ? ['Upcoming Events File', `<a href="${upcomingEventsLink}" style="color:#E07B20;">Download file (link expires in 7 days)</a>`] : null,
                 ['Proposal/Contract Templates', templatesLinks],

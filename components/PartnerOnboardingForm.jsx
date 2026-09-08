@@ -25,8 +25,8 @@ const initialForm = {
   totalCapacity: '', description: '', currency: 'USD',
   streetAddress: '', city: '', state: '', zip: '', country: '',
   businessHours: DAYS.map((day) => ({ day, closed: false, open: '09:00', close: '18:00' })),
-  spaces: [{ name: '', capacity: '' }], spacePhotosUrls: [],
-  logoUrl: '', coverPhotoUrl: '', brandColors: '', policiesUrl: '', menuUrl: '', taxAndFees: '',
+  spaces: [{ name: '', capacity: '', minimumSpend: '' }], spacePhotosUrls: [],
+  logoUrl: '', coverPhotoUrl: '', brandColors: '', policiesUrl: '', menuUrl: '', taxAndFees: '', extraServices: '',
   welcomeEmail: '', firstResponseEmail: '', followUpEmail: '',
   teamMembers: '', contactsExportUrl: '', upcomingEvents: '', upcomingEventsFileUrl: '', templatesUrls: [], notes: '',
 }
@@ -83,7 +83,7 @@ export default function PartnerOnboardingForm() {
   }
 
   const addSpace = () => {
-    setForm((prev) => ({ ...prev, spaces: [...prev.spaces, { name: '', capacity: '' }] }))
+    setForm((prev) => ({ ...prev, spaces: [...prev.spaces, { name: '', capacity: '', minimumSpend: '' }] }))
   }
 
   const removeSpace = (index) => {
@@ -270,13 +270,16 @@ export default function PartnerOnboardingForm() {
         <div className="space-y-6">
           <div>
             <label className={labelClass}>Event Spaces</label>
+            <p className="text-xs text-gray-400 mb-2">Name, capacity, and minimum spend for each room/area (leave minimum spend blank if it doesn't apply)</p>
             <div className="space-y-3">
               {form.spaces.map((space, i) => (
                 <div key={i} className="flex gap-2">
                   <input type="text" value={space.name} onChange={(e) => updateSpace(i, 'name', e.target.value)}
                     placeholder="Main Hall" className={inputClass} />
                   <input type="number" value={space.capacity} onChange={(e) => updateSpace(i, 'capacity', e.target.value)}
-                    placeholder="Capacity" className={`${inputClass} w-32`} />
+                    placeholder="Capacity" className={`${inputClass} w-28`} />
+                  <input type="text" value={space.minimumSpend} onChange={(e) => updateSpace(i, 'minimumSpend', e.target.value)}
+                    placeholder="Min. spend" className={`${inputClass} w-32`} />
                   {form.spaces.length > 1 && (
                     <button type="button" onClick={() => removeSpace(i)}
                       className="px-3 text-gray-400 hover:text-[#EF4561]">✕</button>
@@ -314,16 +317,22 @@ export default function PartnerOnboardingForm() {
             </div>
           </div>
 
-          <PartnerFileUpload label="Policies Document" accept="application/pdf,image/jpeg,image/png"
+          <PartnerFileUpload label="Terms & Conditions / Policies Document" accept="application/pdf,image/jpeg,image/png"
             hint="PDF, JPG, or PNG" onUploaded={(url) => setForm((p) => ({ ...p, policiesUrl: url }))} />
 
-          <PartnerFileUpload label="Menu Document" accept="application/pdf,image/jpeg,image/png"
+          <PartnerFileUpload label="Menu Document (Food & Beverage)" accept="application/pdf,image/jpeg,image/png"
             hint="PDF, JPG, or PNG" onUploaded={(url) => setForm((p) => ({ ...p, menuUrl: url }))} />
 
           <div>
-            <label className={labelClass}>Tax Rate(s) & Fees</label>
+            <label className={labelClass}>Tax Rate(s) & Gratuity/Service Fee</label>
             <input type="text" name="taxAndFees" value={form.taxAndFees} onChange={handleChange}
-              placeholder="8.5% sales tax, 20% service fee" className={inputClass} />
+              placeholder="8.5% sales tax, 20% gratuity" className={inputClass} />
+          </div>
+
+          <div>
+            <label className={labelClass}>Extra Services Offered</label>
+            <textarea name="extraServices" value={form.extraServices} onChange={handleChange} rows={2}
+              placeholder="e.g. DJ, live chef stations, valet, AV/lighting..." className={`${inputClass} resize-none`} />
           </div>
 
           <div className="flex gap-3">
