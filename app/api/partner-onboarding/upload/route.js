@@ -7,6 +7,7 @@ const ALLOWED_CONTENT_TYPES = [
   'application/pdf',
   'text/csv',
   'text/plain',
+  'text/calendar',
   'application/vnd.ms-excel',
   'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
   'application/msword',

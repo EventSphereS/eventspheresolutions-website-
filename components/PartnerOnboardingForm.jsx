@@ -28,7 +28,7 @@ const initialForm = {
   spaces: [{ name: '', capacity: '', minimumSpend: '' }], spacePhotosUrls: [],
   logoUrl: '', coverPhotoUrl: '', brandColors: '', policiesUrl: '', menuUrl: '', taxAndFees: '', extraServices: '',
   welcomeEmail: '', firstResponseEmail: '',
-  teamMembers: '', contactsExportUrl: '', upcomingEvents: '', upcomingEventsFileUrl: '', templatesUrls: [], notes: '',
+  teamMembers: '', contactsExportUrl: '', upcomingEvents: '', upcomingEventsFileUrl: '', bookedEventContractsUrls: [], templatesUrls: [], notes: '',
 }
 
 const TOTAL_STEPS = 5
@@ -380,17 +380,22 @@ export default function PartnerOnboardingForm() {
             onUploaded={(url) => setForm((p) => ({ ...p, contactsExportUrl: url }))} />
 
           <div>
-            <label className={labelClass}>Upcoming Events & Bookings</label>
+            <label className={labelClass}>Upcoming Events List</label>
+            <p className="text-xs text-gray-400 mb-2">Let us know where these currently live — e.g. PDF BEOs, Toast, Google Calendar, a spreadsheet...</p>
             <textarea name="upcomingEvents" value={form.upcomingEvents} onChange={handleChange} rows={3}
-              placeholder="List any already-booked events with dates and client names" className={`${inputClass} resize-none`} />
+              placeholder="Where your bookings are tracked, plus any already-booked events with dates and client names" className={`${inputClass} resize-none`} />
           </div>
 
-          <PartnerFileUpload label="Upcoming Events File (optional)" accept=".csv,.xls,.xlsx"
-            hint="CSV or spreadsheet export of upcoming bookings, if that's easier than typing them out"
+          <PartnerFileUpload label="Upcoming Events File (optional)" accept=".csv,.xls,.xlsx,.pdf,.ics"
+            hint="BEO PDFs, a calendar export, or a spreadsheet of upcoming bookings — whatever's easiest"
             onUploaded={(url) => setForm((p) => ({ ...p, upcomingEventsFileUrl: url }))} />
 
+          <PartnerFileUpload label="Proposals & Contracts for Booked Events (optional)" accept=".pdf,.doc,.docx" multiple
+            hint="Signed proposals/contracts for events you've already booked, so we can enter them into your calendar"
+            onUploaded={(urls) => setForm((p) => ({ ...p, bookedEventContractsUrls: urls }))} />
+
           <PartnerFileUpload label="Proposal & Contract Templates" accept=".pdf,.doc,.docx" multiple
-            hint="PDF or Word docs, you can select multiple" onUploaded={(urls) => setForm((p) => ({ ...p, templatesUrls: urls }))} />
+            hint="Blank templates you use for new proposals — PDF or Word docs, you can select multiple" onUploaded={(urls) => setForm((p) => ({ ...p, templatesUrls: urls }))} />
 
           <div>
             <label className={labelClass}>Anything else we should know?</label>

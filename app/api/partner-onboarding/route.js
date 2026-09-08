@@ -42,7 +42,7 @@ export async function POST(request) {
       streetAddress, city, state, zip, country,
       spaces, spacePhotosUrls, logoUrl, coverPhotoUrl, brandColors, policiesUrl, menuUrl, taxAndFees, extraServices,
       welcomeEmail, firstResponseEmail,
-      teamMembers, contactsExportUrl, upcomingEvents, upcomingEventsFileUrl, templatesUrls, notes,
+      teamMembers, contactsExportUrl, upcomingEvents, upcomingEventsFileUrl, bookedEventContractsUrls, templatesUrls, notes,
     } = body
 
     if (!adminName || !adminEmail || !businessName) {
@@ -56,7 +56,7 @@ export async function POST(request) {
     // Uploaded files are private blobs — swap each raw URL for a 7-day signed
     // read link before it goes anywhere near the email.
     const [
-      logoLink, coverPhotoLink, policiesLink, menuLink, contactsLink, upcomingEventsLink, templateLinks, spacePhotoLinks,
+      logoLink, coverPhotoLink, policiesLink, menuLink, contactsLink, upcomingEventsLink, templateLinks, spacePhotoLinks, bookedEventContractLinks,
     ] = await Promise.all([
       toReadableLink(logoUrl),
       toReadableLink(coverPhotoUrl),
@@ -66,6 +66,7 @@ export async function POST(request) {
       toReadableLink(upcomingEventsFileUrl),
       Promise.all((templatesUrls || []).map(toReadableLink)),
       Promise.all((spacePhotosUrls || []).map(toReadableLink)),
+      Promise.all((bookedEventContractsUrls || []).map(toReadableLink)),
     ])
 
     const address = [streetAddress, city, state, zip, country].filter(Boolean).join(', ')
@@ -82,6 +83,10 @@ export async function POST(request) {
     const templatesLinks = templateLinks
       .map((url, i) => `<a href="${url}" style="color:#E07B20;">Template ${i + 1}</a>`)
       .join('<br>') || 'None provided'
+
+    const bookedEventContractsLinks = bookedEventContractLinks
+      .map((url, i) => `<a href="${url}" style="color:#E07B20;">Contract ${i + 1}</a>`)
+      .join('<br>')
 
     const spacePhotosLinks = spacePhotoLinks
       .map((url, i) => `<a href="${url}" style="color:#E07B20;">Space Photo ${i + 1}</a>`)
@@ -120,6 +125,7 @@ export async function POST(request) {
                 extraServices ? ['Extra Services', extraServices] : null,
                 contactsLink ? ['Contacts Export', `<a href="${contactsLink}" style="color:#E07B20;">Download file (link expires in 7 days)</a>`] : null,
                 upcomingEventsLink ? ['Upcoming Events File', `<a href="${upcomingEventsLink}" style="color:#E07B20;">Download file (link expires in 7 days)</a>`] : null,
+                bookedEventContractsLinks ? ['Booked Event Contracts', bookedEventContractsLinks] : null,
                 ['Proposal/Contract Templates', templatesLinks],
               ].filter(Boolean).map(([label, value]) => `
                 <tr>
