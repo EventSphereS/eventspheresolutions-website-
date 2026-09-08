@@ -41,7 +41,7 @@ export async function POST(request) {
       totalCapacity, description, currency, businessHours,
       streetAddress, city, state, zip, country,
       spaces, spacePhotosUrls, logoUrl, coverPhotoUrl, brandColors, policiesUrl, menuUrl, taxAndFees, extraServices,
-      welcomeEmail, firstResponseEmail, followUpEmail,
+      welcomeEmail, firstResponseEmail,
       teamMembers, contactsExportUrl, upcomingEvents, upcomingEventsFileUrl, templatesUrls, notes,
     } = body
 
@@ -138,7 +138,6 @@ export async function POST(request) {
             ${upcomingEvents ? `<div style="margin-top:16px;"><p style="font-weight:700;color:#333;font-size:14px;margin-bottom:8px;">Upcoming Events & Bookings:</p><div style="background:white;border-left:4px solid #6a256f;padding:14px 16px;border-radius:4px;font-size:14px;color:#444;line-height:1.6;white-space:pre-line;">${upcomingEvents}</div></div>` : ''}
             ${welcomeEmail ? `<div style="margin-top:16px;"><p style="font-weight:700;color:#333;font-size:14px;margin-bottom:8px;">Welcome Email Copy:</p><div style="background:white;border-left:4px solid #EF4561;padding:14px 16px;border-radius:4px;font-size:14px;color:#444;line-height:1.6;white-space:pre-line;">${welcomeEmail}</div></div>` : ''}
             ${firstResponseEmail ? `<div style="margin-top:16px;"><p style="font-weight:700;color:#333;font-size:14px;margin-bottom:8px;">First Response Email Copy:</p><div style="background:white;border-left:4px solid #EF4561;padding:14px 16px;border-radius:4px;font-size:14px;color:#444;line-height:1.6;white-space:pre-line;">${firstResponseEmail}</div></div>` : ''}
-            ${followUpEmail ? `<div style="margin-top:16px;"><p style="font-weight:700;color:#333;font-size:14px;margin-bottom:8px;">Follow-Up Sequence Copy:</p><div style="background:white;border-left:4px solid #EF4561;padding:14px 16px;border-radius:4px;font-size:14px;color:#444;line-height:1.6;white-space:pre-line;">${followUpEmail}</div></div>` : ''}
             ${notes ? `<div style="margin-top:16px;"><p style="font-weight:700;color:#333;font-size:14px;margin-bottom:8px;">Additional Notes:</p><div style="background:white;border-left:4px solid #222123;padding:14px 16px;border-radius:4px;font-size:14px;color:#444;line-height:1.6;white-space:pre-line;">${notes}</div></div>` : ''}
 
             <div style="margin-top: 28px; text-align: center;">

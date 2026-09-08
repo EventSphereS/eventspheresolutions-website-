@@ -27,7 +27,7 @@ const initialForm = {
   businessHours: DAYS.map((day) => ({ day, closed: false, open: '09:00', close: '18:00' })),
   spaces: [{ name: '', capacity: '', minimumSpend: '' }], spacePhotosUrls: [],
   logoUrl: '', coverPhotoUrl: '', brandColors: '', policiesUrl: '', menuUrl: '', taxAndFees: '', extraServices: '',
-  welcomeEmail: '', firstResponseEmail: '', followUpEmail: '',
+  welcomeEmail: '', firstResponseEmail: '',
   teamMembers: '', contactsExportUrl: '', upcomingEvents: '', upcomingEventsFileUrl: '', templatesUrls: [], notes: '',
 }
 
@@ -347,19 +347,14 @@ export default function PartnerOnboardingForm() {
       {step === 4 && (
         <div className="space-y-6">
           <div>
-            <label className={labelClass}>Welcome Email Copy</label>
+            <label className={labelClass}>Welcome Email Copy <span className="text-gray-400 font-normal">(if any — otherwise we'll create one)</span></label>
             <textarea name="welcomeEmail" value={form.welcomeEmail} onChange={handleChange} rows={4}
               placeholder="What should new leads receive when they first reach out?" className={`${inputClass} resize-none`} />
           </div>
           <div>
-            <label className={labelClass}>First Response Email Copy</label>
+            <label className={labelClass}>First Response Email Copy <span className="text-gray-400 font-normal">(if any — otherwise we'll create one)</span></label>
             <textarea name="firstResponseEmail" value={form.firstResponseEmail} onChange={handleChange} rows={4}
               placeholder="Your team's standard first reply to a new lead" className={`${inputClass} resize-none`} />
-          </div>
-          <div>
-            <label className={labelClass}>Follow-Up Sequence Copy</label>
-            <textarea name="followUpEmail" value={form.followUpEmail} onChange={handleChange} rows={4}
-              placeholder="Any follow-up emails you'd like automated" className={`${inputClass} resize-none`} />
           </div>
           <div className="flex gap-3">
             <button type="button" onClick={handleBack}
@@ -373,9 +368,9 @@ export default function PartnerOnboardingForm() {
       {step === 5 && (
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label className={labelClass}>Team Members to Invite</label>
+            <label className={labelClass}>Team Members to Invite <span className="text-gray-400 font-normal">(one line per member)</span></label>
             <textarea name="teamMembers" value={form.teamMembers} onChange={handleChange} rows={3}
-              placeholder="One per line: Name, email, role" className={`${inputClass} resize-none`} />
+              placeholder={"Jane Smith, jane@yourvenue.com, Sales Manager\nJohn Doe, john@yourvenue.com, Event Coordinator"} className={`${inputClass} resize-none`} />
           </div>
 
           <PartnerFileUpload
