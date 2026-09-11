@@ -197,20 +197,45 @@ export default function ServicesPage() {
       <V1V2CTA />
 
       {/* Free Playbook */}
-      <section className="py-16 bg-[#f4f0f5] border-t border-gray-100">
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <span className="inline-block bg-[#E07B20] text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5">
-            Free Guide
-          </span>
-          <h2 className="text-2xl md:text-3xl font-bold font-display text-[#6a256f] mb-3">
-            Not ready to talk yet? Start with the free playbook.
-          </h2>
-          <p className="text-gray-600 max-w-xl mx-auto mb-7">
-            The Private Event Lead Generation Playbook — the PR, social, email, SEO, and partner tactics you can start using today, no matter which option you pick.
-          </p>
-          <Link href="/playbook" className="btn-primary inline-block">
-            Get the Free Playbook →
-          </Link>
+      <section className="py-20 bg-gradient-to-br from-[#faf7ff] to-[#fff8f0] border-t border-gray-100 overflow-hidden">
+        <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+
+          <div className="relative mx-auto md:mx-0 w-full max-w-xs">
+            <div className="absolute -inset-4 bg-gradient-to-br from-[#6a256f]/10 to-[#E07B20]/10 rounded-3xl rotate-3" />
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl -rotate-2 border-4 border-white">
+              <Image
+                src="/images/playbook-cover-food-photo.jpg"
+                alt="The Private Event Lead Generation Playbook"
+                width={500}
+                height={650}
+                className="w-full h-auto object-cover"
+              />
+              <div className="absolute top-3 left-3 bg-[#E07B20] text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">
+                Free Guide
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <p className="text-[#E07B20] text-xs font-bold uppercase tracking-widest mb-3">Not ready to talk yet?</p>
+            <h2 className="text-2xl md:text-3xl font-bold font-display text-[#6a256f] mb-4">
+              Grab the Private Event Lead Generation Playbook
+            </h2>
+            <p className="text-gray-600 mb-6">
+              A step-by-step system covering PR, social content, email, SEO, and exposure partners — tactics you can start using today, no matter which option above you pick.
+            </p>
+            <ul className="space-y-2 mb-7">
+              {['PR & media outreach', 'Social content + CTA system', 'Email & SEO tactics', 'Exposure partner list'].map((item) => (
+                <li key={item} className="flex items-center gap-2 text-gray-700 text-sm">
+                  <span className="text-[#E07B20] font-bold">✓</span> {item}
+                </li>
+              ))}
+            </ul>
+            <Link href="/playbook" className="btn-primary inline-block">
+              Get the Free Playbook →
+            </Link>
+          </div>
+
         </div>
       </section>
     </>
