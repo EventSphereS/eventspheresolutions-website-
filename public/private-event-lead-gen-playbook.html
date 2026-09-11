@@ -277,11 +277,10 @@
     table.data-table td { padding: 8px 10px; border-bottom: 1px solid #eee; color: #444; vertical-align: top; }
     table.data-table tr:nth-child(even) td { background: #faf7ff; }
 
-    .format-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 10px 0 14px; }
-    .format-card { border: 1.5px solid #e8e8e8; border-radius: 10px; padding: 12px; }
-    .format-card h3 { margin-top: 0; font-size: 10pt; }
-    .format-card p { font-size: 8pt; }
-    .format-card .cta-line { margin-top: 6px; font-size: 7.5pt; color: var(--orange); font-weight: 700; }
+    .format-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 10px 0 14px; align-items: start; }
+    .format-shot h3 { margin: 0 0 6px; font-size: 9.5pt; text-align: center; }
+    .format-shot .shot-frame { border-radius: 12px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.1); }
+    .format-shot .shot-frame img { width: 100%; height: auto; display: block; }
 
     .page-footer {
       position: absolute;
@@ -413,20 +412,17 @@
 
     <h2>Content Formats</h2>
     <div class="format-grid">
-      <div class="format-card">
+      <div class="format-shot">
         <h3>Feed Post</h3>
-        <p>4:5 or 1:1, ~1×/week. Hero photography of past events; carousels for package comparisons; quote-card testimonials.</p>
-        <div class="cta-line">CTA: caption's last line is always the ask — "Ready to book? Link in bio."</div>
+        <div class="shot-frame"><img src="/images/playbook-format-feed-post.png" alt="Example Instagram feed post with a private-event booking caption and link-in-bio call to action" /></div>
       </div>
-      <div class="format-card">
+      <div class="format-shot">
         <h3>Story</h3>
-        <p>9:16, near-daily. Link sticker on every story, countdown stickers for limited dates, polls/quizzes for engagement.</p>
-        <div class="cta-line">CTA: never post a story without a tap-through. Evergreen highlights: Packages · Real Events · FAQ · Reviews.</div>
+        <div class="shot-frame"><img src="/images/playbook-format-story.png" alt="Example Instagram story with a link sticker and Book a Party call to action" /></div>
       </div>
-      <div class="format-card">
+      <div class="format-shot">
         <h3>Reel</h3>
-        <p>9:16, 15–30 sec, ~2×/week. Hook in the first 2 seconds, timelapse build-out or plating close-up, trending audio.</p>
-        <div class="cta-line">CTA: caption ends with a direct line + link-in-bio prompt, not just a hashtag.</div>
+        <div class="shot-frame"><img src="/images/playbook-format-reel.png" alt="Example Instagram Reel with a Book Your Party end card call to action" /></div>
       </div>
     </div>
 
