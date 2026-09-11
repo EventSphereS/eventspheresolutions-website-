@@ -10,6 +10,7 @@ export default function sitemap() {
     { url: `${baseUrl}/services`, lastModified, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${baseUrl}/pricing`, lastModified, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${baseUrl}/founding-partner`, lastModified, changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${baseUrl}/playbook`, lastModified, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${baseUrl}/about`, lastModified, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${baseUrl}/contact`, lastModified, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${baseUrl}/blog`, lastModified, changeFrequency: 'weekly', priority: 0.8 },

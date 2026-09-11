@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Private Event Lead Generation Playbook — Event Sphere Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=PT+Serif:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --purple: #6a256f;
+      --purple-dark: #2d0a35;
+      --purple-mid: #4a1555;
+      --orange: #E07B20;
+      --orange-light: #F99F33;
+      --red: #EF4561;
+      --dark: #111827;
+      --gray: #444;
+      --light-gray: #f5f5f7;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--dark);
+      background: #e8e8e8;
+      font-size: 10pt;
+      line-height: 1.5;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto 24px;
+      background: white;
+      padding: 16mm 18mm;
+      position: relative;
+    }
+    .page:last-child { margin-bottom: 0; }
+
+    @media print {
+      body { margin: 0; background: white; }
+      .page { width: 100%; min-height: 0; margin: 0; page-break-after: always; }
+      .page:last-child { page-break-after: auto; }
+      .no-print { display: none !important; }
+    }
+
+    /* ── Print Bar ── */
+    .print-bar {
+      background: #f0f0f0;
+      padding: 11px 24px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+    }
+    .print-btn {
+      background: var(--purple);
+      color: white;
+      border: none;
+      padding: 9px 26px;
+      border-radius: 24px;
+      font-size: 9.5pt;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+    }
+    .print-btn:hover { background: var(--purple-mid); }
+    .back-btn {
+      background: var(--dark);
+      color: white;
+      border: none;
+      padding: 9px 22px;
+      border-radius: 24px;
+      font-size: 9.5pt;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    /* ── Cover ── */
+    .cover { display: flex; flex-direction: column; height: 265mm; }
+    .cover-badge {
+      align-self: flex-start;
+      background: var(--orange);
+      color: white;
+      font-size: 8pt;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+    }
+    .cover-eyebrow {
+      font-size: 9pt;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 14px;
+    }
+    .cover-title {
+      font-family: 'PT Serif', serif;
+      font-size: 40pt;
+      font-weight: 700;
+      color: var(--dark);
+      line-height: 1.1;
+      margin-bottom: 18px;
+      max-width: 480px;
+    }
+    .cover-title span {
+      background: linear-gradient(90deg, var(--purple), var(--red));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .cover-sub {
+      font-size: 12pt;
+      color: #555;
+      max-width: 420px;
+      line-height: 1.6;
+      margin-bottom: auto;
+    }
+    .cover-pillars {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      margin-top: 40px;
+    }
+    .cover-pillar {
+      border: 1.5px solid #e8e8e8;
+      border-radius: 10px;
+      padding: 12px 10px;
+      text-align: center;
+    }
+    .cover-pillar-num {
+      font-family: 'PT Serif', serif;
+      font-size: 14pt;
+      font-weight: 700;
+      color: var(--orange);
+      display: block;
+      margin-bottom: 4px;
+    }
+    .cover-pillar span.label { font-size: 7.5pt; font-weight: 700; color: var(--dark); display: block; line-height: 1.3; }
+    .cover-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 30px;
+      padding-top: 18px;
+      border-top: 1px solid #eee;
+    }
+    .cover-footer img { height: 32px; width: auto; }
+    .cover-footer span { font-size: 8pt; color: #888; }
+
+    /* ── Content pages ── */
+    .page-eyebrow {
+      font-size: 7.5pt;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 6px;
+    }
+    h1.section-title {
+      font-family: 'PT Serif', serif;
+      font-size: 22pt;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 14px;
+      padding-bottom: 12px;
+      border-bottom: 3px solid var(--orange);
+    }
+    h2 {
+      font-family: 'PT Serif', serif;
+      font-size: 13.5pt;
+      font-weight: 700;
+      color: var(--dark);
+      margin: 18px 0 8px;
+    }
+    h2:first-of-type { margin-top: 0; }
+    h3 {
+      font-family: 'PT Serif', serif;
+      font-size: 11pt;
+      font-weight: 700;
+      color: var(--purple);
+      margin: 12px 0 6px;
+    }
+    p { color: #444; font-size: 9.5pt; line-height: 1.65; margin-bottom: 8px; }
+    p:last-child { margin-bottom: 0; }
+
+    ul.check-list, ol.step-list { list-style: none; margin-bottom: 10px; }
+    ul.check-list li {
+      font-size: 9.5pt;
+      color: #444;
+      line-height: 1.55;
+      padding: 3px 0;
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+    }
+    ul.check-list li::before {
+      content: '✓';
+      color: var(--purple);
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    ol.step-list { counter-reset: step; }
+    ol.step-list li {
+      counter-increment: step;
+      font-size: 9.5pt;
+      color: #444;
+      line-height: 1.55;
+      padding: 4px 0 4px 30px;
+      position: relative;
+    }
+    ol.step-list li::before {
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 3px;
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      background: var(--orange);
+      color: white;
+      font-size: 8.5pt;
+      font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    .callout {
+      background: #faf7ff;
+      border-left: 4px solid var(--purple);
+      border-radius: 6px;
+      padding: 10px 14px;
+      margin: 10px 0;
+      font-size: 8.5pt;
+      color: #555;
+    }
+    .callout strong { color: var(--purple); }
+
+    table.data-table { width: 100%; border-collapse: collapse; margin: 10px 0 14px; font-size: 8.5pt; }
+    table.data-table th {
+      background: var(--purple);
+      color: white;
+      text-align: left;
+      padding: 8px 10px;
+      font-size: 7.5pt;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    table.data-table td { padding: 8px 10px; border-bottom: 1px solid #eee; color: #444; vertical-align: top; }
+    table.data-table tr:nth-child(even) td { background: #faf7ff; }
+
+    .format-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 10px 0 14px; }
+    .format-card { border: 1.5px solid #e8e8e8; border-radius: 10px; padding: 12px; }
+    .format-card h3 { margin-top: 0; font-size: 10pt; }
+    .format-card p { font-size: 8pt; }
+    .format-card .cta-line { margin-top: 6px; font-size: 7.5pt; color: var(--orange); font-weight: 700; }
+
+    .page-footer {
+      position: absolute;
+      bottom: 10mm;
+      left: 18mm;
+      right: 18mm;
+      display: flex;
+      justify-content: space-between;
+      font-size: 7pt;
+      color: #999;
+      border-top: 1px solid #eee;
+      padding-top: 8px;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, var(--purple-dark) 0%, var(--purple-mid) 50%, #3a0e4a 100%);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-top: 20px;
+    }
+    .cta-box h2 { color: white; margin-top: 0; }
+    .cta-box p { color: rgba(255,255,255,0.7); }
+    .cta-box a {
+      display: inline-block;
+      margin-top: 10px;
+      background: var(--orange);
+      color: white;
+      font-weight: 700;
+      font-size: 9pt;
+      padding: 10px 22px;
+      border-radius: 24px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Print Bar -->
+  <div class="print-bar no-print">
+    <a href="/playbook" class="back-btn">← Back to Website</a>
+    <button class="print-btn" onclick="window.print()">⬇ Save as PDF / Print</button>
+  </div>
+
+  <!-- Page 1: Cover -->
+  <div class="page cover">
+    <div class="cover-badge">Free Guide</div>
+    <div class="cover-eyebrow">Event Sphere Solutions</div>
+    <h1 class="cover-title">The Private Event<br/>Lead Generation <span>Playbook</span></h1>
+    <p class="cover-sub">A step-by-step system for restaurants, bars, breweries, boutique hotels, country clubs, and other hospitality venues to generate qualified private-event inquiries — every day.</p>
+    <div class="cover-pillars">
+      <div class="cover-pillar"><span class="cover-pillar-num">1</span><span class="label">PR &amp; Media</span></div>
+      <div class="cover-pillar"><span class="cover-pillar-num">2</span><span class="label">Social + CTA System</span></div>
+      <div class="cover-pillar"><span class="cover-pillar-num">3</span><span class="label">Email Marketing</span></div>
+      <div class="cover-pillar"><span class="cover-pillar-num">4</span><span class="label">SEO</span></div>
+      <div class="cover-pillar"><span class="cover-pillar-num">5</span><span class="label">Exposure Partners</span></div>
+    </div>
+    <div class="cover-footer">
+      <img src="/images/logo-mark.png" alt="Event Sphere Solutions" />
+      <span>eventspheresolutions.com</span>
+    </div>
+  </div>
+
+  <!-- Page 2: How to Use / Objective / Pillars / Audience -->
+  <div class="page">
+    <div class="page-eyebrow">Getting Started</div>
+    <h1 class="section-title">How to Use This Playbook</h1>
+
+    <p>This playbook covers the same channel mix that works for any venue that books private events: PR, social content with a built-in call-to-action system, email, SEO, and exposure partners. The specific tactics shift by venue type — a brewery leans on taproom buyouts and beer flights, a hotel leans on banquet and meeting space, a bar leans on happy-hour buyouts and late-night private parties — but the underlying system is the same. Work through each section, adapt the notes marked <strong>by venue type</strong> to your own space, and route every channel through one tracked inquiry link so you can measure what's actually working.</p>
+
+    <h2>Objective</h2>
+    <p>Set a real target: a specific number of qualified private-event inquiries per day, routed through one tracked inquiry link, so every channel below can be measured against it.</p>
+
+    <h2>1. Content Pillars</h2>
+    <ul class="check-list">
+      <li><strong>Event setups</strong> — bare room to full build-out, timelapse-friendly</li>
+      <li><strong>Food &amp; beverage</strong> — plating, pours, tasting moments, group gathering shots</li>
+      <li><strong>Venue &amp; vibe</strong> — room, lighting, patio/outdoor space, ambience</li>
+      <li><strong>Real events</strong> — host testimonials, guest reactions, group celebrations</li>
+    </ul>
+
+    <h2>2. Who You're Talking To</h2>
+    <ul class="check-list">
+      <li><strong>Celebrations</strong> — birthdays, engagements, showers, anniversaries. Mostly local hosts, often searching same-week to 6 weeks out.</li>
+      <li><strong>Corporate</strong> — holiday parties, team offsites, client dinners. Planned 6–12 weeks out; decision-maker is typically an office manager or EA.</li>
+      <li><strong>Weddings-adjacent</strong> — rehearsal dinners, welcome parties, bridal showers. Often found via listing platforms and Instagram, not search.</li>
+    </ul>
+    <div class="callout"><strong>By venue type:</strong> breweries and bars often add a "regulars &amp; groups" segment — birthday buyouts, trivia/league nights, watch parties.</div>
+
+    <div class="page-footer"><span>Event Sphere Solutions</span><span>02</span></div>
+  </div>
+
+  <!-- Page 3: PR -->
+  <div class="page">
+    <div class="page-eyebrow">Section 3</div>
+    <h1 class="section-title">Public Relations</h1>
+    <p>Build third-party credibility and local visibility before you spend on ads, so paid traffic lands on a venue that already looks established.</p>
+
+    <h2>Press &amp; Media</h2>
+    <ul class="check-list">
+      <li>Press release: new photography, new event packages, and whatever's distinct about your venue — private room capacity, patio, tap list or barrel room, banquet space.</li>
+      <li>Media outreach to local and regional outlets — lifestyle magazines, newspapers, food and events blogs — pitched around your release cadence.</li>
+      <li>Chamber and destination-marketing ties: your local Chamber of Commerce and destination-marketing organization or downtown partnership, for listings, member events, and co-promotion.</li>
+    </ul>
+
+    <h2>Influencer Partnerships</h2>
+    <p>Host a private tasting or setup preview in exchange for a Reel + Story set. Prioritize local and regional food/lifestyle accounts likely to reach your actual audience — a handful of local food influencers, a couple of regional food/lifestyle accounts, and a local "things to do" or travel account go further than one big name with the wrong audience.</p>
+    <div class="callout"><strong>Action:</strong> make sure every partner mentions group/private event booking, not just food and drink.</div>
+
+    <div class="page-footer"><span>Event Sphere Solutions</span><span>03</span></div>
+  </div>
+
+  <!-- Page 4: Social -->
+  <div class="page">
+    <div class="page-eyebrow">Section 4</div>
+    <h1 class="section-title">Social Media &amp; Content Design</h1>
+    <p>Instagram is the primary channel for most venues (cross-post to Facebook, TikTok secondary). Every format below carries a specific call to action — nothing posts without one.</p>
+
+    <h2>CTA Framework</h2>
+    <table class="data-table">
+      <tr><th>Intent</th><th>CTA</th><th>Destination</th></tr>
+      <tr><td>High intent</td><td>"Book your event" / "Book a party" / "Reserve your date"</td><td>Link in bio / Book Now button to inquiry form</td></tr>
+      <tr><td>Warm</td><td>"DM us your date"</td><td>Opens a chat; reply with the inquiry link</td></tr>
+      <tr><td>Discovery</td><td>"See packages"</td><td>Link sticker / bio link to packages page</td></tr>
+    </table>
+    <div class="callout">Set your Instagram Business profile's action button to <strong>Book Now</strong>, pointed straight at your inquiry form — not your homepage. Tag every link with a UTM parameter so you know which format actually drives a submitted inquiry.</div>
+
+    <h2>Content Formats</h2>
+    <div class="format-grid">
+      <div class="format-card">
+        <h3>Feed Post</h3>
+        <p>4:5 or 1:1, ~1×/week. Hero photography of past events; carousels for package comparisons; quote-card testimonials.</p>
+        <div class="cta-line">CTA: caption's last line is always the ask — "Ready to book? Link in bio."</div>
+      </div>
+      <div class="format-card">
+        <h3>Story</h3>
+        <p>9:16, near-daily. Link sticker on every story, countdown stickers for limited dates, polls/quizzes for engagement.</p>
+        <div class="cta-line">CTA: never post a story without a tap-through. Evergreen highlights: Packages · Real Events · FAQ · Reviews.</div>
+      </div>
+      <div class="format-card">
+        <h3>Reel</h3>
+        <p>9:16, 15–30 sec, ~2×/week. Hook in the first 2 seconds, timelapse build-out or plating close-up, trending audio.</p>
+        <div class="cta-line">CTA: caption ends with a direct line + link-in-bio prompt, not just a hashtag.</div>
+      </div>
+    </div>
+
+    <h2>Paid — Boosted Stories &amp; Posts</h2>
+    <p>Split spend across IG/FB story and feed boosts plus local Google search. Set the ad objective to Messages or Website Conversions tied to your inquiry form — not reach or awareness. Retarget site visitors who viewed your events page but didn't submit. A simple weekly "Book your event" Story ad swiping through to your inquiry page is enough to start.</p>
+
+    <div class="page-footer"><span>Event Sphere Solutions</span><span>04</span></div>
+  </div>
+
+  <!-- Page 5: Email + SEO -->
+  <div class="page">
+    <div class="page-eyebrow">Sections 5 &amp; 6</div>
+    <h1 class="section-title">Email Marketing &amp; SEO</h1>
+
+    <h2>Email Marketing</h2>
+    <p>Send a monthly newsletter through your POS or CRM's email tool, featuring the venue, current packages, and a seasonal or limited-time offer. Set it up as an automated campaign on a fixed monthly send date so it runs without manual rebuilding every month.</p>
+
+    <h2>SEO — Target Keywords</h2>
+    <p>Work these into your events landing page, meta titles/descriptions, and image alt text — swap in your own city and venue type:</p>
+    <ul class="check-list">
+      <li>best party venue [your city]</li>
+      <li>event space near me</li>
+      <li>private dining [your city] <em>(or: taproom rental / bar buyout / banquet hall, depending on venue type)</em></li>
+      <li>[your city] venue booking</li>
+      <li>birthday venue [your city]</li>
+      <li>corporate event space [your city]</li>
+    </ul>
+
+    <h2>Local SEO</h2>
+    <ol class="step-list">
+      <li>Google Business Profile: fresh photos monthly, correct categories, weekly posts, answer every Q&amp;A.</li>
+      <li>Review generation: ask every host to leave a review within 48 hours of their event; respond to every review, good or bad.</li>
+      <li>Dedicated /private-events landing page as the canonical link for every ad, bio, and listing.</li>
+    </ol>
+
+    <div class="page-footer"><span>Event Sphere Solutions</span><span>05</span></div>
+  </div>
+
+  <!-- Page 6: Partners + CTA -->
+  <div class="page">
+    <div class="page-eyebrow">Section 7</div>
+    <h1 class="section-title">Partners for Exposure</h1>
+    <table class="data-table">
+      <tr><th>Platform</th><th>Why It Matters</th></tr>
+      <tr><td>Your city's official destination/tourism site</td><td>Local credibility + backlink — the default first listing for any venue in the area.</td></tr>
+      <tr><td>Your neighborhood or downtown district's visitor/merchant site</td><td>Puts you in front of the exact foot-traffic and event-shopping audience already nearby.</td></tr>
+      <tr><td>Your state's office of tourism — city page</td><td>Reaches out-of-state visitors planning a trip who search "things to do in [your city]."</td></tr>
+      <tr><td>Your state/regional restaurant or hospitality association</td><td>Industry directory + referral network — useful for corporate leads and cross-promotion with other members.</td></tr>
+      <tr><td>Your city's Chamber of Commerce</td><td>Member directory doubles as its own listing/backlink, separate from any mixers in the PR plan.</td></tr>
+    </table>
+
+    <div class="cta-box">
+      <h2>Want this system built and run for you?</h2>
+      <p>Event Sphere Solutions built this playbook from real venue engagements — and we run this exact system for hospitality clients every day. If you'd rather have it implemented than DIY it, let's talk.</p>
+      <a href="https://www.eventspheresolutions.com/contact">Book a Free Consultation →</a>
+    </div>
+
+    <div class="page-footer"><span>Event Sphere Solutions · eventspheresolutions.com</span><span>06</span></div>
+  </div>
+
+</body>
+</html>
