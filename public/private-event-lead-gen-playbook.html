@@ -286,6 +286,14 @@
     .pillar-grid .shot-frame { border-radius: 10px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.1); height: 130px; }
     .pillar-grid .shot-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .pillar-grid .cap { margin-top: 6px; font-size: 7.5pt; color: #999; text-align: center; }
+
+    .example-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 10px 0 14px; }
+    .example-grid .shot-frame { border-radius: 10px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.1); height: 140px; }
+    .example-grid .shot-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .example-grid .cap { margin-top: 6px; font-size: 7.5pt; color: #999; text-align: center; }
+    .example-wide { grid-column: 1 / -1; }
+    .example-wide .shot-frame { height: 220px; }
+    .example-wide .shot-frame img { object-position: top; }
     .callout strong { color: var(--purple); }
 
     table.data-table { width: 100%; border-collapse: collapse; margin: 10px 0 14px; font-size: 8.5pt; }
@@ -561,7 +569,13 @@
       <li>Dedicated /private-events landing page as the canonical link for every ad, bio, and listing.</li>
     </ol>
 
-    <h2>Your Private-Events Landing Page</h2>
+    <div class="page-footer"><span>Event Sphere Solutions</span><span>07</span></div>
+  </div>
+
+  <!-- Page 8: Your Private-Events Landing Page -->
+  <div class="page">
+    <div class="page-eyebrow">Section 8</div>
+    <h1 class="section-title">Your Private-Events Landing Page</h1>
     <p>This page has one job: get the inquiry sent. Everything on it should support that. Put the inquiry form — or a "Send an Inquiry" button that jumps to one — near the top or middle of the page, not just at the bottom. Don't make a host scroll through the whole page before they can reach out.</p>
     <ul class="check-list">
       <li>Lead with real photos of the space — or better, a 360° virtual tour, so a host can picture their event without a site visit.</li>
@@ -569,12 +583,28 @@
     </ul>
     <div class="callout"><strong>Built into Sphere:</strong> Sphere includes a 360° virtual tour feature that helps sell the space before a host ever steps inside.</div>
 
-    <div class="page-footer"><span>Event Sphere Solutions</span><span>07</span></div>
+    <h2>Example: CTA Near the Top</h2>
+    <div class="example-grid">
+      <div class="example-wide">
+        <div class="shot-frame"><img src="/images/playbook-example-landingpage-cta.png" alt="Example private-events landing page with a booking CTA button placed near the top" /></div>
+        <div class="cap">The booking button sits right in the hero — no scrolling required.</div>
+      </div>
+    </div>
+
+    <h2>Example: Inquiry Form</h2>
+    <div style="max-width: 200px; margin: 0 auto;">
+      <div style="border-radius: 10px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.1);">
+        <img src="/images/playbook-example-inquiry-form.png" alt="Example detailed private-event inquiry form" style="width: 100%; height: auto; display: block;" />
+      </div>
+      <div style="margin-top: 6px; font-size: 7.5pt; color: #999; text-align: center;">Captures event details up front for faster follow-up.</div>
+    </div>
+
+    <div class="page-footer"><span>Event Sphere Solutions</span><span>08</span></div>
   </div>
 
-  <!-- Page 8: Partners + CTA -->
+  <!-- Page 9: Partners + CTA -->
   <div class="page">
-    <div class="page-eyebrow">Section 8</div>
+    <div class="page-eyebrow">Section 9</div>
     <h1 class="section-title">Partners for Exposure</h1>
     <table class="data-table">
       <tr><th>Platform</th><th>Why It Matters</th></tr>
@@ -591,7 +621,7 @@
       <a href="https://www.eventspheresolutions.com/contact">Book a Free Consultation →</a>
     </div>
 
-    <div class="page-footer"><span>Event Sphere Solutions · eventspheresolutions.com</span><span>08</span></div>
+    <div class="page-footer"><span>Event Sphere Solutions · eventspheresolutions.com</span><span>09</span></div>
   </div>
 
 </body>
