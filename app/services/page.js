@@ -86,6 +86,7 @@ export default function ServicesPage() {
           <a href="https://crm.eventspheresolutions.com/signup" target="_blank" rel="noopener noreferrer" className="btn-primary text-lg px-8 py-4">
             Start Free
           </a>
+          <p className="text-gray-400 text-sm mt-3">No credit card required</p>
         </div>
       </section>
 
@@ -129,6 +130,7 @@ export default function ServicesPage() {
                 <a href="https://crm.eventspheresolutions.com/signup" target="_blank" rel="noopener noreferrer" className="inline-block bg-white text-[#6a256f] font-bold text-sm px-8 py-3.5 rounded-full hover:bg-gray-100 transition-all">
                   Start Free →
                 </a>
+                <p className="text-white/40 text-xs mt-3">No credit card required</p>
               </div>
             </div>
           </div>
@@ -193,6 +195,24 @@ export default function ServicesPage() {
       </section>
 
       <V1V2CTA />
+
+      {/* Free Playbook */}
+      <section className="py-16 bg-[#f4f0f5] border-t border-gray-100">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <span className="inline-block bg-[#E07B20] text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5">
+            Free Guide
+          </span>
+          <h2 className="text-2xl md:text-3xl font-bold font-display text-[#6a256f] mb-3">
+            Not ready to talk yet? Start with the free playbook.
+          </h2>
+          <p className="text-gray-600 max-w-xl mx-auto mb-7">
+            The Private Event Lead Generation Playbook — the PR, social, email, SEO, and partner tactics you can start using today, no matter which option you pick.
+          </p>
+          <Link href="/playbook" className="btn-primary inline-block">
+            Get the Free Playbook →
+          </Link>
+        </div>
+      </section>
     </>
   )
 }
