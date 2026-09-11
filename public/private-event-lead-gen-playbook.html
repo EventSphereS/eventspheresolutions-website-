@@ -292,8 +292,8 @@
     .example-grid .shot-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .example-grid .cap { margin-top: 6px; font-size: 7.5pt; color: #999; text-align: center; }
     .example-wide { grid-column: 1 / -1; }
-    .example-wide .shot-frame { height: 220px; }
-    .example-wide .shot-frame img { object-position: top; }
+    .example-wide .shot-frame { height: auto; max-width: 82%; margin: 0 auto; }
+    .example-wide .shot-frame img { width: 100%; height: auto; object-fit: initial; }
     .callout strong { color: var(--purple); }
 
     table.data-table { width: 100%; border-collapse: collapse; margin: 10px 0 14px; font-size: 8.5pt; }
@@ -587,16 +587,24 @@
     <div class="example-grid">
       <div class="example-wide">
         <div class="shot-frame"><img src="/images/playbook-example-landingpage-cta.png" alt="Example private-events landing page with a booking CTA button placed near the top" /></div>
-        <div class="cap">The booking button sits right in the hero — no scrolling required.</div>
+        <div class="cap">The CTA button sits right in the hero, with real photos of the space just below it — no scrolling required.</div>
       </div>
     </div>
 
-    <h2>Example: Inquiry Form</h2>
-    <div style="max-width: 200px; margin: 0 auto;">
-      <div style="border-radius: 10px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.1);">
-        <img src="/images/playbook-example-inquiry-form.png" alt="Example detailed private-event inquiry form" style="width: 100%; height: auto; display: block;" />
+    <h2>Example: Inquiry Forms</h2>
+    <div style="display: flex; gap: 20px; justify-content: center; align-items: flex-start;">
+      <div style="text-align: center;">
+        <div style="border-radius: 10px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.1); display: inline-block;">
+          <img src="/images/playbook-example-inquiry-form-recreo.png" alt="Example branded private-event inquiry form for Recreo Cantina" style="height: 175px; width: auto; display: block;" />
+        </div>
+        <div style="margin-top: 6px; font-size: 7.5pt; color: #999; max-width: 170px;">Branded form — matches the venue's look and feel.</div>
       </div>
-      <div style="margin-top: 6px; font-size: 7.5pt; color: #999; text-align: center;">Captures event details up front for faster follow-up.</div>
+      <div style="text-align: center;">
+        <div style="border-radius: 10px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.1); display: inline-block;">
+          <img src="/images/playbook-example-inquiry-form.png" alt="Example detailed private-event inquiry form" style="height: 175px; width: auto; display: block;" />
+        </div>
+        <div style="margin-top: 6px; font-size: 7.5pt; color: #999; max-width: 170px;">Captures event details up front for faster follow-up.</div>
+      </div>
     </div>
 
     <div class="page-footer"><span>Event Sphere Solutions</span><span>08</span></div>
