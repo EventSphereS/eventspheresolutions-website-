@@ -116,9 +116,9 @@ export default function PlatformPage() {
               Sphere gives your hospitality business the expert sales team and smart tools to turn empty calendars into consistent, high-performing event sales programs — without the overhead.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/founding-partner" className="btn-primary text-base px-8 py-3.5">
-                Get 3 Months Free →
-              </Link>
+              <a href="https://crm.eventspheresolutions.com/signup" target="_blank" rel="noopener noreferrer" className="btn-primary text-base px-8 py-3.5">
+                Start Free →
+              </a>
               <Link href="/pricing" className="btn-outline text-base px-8 py-3.5">
                 See Pricing
               </Link>

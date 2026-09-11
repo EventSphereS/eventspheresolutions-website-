@@ -83,9 +83,9 @@ export default function ServicesPage() {
           <p className="text-gray-300 text-lg max-w-2xl mx-auto mb-8">
             Start with Sphere and run your entire private event operation from one platform. Then add a dedicated sales team or AI automation when you're ready to scale.
           </p>
-          <Link href="/founding-partner" className="btn-primary text-lg px-8 py-4">
-            Get Sphere Free — 3 Months
-          </Link>
+          <a href="https://crm.eventspheresolutions.com/signup" target="_blank" rel="noopener noreferrer" className="btn-primary text-lg px-8 py-4">
+            Start Free
+          </a>
         </div>
       </section>
 
@@ -126,9 +126,9 @@ export default function ServicesPage() {
                     </div>
                   ))}
                 </div>
-                <Link href="/founding-partner" className="inline-block bg-white text-[#6a256f] font-bold text-sm px-8 py-3.5 rounded-full hover:bg-gray-100 transition-all">
-                  Get Sphere Free — 3 Months →
-                </Link>
+                <a href="https://crm.eventspheresolutions.com/signup" target="_blank" rel="noopener noreferrer" className="inline-block bg-white text-[#6a256f] font-bold text-sm px-8 py-3.5 rounded-full hover:bg-gray-100 transition-all">
+                  Start Free →
+                </a>
               </div>
             </div>
           </div>
