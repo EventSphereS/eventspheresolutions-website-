@@ -1,16 +1,16 @@
 import PlaybookLeadForm from '@/components/PlaybookLeadForm'
 
 export const metadata = {
-  title: 'Free Playbook: Private Event Lead Generation | Event Sphere Solutions',
-  description: 'Download the free Private Event Lead Generation Playbook — a step-by-step system covering PR, social content, email, SEO, and exposure partners for restaurants, bars, breweries, and hospitality venues.',
+  title: 'Free Playbook: Private Event Lead Generation Marketing | Event Sphere Solutions',
+  description: 'Download the free Private Event Lead Generation Marketing Playbook — a step-by-step system covering PR, social content, email, SEO, and exposure partners for restaurants, bars, breweries, and hospitality venues.',
   openGraph: {
-    title: 'Free Playbook: Private Event Lead Generation',
+    title: 'Free Playbook: Private Event Lead Generation Marketing',
     description: 'A step-by-step system for hospitality venues to generate qualified private-event inquiries every day.',
-    images: [{ url: '/feature-image.png', width: 1200, height: 630, alt: 'Private Event Lead Generation Playbook' }],
+    images: [{ url: '/feature-image.png', width: 1200, height: 630, alt: 'Private Event Lead Generation Marketing Playbook' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Free Playbook: Private Event Lead Generation',
+    title: 'Free Playbook: Private Event Lead Generation Marketing',
     description: 'A step-by-step system for hospitality venues to generate qualified private-event inquiries every day.',
     images: ['/feature-image.png'],
   },
@@ -33,7 +33,7 @@ export default function PlaybookPage() {
             Free Guide
           </span>
           <h1 className="font-display text-4xl sm:text-5xl font-extrabold text-[#222123] leading-tight mb-6">
-            The Private Event Lead Generation Playbook
+            The Private Event Lead Generation Marketing Playbook
           </h1>
           <p className="text-gray-500 text-lg leading-relaxed mb-8">
             A step-by-step system for restaurants, bars, breweries, boutique hotels, country clubs, and other hospitality venues to generate qualified private-event inquiries — every day.

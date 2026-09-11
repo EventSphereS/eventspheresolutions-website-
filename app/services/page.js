@@ -205,7 +205,7 @@ export default function ServicesPage() {
             <div className="relative rounded-2xl overflow-hidden shadow-2xl -rotate-2 border-4 border-white">
               <Image
                 src="/images/playbook-cover-food-photo.jpg"
-                alt="The Private Event Lead Generation Playbook"
+                alt="The Private Event Lead Generation Marketing Playbook"
                 width={500}
                 height={650}
                 className="w-full h-auto object-cover"
@@ -219,7 +219,7 @@ export default function ServicesPage() {
           <div>
             <p className="text-[#E07B20] text-xs font-bold uppercase tracking-widest mb-3">Not ready to talk yet?</p>
             <h2 className="text-2xl md:text-3xl font-bold font-display text-[#6a256f] mb-4">
-              Grab the Private Event Lead Generation Playbook
+              Grab the Private Event Lead Generation Marketing Playbook
             </h2>
             <p className="text-gray-600 mb-6">
               A step-by-step system covering PR, social content, email, SEO, and exposure partners — tactics you can start using today, no matter which option above you pick.

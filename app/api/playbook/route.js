@@ -61,7 +61,7 @@ export async function POST(request) {
           <div style="padding: 40px 40px 32px;">
             <h2 style="margin: 0 0 16px; font-size: 26px; font-weight: 800; color: #222123; letter-spacing: -0.5px;">Hi ${name.split(' ')[0]}, here's your playbook 🎉</h2>
             <p style="color: #555; line-height: 1.7; margin: 0 0 24px; font-size: 15px;">
-              Thanks for downloading the Private Event Lead Generation Playbook. Click below to open it — you can read it in your browser or save it as a PDF.
+              Thanks for downloading the Private Event Lead Generation Marketing Playbook. Click below to open it — you can read it in your browser or save it as a PDF.
             </p>
             <div style="text-align: center; margin-bottom: 28px;">
               <a href="${downloadUrl}" target="_blank"
