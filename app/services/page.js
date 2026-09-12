@@ -196,7 +196,7 @@ export default function ServicesPage() {
 
       <V1V2CTA />
 
-      {/* Free Playbook */}
+      {/* Playbook — Sphere Subscriber Bonus */}
       <section className="py-20 bg-gradient-to-br from-[#faf7ff] to-[#fff8f0] border-t border-gray-100 overflow-hidden">
         <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
 
@@ -211,18 +211,18 @@ export default function ServicesPage() {
                 className="w-full h-auto object-cover"
               />
               <div className="absolute top-3 left-3 bg-[#E07B20] text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">
-                Free Guide
+                Sphere Bonus
               </div>
             </div>
           </div>
 
           <div>
-            <p className="text-[#E07B20] text-xs font-bold uppercase tracking-widest mb-3">Not ready to talk yet?</p>
+            <p className="text-[#E07B20] text-xs font-bold uppercase tracking-widest mb-3">A Sphere Subscriber Bonus</p>
             <h2 className="text-2xl md:text-3xl font-bold font-display text-[#6a256f] mb-4">
-              Grab the Private Event Lead Generation Marketing Playbook
+              The Private Event Lead Generation Marketing Playbook
             </h2>
             <p className="text-gray-600 mb-6">
-              A step-by-step system covering PR, social content, email, SEO, and exposure partners — tactics you can start using today, no matter which option above you pick.
+              A step-by-step system covering PR, social content, email, SEO, and exposure partners — included as a bonus when you subscribe to Sphere.
             </p>
             <ul className="space-y-2 mb-7">
               {['PR & media outreach', 'Social content + CTA system', 'Email & SEO tactics', 'Exposure partner list'].map((item) => (
@@ -232,7 +232,7 @@ export default function ServicesPage() {
               ))}
             </ul>
             <Link href="/playbook" className="btn-primary inline-block">
-              Get the Free Playbook →
+              See the Playbook →
             </Link>
           </div>
 
