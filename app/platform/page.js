@@ -133,7 +133,7 @@ export default function PlatformPage() {
                 <span>⬇</span> Download One-Pager
               </a>
               <span className="text-gray-300 text-xs">·</span>
-              <p className="text-gray-400 text-xs">No credit card required · Founding Partner spots are limited · Cancel anytime</p>
+              <p className="text-gray-400 text-xs">No credit card required · Receive a free copy of The Private Event Lead Generation Marketing Playbook · Founding Partner spots are limited · Cancel anytime</p>
             </div>
           </div>
           <div className="relative rounded-2xl overflow-hidden shadow-2xl">

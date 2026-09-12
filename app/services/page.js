@@ -86,7 +86,7 @@ export default function ServicesPage() {
           <a href="https://crm.eventspheresolutions.com/signup" target="_blank" rel="noopener noreferrer" className="btn-primary text-lg px-8 py-4">
             Start Free
           </a>
-          <p className="text-gray-400 text-sm mt-3">No credit card required</p>
+          <p className="text-gray-400 text-sm mt-3">No credit card required — plus receive a free copy of The Private Event Lead Generation Marketing Playbook</p>
         </div>
       </section>
 
@@ -130,7 +130,7 @@ export default function ServicesPage() {
                 <a href="https://crm.eventspheresolutions.com/signup" target="_blank" rel="noopener noreferrer" className="inline-block bg-white text-[#6a256f] font-bold text-sm px-8 py-3.5 rounded-full hover:bg-gray-100 transition-all">
                   Start Free →
                 </a>
-                <p className="text-white/40 text-xs mt-3">No credit card required</p>
+                <p className="text-white/40 text-xs mt-3">No credit card required — plus receive a free copy of The Private Event Lead Generation Marketing Playbook</p>
               </div>
             </div>
           </div>

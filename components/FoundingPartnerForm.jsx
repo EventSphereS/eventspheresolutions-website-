@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
 
-const businessTypes = ['Restaurant', 'Bar / Nightlife', 'Venue', 'Hotel', 'Multiple locations']
+const businessTypes = ['Restaurant', 'Bar / Nightlife', 'Venue', 'Boutique Hotels', 'Multiple locations']
 const eventFrequency = ['< 1/month', '1–3/month', '4–8/month', '8+/month']
 const currentTools = ['Spreadsheets / email', 'Tripleseat', 'Gather', 'Planning Pod', 'Another CRM', 'Nothing — we wing it']
 const sphereNeeds = [

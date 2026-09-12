@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
 
-const businessTypes = ['Restaurant', 'Bar / Nightlife', 'Venue', 'Hotel', 'Catering', 'Other']
+const businessTypes = ['Restaurant', 'Bar / Nightlife', 'Venue', 'Boutique Hotels', 'Catering', 'Other']
 const services = [
   'V1 — Platform + Expert Sales Team',
   'V2 — Platform Only (Self-Serve)',

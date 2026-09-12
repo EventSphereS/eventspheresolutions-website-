@@ -79,11 +79,16 @@ export default function ContactPage() {
             </div>
 
             {/* Contact buttons */}
-            <div className="flex flex-col sm:flex-row gap-3">
+            <div className="flex flex-col sm:flex-row gap-3 flex-wrap">
               <a href="mailto:hello@eventspheresolutions.com"
                 className="flex items-center justify-center gap-2 bg-[#6a256f] text-white font-semibold text-sm px-5 py-3 rounded-full hover:opacity-90 transition-all">
                 <span className="text-base">✉</span>
                 hello@eventspheresolutions.com
+              </a>
+              <a href="tel:+16028263834"
+                className="flex items-center justify-center gap-2 bg-[#E07B20] text-white font-semibold text-sm px-5 py-3 rounded-full hover:opacity-90 transition-all">
+                <span className="text-base">📞</span>
+                +1 (602) 826-3834
               </a>
               <a href="https://wa.me/16028263834"
                 target="_blank" rel="noopener noreferrer"
