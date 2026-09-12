@@ -123,7 +123,12 @@ export default function PlatformPage() {
                 See Pricing
               </Link>
             </div>
-            <div className="flex items-center gap-3 mt-5">
+            <div className="mt-4">
+              <span className="inline-flex items-center gap-2 bg-[#E07B20]/10 border border-[#E07B20]/40 text-[#E07B20] text-xs font-bold px-4 py-2 rounded-full">
+                🎁 Free bonus — The Private Event Lead Generation Marketing Playbook
+              </span>
+            </div>
+            <div className="flex items-center gap-3 mt-4">
               <a
                 href="/sphere-services.html"
                 target="_blank"
@@ -133,7 +138,7 @@ export default function PlatformPage() {
                 <span>⬇</span> Download One-Pager
               </a>
               <span className="text-gray-300 text-xs">·</span>
-              <p className="text-gray-400 text-xs">No credit card required · Receive a free copy of The Private Event Lead Generation Marketing Playbook · Founding Partner spots are limited · Cancel anytime</p>
+              <p className="text-gray-400 text-xs">No credit card required · Founding Partner spots are limited · Cancel anytime</p>
             </div>
           </div>
           <div className="relative rounded-2xl overflow-hidden shadow-2xl">

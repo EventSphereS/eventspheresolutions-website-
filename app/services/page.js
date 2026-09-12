@@ -86,7 +86,12 @@ export default function ServicesPage() {
           <a href="https://crm.eventspheresolutions.com/signup" target="_blank" rel="noopener noreferrer" className="btn-primary text-lg px-8 py-4">
             Start Free
           </a>
-          <p className="text-gray-400 text-sm mt-3">No credit card required — plus receive a free copy of The Private Event Lead Generation Marketing Playbook</p>
+          <div className="mt-4">
+            <span className="inline-flex items-center gap-2 bg-[#E07B20]/15 border border-[#E07B20]/50 text-[#F99F33] text-xs font-bold px-4 py-2 rounded-full">
+              🎁 Free bonus — The Private Event Lead Generation Marketing Playbook
+            </span>
+          </div>
+          <p className="text-gray-400 text-sm mt-3">No credit card required</p>
         </div>
       </section>
 
@@ -130,7 +135,12 @@ export default function ServicesPage() {
                 <a href="https://crm.eventspheresolutions.com/signup" target="_blank" rel="noopener noreferrer" className="inline-block bg-white text-[#6a256f] font-bold text-sm px-8 py-3.5 rounded-full hover:bg-gray-100 transition-all">
                   Start Free →
                 </a>
-                <p className="text-white/40 text-xs mt-3">No credit card required — plus receive a free copy of The Private Event Lead Generation Marketing Playbook</p>
+                <div className="mt-3">
+                  <span className="inline-flex items-center gap-2 bg-[#E07B20]/15 border border-[#E07B20]/50 text-[#F99F33] text-xs font-bold px-4 py-2 rounded-full">
+                    🎁 Free bonus — The Private Event Lead Generation Marketing Playbook
+                  </span>
+                </div>
+                <p className="text-white/40 text-xs mt-2">No credit card required</p>
               </div>
             </div>
           </div>
