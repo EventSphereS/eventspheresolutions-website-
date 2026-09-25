@@ -124,7 +124,7 @@ export default function Home() {
                 number: '02',
                 title: 'No Manual Work',
                 desc: 'Proposals, contracts, follow-ups, and reporting all run automatically. Your team focuses on hospitality, not paperwork.',
-                stat: '14+',
+                stat: '20+',
                 statLabel: 'hours saved every week',
               },
               {
