@@ -132,7 +132,6 @@
       border-radius: 14px;
       overflow: hidden;
       position: relative;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
     }
     .cover-photo img {
       width: 100%;
@@ -153,8 +152,6 @@
       margin-top: 40px;
     }
     .cover-pillar {
-      border: 1.5px solid #e8e8e8;
-      border-radius: 10px;
       padding: 12px 10px;
       text-align: center;
     }
@@ -267,28 +264,27 @@
       margin: 16px 0 6px;
       border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.1);
     }
     .page-photo img { width: 100%; height: 200px; object-fit: cover; display: block; }
     .page-photo-caption { margin-top: 6px; font-size: 7.5pt; color: #999; text-align: center; }
 
     .eblast-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 12px 0 6px; }
-    .eblast-grid .shot-frame { border-radius: 10px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.1); }
+    .eblast-grid .shot-frame { border-radius: 10px; overflow: hidden; }
     .eblast-grid .shot-frame img { width: 100%; height: auto; display: block; }
     .eblast-grid .cap { margin-top: 6px; font-size: 7.5pt; color: #999; text-align: center; }
 
     .seasonal-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 12px 0 6px; }
-    .seasonal-grid .shot-frame { border-radius: 10px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.1); }
+    .seasonal-grid .shot-frame { border-radius: 10px; overflow: hidden; }
     .seasonal-grid .shot-frame img { width: 100%; height: auto; display: block; }
     .seasonal-grid .cap { margin-top: 6px; font-size: 7.5pt; color: #999; text-align: center; }
 
     .pillar-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 12px 0 6px; }
-    .pillar-grid .shot-frame { border-radius: 10px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.1); height: 130px; }
+    .pillar-grid .shot-frame { border-radius: 10px; overflow: hidden; height: 130px; }
     .pillar-grid .shot-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .pillar-grid .cap { margin-top: 6px; font-size: 7.5pt; color: #999; text-align: center; }
 
     .example-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 10px 0 14px; }
-    .example-grid .shot-frame { border-radius: 10px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.1); height: 140px; }
+    .example-grid .shot-frame { border-radius: 10px; overflow: hidden; height: 140px; }
     .example-grid .shot-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .example-grid .cap { margin-top: 6px; font-size: 7.5pt; color: #999; text-align: center; }
     .example-wide { grid-column: 1 / -1; }
@@ -311,7 +307,7 @@
 
     .format-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 8px 0 10px; align-items: start; }
     .format-shot h3 { margin: 0 0 6px; font-size: 9.5pt; text-align: center; }
-    .format-shot .shot-frame { border-radius: 12px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.1); }
+    .format-shot .shot-frame { border-radius: 12px; overflow: hidden; }
     .format-shot .shot-frame img { width: 100%; height: auto; display: block; }
 
     .page-footer {
@@ -597,13 +593,13 @@
     <h2>Example: Inquiry Forms</h2>
     <div style="display: flex; gap: 20px; justify-content: center; align-items: flex-start;">
       <div style="text-align: center;">
-        <div style="border-radius: 10px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.1); display: inline-block;">
+        <div style="border-radius: 10px; overflow: hidden; display: inline-block;">
           <img src="/images/playbook-example-inquiry-form-recreo.png" alt="Example branded private-event inquiry form for Recreo Cantina" style="height: 175px; width: auto; display: block;" />
         </div>
         <div style="margin-top: 6px; font-size: 7.5pt; color: #999; max-width: 170px;">Branded form — matches the venue's look and feel.</div>
       </div>
       <div style="text-align: center;">
-        <div style="border-radius: 10px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.1); display: inline-block;">
+        <div style="border-radius: 10px; overflow: hidden; display: inline-block;">
           <img src="/images/playbook-example-inquiry-form-lomas.png" alt="Example embedded private-event inquiry form for Lomas - Padeland" style="height: 175px; width: auto; display: block;" />
         </div>
         <div style="margin-top: 6px; font-size: 7.5pt; color: #999; max-width: 170px;">Embed this form directly on your website page.</div>
@@ -630,7 +626,7 @@
 
     <h2>Example: Poster</h2>
     <div style="text-align: center;">
-      <div style="border-radius: 10px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.1); display: inline-block;">
+      <div style="border-radius: 10px; overflow: hidden; display: inline-block;">
         <img src="/images/playbook-signage-poster-qr.png" alt="Example framed poster with a QR code linking to the inquiry form" style="height: 280px; width: auto; display: block;" />
       </div>
       <div style="margin-top: 6px; font-size: 7.5pt; color: #999;">Branded, on-message, and easy to scan — the same poster works at the entrance, on a table stand, or in the restroom.</div>
