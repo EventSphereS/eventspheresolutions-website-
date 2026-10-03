@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import PricingToggle from '@/components/PricingToggle'
@@ -73,6 +74,78 @@ export const metadata = {
     images: ['/feature-image.png'],
   },
 }
+
+function FeatureCheck() {
+  return (
+    <svg viewBox="0 0 20 20" className="w-5 h-5 mx-auto" aria-label="Included">
+      <circle cx="10" cy="10" r="9" className="fill-[#E07B20]/10" />
+      <path d="M6 10.3l2.6 2.6L14 7.3" fill="none" stroke="#E07B20" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
+}
+
+const featureGroups = [
+  {
+    category: 'Plan Basics',
+    rows: [
+      { feature: 'Free data migration', e: '✓', g: '✓', p: '✓' },
+      { feature: 'Locations', e: '1', g: '1', p: 'Multiple' },
+      { feature: 'Users', e: '2 (+$15 each)', g: '5 (+$15 each)', p: 'Multiple' },
+      { feature: 'Support', e: 'Email', g: 'Priority', p: 'Dedicated' },
+    ],
+  },
+  {
+    category: 'Core Platform',
+    rows: [
+      { feature: 'Branded lead capture forms', e: '✓', g: '✓', p: '✓' },
+      { feature: 'Visual sales pipeline', e: '✓', g: '✓', p: '✓' },
+      { feature: 'Event calendar & conflict prevention', e: '✓', g: '✓', p: '✓' },
+      { feature: 'Branded proposals & contracts', e: '✓', g: '✓', p: '✓' },
+      { feature: 'Digital agreements & e-signature', e: '✓', g: '✓', p: '✓' },
+      { feature: 'Online payment collection', e: '✓', g: '✓', p: '✓' },
+      { feature: 'Task reminders & notifications', e: '✓', g: '✓', p: '✓' },
+      { feature: 'Reporting dashboard', e: '✓', g: '✓', p: '✓' },
+      { feature: 'Internal team chatbox', e: '✓', g: '✓', p: '✓' },
+      { feature: 'Multi-location dashboard', e: '✓', g: '✓', p: '✓' },
+      { feature: 'Cross-location sales analytics', e: '✓', g: '✓', p: '✓' },
+      { feature: 'Guest review & feedback collection', e: '✓', g: '✓', p: '✓' },
+      { feature: 'Email campaigns', e: '1,000/mo', g: '2,500/mo', p: '5,000/mo per location' },
+      { feature: 'Email campaign analytics', e: '✓', g: '✓', p: '✓' },
+      { feature: 'Promo codes', e: '2 active', g: '3/month', p: '6/month per location' },
+    ],
+  },
+  {
+    category: 'Sales Growth',
+    rows: [
+      { feature: 'Leads call system', e: '—', g: '✓', p: '✓' },
+      { feature: 'Automated email follow-up', e: '—', g: '✓', p: '✓' },
+      { feature: 'AI email support', e: '—', g: '✓', p: '✓' },
+      { feature: 'Sales forecasting dashboard', e: '—', g: '✓', p: '✓' },
+      { feature: 'Conversion tracking (lead → booked)', e: '—', g: '✓', p: '✓' },
+      { feature: 'Branded client portal', e: '—', g: '✓', p: '✓' },
+    ],
+  },
+  {
+    category: 'Hospitality Exclusive',
+    rows: [
+      { feature: 'Sales rep performance tracking', e: '—', g: '—', p: '✓' },
+      { feature: 'Commission tracking', e: '—', g: '—', p: '✓' },
+      { feature: 'Custom workflow builder', e: '—', g: '—', p: '✓' },
+      { feature: 'API access', e: '—', g: '—', p: '✓' },
+      { feature: 'Dedicated onboarding manager', e: '—', g: '—', p: '✓' },
+      { feature: 'Strategic review sessions', e: '—', g: '—', p: '✓' },
+    ],
+  },
+  {
+    category: 'Coming Soon',
+    rows: [
+      { feature: '360° Virtual Tour', e: 'Add-On', g: 'Add-On', p: 'Add-On' },
+      { feature: 'Mobile app access', e: 'Coming Soon', g: 'Coming Soon', p: 'Coming Soon' },
+      { feature: 'SMS credit bundle', e: '—', g: 'Coming Soon', p: 'Coming Soon' },
+      { feature: 'OpenTable integration', e: 'Coming Soon', g: 'Coming Soon', p: 'Coming Soon' },
+    ],
+  },
+]
 
 export default function PricingPage() {
   return (
@@ -213,54 +286,28 @@ export default function PricingPage() {
                 </tr>
               </thead>
               <tbody>
-                {[
-                  // — Plan limits —
-                  { feature: 'Free data migration', e: '✓', g: '✓', p: '✓' },
-                  { feature: 'Locations', e: '1', g: '1', p: 'Multiple' },
-                  { feature: 'Users', e: '2 (+$15 each)', g: '5 (+$15 each)', p: 'Multiple' },
-                  // — Included in all —
-                  { feature: 'Branded lead capture forms', e: '✓', g: '✓', p: '✓' },
-                  { feature: 'Visual sales pipeline', e: '✓', g: '✓', p: '✓' },
-                  { feature: 'Event calendar & conflict prevention', e: '✓', g: '✓', p: '✓' },
-                  { feature: 'Branded proposals & contracts', e: '✓', g: '✓', p: '✓' },
-                  { feature: 'Digital agreements & e-signature', e: '✓', g: '✓', p: '✓' },
-                  { feature: 'Online payment collection', e: '✓', g: '✓', p: '✓' },
-                  { feature: 'Task reminders & notifications', e: '✓', g: '✓', p: '✓' },
-                  { feature: 'Reporting dashboard', e: '✓', g: '✓', p: '✓' },
-                  { feature: 'Internal team chatbox', e: '✓', g: '✓', p: '✓' },
-                  { feature: 'Multi-location dashboard', e: '✓', g: '✓', p: '✓' },
-                  { feature: 'Cross-location sales analytics', e: '✓', g: '✓', p: '✓' },
-                  { feature: 'Email campaigns', e: '1,000/mo', g: '2,500/mo', p: '5,000/mo per location' },
-                  { feature: 'Email campaign analytics', e: '✓', g: '✓', p: '✓' },
-                  { feature: 'Promo codes', e: '2 active', g: '3/month', p: '6/month per location' },
-                  { feature: 'Support', e: 'Email', g: 'Priority', p: 'Dedicated' },
-                  // — Revenue Growth+ —
-                  { feature: 'Leads call system', e: '—', g: '✓', p: '✓' },
-                  { feature: 'Automated email follow-up', e: '—', g: '✓', p: '✓' },
-                  { feature: 'AI email support', e: '—', g: '✓', p: '✓' },
-                  { feature: 'Sales forecasting dashboard', e: '—', g: '✓', p: '✓' },
-                  { feature: 'Conversion tracking (lead → booked)', e: '—', g: '✓', p: '✓' },
-                  { feature: 'Branded client portal', e: '—', g: '✓', p: '✓' },
-                  // — Portfolio only —
-                  { feature: 'Sales rep performance tracking', e: '—', g: '—', p: '✓' },
-                  { feature: 'Commission tracking', e: '—', g: '—', p: '✓' },
-                  { feature: 'Custom workflow builder', e: '—', g: '—', p: '✓' },
-                  { feature: 'API access', e: '—', g: '—', p: '✓' },
-                  { feature: 'Dedicated onboarding manager', e: '—', g: '—', p: '✓' },
-                  { feature: 'Strategic review sessions', e: '—', g: '—', p: '✓' },
-                  // — Coming Soon —
-                  { feature: '360° Virtual Tour', e: 'Add-On', g: 'Add-On', p: 'Add-On' },
-                  { feature: 'Guest review & feedback collection', e: '✓', g: '✓', p: '✓' },
-                  { feature: 'Mobile app access', e: 'Coming Soon', g: 'Coming Soon', p: 'Coming Soon' },
-                  { feature: 'SMS credit bundle', e: '—', g: 'Coming Soon', p: 'Coming Soon' },
-                  { feature: 'OpenTable integration', e: 'Coming Soon', g: 'Coming Soon', p: 'Coming Soon' },
-                ].map((row, i) => (
-                  <tr key={row.feature} className={`border-b border-gray-50 ${i % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'}`}>
-                    <td className="p-4 text-gray-700 font-medium">{row.feature}</td>
-                    <td className={`p-4 text-center ${row.e === 'Coming Soon' ? 'text-orange-400 text-xs font-medium' : row.e === 'Add-On' ? 'text-[#6a256f] text-xs font-bold' : 'text-gray-600'}`}>{row.e}</td>
-                    <td className={`p-4 text-center bg-[#E07B20]/5 border-x border-[#E07B20]/10 ${row.g === 'Coming Soon' ? 'text-orange-400 text-xs font-medium' : row.g === 'Add-On' ? 'text-[#6a256f] text-xs font-bold' : 'text-gray-600'}`}>{row.g}</td>
-                    <td className={`p-4 text-center ${row.p === 'Coming Soon' ? 'text-orange-400 text-xs font-medium' : row.p === 'Add-On' ? 'text-[#6a256f] text-xs font-bold' : 'text-gray-600'}`}>{row.p}</td>
-                  </tr>
+                {featureGroups.map((group) => (
+                  <Fragment key={group.category}>
+                    <tr className="bg-gray-100/80">
+                      <td colSpan={4} className="px-5 py-2.5 text-gray-500 text-xs font-bold uppercase tracking-wide">
+                        {group.category}
+                      </td>
+                    </tr>
+                    {group.rows.map((row) => (
+                      <tr key={row.feature} className="border-b border-gray-50">
+                        <td className="p-4 text-gray-700 font-medium">{row.feature}</td>
+                        <td className={`p-4 text-center ${row.e === 'Coming Soon' ? 'text-orange-400 text-xs font-medium' : row.e === 'Add-On' ? 'text-[#6a256f] text-xs font-bold' : 'text-gray-600'}`}>
+                          {row.e === '✓' ? <FeatureCheck /> : row.e === '—' ? '' : row.e}
+                        </td>
+                        <td className={`p-4 text-center bg-[#E07B20]/5 border-x border-[#E07B20]/10 ${row.g === 'Coming Soon' ? 'text-orange-400 text-xs font-medium' : row.g === 'Add-On' ? 'text-[#6a256f] text-xs font-bold' : 'text-gray-600'}`}>
+                          {row.g === '✓' ? <FeatureCheck /> : row.g === '—' ? '' : row.g}
+                        </td>
+                        <td className={`p-4 text-center ${row.p === 'Coming Soon' ? 'text-orange-400 text-xs font-medium' : row.p === 'Add-On' ? 'text-[#6a256f] text-xs font-bold' : 'text-gray-600'}`}>
+                          {row.p === '✓' ? <FeatureCheck /> : row.p === '—' ? '' : row.p}
+                        </td>
+                      </tr>
+                    ))}
+                  </Fragment>
                 ))}
               </tbody>
             </table>
