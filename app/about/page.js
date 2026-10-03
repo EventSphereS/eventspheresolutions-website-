@@ -139,13 +139,10 @@ export default function AboutPage() {
             <h2 className="text-3xl md:text-4xl font-bold font-display tracking-tight text-[#6a256f] mb-6">Our Story</h2>
             <div className="space-y-4 text-gray-600 leading-relaxed">
               <p>
-                Event Sphere Solutions was founded with a simple insight: hospitality businesses are sitting on untapped event potential. Restaurants with beautiful private dining rooms hosting one event a month. Hotels with stunning ballrooms that sit empty most weekends. Bars with perfect atmospheres but no strategy to fill them.
+                Event Sphere Solutions started with frustration, not a business plan. Our founder spent 18 years selling private events on three continents — and never had the right tool built for the job. Spreadsheets. Missed inquiries. Leads lost across three different inboxes.
               </p>
               <p>
-                We built Event Sphere Solutions to change that. Our team brings together deep expertise in event planning, marketing, technology, and hospitality operations — creating a unique B2B2C model that serves both our business clients and the guests they serve.
-              </p>
-              <p>
-                When you partner with Event Sphere Solutions, you're not hiring a vendor. You're gaining a dedicated team that cares as much about your guests' experience as you do — and has the skills and systems to deliver it, every time.
+                So we built Sphere: the private event sales platform made for event sales people, not around them. One pipeline. Follow-up that never forgets. No lead left behind.
               </p>
             </div>
             <Link href="/contact" className="btn-primary mt-8 inline-block">Let's Work Together</Link>
