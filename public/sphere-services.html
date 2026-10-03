@@ -10,8 +10,10 @@
 
     :root {
       --purple: #6a256f;
+      --purple-mid: #4a1555;
       --purple-dark: #2d0a35;
       --orange: #E07B20;
+      --orange-light: #F99F33;
       --dark: #111827;
       --gray: #666;
       --line: #e8e8e8;
@@ -195,7 +197,7 @@
       padding: 15px;
       border: 1px solid var(--line);
     }
-    .card.accent { border-color: var(--orange); }
+    .card.accent { border-color: var(--orange); background: #fff9f5; }
     .card-label {
       font-size: 6pt;
       font-weight: 800;
@@ -230,6 +232,24 @@
       flex-shrink: 0;
     }
     .plan-features .lead { color: var(--dark); font-weight: 600; }
+
+    /* ── Dark cards (Hospitality tier + add-ons) ── */
+    .card.dark-card { border-color: transparent; }
+    .card.tone-purple { background: var(--purple); }
+    .card.tone-purple-mid { background: var(--purple-mid); }
+    .card.tone-purple-dark { background: var(--purple-dark); }
+    .card.tone-dark { background: var(--dark); }
+    .dark-card .card-label { color: rgba(255,255,255,0.5); }
+    .dark-card .card-label.accent { color: var(--orange-light); }
+    .dark-card h3 { color: white; }
+    .dark-card p { color: rgba(255,255,255,0.55); }
+    .dark-card .plan-price { color: white; }
+    .dark-card .plan-price span { color: rgba(255,255,255,0.4); }
+    .dark-card .plan-features li,
+    .dark-card .feature-list li { color: rgba(255,255,255,0.8); }
+    .dark-card .plan-features li::before,
+    .dark-card .feature-list li::before { color: var(--orange-light); }
+    .dark-card .plan-features .lead { color: white; }
 
     /* ── Divider ── */
     .divider {
@@ -385,7 +405,7 @@
             </div>
 
             <!-- Hospitality -->
-            <div class="card">
+            <div class="card dark-card tone-purple">
               <div class="card-label">Sphere Hospitality · Multi-location groups</div>
               <div class="plan-price">Custom<span>&nbsp;pricing</span></div>
               <ul class="plan-features">
@@ -412,7 +432,7 @@
 
         <div class="three-col">
 
-          <div class="card addon-card">
+          <div class="card addon-card dark-card tone-purple-mid">
             <div class="card-label">Add-On · Free</div>
             <h3>Sphere + Sales Team</h3>
             <p>A dedicated expert sales team handles every inquiry, follow-up, and close — on your behalf.</p>
@@ -422,7 +442,7 @@
             </ul>
           </div>
 
-          <div class="card addon-card">
+          <div class="card addon-card dark-card tone-purple-dark">
             <div class="card-label">Add-On · Coming Soon</div>
             <h3>Sphere AI</h3>
             <p>AI automation layered on Sphere — capture leads and book events 24/7, hands-free.</p>
@@ -432,7 +452,7 @@
             </ul>
           </div>
 
-          <div class="card addon-card">
+          <div class="card addon-card dark-card tone-dark">
             <div class="card-label">Coming Soon</div>
             <h3>Sphere Mobile App</h3>
             <p>Manage leads, proposals, and bookings from your phone, wherever you are.</p>
