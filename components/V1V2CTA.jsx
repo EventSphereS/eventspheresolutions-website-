@@ -74,7 +74,7 @@ const questions = [
     options: [
       { label: 'I want full control and visibility over every booking', points: { sphere: 2 } },
       { label: 'I want to grow but need the right team to make it happen', points: { salesTeam: 2 } },
-      { label: 'I want to scale efficiently with smart tools and automation', points: { ai: 2 } },
+      { label: 'I want to scale efficiently with software and automation', points: { ai: 2 } },
       { label: 'I want a bit of everything — tools, support, and efficiency', points: { sphere: 1, salesTeam: 1, ai: 1 } },
     ],
   },

@@ -113,7 +113,7 @@ export default function PlatformPage() {
               <span className="text-[#E07B20]">Sphere</span> — Your private event<br />sales platform
             </h1>
             <p className="text-gray-500 text-lg leading-relaxed mb-8">
-              Sphere gives your hospitality business the expert sales team and smart tools to turn empty calendars into consistent, high-performing event sales programs — without the overhead.
+              Sphere gives your hospitality business the expert sales team and software to turn empty calendars into consistent, high-performing event sales programs — without the overhead.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="https://crm.eventspheresolutions.com/signup" target="_blank" rel="noopener noreferrer" className="btn-primary text-base px-8 py-3.5">

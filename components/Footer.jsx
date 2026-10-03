@@ -16,7 +16,7 @@ export default function Footer() {
               className="h-16 w-auto object-contain"
             />
             <p className="mt-4 leading-relaxed text-white/70 text-sm">
-              Empowering hospitality businesses with expert-driven event sales and smart tools that increase revenue, simplify operations, and create standout guest experiences.
+              Empowering hospitality businesses with expert-driven event sales and software that increase revenue, simplify operations, and create standout guest experiences.
             </p>
             <div className="flex gap-4 mt-6">
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
