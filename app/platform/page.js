@@ -67,7 +67,8 @@ const pillars = [
   },
   {
     icon: '⚙️',
-    stat: '10hrs',
+    statPrefix: 'Up to',
+    stat: '20hrs',
     statLabel: 'saved per week per team',
     title: 'Less Manual Work',
     accent: 'from-[#E07B20] to-[#F99F33]',
@@ -232,7 +233,10 @@ export default function PlatformPage() {
                     {p.icon}
                   </div>
                   {/* Stat */}
-                  <div className="mb-1">
+                  <div className="mb-1 flex items-baseline gap-2">
+                    {p.statPrefix && (
+                      <span className="text-sm font-bold text-gray-400 uppercase tracking-wide">{p.statPrefix}</span>
+                    )}
                     <span className={`text-5xl font-extrabold font-display bg-gradient-to-r ${p.accent} bg-clip-text text-transparent`}>
                       {p.stat}
                     </span>
@@ -280,7 +284,7 @@ export default function PlatformPage() {
               </div>
               <p className="text-gray-500 text-sm mb-6">Perfect for single-location venues getting started.</p>
               <ul className="space-y-2 mb-8 flex-1">
-                {['Lead capture & visual pipeline', 'Proposals, BEOs & e-signatures', 'Event calendar & conflict prevention', 'Email campaigns (1,000/mo)', 'Reporting dashboard'].map((f) => (
+                {['Lead capture & visual pipeline', 'Proposals, BEOs & e-signatures', 'Event calendar & conflict prevention', 'Email campaigns (1,000/mo)', 'Smart Dashboard'].map((f) => (
                   <li key={f} className="flex items-start gap-2 text-gray-600 text-sm">
                     <span className="text-[#6a256f] font-bold mt-0.5">✓</span> {f}
                   </li>

@@ -104,9 +104,8 @@ const featureGroups = [
       { feature: 'Digital agreements & e-signature', e: '✓', g: '✓', p: '✓' },
       { feature: 'Online payment collection', e: '✓', g: '✓', p: '✓' },
       { feature: 'Task reminders & notifications', e: '✓', g: '✓', p: '✓' },
-      { feature: 'Reporting dashboard', e: '✓', g: '✓', p: '✓' },
+      { feature: 'Smart Dashboard', e: '✓', g: '✓', p: '✓' },
       { feature: 'Internal team chatbox', e: '✓', g: '✓', p: '✓' },
-      { feature: 'Multi-location dashboard', e: '✓', g: '✓', p: '✓' },
       { feature: 'Cross-location sales analytics', e: '✓', g: '✓', p: '✓' },
       { feature: 'Guest review & feedback collection', e: '✓', g: '✓', p: '✓' },
       { feature: 'Email campaigns', e: '1,000/mo', g: '2,500/mo', p: '5,000/mo per location' },
@@ -127,7 +126,7 @@ const featureGroups = [
   {
     category: 'Hospitality Exclusive',
     rows: [
-      { feature: 'Sales rep performance tracking', e: '—', g: '—', p: '✓' },
+      { feature: 'Sales performance tracking', e: '—', g: '—', p: '✓' },
       { feature: 'Commission tracking', e: '—', g: '—', p: '✓' },
       { feature: 'Custom workflow builder', e: '—', g: '—', p: '✓' },
       { feature: 'API access', e: '—', g: '—', p: '✓' },
@@ -359,7 +358,7 @@ export default function PricingPage() {
                   Everything your venue needs to capture leads, send proposals, manage your calendar, run email campaigns, and track every booking — all in one place.
                 </p>
                 <ul className="grid grid-cols-2 gap-2">
-                  {['Lead capture & pipeline', 'Proposals, BEOs & invoices', 'Smart calendar & conflict prevention', 'Email campaigns & promo codes', 'Online payments & e-signatures', 'Reporting dashboard'].map((f) => (
+                  {['Lead capture & pipeline', 'Proposals, BEOs & invoices', 'Smart calendar & conflict prevention', 'Email campaigns & promo codes', 'Online payments & e-signatures', 'Smart Dashboard'].map((f) => (
                     <li key={f} className="flex items-center gap-2 text-sm text-gray-600">
                       <span className="text-[#E07B20] font-bold text-base">✓</span> {f}
                     </li>

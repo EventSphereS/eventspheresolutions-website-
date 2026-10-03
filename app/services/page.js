@@ -125,7 +125,7 @@ export default function ServicesPage() {
                 <h3 className="font-display font-extrabold text-4xl md:text-5xl tracking-tight mb-4 leading-tight" style={{ background: 'linear-gradient(90deg, #6a256f, #EF4561, #E07B20)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Sphere</h3>
                 <p className="text-white/70 text-base leading-relaxed mb-6 max-w-lg">Your complete private event sales platform. Capture leads, send proposals, manage your calendar, run email campaigns, and track every booking — all in one place.</p>
                 <div className="grid grid-cols-2 gap-2 mb-8 max-w-md">
-                  {['Lead capture & pipeline', 'Proposals, BEOs & invoices', 'Smart calendar', 'Email campaigns', 'Online payments', 'Reporting dashboard'].map(f => (
+                  {['Lead capture & pipeline', 'Proposals, BEOs & invoices', 'Smart calendar', 'Email campaigns', 'Online payments', 'Smart Dashboard'].map(f => (
                     <div key={f} className="flex items-center gap-2 text-white/80 text-sm">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#E07B20] shrink-0" />
                       {f}
