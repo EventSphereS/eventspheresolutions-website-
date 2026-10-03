@@ -223,7 +223,7 @@ export default function Home() {
               The hospitality industry,<br className="hidden md:block" /> and no one else.
             </h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
             {[
               {
                 label: 'Restaurants',
@@ -244,20 +244,29 @@ export default function Home() {
                 ),
               },
               {
-                label: 'Venues',
-                sub: 'Event spaces & halls',
+                label: 'Boutique Hotels',
+                sub: 'Intimate stays & suites',
                 icon: (
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M3 22h18"/><path d="M4 22V11L12 4l8 7v11"/><path d="M9 22v-6h6v6"/><path d="M9 9h.01M12 9h.01M15 9h.01"/>
+                    <path d="M3 22h18"/><path d="M4 22V4a1 1 0 011-1h14a1 1 0 011 1v18"/><path d="M7 8h2v2H7zM7 13h2v2H7zM15 8h2v2h-2zM15 13h2v2h-2zM11 18h2v4h-2z"/>
                   </svg>
                 ),
               },
               {
-                label: 'Hotels',
-                sub: 'Ballrooms to boutiques',
+                label: 'Catering & Private Chefs',
+                sub: 'In-home dinners to off-site events',
                 icon: (
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M3 22h18"/><path d="M4 22V4a1 1 0 011-1h14a1 1 0 011 1v18"/><path d="M7 8h2v2H7zM7 13h2v2H7zM15 8h2v2h-2zM15 13h2v2h-2zM11 18h2v4h-2z"/>
+                    <path d="M17 21a1 1 0 001-1v-5.35c0-.457.316-.844.727-1.041a4 4 0 00-2.134-7.589 5 5 0 00-9.186 0 4 4 0 00-2.134 7.588c.411.198.727.585.727 1.041V20a1 1 0 001 1Z"/><path d="M6 17h12"/>
+                  </svg>
+                ),
+              },
+              {
+                label: 'Sports Venues',
+                sub: 'Golf, country clubs & pickleball courts',
+                icon: (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22V4"/>
                   </svg>
                 ),
               },
