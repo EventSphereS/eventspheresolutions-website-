@@ -139,7 +139,7 @@ export default function AboutPage() {
             <h2 className="text-3xl md:text-4xl font-bold font-display tracking-tight text-[#6a256f] mb-6">Our Story</h2>
             <div className="space-y-4 text-gray-600 leading-relaxed">
               <p>
-                Event Sphere Solutions started with frustration, not a business plan. Our founder spent 18 years selling private events on three continents — and never had the right tool built for the job. Spreadsheets. Missed inquiries. Leads lost across three different inboxes.
+                Event Sphere Solutions started with frustration, not a business plan. Our founder spent 18 years selling private events on three continents and could never find the right tool — not for event planners, but for event sales people inside hospitality businesses. Spreadsheets. Missed inquiries. Leads lost across three different inboxes.
               </p>
               <p>
                 So we built Sphere: the private event sales platform made for event sales people, not around them. One pipeline. Follow-up that never forgets. No lead left behind.
