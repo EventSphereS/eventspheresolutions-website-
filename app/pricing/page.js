@@ -108,6 +108,7 @@ const featureGroups = [
       { feature: 'Internal team chatbox', e: '✓', g: '✓', p: '✓' },
       { feature: 'Cross-location sales analytics', e: '✓', g: '✓', p: '✓' },
       { feature: 'Guest review & feedback collection', e: '✓', g: '✓', p: '✓' },
+      { feature: 'Smart Email Templates', e: '✓', g: '✓', p: '✓' },
       { feature: 'Email campaigns', e: '1,000/mo', g: '2,500/mo', p: '5,000/mo per location' },
       { feature: 'Email campaign analytics', e: '✓', g: '✓', p: '✓' },
       { feature: 'Promo codes', e: '2 active', g: '3/month', p: '6/month per location' },

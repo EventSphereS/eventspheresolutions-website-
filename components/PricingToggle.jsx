@@ -18,6 +18,7 @@ const plans = [
       'Task reminders & notifications',
       'Smart Dashboard',
       'Internal team chatbox',
+      'Smart Email Templates',
       'Email campaigns (1,000/mo)',
       'Email campaign analytics',
       'Promo codes (2 active)',
