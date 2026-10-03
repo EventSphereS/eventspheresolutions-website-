@@ -118,11 +118,10 @@ const featureGroups = [
     category: 'Sales Growth',
     rows: [
       { feature: 'Leads call system', e: '—', g: '✓', p: '✓' },
-      { feature: 'Automated email follow-up', e: '—', g: '✓', p: '✓' },
+      { feature: 'Automated email follow-up', e: '✓', g: '✓', p: '✓' },
       { feature: 'AI email support', e: '—', g: '✓', p: '✓' },
-      { feature: 'Sales forecasting dashboard', e: '—', g: '✓', p: '✓' },
-      { feature: 'Conversion tracking (lead → booked)', e: '—', g: '✓', p: '✓' },
-      { feature: 'Branded client portal', e: '—', g: '✓', p: '✓' },
+      { feature: 'Sales forecasting dashboard', e: '✓', g: '✓', p: '✓' },
+      { feature: 'Conversion tracking (lead → booked)', e: '✓', g: '✓', p: '✓' },
     ],
   },
   {
@@ -142,7 +141,6 @@ const featureGroups = [
       { feature: '360° Virtual Tour', e: 'Add-On', g: 'Add-On', p: 'Add-On' },
       { feature: 'Mobile app access', e: 'Coming Soon', g: 'Coming Soon', p: 'Coming Soon' },
       { feature: 'SMS credit bundle', e: '—', g: 'Coming Soon', p: 'Coming Soon' },
-      { feature: 'OpenTable integration', e: 'Coming Soon', g: 'Coming Soon', p: 'Coming Soon' },
     ],
   },
 ]
@@ -325,7 +323,6 @@ export default function PricingPage() {
               { q: 'Is the 30-day trial really free?', a: 'Yes. No credit card required. You get full access to your chosen tier for 30 days. If you love it, you stay. If not, you walk away with no charge.' },
               { q: 'Can I change plans later?', a: 'Absolutely. You can upgrade or downgrade at any time. Upgrades take effect immediately. Downgrades take effect at the next billing cycle.' },
               { q: 'What does "per location" mean?', a: 'Each physical venue or location is billed separately. If you have multiple locations, each gets its own dashboard and tools. The Sphere Hospitality tier gives you a centralized view across all of them.' },
-              { q: 'What is the OpenTable integration?', a: "We're actively working on OpenTable integration. It's coming to Sphere Growth and Sphere Hospitality tiers. Existing customers will get it added automatically at no extra charge when it's live." },
               { q: 'How are payments processed?', a: 'We partner with Stripe, the industry-leading payment platform, to process all payments securely. Your subscription billing and the online payments and deposits you collect from your clients are handled through Stripe — so card data is encrypted and PCI-compliant, and you never have to manage sensitive payment information yourself.' },
             ].map((item) => (
               <div key={item.q} className="bg-white rounded-xl p-6 shadow-sm">
