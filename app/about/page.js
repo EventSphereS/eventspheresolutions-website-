@@ -133,10 +133,10 @@ export default function AboutPage() {
 
       {/* Story */}
       <section className="py-20 bg-white">
-        <div className="max-w-2xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-6">
           <p className="text-[#E07B20] text-xs font-bold uppercase tracking-[0.2em] mb-3">Our Journey</p>
           <h2 className="text-3xl md:text-4xl font-bold font-display tracking-tight text-[#6a256f] mb-6">Our Story</h2>
-          <div className="space-y-4 text-gray-600 leading-relaxed">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 text-gray-600 leading-relaxed">
             <p>
               Event Sphere Solutions started with frustration, not a business plan. Our founder spent 18 years selling private events on three continents and could never find the right tool — not for event planners, but for event sales people inside hospitality businesses. Spreadsheets. Missed inquiries. Leads lost across three different inboxes.
             </p>
