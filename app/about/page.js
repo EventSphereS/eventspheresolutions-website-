@@ -166,10 +166,10 @@ export default function AboutPage() {
               <h2 className="text-3xl font-bold font-display tracking-tight text-[#6a256f] mb-4">Samia Kohler</h2>
               <div className="space-y-4 text-gray-600 leading-relaxed text-sm">
                 <p>
-                  Originally from France, I bring over 18 years of hands-on experience in hospitality and private event sales across China, Hong Kong, France, and the U.S. My background spans the full spectrum of the hospitality business — restaurants, bars, nightclubs, luxury hotels, private yacht clubs, event venues, and catering — giving me a deep understanding of what it takes to drive event sales while delivering five-star guest experiences.
+                  Originally from France, I bring over 18 years of hands-on experience in hospitality — not just selling private events, but operating them — across China, Hong Kong, France, and the U.S. My background spans the full spectrum of the hospitality business — restaurants, bars, nightclubs, luxury hotels, private yacht clubs, event venues, and catering — giving me a deep understanding of both sides of the business: driving event sales and running the operations that deliver five-star guest experiences.
                 </p>
                 <p>
-                  My expertise lies in building and leading sales teams, optimizing venue operations, and developing strategic sales systems that convert inquiries into booked events. From concept to close, I specialize in creating sales-driven solutions that streamline the process for venues and provide clients with a seamless, elevated experience.
+                  My expertise lies in building and leading sales teams, running day-to-day venue operations, and developing strategic sales systems that convert inquiries into booked events. From concept to close — and through execution on the floor — I specialize in creating sales-driven solutions that streamline the process for venues and provide clients with a seamless, elevated experience.
                 </p>
                 <p>
                   Resourceful, detail-obsessed, and passionate about hospitality, I launched Event Sphere Solutions to help venues unlock their full potential. We don't just manage leads — we turn them into lasting relationships and profitable results.
