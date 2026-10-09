@@ -43,6 +43,10 @@ const plans = [
     features: [
       'Everything in Sphere Essentials',
       'Leads call system',
+      'Client reach system',
+      'AI reply support',
+      'AI Assistant',
+      'AI Sales Support (24/7)',
       'Email campaigns (2,500/mo)',
       'Promo codes (3/month)',
       'SMS credit bundle (Coming Soon)',
@@ -69,7 +73,6 @@ const plans = [
       'Advanced role permissions',
       'Email campaigns (5,000/mo per location)',
       'Promo codes (6/month per location)',
-      'AI email support',
     ],
     limits: 'Multiple locations · Multiple users',
     support: 'Dedicated onboarding + strategic reviews',

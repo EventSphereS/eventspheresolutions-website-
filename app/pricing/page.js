@@ -121,7 +121,10 @@ const featureGroups = [
       { feature: 'Sales forecasting dashboard', e: '✓', g: '✓', p: '✓' },
       { feature: 'Conversion tracking (lead → booked)', e: '✓', g: '✓', p: '✓' },
       { feature: 'Leads call system', e: '—', g: '✓', p: '✓' },
-      { feature: 'AI email support', e: '—', g: '✓', p: '✓' },
+      { feature: 'Client reach system', e: '—', g: '✓', p: '✓' },
+      { feature: 'AI reply support', e: '—', g: '✓', p: '✓' },
+      { feature: 'AI Assistant', e: '—', g: '✓', p: '✓' },
+      { feature: 'AI Sales Support (24/7)', e: '—', g: '✓', p: '✓' },
     ],
   },
   {
