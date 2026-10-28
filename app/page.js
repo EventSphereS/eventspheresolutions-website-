@@ -46,7 +46,7 @@ export default function Home() {
           <h1 className="font-display font-extrabold text-4xl sm:text-5xl md:text-7xl leading-[1.05] tracking-tight text-white mb-6">
             The Future of Private
             Event Booking for{' '}
-            <span className="text-[#E07B20]">Hospitality & Venues</span>
+            <span className="text-[#E07B20]">Hospitality</span>
           </h1>
           <p className="text-gray-300 text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-10">
             Event Sphere Solutions gives hospitality businesses <span className="text-white font-semibold">Sphere</span> — the expert sales team and software to turn empty calendars into consistent, high-performing event sales programs.
