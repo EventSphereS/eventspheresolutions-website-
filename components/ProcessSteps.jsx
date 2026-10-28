@@ -10,7 +10,12 @@ const LINE = 'linear-gradient(90deg, #6a256f, #EF4561, #E07B20)'
 function Circle({ num }) {
   return (
     <div className="relative z-10 w-20 h-20 md:w-24 md:h-24 rounded-full bg-white border-[3px] border-[#E07B20] flex items-center justify-center shrink-0">
-      <span className="font-display font-extrabold text-2xl md:text-3xl text-[#E07B20] leading-none">{num}</span>
+      <span
+        className="font-display font-extrabold text-2xl md:text-3xl leading-none"
+        style={{ background: LINE, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
+      >
+        {num}
+      </span>
     </div>
   )
 }
