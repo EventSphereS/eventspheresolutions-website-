@@ -9,20 +9,23 @@ const LINE = 'linear-gradient(90deg, #6a256f, #EF4561, #E07B20)'
 
 function Circle({ num }) {
   return (
-    <div className="relative z-10 w-12 h-12 rounded-full bg-white border-2 border-[#6a256f] flex items-center justify-center shrink-0">
-      <span className="font-display font-extrabold text-sm text-[#6a256f] leading-none">{num}</span>
+    <div className="relative z-10 w-12 h-12 rounded-full bg-white border-2 border-[#E07B20] flex items-center justify-center shrink-0">
+      <span className="font-display font-bold text-sm text-[#E07B20] leading-none">{num}</span>
     </div>
   )
 }
 
 export default function ProcessSteps() {
   return (
-    <section className="py-20 md:py-24 bg-[#f6f3f6]">
+    <section className="pt-28 pb-8 bg-white">
       <div className="max-w-5xl mx-auto px-6">
-        <h2 className="font-display font-extrabold uppercase tracking-tight text-[#6a256f] text-3xl sm:text-4xl md:text-5xl leading-tight text-center mb-14 md:mb-16">
-          Sphere is built for your{' '}
-          <span className="inline-block bg-[#EF4561] text-white px-3 py-0.5">Events Business</span>
-        </h2>
+        <div className="text-center mb-16">
+          <p className="text-[#E07B20] text-xs font-bold uppercase tracking-[0.2em] mb-3">From Inquiry to Event</p>
+          <h2 className="font-display font-extrabold text-4xl md:text-5xl tracking-tight text-[#6a256f] leading-tight">
+            Sphere is built for your{' '}
+            <span className="text-[#E07B20]">events business.</span>
+          </h2>
+        </div>
 
         {/* Desktop — horizontal timeline */}
         <div className="hidden md:block relative">
@@ -35,7 +38,7 @@ export default function ProcessSteps() {
             {steps.map((s) => (
               <div key={s.num} className="flex flex-col items-center text-center px-3">
                 <Circle num={s.num} />
-                <h3 className="font-display font-extrabold uppercase tracking-tight text-[#222123] text-xl lg:text-2xl mt-6 mb-2">
+                <h3 className="text-xl font-bold text-[#6a256f] mt-6 mb-2">
                   {s.title}
                 </h3>
                 <p className="text-gray-500 text-sm leading-relaxed">
@@ -58,7 +61,7 @@ export default function ProcessSteps() {
               <div key={s.num} className="flex items-center gap-5">
                 <Circle num={s.num} />
                 <div>
-                  <h3 className="font-display font-extrabold uppercase tracking-tight text-[#222123] text-xl mb-1">
+                  <h3 className="text-xl font-bold text-[#6a256f] mb-1">
                     {s.title}
                   </h3>
                   <p className="text-gray-500 text-sm leading-relaxed">
