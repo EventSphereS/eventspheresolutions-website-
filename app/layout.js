@@ -32,6 +32,7 @@ export const metadata = {
     description: 'Sphere helps restaurants, bars, and venues protect and grow their private event sales. Built for hospitality. Not adapted for it.',
     images: ['/feature-image.png'],
   },
+  verification: { other: { 'msvalidate.01': '6B325469D569B66B54A5DC9868803D85' } },
 }
 
 const organizationSchema = {
