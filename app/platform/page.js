@@ -26,11 +26,6 @@ const softwareSchema = {
       priceSpecification: { '@type': 'UnitPriceSpecification', billingDuration: 'P1M' },
     },
   ],
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '4.9',
-    ratingCount: '50',
-  },
   url: 'https://eventspheresolutions.com/platform',
 }
 
