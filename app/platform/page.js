@@ -333,6 +333,8 @@ export default function PlatformPage() {
 
           <p className="text-center text-gray-400 text-sm mt-8">
             <Link href="/pricing" className="text-[#6a256f] font-semibold hover:underline">See full pricing & feature comparison →</Link>
+            {' · '}
+            <Link href="/platform/sphere-vs-tripleseat" className="text-[#6a256f] font-semibold hover:underline">Sphere vs. Tripleseat →</Link>
           </p>
         </div>
       </section>
