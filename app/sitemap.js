@@ -7,6 +7,9 @@ export default function sitemap() {
   const staticRoutes = [
     { url: baseUrl, lastModified, changeFrequency: 'weekly', priority: 1.0 },
     { url: `${baseUrl}/platform`, lastModified, changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${baseUrl}/platform/banquet-event-orders`, lastModified, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${baseUrl}/platform/digital-contracts`, lastModified, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${baseUrl}/platform/venue-calendar`, lastModified, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${baseUrl}/services`, lastModified, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${baseUrl}/pricing`, lastModified, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${baseUrl}/founding-partner`, lastModified, changeFrequency: 'weekly', priority: 0.9 },

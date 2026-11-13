@@ -39,6 +39,7 @@ const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Event Sphere Solutions',
+  alternateName: ['EventSphere', 'Event Sphere', 'Sphere'],
   url: 'https://eventspheresolutions.com',
   logo: 'https://eventspheresolutions.com/images/logo-main.png',
   description: 'Sphere is the private event sales platform built for restaurants, bars, and venues. Not adapted for it. Built for it.',

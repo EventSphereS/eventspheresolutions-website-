@@ -5,6 +5,10 @@ import CountUp from '@/components/CountUp'
 import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import ProcessSteps from '@/components/ProcessSteps'
 
+export const metadata = {
+  title: { absolute: 'Event Sphere Solutions | Sphere — Private Event Sales Platform for Hospitality' },
+}
+
 const partners = [
   { name: 'BARCOA Agaveria', logo: '/images/logo-barcoa.png' },
   { name: 'XICO Arte y Cultura', logo: '/images/logo-xico.png' },
@@ -43,6 +47,7 @@ export default function Home() {
             <span className="w-1.5 h-1.5 bg-[#E07B20] rounded-full animate-pulse shrink-0"></span>
             Now accepting Founding Partners
           </div>
+          <p className="text-[#E07B20] text-xs font-bold uppercase tracking-[0.2em] mb-4">Event Sphere Solutions</p>
           <h1 className="font-display font-extrabold text-4xl sm:text-5xl md:text-7xl leading-[1.05] tracking-tight text-white mb-6">
             The Future of Private
             Event Booking for{' '}

@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect, useCallback } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const slides = [
   {
@@ -12,6 +13,7 @@ const slides = [
     objectFit: 'contain',
     objectPosition: 'center center',
     scale: 1.0,
+    href: '/platform/digital-contracts',
   },
   {
     number: '02',
@@ -32,6 +34,7 @@ const slides = [
     objectFit: 'cover',
     objectPosition: '100% 20%',
     transformOrigin: 'right center',
+    href: '/platform/banquet-event-orders',
   },
   {
     number: '04',
@@ -41,6 +44,7 @@ const slides = [
     image: '/images/platform-calendar.png',
     scale: 1.0,
     objectPosition: 'center top',
+    href: '/platform/venue-calendar',
   },
   {
     number: '05',
@@ -190,9 +194,15 @@ export default function FeatureSlider() {
                   {slide.title}
                 </h3>
 
-                <p className="text-white/55 text-base leading-relaxed mb-10 max-w-sm">
+                <p className="text-white/55 text-base leading-relaxed mb-6 max-w-sm">
                   {slide.desc}
                 </p>
+
+                {slide.href && (
+                  <Link href={slide.href} className="inline-block text-[#E07B20] font-semibold text-sm mb-6 hover:underline">
+                    Learn more →
+                  </Link>
+                )}
 
                 {/* Progress dots */}
                 <div className="flex items-center gap-2 mb-6">
