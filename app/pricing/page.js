@@ -78,8 +78,8 @@ export const metadata = {
 function FeatureCheck() {
   return (
     <svg viewBox="0 0 20 20" className="w-5 h-5 mx-auto" aria-label="Included">
-      <circle cx="10" cy="10" r="9" className="fill-[#E07B20]/10" />
-      <path d="M6 10.3l2.6 2.6L14 7.3" fill="none" stroke="#E07B20" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="10" cy="10" r="9" className="fill-[#F99F33]/10" />
+      <path d="M6 10.3l2.6 2.6L14 7.3" fill="none" stroke="#F99F33" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   )
 }
@@ -159,7 +159,7 @@ export default function PricingPage() {
       <section className="pt-28 pb-16 bg-gradient-to-br from-[#6a256f] to-[#222123] text-white text-center">
         <div className="max-w-4xl mx-auto px-6">
           {/* BETA Badge */}
-          <span className="inline-block bg-[#E07B20] text-white text-xs font-bold px-4 py-1.5 rounded-full mb-6 uppercase tracking-widest">
+          <span className="inline-block bg-[#F99F33] text-[#222123] text-xs font-bold px-4 py-1.5 rounded-full mb-6 uppercase tracking-widest">
             Beta — Limited Spots Available
           </span>
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold font-display tracking-tight mb-6">
@@ -167,7 +167,7 @@ export default function PricingPage() {
           </h1>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto mb-8">
             Our clients average a{' '}
-            <span className="text-[#E07B20] font-bold text-2xl">189% increase</span>{' '}
+            <span className="text-[#F99F33] font-bold text-2xl">189% increase</span>{' '}
             in event sales within 90 days. At these prices, the ROI is immediate.
           </p>
           <div className="flex items-center justify-center gap-3 flex-wrap">
@@ -176,7 +176,7 @@ export default function PricingPage() {
               Cancel anytime
             </div>
             <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-5 py-2.5 text-sm text-gray-300">
-              <span className="w-2 h-2 bg-[#E07B20] rounded-full"></span>
+              <span className="w-2 h-2 bg-[#F99F33] rounded-full"></span>
               Free full migration included
             </div>
           </div>
@@ -207,7 +207,7 @@ export default function PricingPage() {
               <div className="flex-1 p-8 md:p-12">
                 <div className="flex items-center gap-3 mb-4">
                   <h3 className="text-2xl md:text-3xl font-bold font-display">360° Virtual Tour Add-On</h3>
-                  <span className="bg-[#E07B20] text-white text-xs font-bold px-3 py-1 rounded-full shrink-0">Popular</span>
+                  <span className="bg-[#F99F33] text-[#222123] text-xs font-bold px-3 py-1 rounded-full shrink-0">Popular</span>
                 </div>
                 <p className="text-gray-300 mb-6 leading-relaxed">
                   Let clients explore your venue before they ever visit. Immersive 360° tours embedded directly
@@ -248,7 +248,7 @@ export default function PricingPage() {
                     quality={100}
                     className="h-auto object-contain drop-shadow-2xl max-h-64 md:max-h-72"
                   />
-                  <div className="absolute -bottom-2 -right-2 bg-[#F99F33] text-white font-extrabold font-display text-sm px-4 py-2 rounded-full shadow-lg shadow-[#F99F33]/30 whitespace-nowrap">
+                  <div className="absolute -bottom-2 -right-2 bg-[#F99F33] text-[#222123] font-extrabold font-display text-sm px-4 py-2 rounded-full shadow-lg shadow-[#F99F33]/30 whitespace-nowrap">
                     360° Immersive
                   </div>
                 </div>
@@ -263,7 +263,7 @@ export default function PricingPage() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-12">
-            <p className="text-[#E07B20] text-xs font-bold uppercase tracking-[0.2em] mb-3">Side by Side</p>
+            <p className="text-[#F99F33] text-xs font-bold uppercase tracking-[0.2em] mb-3">Side by Side</p>
             <h2 className="section-title">Compare Plans</h2>
             <p className="section-subtitle">Everything you need to know, side by side.</p>
           </div>
@@ -274,15 +274,15 @@ export default function PricingPage() {
                   <th className="text-left p-5 text-[#222123] font-bold w-2/5">Feature</th>
                   <th className="p-5 text-center text-[#222123] font-bold">
                     <div>Sphere Essentials</div>
-                    <div className="text-[#E07B20] font-bold">$149/mo</div>
+                    <div className="text-[#F99F33] font-bold">$149/mo</div>
                   </th>
-                  <th className="p-5 text-center bg-[#E07B20]/5 border-x border-[#E07B20]/20">
+                  <th className="p-5 text-center bg-[#F99F33]/5 border-x border-[#F99F33]/20">
                     <div className="text-[#222123] font-bold">Sphere Growth</div>
-                    <div className="text-[#E07B20] font-bold">$259/mo</div>
+                    <div className="text-[#F99F33] font-bold">$259/mo</div>
                   </th>
                   <th className="p-5 text-center text-[#222123] font-bold">
                     <div>Sphere Hospitality</div>
-                    <div className="text-[#E07B20] font-bold">Contact Us</div>
+                    <div className="text-[#F99F33] font-bold">Contact Us</div>
                   </th>
                 </tr>
               </thead>
@@ -297,13 +297,13 @@ export default function PricingPage() {
                     {group.rows.map((row) => (
                       <tr key={row.feature} className="border-b border-gray-50">
                         <td className="p-4 text-gray-700 font-medium">{row.feature}</td>
-                        <td className={`p-4 text-center ${row.e === 'Coming Soon' ? 'text-orange-400 text-xs font-medium' : row.e === 'Add-On' ? 'text-[#6a256f] text-xs font-bold' : 'text-gray-600'}`}>
+                        <td className={`p-4 text-center ${row.e === 'Coming Soon' ? 'text-[#F99F33] text-xs font-medium' : row.e === 'Add-On' ? 'text-[#6a256f] text-xs font-bold' : 'text-gray-600'}`}>
                           {row.e === '✓' ? <FeatureCheck /> : row.e === '—' ? '' : row.e}
                         </td>
-                        <td className={`p-4 text-center bg-[#E07B20]/5 border-x border-[#E07B20]/10 ${row.g === 'Coming Soon' ? 'text-orange-400 text-xs font-medium' : row.g === 'Add-On' ? 'text-[#6a256f] text-xs font-bold' : 'text-gray-600'}`}>
+                        <td className={`p-4 text-center bg-[#F99F33]/5 border-x border-[#F99F33]/10 ${row.g === 'Coming Soon' ? 'text-[#F99F33] text-xs font-medium' : row.g === 'Add-On' ? 'text-[#6a256f] text-xs font-bold' : 'text-gray-600'}`}>
                           {row.g === '✓' ? <FeatureCheck /> : row.g === '—' ? '' : row.g}
                         </td>
-                        <td className={`p-4 text-center ${row.p === 'Coming Soon' ? 'text-orange-400 text-xs font-medium' : row.p === 'Add-On' ? 'text-[#6a256f] text-xs font-bold' : 'text-gray-600'}`}>
+                        <td className={`p-4 text-center ${row.p === 'Coming Soon' ? 'text-[#F99F33] text-xs font-medium' : row.p === 'Add-On' ? 'text-[#6a256f] text-xs font-bold' : 'text-gray-600'}`}>
                           {row.p === '✓' ? <FeatureCheck /> : row.p === '—' ? '' : row.p}
                         </td>
                       </tr>
@@ -351,7 +351,7 @@ export default function PricingPage() {
 
           {/* Sphere — Primary */}
           <div className="bg-white rounded-2xl p-8 mb-6 shadow-xl shadow-black/10">
-            <div className="inline-block bg-[#E07B20] text-white text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-widest">
+            <div className="inline-block bg-[#F99F33] text-[#222123] text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-widest">
               The Platform
             </div>
             <div className="flex flex-col md:flex-row md:items-center gap-8">
@@ -364,18 +364,18 @@ export default function PricingPage() {
                 <ul className="grid grid-cols-2 gap-2">
                   {['Lead capture & pipeline', 'Proposals, BEOs & invoices', 'Smart calendar & conflict prevention', 'Email campaigns & promo codes', 'Online payments & e-signatures', 'Smart Dashboard'].map((f) => (
                     <li key={f} className="flex items-center gap-2 text-sm text-gray-600">
-                      <span className="text-[#E07B20] font-bold text-base">✓</span> {f}
+                      <span className="text-[#F99F33] font-bold text-base">✓</span> {f}
                     </li>
                   ))}
                 </ul>
               </div>
               <div className="shrink-0 text-center min-w-[200px]">
                 <Link href="/founding-partner"
-                  className="block bg-gradient-to-r from-[#6a256f] via-[#EF4561] to-[#E07B20] text-white font-bold py-4 px-8 rounded-xl hover:opacity-90 transition-all text-center text-base shadow-lg shadow-[#6a256f]/30">
+                  className="block bg-gradient-to-r from-[#6a256f] via-[#EF4561] to-[#F99F33] text-white font-bold py-4 px-8 rounded-xl hover:opacity-90 transition-all text-center text-base shadow-lg shadow-[#6a256f]/30">
                   Get Sphere Free →
                 </Link>
                 <p className="text-gray-400 text-xs mt-2">Cancel anytime</p>
-                <p className="text-[#E07B20] font-bold text-xs mt-1">
+                <p className="text-[#F99F33] font-bold text-xs mt-1">
                   <Link href="/founding-partner" className="hover:underline">3 months free — Founding Partner Program</Link>
                 </p>
               </div>
@@ -387,27 +387,27 @@ export default function PricingPage() {
           <div className="grid md:grid-cols-2 gap-5">
 
             {/* Sphere + Sales Team */}
-            <div className="relative rounded-2xl p-px overflow-hidden" style={{ background: 'linear-gradient(135deg, #E07B20, #EF4561, #6a256f)' }}>
+            <div className="relative rounded-2xl p-px overflow-hidden" style={{ background: 'linear-gradient(135deg, #F99F33, #EF4561, #6a256f)' }}>
               <div className="relative bg-[#4a1555] rounded-2xl p-7 flex flex-col h-full">
                 {/* Glow */}
-                <div className="absolute top-0 right-0 w-40 h-40 rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(224,123,32,0.25) 0%, transparent 70%)', filter: 'blur(30px)' }} />
+                <div className="absolute top-0 right-0 w-40 h-40 rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(249,159,51,0.25) 0%, transparent 70%)', filter: 'blur(30px)' }} />
                 <div className="flex items-start justify-between mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#E07B20] to-[#EF4561] flex items-center justify-center text-2xl shadow-lg shadow-[#E07B20]/30">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#F99F33] to-[#EF4561] flex items-center justify-center text-2xl shadow-lg shadow-[#F99F33]/30">
                     🎯
                   </div>
-                  <span className="bg-[#E07B20] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">Add-On</span>
+                  <span className="bg-[#F99F33] text-[#222123] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">Add-On</span>
                 </div>
                 <h4 className="text-xl font-extrabold font-display text-white mb-2">Sphere + Sales Team</h4>
                 <p className="text-white/60 text-sm leading-relaxed mb-5">A dedicated expert sales team handles every inquiry, follow-up, proposal, and close — on your behalf.</p>
                 <ul className="space-y-2 mb-6 flex-1">
                   {['Every lead captured & followed up', 'Proposals written & sent for you', 'Closes deals while you run your venue'].map(f => (
                     <li key={f} className="flex items-center gap-2 text-white/80 text-sm">
-                      <span className="text-[#E07B20] font-bold">✓</span> {f}
+                      <span className="text-[#F99F33] font-bold">✓</span> {f}
                     </li>
                   ))}
                 </ul>
                 <Link href="/contact"
-                  className="w-full bg-gradient-to-r from-[#E07B20] to-[#EF4561] text-white font-bold py-3.5 rounded-xl hover:opacity-90 transition-all text-sm text-center shadow-lg shadow-[#E07B20]/30">
+                  className="w-full bg-gradient-to-r from-[#F99F33] to-[#EF4561] text-[#222123] font-bold py-3.5 rounded-xl hover:opacity-90 transition-all text-sm text-center shadow-lg shadow-[#F99F33]/30">
                   Contact Us →
                 </Link>
               </div>

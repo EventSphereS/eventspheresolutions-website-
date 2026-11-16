@@ -18,9 +18,9 @@ module.exports = {
         },
       },
       fontFamily: {
-        serif: ['Inter', 'system-ui', 'sans-serif'],
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Montserrat', 'system-ui', 'sans-serif'],
+        serif: ['Montserrat', 'system-ui', 'sans-serif'],
+        sans: ['Montserrat', 'system-ui', 'sans-serif'],
+        display: ['Quicksand', 'system-ui', 'sans-serif'],
       },
       animation: {
         'marquee': 'marquee 30s linear infinite',

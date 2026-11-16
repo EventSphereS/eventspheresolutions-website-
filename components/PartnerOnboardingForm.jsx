@@ -3,7 +3,7 @@ import { useState } from 'react'
 import PartnerFileUpload from './PartnerFileUpload'
 
 const DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
-const inputClass = "w-full border border-gray-200 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-[#E07B20] focus:ring-2 focus:ring-[#E07B20]/20 transition-all bg-white placeholder:text-gray-400"
+const inputClass = "w-full border border-gray-200 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-[#F99F33] focus:ring-2 focus:ring-[#F99F33]/20 transition-all bg-white placeholder:text-gray-400"
 const labelClass = "block text-sm font-semibold text-[#222123] mb-1.5"
 
 const initialForm = {
@@ -27,11 +27,11 @@ function Progress({ step }) {
     <div className="mb-8">
       <div className="flex items-center justify-between mb-2">
         <span className="text-xs font-semibold text-gray-400 uppercase tracking-widest">Step {step} of {TOTAL_STEPS}</span>
-        <span className="text-xs font-semibold text-[#E07B20]">{STEP_LABELS[step - 1]}</span>
+        <span className="text-xs font-semibold text-[#F99F33]">{STEP_LABELS[step - 1]}</span>
       </div>
       <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
         <div
-          className="h-full bg-gradient-to-r from-[#6a256f] to-[#E07B20] rounded-full transition-all duration-500"
+          className="h-full bg-gradient-to-r from-[#6a256f] to-[#F99F33] rounded-full transition-all duration-500"
           style={{ width: `${(step / TOTAL_STEPS) * 100}%` }}
         />
       </div>
@@ -130,10 +130,10 @@ export default function PartnerOnboardingForm() {
   if (submitted) {
     return (
       <div className="bg-gradient-to-br from-[#6a256f] to-[#3d1640] rounded-2xl p-14 flex flex-col items-center justify-center text-center text-white max-w-2xl mx-auto">
-        <div className="w-16 h-16 bg-gradient-to-br from-[#6a256f] via-[#EF4561] to-[#E07B20] rounded-full flex items-center justify-center text-white text-2xl mb-6">✓</div>
+        <div className="w-16 h-16 bg-gradient-to-br from-[#6a256f] via-[#EF4561] to-[#F99F33] rounded-full flex items-center justify-center text-white text-2xl mb-6">✓</div>
         <h3 className="text-2xl font-extrabold font-display tracking-tight mb-3">You're all set, {form.adminName.split(' ')[0]}!</h3>
         <p className="text-gray-300 leading-relaxed max-w-md mb-2">
-          We've got everything we need for <strong className="text-white">{form.businessName}</strong>. Your account will be live within <strong className="text-[#E07B20]">2 business days</strong>.
+          We've got everything we need for <strong className="text-white">{form.businessName}</strong>. Your account will be live within <strong className="text-[#F99F33]">2 business days</strong>.
         </p>
       </div>
     )
@@ -173,7 +173,7 @@ export default function PartnerOnboardingForm() {
             {errors.businessName && <p className="text-[#EF4561] text-xs mt-1">{errors.businessName}</p>}
           </div>
           <button type="button" onClick={handleNext}
-            className="w-full bg-gradient-to-r from-[#6a256f] via-[#EF4561] to-[#E07B20] text-white font-bold py-4 rounded-xl hover:opacity-90 transition-all text-sm mt-2">
+            className="w-full bg-gradient-to-r from-[#6a256f] via-[#EF4561] to-[#F99F33] text-white font-bold py-4 rounded-xl hover:opacity-90 transition-all text-sm mt-2">
             Continue →
           </button>
         </div>
@@ -247,7 +247,7 @@ export default function PartnerOnboardingForm() {
             <button type="button" onClick={handleBack}
               className="px-6 py-4 rounded-xl border border-gray-200 text-gray-600 font-semibold text-sm hover:border-gray-300 transition-all">← Back</button>
             <button type="button" onClick={handleNext}
-              className="flex-1 bg-gradient-to-r from-[#6a256f] via-[#EF4561] to-[#E07B20] text-white font-bold py-4 rounded-xl hover:opacity-90 transition-all text-sm">Continue →</button>
+              className="flex-1 bg-gradient-to-r from-[#6a256f] via-[#EF4561] to-[#F99F33] text-white font-bold py-4 rounded-xl hover:opacity-90 transition-all text-sm">Continue →</button>
           </div>
         </div>
       )}
@@ -313,7 +313,7 @@ export default function PartnerOnboardingForm() {
             <button type="button" onClick={handleBack}
               className="px-6 py-4 rounded-xl border border-gray-200 text-gray-600 font-semibold text-sm hover:border-gray-300 transition-all">← Back</button>
             <button type="button" onClick={handleNext}
-              className="flex-1 bg-gradient-to-r from-[#6a256f] via-[#EF4561] to-[#E07B20] text-white font-bold py-4 rounded-xl hover:opacity-90 transition-all text-sm">Continue →</button>
+              className="flex-1 bg-gradient-to-r from-[#6a256f] via-[#EF4561] to-[#F99F33] text-white font-bold py-4 rounded-xl hover:opacity-90 transition-all text-sm">Continue →</button>
           </div>
         </div>
       )}
@@ -380,7 +380,7 @@ export default function PartnerOnboardingForm() {
             <button type="button" onClick={handleBack}
               className="px-6 py-4 rounded-xl border border-gray-200 text-gray-600 font-semibold text-sm hover:border-gray-300 transition-all">← Back</button>
             <button type="submit" disabled={loading}
-              className="flex-1 bg-gradient-to-r from-[#6a256f] via-[#EF4561] to-[#E07B20] text-white font-bold py-4 rounded-xl hover:opacity-90 transition-all text-sm disabled:opacity-70">
+              className="flex-1 bg-gradient-to-r from-[#6a256f] via-[#EF4561] to-[#F99F33] text-white font-bold py-4 rounded-xl hover:opacity-90 transition-all text-sm disabled:opacity-70">
               {loading ? 'Submitting...' : 'Submit →'}
             </button>
           </div>

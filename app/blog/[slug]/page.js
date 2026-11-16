@@ -48,7 +48,7 @@ function renderBlock(block, i) {
           <p key={i} className="text-gray-600 leading-relaxed mb-5 text-lg">
             {block.segments.map((seg, j) =>
               seg.href ? (
-                <Link key={j} href={seg.href} className="text-[#6a256f] font-semibold underline underline-offset-2 hover:text-[#E07B20] transition-colors">{seg.text}</Link>
+                <Link key={j} href={seg.href} className="text-[#6a256f] font-semibold underline underline-offset-2 hover:text-[#F99F33] transition-colors">{seg.text}</Link>
               ) : seg.text
             )}
           </p>
@@ -64,7 +64,7 @@ function renderBlock(block, i) {
         <ul key={i} className="mb-6 space-y-3">
           {block.items.map((item, j) => (
             <li key={j} className="flex items-start gap-3 text-gray-600 text-lg">
-              <span className="mt-1 w-5 h-5 rounded-full bg-[#E07B20]/15 text-[#E07B20] font-bold text-xs flex items-center justify-center shrink-0">✓</span>
+              <span className="mt-1 w-5 h-5 rounded-full bg-[#F99F33]/15 text-[#F99F33] font-bold text-xs flex items-center justify-center shrink-0">✓</span>
               {item}
             </li>
           ))}
@@ -73,7 +73,7 @@ function renderBlock(block, i) {
     case 'stat':
       return (
         <div key={i} className="my-10 py-10 px-8 bg-gradient-to-br from-[#1a0f40] to-[#2d0a35] rounded-2xl text-center">
-          <p className="font-display font-extrabold text-6xl md:text-7xl text-[#E07B20] leading-none mb-3">{block.number}</p>
+          <p className="font-display font-extrabold text-6xl md:text-7xl text-[#F99F33] leading-none mb-3">{block.number}</p>
           <p className="text-white/70 text-lg max-w-sm mx-auto">{block.label}</p>
         </div>
       )
@@ -88,10 +88,10 @@ function renderBlock(block, i) {
       )
     case 'tip':
       return (
-        <div key={i} className="my-8 flex gap-4 bg-[#E07B20]/8 border border-[#E07B20]/25 rounded-2xl p-6">
+        <div key={i} className="my-8 flex gap-4 bg-[#F99F33]/8 border border-[#F99F33]/25 rounded-2xl p-6">
           <span className="text-2xl shrink-0 mt-0.5">💡</span>
           <div>
-            <p className="font-display font-bold text-[#E07B20] text-sm uppercase tracking-widest mb-1">Pro Tip</p>
+            <p className="font-display font-bold text-[#F99F33] text-sm uppercase tracking-widest mb-1">Pro Tip</p>
             <p className="text-gray-700 leading-relaxed">{block.text}</p>
           </div>
         </div>
@@ -130,7 +130,7 @@ function renderBlock(block, i) {
           <p className="text-white/60 mb-6">{block.body}</p>
           <Link
             href={block.buttonHref}
-            className="inline-block bg-gradient-to-r from-[#EF4561] to-[#E07B20] text-white font-bold px-8 py-4 rounded-full hover:opacity-90 transition-all shadow-xl"
+            className="inline-block bg-gradient-to-r from-[#EF4561] to-[#F99F33] text-[#222123] font-bold px-8 py-4 rounded-full hover:opacity-90 transition-all shadow-xl"
           >
             {block.buttonText}
           </Link>
@@ -180,7 +180,7 @@ export default function BlogPostPage({ params }) {
           <Link href="/blog" className="inline-flex items-center gap-2 text-white/40 hover:text-white/70 text-sm mb-8 transition-colors">
             ← Back to Blog
           </Link>
-          <p className="text-[#E07B20] text-xs font-bold uppercase tracking-[0.25em] mb-4">{post.category}</p>
+          <p className="text-[#F99F33] text-xs font-bold uppercase tracking-[0.25em] mb-4">{post.category}</p>
           <h1 className="font-display font-extrabold text-3xl md:text-5xl leading-tight tracking-tight mb-5">
             {post.title}
           </h1>
@@ -204,7 +204,7 @@ export default function BlogPostPage({ params }) {
         <div className="max-w-2xl mx-auto px-6">
           <h2 className="font-display font-extrabold text-3xl mb-4">Ready to grow your private event revenue?</h2>
           <p className="text-white/70 mb-8">Join Sphere as a Founding Partner — 3 months free, pricing locked for life. Limited spots.</p>
-          <Link href="/founding-partner" className="inline-block bg-gradient-to-r from-[#EF4561] to-[#E07B20] text-white font-bold px-8 py-4 rounded-full hover:opacity-90 transition-all shadow-xl">
+          <Link href="/founding-partner" className="inline-block bg-gradient-to-r from-[#EF4561] to-[#F99F33] text-[#222123] font-bold px-8 py-4 rounded-full hover:opacity-90 transition-all shadow-xl">
             Claim Your Founding Partner Spot →
           </Link>
         </div>

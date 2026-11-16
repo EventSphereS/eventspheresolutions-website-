@@ -9,7 +9,7 @@ const services = [
   'Not sure yet — help me decide',
 ]
 
-const inputClass = "w-full border border-gray-200 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-[#E07B20] focus:ring-2 focus:ring-[#E07B20]/20 transition-all bg-white placeholder:text-gray-400"
+const inputClass = "w-full border border-gray-200 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-[#F99F33] focus:ring-2 focus:ring-[#F99F33]/20 transition-all bg-white placeholder:text-gray-400"
 const labelClass = "block text-sm font-semibold text-[#222123] mb-1.5"
 
 export default function ContactForm() {
@@ -71,8 +71,8 @@ export default function ContactForm() {
   // ── Success ──
   if (submitted) {
     return (
-      <div className="bg-gradient-to-br from-[#6a256f]/5 to-[#E07B20]/5 border border-[#E07B20]/20 rounded-2xl p-12 flex flex-col items-center justify-center text-center min-h-[400px]">
-        <div className="w-16 h-16 bg-gradient-to-br from-[#6a256f] to-[#E07B20] rounded-full flex items-center justify-center text-white text-2xl mb-6">✓</div>
+      <div className="bg-gradient-to-br from-[#6a256f]/5 to-[#F99F33]/5 border border-[#F99F33]/20 rounded-2xl p-12 flex flex-col items-center justify-center text-center min-h-[400px]">
+        <div className="w-16 h-16 bg-gradient-to-br from-[#6a256f] to-[#F99F33] rounded-full flex items-center justify-center text-white text-2xl mb-6">✓</div>
         <h3 className="text-2xl font-bold text-[#222123] mb-3">You're all set, {form.name.split(' ')[0]}!</h3>
         <p className="text-gray-500 leading-relaxed max-w-sm">
           We'll review your info and reach out within 1 business day to schedule your free consultation.
@@ -86,11 +86,11 @@ export default function ContactForm() {
     <div className="mb-8">
       <div className="flex items-center justify-between mb-2">
         <span className="text-xs font-semibold text-gray-400 uppercase tracking-widest">Step {step} of 2</span>
-        <span className="text-xs font-semibold text-[#E07B20]">{step === 1 ? 'Your Info' : 'Your Business'}</span>
+        <span className="text-xs font-semibold text-[#F99F33]">{step === 1 ? 'Your Info' : 'Your Business'}</span>
       </div>
       <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
         <div
-          className="h-full bg-gradient-to-r from-[#6a256f] to-[#E07B20] rounded-full transition-all duration-500"
+          className="h-full bg-gradient-to-r from-[#6a256f] to-[#F99F33] rounded-full transition-all duration-500"
           style={{ width: step === 1 ? '50%' : '100%' }}
         />
       </div>
@@ -131,7 +131,7 @@ export default function ContactForm() {
           </div>
 
           <button onClick={handleNext}
-            className="w-full bg-gradient-to-r from-[#6a256f] via-[#EF4561] to-[#E07B20] text-white font-bold py-4 rounded-xl hover:opacity-90 transition-all text-sm mt-2">
+            className="w-full bg-gradient-to-r from-[#6a256f] via-[#EF4561] to-[#F99F33] text-white font-bold py-4 rounded-xl hover:opacity-90 transition-all text-sm mt-2">
             Continue →
           </button>
         </div>
@@ -153,8 +153,8 @@ export default function ContactForm() {
                 onClick={() => setForm((prev) => ({ ...prev, businessType: type }))}
                 className={`px-4 py-2 rounded-full text-sm font-medium border transition-all ${
                   form.businessType === type
-                    ? 'bg-[#E07B20] text-white border-[#E07B20]'
-                    : 'border-gray-200 text-gray-600 hover:border-[#E07B20] hover:text-[#E07B20]'
+                    ? 'bg-[#F99F33] text-[#222123] border-[#F99F33]'
+                    : 'border-gray-200 text-gray-600 hover:border-[#F99F33] hover:text-[#F99F33]'
                 }`}>
                 {type}
               </button>
@@ -199,8 +199,8 @@ export default function ContactForm() {
                 onClick={() => setForm((prev) => ({ ...prev, timeline: v }))}
                 className={`px-4 py-2 rounded-full text-sm font-medium border transition-all ${
                   form.timeline === v
-                    ? 'bg-[#E07B20] text-white border-[#E07B20]'
-                    : 'border-gray-200 text-gray-600 hover:border-[#E07B20] hover:text-[#E07B20]'
+                    ? 'bg-[#F99F33] text-[#222123] border-[#F99F33]'
+                    : 'border-gray-200 text-gray-600 hover:border-[#F99F33] hover:text-[#F99F33]'
                 }`}>
                 {l}
               </button>
@@ -214,7 +214,7 @@ export default function ContactForm() {
             ← Back
           </button>
           <button type="submit" disabled={loading}
-            className="flex-1 bg-gradient-to-r from-[#6a256f] via-[#EF4561] to-[#E07B20] text-white font-bold py-4 rounded-xl hover:opacity-90 transition-all text-sm disabled:opacity-70">
+            className="flex-1 bg-gradient-to-r from-[#6a256f] via-[#EF4561] to-[#F99F33] text-white font-bold py-4 rounded-xl hover:opacity-90 transition-all text-sm disabled:opacity-70">
             {loading ? 'Sending...' : 'Book My Free Consultation →'}
           </button>
         </div>

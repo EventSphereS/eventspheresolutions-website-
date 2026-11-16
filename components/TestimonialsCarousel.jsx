@@ -39,7 +39,7 @@ export default function TestimonialsCarousel() {
 
       <div className="relative z-10 max-w-4xl mx-auto px-6">
         <div className="text-center mb-12">
-          <p className="text-[#E07B20] text-xs font-bold uppercase tracking-[0.2em] mb-3">Client Stories</p>
+          <p className="text-[#F99F33] text-xs font-bold uppercase tracking-[0.2em] mb-3">Client Stories</p>
           <h2 className="font-display font-extrabold text-4xl md:text-5xl tracking-tight text-white">They trust us.</h2>
         </div>
 
@@ -47,7 +47,7 @@ export default function TestimonialsCarousel() {
           {/* Left arrow — outside card */}
           <button
             onClick={prev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full border-2 border-white/30 flex items-center justify-center text-white hover:border-[#E07B20] hover:text-[#E07B20] transition-colors z-10"
+            className="absolute left-0 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full border-2 border-white/30 flex items-center justify-center text-white hover:border-[#F99F33] hover:text-[#F99F33] transition-colors z-10"
             aria-label="Previous"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
@@ -60,7 +60,7 @@ export default function TestimonialsCarousel() {
             {/* Stars */}
             <div className="flex justify-center gap-1 mb-8">
               {[...Array(5)].map((_, i) => (
-                <svg key={i} className="w-5 h-5 text-[#E07B20] fill-current" viewBox="0 0 20 20">
+                <svg key={i} className="w-5 h-5 text-[#F99F33] fill-current" viewBox="0 0 20 20">
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
                 </svg>
               ))}
@@ -73,7 +73,7 @@ export default function TestimonialsCarousel() {
 
             {/* Attribution */}
             <div className="flex items-center justify-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-[#E07B20] flex items-center justify-center text-white font-bold font-display text-base shrink-0">
+              <div className="w-12 h-12 rounded-full bg-[#F99F33] flex items-center justify-center text-[#222123] font-bold font-display text-base shrink-0">
                 {t.name.charAt(0)}
               </div>
               <div className="text-left">
@@ -86,7 +86,7 @@ export default function TestimonialsCarousel() {
           {/* Right arrow — outside card */}
           <button
             onClick={next}
-            className="absolute right-0 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full border-2 border-white/30 flex items-center justify-center text-white hover:border-[#E07B20] hover:text-[#E07B20] transition-colors z-10"
+            className="absolute right-0 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full border-2 border-white/30 flex items-center justify-center text-white hover:border-[#F99F33] hover:text-[#F99F33] transition-colors z-10"
             aria-label="Next"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
@@ -100,7 +100,7 @@ export default function TestimonialsCarousel() {
               <button
                 key={i}
                 onClick={() => setCurrent(i)}
-                className={`h-2 rounded-full transition-all duration-300 ${i === current ? 'bg-[#E07B20] w-6' : 'bg-white/40 w-2'}`}
+                className={`h-2 rounded-full transition-all duration-300 ${i === current ? 'bg-[#F99F33] w-6' : 'bg-white/40 w-2'}`}
                 aria-label={`Go to testimonial ${i + 1}`}
               />
             ))}

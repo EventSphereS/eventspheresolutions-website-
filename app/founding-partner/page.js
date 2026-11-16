@@ -27,13 +27,13 @@ const perks = [
   },
   {
     icon: '🔒',
-    gradient: 'from-[#EF4561] to-[#E07B20]',
+    gradient: 'from-[#EF4561] to-[#F99F33]',
     title: 'Founder Pricing — Locked In Forever',
     desc: 'After your free period, you keep a permanently discounted rate that never increases. Regular price is $259/mo — you pay less, always.',
   },
   {
     icon: '⚡',
-    gradient: 'from-[#E07B20] to-[#f7b733]',
+    gradient: 'from-[#F99F33] to-[#F99F33]',
     title: 'First Access to Every New Feature',
     desc: 'Early access to every feature we build — including OpenTable integration and upcoming AI tools — before anyone else.',
   },
@@ -51,7 +51,7 @@ const perks = [
   },
   {
     icon: '📊',
-    gradient: 'from-[#E07B20] to-[#EF4561]',
+    gradient: 'from-[#F99F33] to-[#EF4561]',
     title: 'Your Results, Amplified',
     desc: 'We document and promote your success story. Your venue gets featured in our case studies, reaching thousands of hospitality professionals.',
   },
@@ -79,13 +79,13 @@ export default function FoundingPartnerPage() {
 
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           {/* Scarcity Banner */}
-          <div className="inline-flex items-center gap-2 bg-[#E07B20]/20 border border-[#E07B20]/40 text-[#E07B20] text-sm font-bold px-5 py-2.5 rounded-full mb-8">
-            <span className="w-2 h-2 bg-[#E07B20] rounded-full animate-pulse"></span>
+          <div className="inline-flex items-center gap-2 bg-[#F99F33]/20 border border-[#F99F33]/40 text-[#F99F33] text-sm font-bold px-5 py-2.5 rounded-full mb-8">
+            <span className="w-2 h-2 bg-[#F99F33] rounded-full animate-pulse"></span>
             Only {remaining} of {spots.total} spots remaining
           </div>
 
           <h1 className="text-4xl md:text-6xl font-extrabold font-display tracking-tight leading-tight mb-6">
-            Become a <span className="text-[#E07B20]">Founding Partner</span> of Sphere
+            Become a <span className="text-[#F99F33]">Founding Partner</span> of Sphere
           </h1>
 
           <p className="text-gray-300 text-xl leading-relaxed max-w-2xl mx-auto mb-8">
@@ -100,7 +100,7 @@ export default function FoundingPartnerPage() {
               { value: '20', label: 'total spots ever' },
             ].map((s) => (
               <div key={s.label} className="text-center">
-                <div className="text-3xl font-extrabold font-display text-[#E07B20]">{s.value}</div>
+                <div className="text-3xl font-extrabold font-display text-[#F99F33]">{s.value}</div>
                 <div className="text-gray-400 text-sm">{s.label}</div>
               </div>
             ))}
@@ -108,7 +108,7 @@ export default function FoundingPartnerPage() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="#apply"
-              className="btn-primary text-lg px-10 py-4 inline-block shadow-2xl shadow-[#E07B20]/30">
+              className="btn-primary text-lg px-10 py-4 inline-block shadow-2xl shadow-[#F99F33]/30">
               Apply for a Founding Partner Spot →
             </a>
             <a href="/founding-partner-one-pager.html" target="_blank"
@@ -157,7 +157,7 @@ export default function FoundingPartnerPage() {
                   'A testimonial if results are strong',
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-3">
-                    <span className="w-7 h-7 rounded-full bg-[#E07B20]/15 text-[#E07B20] font-bold text-sm flex items-center justify-center shrink-0">✓</span>
+                    <span className="w-7 h-7 rounded-full bg-[#F99F33]/15 text-[#F99F33] font-bold text-sm flex items-center justify-center shrink-0">✓</span>
                     <span className="text-gray-700 text-base font-medium">{item}</span>
                   </li>
                 ))}
@@ -168,7 +168,7 @@ export default function FoundingPartnerPage() {
               <h3 className="text-xl font-extrabold font-display tracking-tight mb-3">A partnership, not a pitch.</h3>
               <p className="text-white/60 text-sm leading-relaxed mb-5">We're selective. We want venues serious about growing event sales — and willing to be honest with us.</p>
               <div className="bg-white/10 rounded-xl p-4 border border-white/15">
-                <p className="text-[#E07B20] font-bold text-xs uppercase tracking-widest mb-2">Not for you if:</p>
+                <p className="text-[#F99F33] font-bold text-xs uppercase tracking-widest mb-2">Not for you if:</p>
                 <ul className="text-white/50 text-sm space-y-1.5">
                   <li>• You just want a free tool with no feedback</li>
                   <li>• You're not actively booking events</li>
@@ -181,7 +181,7 @@ export default function FoundingPartnerPage() {
       </section>
 
       {/* Spot Counter */}
-      <section className="py-16 bg-gradient-to-r from-[#6a256f] via-[#EF4561] to-[#E07B20]">
+      <section className="py-16 bg-gradient-to-r from-[#6a256f] via-[#EF4561] to-[#F99F33]">
         <div className="max-w-3xl mx-auto px-6 text-center text-white">
           <h2 className="text-3xl font-extrabold font-display tracking-tight mb-4">Spots Are Limited — By Design</h2>
           <p className="text-white/90 mb-8 text-lg">
@@ -221,10 +221,10 @@ export default function FoundingPartnerPage() {
               <div key={item.step} className="relative bg-white rounded-3xl p-6 flex flex-col items-center text-center shadow-sm border border-gray-100">
                 {/* Connector line */}
                 {i < 3 && (
-                  <div className="hidden md:block absolute top-10 left-full w-4 h-0.5 bg-gradient-to-r from-[#6a256f] to-[#E07B20] z-10" />
+                  <div className="hidden md:block absolute top-10 left-full w-4 h-0.5 bg-gradient-to-r from-[#6a256f] to-[#F99F33] z-10" />
                 )}
                 <div className="text-4xl mb-4">{item.icon}</div>
-                <div className="text-[10px] font-black uppercase tracking-[0.2em] text-[#E07B20] mb-1">{item.step}</div>
+                <div className="text-[10px] font-black uppercase tracking-[0.2em] text-[#F99F33] mb-1">{item.step}</div>
                 <h3 className="font-extrabold text-[#6a256f] text-base mb-2">{item.title}</h3>
                 <span className="text-xs bg-[#6a256f]/8 text-[#6a256f] font-semibold px-3 py-1 rounded-full">{item.tag}</span>
               </div>
@@ -239,8 +239,8 @@ export default function FoundingPartnerPage() {
         <div className="max-w-3xl mx-auto px-6">
           <div className="bg-white border border-gray-100 rounded-3xl shadow-xl shadow-gray-200/60 p-8 md:p-12">
             <div className="text-center mb-10">
-              <div className="inline-flex items-center gap-2 bg-[#E07B20]/10 text-[#E07B20] text-sm font-bold px-4 py-1.5 rounded-full mb-4">
-                <span className="w-2 h-2 bg-[#E07B20] rounded-full animate-pulse"></span>
+              <div className="inline-flex items-center gap-2 bg-[#F99F33]/10 text-[#F99F33] text-sm font-bold px-4 py-1.5 rounded-full mb-4">
+                <span className="w-2 h-2 bg-[#F99F33] rounded-full animate-pulse"></span>
                 {remaining} spots left
               </div>
               <h2 className="section-title">Apply for a Founding Partner Spot</h2>

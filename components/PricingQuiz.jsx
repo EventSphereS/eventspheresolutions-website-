@@ -58,7 +58,7 @@ const results = {
     cta: 'Contact Us',
     href: '/contact',
     free: '1st month free',
-    color: 'from-[#6a256f] via-[#EF4561] to-[#E07B20]',
+    color: 'from-[#6a256f] via-[#EF4561] to-[#F99F33]',
   },
 }
 
@@ -97,7 +97,7 @@ export default function PricingQuiz() {
       {/* Intro */}
       {step === 0 && (
         <div className="text-center">
-          <div className="inline-block bg-[#E07B20]/15 text-[#E07B20] text-xs font-bold px-4 py-1.5 rounded-full mb-5 uppercase tracking-widest">
+          <div className="inline-block bg-[#F99F33]/15 text-[#F99F33] text-xs font-bold px-4 py-1.5 rounded-full mb-5 uppercase tracking-widest">
             3 quick questions
           </div>
           <h3 className="text-3xl md:text-5xl font-bold font-display tracking-tight text-[#6a256f] mb-4">
@@ -105,7 +105,7 @@ export default function PricingQuiz() {
           </h3>
           <button
             onClick={() => setStep(1)}
-            className="bg-gradient-to-r from-[#6a256f] via-[#EF4561] to-[#E07B20] text-white font-bold px-10 py-4 rounded-full hover:opacity-90 transition-all shadow-lg text-base"
+            className="bg-gradient-to-r from-[#6a256f] via-[#EF4561] to-[#F99F33] text-white font-bold px-10 py-4 rounded-full hover:opacity-90 transition-all shadow-lg text-base"
           >
             Let's find out →
           </button>
@@ -120,7 +120,7 @@ export default function PricingQuiz() {
               <div
                 key={i}
                 className={`h-1.5 flex-1 rounded-full transition-all duration-300 ${
-                  i < step ? 'bg-[#E07B20]' : 'bg-gray-200'
+                  i < step ? 'bg-[#F99F33]' : 'bg-gray-200'
                 }`}
               />
             ))}
@@ -165,7 +165,7 @@ export default function PricingQuiz() {
             <ul className="text-left space-y-3 mb-8 max-w-sm mx-auto">
               {r.perks.map((p) => (
                 <li key={p} className="flex items-start gap-3 text-gray-700 text-sm">
-                  <span className="text-[#E07B20] font-bold mt-0.5">✓</span>
+                  <span className="text-[#F99F33] font-bold mt-0.5">✓</span>
                   {p}
                 </li>
               ))}

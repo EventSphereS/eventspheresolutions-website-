@@ -49,7 +49,7 @@ export default function BanquetEventOrdersPage() {
 
       <section className="pt-28 pb-20 bg-white">
         <div className="max-w-4xl mx-auto px-6">
-          <p className="text-[#E07B20] text-xs font-bold uppercase tracking-[0.2em] mb-4">Sphere — Document Generation</p>
+          <p className="text-[#F99F33] text-xs font-bold uppercase tracking-[0.2em] mb-4">Sphere — Document Generation</p>
           <h1 className="text-4xl md:text-5xl font-extrabold font-display tracking-tight text-[#6a256f] leading-tight mb-6">
             Banquet event order software built for restaurants and venues.
           </h1>

@@ -5,7 +5,7 @@ const steps = [
   { num: '04', title: 'Operate', plain: 'Run', bold: 'flawless events' },
 ]
 
-const LINE = 'linear-gradient(90deg, #6a256f, #EF4561, #E07B20)'
+const LINE = 'linear-gradient(90deg, #6a256f, #EF4561, #F99F33)'
 
 function Circle({ num }) {
   return (
@@ -50,7 +50,7 @@ export default function ProcessSteps() {
         <div className="md:hidden relative">
           <div
             className="absolute left-10 top-10 bottom-10 w-0.5 -translate-x-1/2"
-            style={{ background: 'linear-gradient(180deg, #6a256f, #EF4561, #E07B20)' }}
+            style={{ background: 'linear-gradient(180deg, #6a256f, #EF4561, #F99F33)' }}
             aria-hidden="true"
           />
           <div className="relative flex flex-col gap-8">

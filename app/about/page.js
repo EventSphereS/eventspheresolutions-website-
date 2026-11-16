@@ -123,7 +123,7 @@ export default function AboutPage() {
         </div>
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10 pt-20 pb-16">
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold font-display tracking-tight text-white mb-6">
-            We're Built for <span className="text-[#E07B20]">Hospitality</span>
+            We're Built for <span className="text-[#F99F33]">Hospitality</span>
           </h1>
           <p className="text-gray-300 text-lg leading-relaxed max-w-2xl mx-auto">
             Event Sphere Solutions is a full-service event company dedicated exclusively to the hospitality industry — because the best results come from specialists who truly understand your world.
@@ -134,7 +134,7 @@ export default function AboutPage() {
       {/* Story */}
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6">
-          <p className="text-[#E07B20] text-xs font-bold uppercase tracking-[0.2em] mb-3">Our Journey</p>
+          <p className="text-[#F99F33] text-xs font-bold uppercase tracking-[0.2em] mb-3">Our Journey</p>
           <h2 className="text-3xl md:text-4xl font-bold font-display tracking-tight text-[#6a256f] mb-6">Our Story</h2>
           <div className="space-y-4 text-gray-600 leading-relaxed">
             <p>
@@ -162,7 +162,7 @@ export default function AboutPage() {
               />
             </div>
             <div>
-              <div className="text-[#E07B20] font-bold text-xs uppercase tracking-widest mb-3">Meet the Founder</div>
+              <div className="text-[#F99F33] font-bold text-xs uppercase tracking-widest mb-3">Meet the Founder</div>
               <h2 className="text-3xl font-bold font-display tracking-tight text-[#6a256f] mb-4">Samia Kohler</h2>
               <div className="space-y-4 text-gray-600 leading-relaxed text-sm">
                 <p>
@@ -187,7 +187,7 @@ export default function AboutPage() {
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-14">
-            <p className="text-[#E07B20] text-xs font-bold uppercase tracking-[0.2em] mb-3">Our Values</p>
+            <p className="text-[#F99F33] text-xs font-bold uppercase tracking-[0.2em] mb-3">Our Values</p>
             <h2 className="text-3xl md:text-4xl font-bold font-display tracking-tight text-[#6a256f] mb-3">What We Stand For</h2>
             <p className="text-gray-500 text-lg">The principles that guide every event we touch.</p>
           </div>
@@ -229,12 +229,12 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-gradient-to-r from-[#6a256f] via-[#EF4561] to-[#E07B20] text-white text-center">
+      <section className="py-20 bg-gradient-to-r from-[#6a256f] via-[#EF4561] to-[#F99F33] text-white text-center">
         <div className="max-w-2xl mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-bold font-display tracking-tight mb-6">Ready to Partner With Us?</h2>
           <p className="text-white/90 mb-8 text-lg">Let's talk about your venue and how we can help you build an event program that drives real results.</p>
           <Link href="/contact"
-            className="bg-white text-[#E07B20] font-bold px-8 py-4 rounded-full hover:bg-gray-100 transition-colors inline-block shadow-lg">
+            className="bg-white text-[#F99F33] font-bold px-8 py-4 rounded-full hover:bg-gray-100 transition-colors inline-block shadow-lg">
             Book a Free Consultation →
           </Link>
         </div>

@@ -21,22 +21,22 @@ export async function POST(request) {
       replyTo: email,
       subject: `🏆 New Founding Partner Application — ${businessName} (${city || 'Location TBD'})`,
       html: `
-        <div style="font-family: Inter, sans-serif; max-width: 620px; margin: 0 auto; color: #222123;">
+        <div style="font-family: Montserrat, sans-serif; max-width: 620px; margin: 0 auto; color: #222123;">
           <div style="background: linear-gradient(135deg, #222123, #6a256f); padding: 28px 32px;">
-            <h1 style="color: white; margin: 0; font-size: 20px;">🏆 New Founding Partner Application</h1>
-            <p style="color: #E07B20; margin: 4px 0 0; font-size: 14px;">Event Sphere Solutions</p>
+            <h1 style="font-family: 'Quicksand', system-ui, sans-serif; color: white; margin: 0; font-size: 20px;">🏆 New Founding Partner Application</h1>
+            <p style="color: #F99F33; margin: 4px 0 0; font-size: 14px;">Event Sphere Solutions</p>
           </div>
 
           <div style="padding: 32px; background: #f9f9f9;">
 
-            <div style="background: #E07B20; color: white; border-radius: 10px; padding: 16px 20px; margin-bottom: 24px; font-size: 15px;">
+            <div style="background: #F99F33; color: #222123; border-radius: 10px; padding: 16px 20px; margin-bottom: 24px; font-size: 15px;">
               <strong>${name}</strong> from <strong>${businessName}</strong> ${city ? `in <strong>${city}</strong>` : ''} wants to join as a Founding Partner.
             </div>
 
             <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden;">
               ${[
                 ['Name', name],
-                ['Email', `<a href="mailto:${email}" style="color: #E07B20;">${email}</a>`],
+                ['Email', `<a href="mailto:${email}" style="color: #F99F33;">${email}</a>`],
                 phone ? ['Phone', phone] : null,
                 ['Business', businessName],
                 ['Type', businessType || 'Not specified'],
@@ -55,7 +55,7 @@ export async function POST(request) {
             ${biggestChallenge ? `
             <div style="margin-top: 20px;">
               <p style="font-weight: 700; color: #333; font-size: 14px; margin-bottom: 8px;">Biggest Event Sales Challenge:</p>
-              <div style="background: white; border-left: 4px solid #E07B20; padding: 14px 16px; border-radius: 4px; font-size: 14px; color: #444; line-height: 1.6;">${biggestChallenge}</div>
+              <div style="background: white; border-left: 4px solid #F99F33; padding: 14px 16px; border-radius: 4px; font-size: 14px; color: #444; line-height: 1.6;">${biggestChallenge}</div>
             </div>` : ''}
 
             ${whyPartner ? `
@@ -66,7 +66,7 @@ export async function POST(request) {
 
             <div style="margin-top: 28px; text-align: center;">
               <a href="mailto:${email}?subject=Your Event Sphere Solutions Founding Partner Application"
-                style="background: #E07B20; color: white; padding: 12px 28px; border-radius: 24px; text-decoration: none; font-weight: 700; font-size: 14px;">
+                style="background: #F99F33; color: #222123; padding: 12px 28px; border-radius: 24px; text-decoration: none; font-weight: 700; font-size: 14px;">
                 Reply to ${name.split(' ')[0]} →
               </a>
             </div>
@@ -85,19 +85,19 @@ export async function POST(request) {
       to: email,
       subject: `Your Founding Partner application is in, ${name.split(' ')[0]}! 🎉`,
       html: `
-        <div style="font-family: Inter, -apple-system, sans-serif; max-width: 600px; margin: 0 auto; color: #222123; background: #ffffff;">
+        <div style="font-family: Montserrat, -apple-system, sans-serif; max-width: 600px; margin: 0 auto; color: #222123; background: #ffffff;">
           <!-- Header -->
           <div style="background: linear-gradient(135deg, #1a0f40 0%, #6a256f 60%, #1a0f40 100%); padding: 28px 40px; border-radius: 12px 12px 0 0; text-align: center;">
             <img src="https://www.eventspheresolutions.com/images/logo-main.png" alt="Event Sphere Solutions" style="height: 60px; width: auto;" />
-            <div style="margin-top: 10px; display: inline-block; background: #E07B20; color: white; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; letter-spacing: 0.08em; text-transform: uppercase;">Founding Partner Program</div>
+            <div style="margin-top: 10px; display: inline-block; background: #F99F33; color: #222123; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; letter-spacing: 0.08em; text-transform: uppercase;">Founding Partner Program</div>
           </div>
 
           <!-- Orange accent bar -->
-          <div style="height: 4px; background: linear-gradient(90deg, #6a256f, #EF4561, #E07B20);"></div>
+          <div style="height: 4px; background: linear-gradient(90deg, #6a256f, #EF4561, #F99F33);"></div>
 
           <!-- Body -->
           <div style="padding: 40px 40px 32px;">
-            <h2 style="margin: 0 0 16px; font-size: 26px; font-weight: 800; color: #222123; letter-spacing: -0.5px;">Application received, ${name.split(' ')[0]}! 🏆</h2>
+            <h2 style="font-family: 'Quicksand', system-ui, sans-serif; margin: 0 0 16px; font-size: 26px; font-weight: 800; color: #222123; letter-spacing: -0.5px;">Application received, ${name.split(' ')[0]}! 🏆</h2>
             <p style="color: #555; line-height: 1.7; margin: 0 0 28px; font-size: 15px;">
               We've received your Founding Partner application for <strong style="color: #222123;">${businessName}</strong>. We review every application personally and will be in touch within <strong style="color: #222123;">48 hours</strong>.
             </p>
@@ -107,7 +107,7 @@ export async function POST(request) {
               <p style="margin: 0 0 14px; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.8;">What you applied for</p>
               ${['3 months free access to Revenue Growth ($259/mo value)', 'Permanently locked Founding Partner pricing', 'First access to every new feature', 'Dedicated onboarding & setup'].map(item => `
               <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px;">
-                <span style="color: #E07B20; font-weight: 700; font-size: 16px; line-height: 1.4;">✓</span>
+                <span style="color: #F99F33; font-weight: 700; font-size: 16px; line-height: 1.4;">✓</span>
                 <span style="font-size: 14px; line-height: 1.6; opacity: 0.95;">${item}</span>
               </div>`).join('')}
             </div>
@@ -117,7 +117,7 @@ export async function POST(request) {
               <p style="margin: 0 0 14px; font-weight: 700; font-size: 13px; color: #6a256f; text-transform: uppercase; letter-spacing: 0.08em;">What happens next</p>
               ${['We review your application (within 48 hours)', 'You receive an acceptance email from our team', 'We schedule your 30-min onboarding call', 'Your account goes live — free for 90 days'].map((step, i) => `
               <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px;">
-                <div style="width: 24px; height: 24px; border-radius: 50%; background: #E07B20; color: white; font-size: 12px; font-weight: 700; text-align: center; line-height: 24px; flex-shrink: 0;">${i + 1}</div>
+                <div style="width: 24px; height: 24px; border-radius: 50%; background: #F99F33; color: #222123; font-size: 12px; font-weight: 700; text-align: center; line-height: 24px; flex-shrink: 0;">${i + 1}</div>
                 <span style="color: #444; font-size: 14px; line-height: 1.6; padding-top: 3px;">${step}</span>
               </div>`).join('')}
             </div>
@@ -129,7 +129,7 @@ export async function POST(request) {
           <!-- Footer -->
           <div style="padding: 20px 40px; background: #1a0f40; border-radius: 0 0 12px 12px; text-align: center;">
             <p style="color: rgba(255,255,255,0.4); font-size: 12px; margin: 0;">
-              © ${new Date().getFullYear()} Event Sphere Solutions · <a href="https://eventspheresolutions.com" style="color: #E07B20; text-decoration: none;">eventspheresolutions.com</a>
+              © ${new Date().getFullYear()} Event Sphere Solutions · <a href="https://eventspheresolutions.com" style="color: #F99F33; text-decoration: none;">eventspheresolutions.com</a>
             </p>
           </div>
         </div>

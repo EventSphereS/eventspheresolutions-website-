@@ -17,7 +17,7 @@ const sphereNeeds = [
   'Team collaboration',
 ]
 
-const inputClass = "w-full border border-gray-200 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-[#E07B20] focus:ring-2 focus:ring-[#E07B20]/20 transition-all bg-white placeholder:text-gray-400"
+const inputClass = "w-full border border-gray-200 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-[#F99F33] focus:ring-2 focus:ring-[#F99F33]/20 transition-all bg-white placeholder:text-gray-400"
 const labelClass = "block text-sm font-semibold text-[#222123] mb-1.5"
 
 export default function FoundingPartnerForm() {
@@ -85,10 +85,10 @@ export default function FoundingPartnerForm() {
   if (submitted) {
     return (
       <div className="bg-gradient-to-br from-[#6a256f] to-[#222123] rounded-2xl p-14 flex flex-col items-center justify-center text-center text-white max-w-2xl mx-auto">
-        <div className="w-16 h-16 bg-gradient-to-br from-[#6a256f] to-[#E07B20] rounded-full flex items-center justify-center text-white text-2xl mb-6">✓</div>
+        <div className="w-16 h-16 bg-gradient-to-br from-[#6a256f] to-[#F99F33] rounded-full flex items-center justify-center text-white text-2xl mb-6">✓</div>
         <h3 className="text-2xl font-extrabold font-display tracking-tight mb-3">Application Received!</h3>
         <p className="text-gray-300 leading-relaxed max-w-md mb-6">
-          Thank you, <strong className="text-white">{form.name.split(' ')[0]}</strong>. We review every application personally and will be in touch within <strong className="text-[#E07B20]">48 hours</strong>.
+          Thank you, <strong className="text-white">{form.name.split(' ')[0]}</strong>. We review every application personally and will be in touch within <strong className="text-[#F99F33]">48 hours</strong>.
         </p>
         <div className="bg-white/10 border border-white/20 rounded-xl p-5 text-sm text-gray-300 text-left max-w-sm mb-6">
           <p className="font-bold text-white mb-2">What happens next:</p>
@@ -106,7 +106,7 @@ export default function FoundingPartnerForm() {
             href="https://calendly.com/hello-eventspheresolutions/30min"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-gradient-to-r from-[#E07B20] to-[#EF4561] text-white font-bold px-8 py-3.5 rounded-full hover:opacity-90 transition-all text-sm shadow-lg shadow-[#E07B20]/30"
+            className="inline-block bg-gradient-to-r from-[#F99F33] to-[#EF4561] text-[#222123] font-bold px-8 py-3.5 rounded-full hover:opacity-90 transition-all text-sm shadow-lg shadow-[#F99F33]/30"
           >
             Schedule Your Demo →
           </a>
@@ -120,11 +120,11 @@ export default function FoundingPartnerForm() {
     <div className="mb-8">
       <div className="flex items-center justify-between mb-2">
         <span className="text-xs font-semibold text-gray-400 uppercase tracking-widest">Step {step} of 2</span>
-        <span className="text-xs font-semibold text-[#E07B20]">{step === 1 ? 'Your Info' : 'Your Venue'}</span>
+        <span className="text-xs font-semibold text-[#F99F33]">{step === 1 ? 'Your Info' : 'Your Venue'}</span>
       </div>
       <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
         <div
-          className="h-full bg-gradient-to-r from-[#6a256f] to-[#E07B20] rounded-full transition-all duration-500"
+          className="h-full bg-gradient-to-r from-[#6a256f] to-[#F99F33] rounded-full transition-all duration-500"
           style={{ width: step === 1 ? '50%' : '100%' }}
         />
       </div>
@@ -165,7 +165,7 @@ export default function FoundingPartnerForm() {
           </div>
 
           <button onClick={handleNext}
-            className="w-full bg-gradient-to-r from-[#6a256f] via-[#EF4561] to-[#E07B20] text-white font-bold py-4 rounded-xl hover:opacity-90 transition-all text-sm mt-2">
+            className="w-full bg-gradient-to-r from-[#6a256f] via-[#EF4561] to-[#F99F33] text-white font-bold py-4 rounded-xl hover:opacity-90 transition-all text-sm mt-2">
             Continue →
           </button>
         </div>
@@ -192,8 +192,8 @@ export default function FoundingPartnerForm() {
               <button key={t} type="button" onClick={() => handleSelect('businessType', t)}
                 className={`px-4 py-2 rounded-full text-sm font-medium border transition-all ${
                   form.businessType === t
-                    ? 'bg-[#E07B20] text-white border-[#E07B20]'
-                    : 'border-gray-200 text-gray-600 hover:border-[#E07B20] hover:text-[#E07B20]'
+                    ? 'bg-[#F99F33] text-[#222123] border-[#F99F33]'
+                    : 'border-gray-200 text-gray-600 hover:border-[#F99F33] hover:text-[#F99F33]'
                 }`}>{t}</button>
             ))}
           </div>
@@ -206,8 +206,8 @@ export default function FoundingPartnerForm() {
               <button key={f} type="button" onClick={() => handleSelect('eventFrequency', f)}
                 className={`px-4 py-2 rounded-full text-sm font-medium border transition-all ${
                   form.eventFrequency === f
-                    ? 'bg-[#E07B20] text-white border-[#E07B20]'
-                    : 'border-gray-200 text-gray-600 hover:border-[#E07B20] hover:text-[#E07B20]'
+                    ? 'bg-[#F99F33] text-[#222123] border-[#F99F33]'
+                    : 'border-gray-200 text-gray-600 hover:border-[#F99F33] hover:text-[#F99F33]'
                 }`}>{f}</button>
             ))}
           </div>
@@ -255,8 +255,8 @@ export default function FoundingPartnerForm() {
               <button key={opt} type="button" onClick={() => handleSelect('canProvideTestimonial', opt)}
                 className={`px-4 py-2 rounded-full text-sm font-medium border transition-all ${
                   form.canProvideTestimonial === opt
-                    ? 'bg-[#E07B20] text-white border-[#E07B20]'
-                    : 'border-gray-200 text-gray-600 hover:border-[#E07B20] hover:text-[#E07B20]'
+                    ? 'bg-[#F99F33] text-[#222123] border-[#F99F33]'
+                    : 'border-gray-200 text-gray-600 hover:border-[#F99F33] hover:text-[#F99F33]'
                 }`}>{opt}</button>
             ))}
           </div>
@@ -268,7 +268,7 @@ export default function FoundingPartnerForm() {
             ← Back
           </button>
           <button type="submit" disabled={loading}
-            className="flex-1 bg-gradient-to-r from-[#6a256f] via-[#EF4561] to-[#E07B20] text-white font-bold py-4 rounded-xl hover:opacity-90 transition-all text-sm disabled:opacity-70">
+            className="flex-1 bg-gradient-to-r from-[#6a256f] via-[#EF4561] to-[#F99F33] text-white font-bold py-4 rounded-xl hover:opacity-90 transition-all text-sm disabled:opacity-70">
             {loading ? 'Submitting...' : 'Submit My Application →'}
           </button>
         </div>
