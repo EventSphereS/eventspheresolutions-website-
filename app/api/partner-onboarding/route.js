@@ -86,7 +86,7 @@ export async function POST(request) {
       .join('<br>') || 'Not specified'
 
     const templatesLinks = templateLinks
-      .map((url, i) => `<a href="${url}" style="color:#E07B20;">Template ${i + 1}</a>`)
+      .map((url, i) => `<a href="${url}" style="color:#F99F33;">Template ${i + 1}</a>`)
       .join('<br>') || 'None provided'
 
     const teamMembersRows = (teamMembers || [])
@@ -95,11 +95,11 @@ export async function POST(request) {
       .join('<br>')
 
     const bookedEventContractsLinks = bookedEventContractLinks
-      .map((url, i) => `<a href="${url}" style="color:#E07B20;">Contract ${i + 1}</a>`)
+      .map((url, i) => `<a href="${url}" style="color:#F99F33;">Contract ${i + 1}</a>`)
       .join('<br>')
 
     const spacePhotosLinks = spacePhotoLinks
-      .map((url, i) => `<a href="${url}" style="color:#E07B20;">Space Photo ${i + 1}</a>`)
+      .map((url, i) => `<a href="${url}" style="color:#F99F33;">Space Photo ${i + 1}</a>`)
       .join('<br>')
 
     const teamResult = await resend.emails.send({
@@ -108,16 +108,16 @@ export async function POST(request) {
       replyTo: adminEmail,
       subject: `🚀 Partner Onboarding — ${businessName}`,
       html: `
-        <div style="font-family: Inter, sans-serif; max-width: 640px; margin: 0 auto; color: #222123;">
+        <div style="font-family: Montserrat, sans-serif; max-width: 640px; margin: 0 auto; color: #222123;">
           <div style="background: linear-gradient(135deg, #222123, #6a256f); padding: 28px 32px;">
-            <h1 style="color: white; margin: 0; font-size: 20px;">🚀 Partner Onboarding Submitted</h1>
-            <p style="color: #E07B20; margin: 4px 0 0; font-size: 14px;">${businessName}</p>
+            <h1 style="font-family: 'Quicksand', system-ui, sans-serif; color: white; margin: 0; font-size: 20px;">🚀 Partner Onboarding Submitted</h1>
+            <p style="color: #F99F33; margin: 4px 0 0; font-size: 14px;">${businessName}</p>
           </div>
           <div style="padding: 32px; background: #f9f9f9;">
             <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden;">
               ${[
                 ['Admin Name', adminName],
-                ['Admin Email', `<a href="mailto:${adminEmail}" style="color:#E07B20;">${adminEmail}</a>`],
+                ['Admin Email', `<a href="mailto:${adminEmail}" style="color:#F99F33;">${adminEmail}</a>`],
                 adminPhone ? ['Admin Phone', adminPhone] : null,
                 ['Business Name', businessName],
                 totalCapacity ? ['Total Capacity', totalCapacity] : null,
@@ -125,14 +125,14 @@ export async function POST(request) {
                 ['Business Hours', hoursRows],
                 ['Event Spaces', spacesRows],
                 spacePhotosLinks ? ['Space Photos', spacePhotosLinks] : null,
-                logoLink ? ['Logo', `<a href="${logoLink}" style="color:#E07B20;">Download file (link expires in 7 days)</a>`] : null,
-                coverPhotoLink ? ['Cover Photo', `<a href="${coverPhotoLink}" style="color:#E07B20;">Download file (link expires in 7 days)</a>`] : null,
-                policiesLink ? ['Terms & Conditions / Policies', `<a href="${policiesLink}" style="color:#E07B20;">Download file (link expires in 7 days)</a>`] : null,
-                menuLink ? ['Menu Doc', `<a href="${menuLink}" style="color:#E07B20;">Download file (link expires in 7 days)</a>`] : null,
+                logoLink ? ['Logo', `<a href="${logoLink}" style="color:#F99F33;">Download file (link expires in 7 days)</a>`] : null,
+                coverPhotoLink ? ['Cover Photo', `<a href="${coverPhotoLink}" style="color:#F99F33;">Download file (link expires in 7 days)</a>`] : null,
+                policiesLink ? ['Terms & Conditions / Policies', `<a href="${policiesLink}" style="color:#F99F33;">Download file (link expires in 7 days)</a>`] : null,
+                menuLink ? ['Menu Doc', `<a href="${menuLink}" style="color:#F99F33;">Download file (link expires in 7 days)</a>`] : null,
                 taxAndFees ? ['Tax & Fees', taxAndFees] : null,
                 extraServices ? ['Extra Services', extraServices] : null,
-                contactsLink ? ['Contacts Export', `<a href="${contactsLink}" style="color:#E07B20;">Download file (link expires in 7 days)</a>`] : null,
-                upcomingEventsLink ? ['Upcoming Events File', `<a href="${upcomingEventsLink}" style="color:#E07B20;">Download file (link expires in 7 days)</a>`] : null,
+                contactsLink ? ['Contacts Export', `<a href="${contactsLink}" style="color:#F99F33;">Download file (link expires in 7 days)</a>`] : null,
+                upcomingEventsLink ? ['Upcoming Events File', `<a href="${upcomingEventsLink}" style="color:#F99F33;">Download file (link expires in 7 days)</a>`] : null,
                 bookedEventContractsLinks ? ['Booked Event Contracts', bookedEventContractsLinks] : null,
                 ['Proposal/Contract Templates', templatesLinks],
               ].filter(Boolean).map(([label, value]) => `
@@ -147,14 +147,14 @@ export async function POST(request) {
               🔒 File links above expire in 7 days. Files are stored privately, but reminder: delete the contacts export from Blob storage once you've imported it into Sphere.
             </p>
 
-            ${description ? `<div style="margin-top:20px;"><p style="font-weight:700;color:#333;font-size:14px;margin-bottom:8px;">Description:</p><div style="background:white;border-left:4px solid #E07B20;padding:14px 16px;border-radius:4px;font-size:14px;color:#444;line-height:1.6;">${description}</div></div>` : ''}
+            ${description ? `<div style="margin-top:20px;"><p style="font-weight:700;color:#333;font-size:14px;margin-bottom:8px;">Description:</p><div style="background:white;border-left:4px solid #F99F33;padding:14px 16px;border-radius:4px;font-size:14px;color:#444;line-height:1.6;">${description}</div></div>` : ''}
             ${teamMembersRows ? `<div style="margin-top:16px;"><p style="font-weight:700;color:#333;font-size:14px;margin-bottom:8px;">Team Members to Invite:</p><div style="background:white;border-left:4px solid #6a256f;padding:14px 16px;border-radius:4px;font-size:14px;color:#444;line-height:1.6;">${teamMembersRows}</div></div>` : ''}
             ${upcomingEvents ? `<div style="margin-top:16px;"><p style="font-weight:700;color:#333;font-size:14px;margin-bottom:8px;">Upcoming Events & Bookings:</p><div style="background:white;border-left:4px solid #6a256f;padding:14px 16px;border-radius:4px;font-size:14px;color:#444;line-height:1.6;white-space:pre-line;">${upcomingEvents}</div></div>` : ''}
             ${notes ? `<div style="margin-top:16px;"><p style="font-weight:700;color:#333;font-size:14px;margin-bottom:8px;">Additional Notes:</p><div style="background:white;border-left:4px solid #222123;padding:14px 16px;border-radius:4px;font-size:14px;color:#444;line-height:1.6;white-space:pre-line;">${notes}</div></div>` : ''}
 
             <div style="margin-top: 28px; text-align: center;">
               <a href="mailto:${adminEmail}?subject=Your Sphere account is on its way!"
-                style="background: #E07B20; color: white; padding: 12px 28px; border-radius: 24px; text-decoration: none; font-weight: 700; font-size: 14px;">
+                style="background: #F99F33; color: #222123; padding: 12px 28px; border-radius: 24px; text-decoration: none; font-weight: 700; font-size: 14px;">
                 Reply to ${adminName.split(' ')[0]} →
               </a>
             </div>
@@ -182,14 +182,14 @@ export async function POST(request) {
         to: adminEmail,
         subject: `We've got everything we need, ${adminName.split(' ')[0]}! 🚀`,
         html: `
-        <div style="font-family: Inter, -apple-system, sans-serif; max-width: 600px; margin: 0 auto; color: #222123; background: #ffffff;">
+        <div style="font-family: Montserrat, -apple-system, sans-serif; max-width: 600px; margin: 0 auto; color: #222123; background: #ffffff;">
           <div style="background: linear-gradient(135deg, #1a0f40 0%, #6a256f 60%, #1a0f40 100%); padding: 28px 40px; border-radius: 12px 12px 0 0; text-align: center;">
             <img src="https://www.eventspheresolutions.com/images/logo-main.png" alt="Event Sphere Solutions" style="height: 60px; width: auto;" />
-            <div style="margin-top: 10px; display: inline-block; background: #E07B20; color: white; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; letter-spacing: 0.08em; text-transform: uppercase;">Partner Onboarding</div>
+            <div style="margin-top: 10px; display: inline-block; background: #F99F33; color: #222123; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; letter-spacing: 0.08em; text-transform: uppercase;">Partner Onboarding</div>
           </div>
-          <div style="height: 4px; background: linear-gradient(90deg, #6a256f, #EF4561, #E07B20);"></div>
+          <div style="height: 4px; background: linear-gradient(90deg, #6a256f, #EF4561, #F99F33);"></div>
           <div style="padding: 40px 40px 32px;">
-            <h2 style="margin: 0 0 16px; font-size: 26px; font-weight: 800; color: #222123; letter-spacing: -0.5px;">You're all set, ${adminName.split(' ')[0]}! 🚀</h2>
+            <h2 style="font-family: 'Quicksand', system-ui, sans-serif; margin: 0 0 16px; font-size: 26px; font-weight: 800; color: #222123; letter-spacing: -0.5px;">You're all set, ${adminName.split(' ')[0]}! 🚀</h2>
             <p style="color: #555; line-height: 1.7; margin: 0 0 28px; font-size: 15px;">
               We've received everything we need to migrate <strong style="color: #222123;">${businessName}</strong> onto Sphere. Your account will be live within <strong style="color: #222123;">2 business days</strong>.
             </p>
@@ -198,7 +198,7 @@ export async function POST(request) {
           </div>
           <div style="padding: 20px 40px; background: #1a0f40; border-radius: 0 0 12px 12px; text-align: center;">
             <p style="color: rgba(255,255,255,0.4); font-size: 12px; margin: 0;">
-              © ${new Date().getFullYear()} Event Sphere Solutions · <a href="https://eventspheresolutions.com" style="color: #E07B20; text-decoration: none;">eventspheresolutions.com</a>
+              © ${new Date().getFullYear()} Event Sphere Solutions · <a href="https://eventspheresolutions.com" style="color: #F99F33; text-decoration: none;">eventspheresolutions.com</a>
             </p>
           </div>
         </div>

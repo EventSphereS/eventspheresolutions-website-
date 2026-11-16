@@ -39,25 +39,25 @@ export default function Home() {
             priority
           />
           <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(26,15,64,0.88) 0%, rgba(45,27,107,0.80) 50%, rgba(26,15,64,0.75) 100%)' }} />
-          <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle at 70% 40%, #E07B20 0%, transparent 55%)' }} />
+          <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle at 70% 40%, #F99F33 0%, transparent 55%)' }} />
         </div>
 
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10 pt-32 pb-24">
           <div className="inline-flex items-center gap-2.5 bg-white/8 border border-white/15 text-white/70 text-xs px-5 py-2 rounded-full mb-8 backdrop-blur-sm tracking-wide font-medium">
-            <span className="w-1.5 h-1.5 bg-[#E07B20] rounded-full animate-pulse shrink-0"></span>
+            <span className="w-1.5 h-1.5 bg-[#F99F33] rounded-full animate-pulse shrink-0"></span>
             Now accepting Founding Partners
           </div>
-          <p className="text-[#E07B20] text-xs font-bold uppercase tracking-[0.2em] mb-4">Event Sphere Solutions</p>
+          <p className="text-[#F99F33] text-xs font-bold uppercase tracking-[0.2em] mb-4">Event Sphere Solutions</p>
           <h1 className="font-display font-extrabold text-4xl sm:text-5xl md:text-7xl leading-[1.05] tracking-tight text-white mb-6">
             The Future of Private
             Event Booking for{' '}
-            <span className="text-[#E07B20]">Hospitality</span>
+            <span className="text-[#F99F33]">Hospitality</span>
           </h1>
           <p className="text-gray-300 text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-10">
             Event Sphere Solutions gives hospitality businesses <span className="text-white font-semibold">Sphere</span> — the expert sales team and software to turn empty calendars into consistent, high-performing event sales programs.
           </p>
           <Link href="/founding-partner"
-            className="inline-block bg-gradient-to-r from-[#6a256f] via-[#EF4561] to-[#E07B20] text-white font-bold text-base md:text-lg px-8 md:px-10 py-4 rounded-full hover:opacity-90 transition-all shadow-2xl">
+            className="inline-block bg-gradient-to-r from-[#6a256f] via-[#EF4561] to-[#F99F33] text-white font-bold text-base md:text-lg px-8 md:px-10 py-4 rounded-full hover:opacity-90 transition-all shadow-2xl">
             Start Free — Founding Partner Program →
           </Link>
           <p className="text-gray-500 text-sm mt-3">3 months free*</p>
@@ -115,7 +115,7 @@ export default function Home() {
       <section className="py-28 bg-white">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-16">
-            <p className="text-[#E07B20] text-xs font-bold uppercase tracking-[0.2em] mb-3">Why Sphere</p>
+            <p className="text-[#F99F33] text-xs font-bold uppercase tracking-[0.2em] mb-3">Why Sphere</p>
             <h2 className="font-display font-extrabold text-4xl md:text-5xl tracking-tight text-[#6a256f] leading-tight">
               One system. Three results.
             </h2>
@@ -146,13 +146,13 @@ export default function Home() {
             ].map((item) => (
               <div key={item.title} className="rounded-2xl border border-gray-100 hover:border-[#6a256f]/20 hover:shadow-lg transition-all group bg-white overflow-hidden flex flex-col">
                 <div className="p-8 flex-1">
-                  <div className="text-[#E07B20] font-display font-bold text-sm mb-6">{item.number}</div>
+                  <div className="text-[#F99F33] font-display font-bold text-sm mb-6">{item.number}</div>
                   <h3 className="text-xl font-bold text-[#6a256f] mb-3">{item.title}</h3>
                   <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
                 </div>
-                <div className="bg-[#E07B20] px-8 py-5 flex items-center gap-3 min-h-[72px]">
-                  <span className="text-white font-extrabold font-display text-3xl leading-none shrink-0">{item.stat}</span>
-                  <span className="text-white/80 font-semibold text-xs uppercase tracking-wide leading-tight">{item.statLabel}</span>
+                <div className="bg-[#F99F33] px-8 py-5 flex items-center gap-3 min-h-[72px]">
+                  <span className="text-[#222123] font-extrabold font-display text-3xl leading-none shrink-0">{item.stat}</span>
+                  <span className="text-[#222123]/80 font-semibold text-xs uppercase tracking-wide leading-tight">{item.statLabel}</span>
                 </div>
               </div>
             ))}
@@ -172,7 +172,7 @@ export default function Home() {
         <div className="absolute inset-0 flex items-center justify-center text-center px-6">
           <p className="font-display font-extrabold text-white text-2xl sm:text-3xl md:text-6xl leading-tight tracking-tight max-w-3xl px-4">
             Every empty date is lost sales{' '}
-            <span className="text-[#E07B20]">walking out the door.</span>
+            <span className="text-[#F99F33]">walking out the door.</span>
           </p>
         </div>
       </section>
@@ -181,8 +181,8 @@ export default function Home() {
       <section className="py-20 bg-white">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-6">
-            <p className="text-[#E07B20] text-xs font-bold uppercase tracking-[0.2em] mb-4">Proven Results</p>
-            <CountUp target={189} suffix="%" className="font-display font-extrabold text-7xl sm:text-8xl md:text-[140px] leading-none mb-2 block" style={{ background: 'linear-gradient(90deg, #6a256f, #EF4561, #E07B20)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }} />
+            <p className="text-[#F99F33] text-xs font-bold uppercase tracking-[0.2em] mb-4">Proven Results</p>
+            <CountUp target={189} suffix="%" className="font-display font-extrabold text-7xl sm:text-8xl md:text-[140px] leading-none mb-2 block" style={{ background: 'linear-gradient(90deg, #6a256f, #EF4561, #F99F33)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }} />
             <p className="text-[#6a256f] text-xl font-semibold">average increase in event sales</p>
             <p className="text-gray-400 text-sm mt-2">Across our first clients in under 120 days</p>
           </div>
@@ -197,7 +197,7 @@ export default function Home() {
       <section className="py-28 bg-white">
         <div className="max-w-5xl mx-auto px-6">
           <div className="mb-20">
-            <p className="text-[#E07B20] text-xs font-bold uppercase tracking-[0.2em] mb-3">Simple by Design</p>
+            <p className="text-[#F99F33] text-xs font-bold uppercase tracking-[0.2em] mb-3">Simple by Design</p>
             <h2 className="font-display font-extrabold text-4xl md:text-5xl tracking-tight text-[#6a256f] leading-tight">
               How It Works
             </h2>
@@ -209,8 +209,8 @@ export default function Home() {
               { step: '03', title: 'Sales grow', desc: 'Track every lead, booking, and dollar in one dashboard. Watch your event sales compound month after month.' },
             ].map((item) => (
               <div key={item.step}>
-                <div className="font-display font-black text-[#ee6603] text-[88px] leading-none mb-1 select-none">{item.step}</div>
-                <div className="w-6 h-0.5 bg-[#E07B20] mb-5" />
+                <div className="font-display font-black text-[#F99F33] text-[88px] leading-none mb-1 select-none">{item.step}</div>
+                <div className="w-6 h-0.5 bg-[#F99F33] mb-5" />
                 <h3 className="text-base font-bold text-[#222123] mb-3">{item.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
               </div>
@@ -223,7 +223,7 @@ export default function Home() {
       <section className="py-28 bg-[#6a256f]">
         <div className="max-w-6xl mx-auto px-6">
           <div className="mb-16">
-            <p className="text-[#ee6603] text-xs font-bold uppercase tracking-[0.25em] mb-4">Built Exclusively For</p>
+            <p className="text-[#F99F33] text-xs font-bold uppercase tracking-[0.25em] mb-4">Built Exclusively For</p>
             <h2 className="text-3xl md:text-5xl font-extrabold font-display tracking-tight text-white leading-tight max-w-2xl">
               The hospitality industry,<br className="hidden md:block" /> and no one else.
             </h2>
@@ -277,7 +277,7 @@ export default function Home() {
               },
             ].map((c) => (
               <div key={c.label} className="flex flex-col items-center text-center py-10 px-6">
-                <div className="w-12 h-12 mb-6 text-[#ee6603]">{c.icon}</div>
+                <div className="w-12 h-12 mb-6 text-[#F99F33]">{c.icon}</div>
                 <div className="font-bold text-white text-base mb-1.5">{c.label}</div>
                 <div className="text-white/50 text-sm leading-relaxed">{c.sub}</div>
               </div>

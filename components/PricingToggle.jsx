@@ -91,51 +91,51 @@ export default function PricingToggle() {
             key={plan.name}
             className={`rounded-2xl overflow-hidden border transition-all duration-300 ${
               plan.highlight
-                ? 'border-[#E07B20] shadow-xl shadow-[#E07B20]/10 scale-105'
+                ? 'border-[#F99F33] shadow-xl shadow-[#F99F33]/10 scale-105'
                 : 'border-gray-200 shadow-sm hover:shadow-md'
             }`}
           >
             {/* Header */}
-            <div className={`p-6 ${plan.highlight ? 'bg-[#E07B20]' : 'bg-white'}`}>
+            <div className={`p-6 ${plan.highlight ? 'bg-[#F99F33]' : 'bg-white'}`}>
               <div className="flex items-start justify-between mb-3">
-                <h3 className={`font-bold font-display text-xl ${plan.highlight ? 'text-white' : 'text-[#222123]'}`}>
+                <h3 className="font-bold font-display text-xl text-[#222123]">
                   {plan.name}
                 </h3>
                 {plan.badge && (
                   <span className={`text-xs font-bold px-3 py-1 rounded-full ${
                     plan.highlight
-                      ? 'bg-white text-[#E07B20]'
+                      ? 'bg-[#222123] text-[#F99F33]'
                       : plan.badge === 'Enterprise'
                       ? 'bg-[#6a256f] text-white'
-                      : 'bg-[#E07B20] text-white'
+                      : 'bg-[#F99F33] text-[#222123]'
                   }`}>
                     {plan.badge}
                   </span>
                 )}
               </div>
-              <p className={`text-sm mb-5 leading-snug ${plan.highlight ? 'text-white/80' : 'text-gray-500'}`}>
+              <p className={`text-sm mb-5 leading-snug ${plan.highlight ? 'text-[#222123]/80' : 'text-gray-500'}`}>
                 {plan.tagline}
               </p>
               {plan.price ? (
                 <>
                   <div className="flex items-end gap-1">
-                    <span className={`text-5xl font-bold font-display ${plan.highlight ? 'text-white' : 'text-[#222123]'}`}>
+                    <span className="text-5xl font-bold font-display text-[#222123]">
                       ${plan.price.monthly}
                     </span>
-                    <span className={`text-sm mb-2 ${plan.highlight ? 'text-white/70' : 'text-gray-400'}`}>/mo</span>
+                    <span className={`text-sm mb-2 ${plan.highlight ? 'text-[#222123]/70' : 'text-gray-400'}`}>/mo</span>
                   </div>
-                  <p className={`text-xs mt-2 ${plan.highlight ? 'text-white/70' : 'text-gray-500'}`}>
+                  <p className={`text-xs mt-2 ${plan.highlight ? 'text-[#222123]/70' : 'text-gray-500'}`}>
                     per location · {plan.limits}
                   </p>
                 </>
               ) : (
                 <>
                   <div className="flex items-end gap-1">
-                    <span className={`text-3xl font-bold font-display ${plan.highlight ? 'text-white' : 'text-[#222123]'}`}>
+                    <span className="text-3xl font-bold font-display text-[#222123]">
                       Contact Us
                     </span>
                   </div>
-                  <p className={`text-xs mt-2 ${plan.highlight ? 'text-white/70' : 'text-gray-500'}`}>
+                  <p className={`text-xs mt-2 ${plan.highlight ? 'text-[#222123]/70' : 'text-gray-500'}`}>
                     {plan.limits}
                   </p>
                 </>
@@ -147,7 +147,7 @@ export default function PricingToggle() {
               <ul className="space-y-2.5 mb-6">
                 {plan.features.map((f) => (
                   <li key={f} className="flex items-start gap-2.5 text-sm text-gray-700">
-                    <span className={`mt-0.5 shrink-0 font-bold ${f.includes('Coming Soon') ? 'text-orange-400' : 'text-[#E07B20]'}`}>
+                    <span className="mt-0.5 shrink-0 font-bold text-[#F99F33]">
                       {f.includes('Coming Soon') ? '○' : '✓'}
                     </span>
                     <span className={
@@ -160,7 +160,7 @@ export default function PricingToggle() {
 
               <div className="border-t border-gray-100 pt-4 mb-6">
                 <p className="text-xs text-gray-400 flex items-center gap-1.5">
-                  <span className="text-[#E07B20]">🎧</span> {plan.support}
+                  <span className="text-[#F99F33]">🎧</span> {plan.support}
                 </p>
               </div>
 
@@ -168,8 +168,8 @@ export default function PricingToggle() {
                 href="/contact"
                 className={`w-full text-center block font-bold py-3.5 rounded-full transition-all text-sm ${
                   plan.highlight
-                    ? 'bg-[#E07B20] text-white hover:bg-[#e08a20]'
-                    : 'border-2 border-[#E07B20] text-[#E07B20] hover:bg-[#E07B20] hover:text-white'
+                    ? 'bg-[#F99F33] text-[#222123] hover:opacity-90'
+                    : 'border-2 border-[#F99F33] text-[#F99F33] hover:bg-[#F99F33] hover:text-[#222123]'
                 }`}
               >
                 {plan.cta} →

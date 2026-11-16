@@ -91,28 +91,31 @@ const results = {
     cta: 'Get Sphere Free →',
     href: '/founding-partner',
     gradient: 'from-[#6a256f] to-[#2d0a35]',
+    textClass: 'text-white',
   },
   salesTeam: {
     label: 'Sphere + Sales Team',
     badge: 'Full Service',
-    badgeColor: 'bg-[#E07B20] text-white',
+    badgeColor: 'bg-[#F99F33] text-[#222123]',
     headline: 'Sphere + Sales Team — we handle everything for you.',
     desc: "You're running a busy venue without the bandwidth to chase every lead and close every deal. Our expert sales team does it all — while you focus on your guests.",
     perks: ['Full Sphere platform included', 'Dedicated sales team', 'Lead-to-close management', 'First month free'],
     cta: 'Contact Us →',
     href: '/contact',
-    gradient: 'from-[#6a256f] via-[#EF4561] to-[#E07B20]',
+    gradient: 'from-[#6a256f] via-[#EF4561] to-[#F99F33]',
+    textClass: 'text-white',
   },
   ai: {
     label: 'Sphere AI',
     badge: 'Coming Soon',
-    badgeColor: 'bg-gradient-to-r from-[#EF4561] to-[#E07B20] text-white',
+    badgeColor: 'bg-gradient-to-r from-[#EF4561] to-[#F99F33] text-[#222123]',
     headline: 'Sphere AI — automate the repetitive, focus on what matters.',
     desc: 'High volume, not enough hours. Sphere AI layers automation on top of Sphere — AI lead capture, smart follow-ups, and 24/7 booking workflows that never sleep.',
     perks: ['Full Sphere platform included', 'AI lead capture & follow-up', 'Automated booking workflows', 'Join the waitlist'],
     cta: 'Join the Waitlist →',
     href: '/contact',
-    gradient: 'from-[#EF4561] to-[#E07B20]',
+    gradient: 'from-[#EF4561] to-[#F99F33]',
+    textClass: 'text-[#222123]',
   },
 }
 
@@ -153,7 +156,7 @@ export default function V1V2CTA() {
     <section className="py-20 bg-white border-t border-gray-100">
       <div className="max-w-2xl mx-auto px-6 text-center">
 
-        <p className="text-[#E07B20] text-xs font-bold uppercase tracking-widest mb-3">Find Your Fit</p>
+        <p className="text-[#F99F33] text-xs font-bold uppercase tracking-widest mb-3">Find Your Fit</p>
         <h2 className="text-3xl md:text-4xl font-extrabold font-display text-[#111827] mb-10">
           Which Sphere is right for you?
         </h2>
@@ -166,7 +169,7 @@ export default function V1V2CTA() {
             </p>
             <button
               onClick={() => setStep(1)}
-              className="bg-gradient-to-r from-[#6a256f] via-[#EF4561] to-[#E07B20] text-white font-bold px-10 py-4 rounded-full hover:opacity-90 transition-all shadow-lg text-base"
+              className="bg-gradient-to-r from-[#6a256f] via-[#EF4561] to-[#F99F33] text-white font-bold px-10 py-4 rounded-full hover:opacity-90 transition-all shadow-lg text-base"
             >
               Let's find out →
             </button>
@@ -178,7 +181,7 @@ export default function V1V2CTA() {
           <div>
             <div className="flex items-center gap-3 mb-8">
               {questions.map((_, i) => (
-                <div key={i} className={`h-1.5 flex-1 rounded-full transition-all duration-300 ${i < step ? 'bg-[#E07B20]' : 'bg-gray-200'}`} />
+                <div key={i} className={`h-1.5 flex-1 rounded-full transition-all duration-300 ${i < step ? 'bg-[#F99F33]' : 'bg-gray-200'}`} />
               ))}
             </div>
             <p className="text-xs text-gray-400 font-semibold uppercase tracking-widest mb-3">Question {step} of {questions.length}</p>
@@ -205,7 +208,7 @@ export default function V1V2CTA() {
           const r = getResult()
           return (
             <div className="text-center">
-              <div className={`inline-block bg-gradient-to-r ${r.gradient} text-white text-xs font-bold px-4 py-1.5 rounded-full mb-5 uppercase tracking-widest`}>
+              <div className={`inline-block bg-gradient-to-r ${r.gradient} ${r.textClass} text-xs font-bold px-4 py-1.5 rounded-full mb-5 uppercase tracking-widest`}>
                 {r.label}
               </div>
               <h3 className="text-2xl md:text-3xl font-bold font-display tracking-tight text-[#6a256f] mb-4 leading-snug">
@@ -215,12 +218,12 @@ export default function V1V2CTA() {
               <ul className="text-left space-y-3 mb-8 max-w-sm mx-auto">
                 {r.perks.map((p) => (
                   <li key={p} className="flex items-start gap-3 text-gray-700 text-sm">
-                    <span className="text-[#E07B20] font-bold mt-0.5">✓</span> {p}
+                    <span className="text-[#F99F33] font-bold mt-0.5">✓</span> {p}
                   </li>
                 ))}
               </ul>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <Link href={r.href} className={`bg-gradient-to-r ${r.gradient} text-white font-bold px-8 py-4 rounded-full hover:opacity-90 transition-all shadow-lg inline-block`}>
+                <Link href={r.href} className={`bg-gradient-to-r ${r.gradient} ${r.textClass} font-bold px-8 py-4 rounded-full hover:opacity-90 transition-all shadow-lg inline-block`}>
                   {r.cta}
                 </Link>
                 <button onClick={reset} className="text-gray-400 text-sm hover:text-gray-600 transition-colors px-4 py-4">

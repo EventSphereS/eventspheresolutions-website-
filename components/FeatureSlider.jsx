@@ -102,16 +102,16 @@ export default function FeatureSlider() {
       <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full pointer-events-none"
         style={{ background: 'radial-gradient(circle, rgba(106,37,111,0.4) 0%, transparent 70%)', filter: 'blur(80px)' }} />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full pointer-events-none"
-        style={{ background: 'radial-gradient(circle, rgba(224,123,32,0.2) 0%, transparent 70%)', filter: 'blur(80px)' }} />
+        style={{ background: 'radial-gradient(circle, rgba(249,159,51,0.2) 0%, transparent 70%)', filter: 'blur(80px)' }} />
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
 
         {/* Header */}
         <div className="text-center mb-14">
-          <p className="text-[#E07B20] text-xs font-bold uppercase tracking-[0.25em] mb-4">Inside Sphere</p>
+          <p className="text-[#F99F33] text-xs font-bold uppercase tracking-[0.25em] mb-4">Inside Sphere</p>
           <h2 className="text-3xl md:text-5xl font-extrabold font-display tracking-tight text-white mb-4">
             Every tool your team needs<br />
-            <span style={{ background: 'linear-gradient(90deg, #E07B20, #EF4561)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+            <span style={{ background: 'linear-gradient(90deg, #F99F33, #EF4561)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
               to sell more events.
             </span>
           </h2>
@@ -128,7 +128,7 @@ export default function FeatureSlider() {
               onClick={() => goTo(i, i > current ? 'right' : 'left')}
               className={`text-xs font-bold px-4 py-2 rounded-full transition-all duration-200 ${
                 current === i
-                  ? 'bg-[#E07B20] text-white shadow-lg shadow-[#E07B20]/30'
+                  ? 'bg-[#F99F33] text-[#222123] shadow-lg shadow-[#F99F33]/30'
                   : 'bg-white/10 border border-white/15 text-white/60 hover:bg-white/20 hover:text-white'
               }`}
             >
@@ -178,7 +178,7 @@ export default function FeatureSlider() {
               <div className="absolute top-0 right-0 w-64 h-64 rounded-full pointer-events-none"
                 style={{ background: 'radial-gradient(circle, rgba(106,37,111,0.5) 0%, transparent 70%)', filter: 'blur(40px)' }} />
               <div className="absolute bottom-0 left-0 w-48 h-48 rounded-full pointer-events-none"
-                style={{ background: 'radial-gradient(circle, rgba(224,123,32,0.2) 0%, transparent 70%)', filter: 'blur(30px)' }} />
+                style={{ background: 'radial-gradient(circle, rgba(249,159,51,0.2) 0%, transparent 70%)', filter: 'blur(30px)' }} />
 
               {/* Big slide number watermark */}
               <div className="absolute bottom-4 right-6 text-white/[0.04] font-display font-extrabold text-[100px] leading-none select-none pointer-events-none">
@@ -186,7 +186,7 @@ export default function FeatureSlider() {
               </div>
 
               <div className="relative z-10">
-                <span className="text-[#E07B20] text-xs font-bold uppercase tracking-[0.2em] mb-5 block">
+                <span className="text-[#F99F33] text-xs font-bold uppercase tracking-[0.2em] mb-5 block">
                   {slide.tag}
                 </span>
 
@@ -199,7 +199,7 @@ export default function FeatureSlider() {
                 </p>
 
                 {slide.href && (
-                  <Link href={slide.href} className="inline-block text-[#E07B20] font-semibold text-sm mb-6 hover:underline">
+                  <Link href={slide.href} className="inline-block text-[#F99F33] font-semibold text-sm mb-6 hover:underline">
                     Learn more →
                   </Link>
                 )}
@@ -211,7 +211,7 @@ export default function FeatureSlider() {
                       key={i}
                       onClick={() => goTo(i, i > current ? 'right' : 'left')}
                       className={`rounded-full transition-all duration-300 ${
-                        i === current ? 'w-6 h-2 bg-[#E07B20]' : 'w-2 h-2 bg-white/20 hover:bg-white/40'
+                        i === current ? 'w-6 h-2 bg-[#F99F33]' : 'w-2 h-2 bg-white/20 hover:bg-white/40'
                       }`}
                     />
                   ))}
@@ -227,7 +227,7 @@ export default function FeatureSlider() {
                   <button
                     onClick={next}
                     disabled={current === slides.length - 1}
-                    className="w-10 h-10 rounded-full bg-[#E07B20] text-white flex items-center justify-center hover:opacity-90 disabled:opacity-30 transition-all shadow-lg shadow-[#E07B20]/30"
+                    className="w-10 h-10 rounded-full bg-[#F99F33] text-[#222123] flex items-center justify-center hover:opacity-90 disabled:opacity-30 transition-all shadow-lg shadow-[#F99F33]/30"
                   >→</button>
                   <span className="text-white/25 text-xs font-mono ml-2">
                     {String(current + 1).padStart(2, '0')} / {String(slides.length).padStart(2, '0')}

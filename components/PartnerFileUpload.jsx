@@ -61,7 +61,7 @@ export default function PartnerFileUpload({ label, hint, accept, multiple = fals
         className="w-full text-sm text-gray-600 file:mr-4 file:py-2.5 file:px-4 file:rounded-lg file:border-0 file:bg-[#6a256f] file:text-white file:font-semibold file:text-sm hover:file:opacity-90 file:cursor-pointer"
       />
       {hint && <p className="text-xs text-gray-400 mt-1">{hint}</p>}
-      {status === 'uploading' && <p className="text-xs text-[#E07B20] mt-1">Uploading...</p>}
+      {status === 'uploading' && <p className="text-xs text-[#F99F33] mt-1">Uploading...</p>}
       {status === 'done' && <p className="text-xs text-green-600 mt-1">✓ {fileNames.join(', ')} uploaded</p>}
       {status === 'error' && <p className="text-xs text-[#EF4561] mt-1">{error}</p>}
     </div>

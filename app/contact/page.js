@@ -17,11 +17,11 @@ export default function ContactPage() {
         </div>
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-gray-300 text-xs font-bold px-4 py-1.5 rounded-full mb-6 uppercase tracking-widest">
-            <span className="w-2 h-2 bg-[#E07B20] rounded-full animate-pulse"></span>
+            <span className="w-2 h-2 bg-[#F99F33] rounded-full animate-pulse"></span>
             Free 30-Minute Consultation
           </div>
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold font-display tracking-tight text-white mb-5 leading-tight">
-            Every empty date is<br />lost sales <span className="text-[#E07B20]">walking out the door.</span>
+            Every empty date is<br />lost sales <span className="text-[#F99F33]">walking out the door.</span>
           </h1>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">
             Book a free call and we'll show you exactly how much your venue is leaving on the table — and how to fix it.
@@ -35,7 +35,7 @@ export default function ContactPage() {
 
           {/* Left — Why Book */}
           <div className="md:sticky md:top-28">
-            <p className="text-[#E07B20] text-xs font-bold uppercase tracking-widest mb-3">Free 30-Min Call</p>
+            <p className="text-[#F99F33] text-xs font-bold uppercase tracking-widest mb-3">Free 30-Min Call</p>
             <h2 className="text-3xl md:text-4xl font-extrabold font-display tracking-tight text-[#222123] leading-tight mb-4">
               In one call, you'll know exactly<br />
               <span className="text-[#6a256f]">what you're leaving on the table.</span>
@@ -54,13 +54,13 @@ export default function ContactPage() {
                   desc: 'We analyze your current setup and show you exactly how much private event sales you could be generating.',
                 },
                 {
-                  gradient: 'from-[#EF4561] to-[#E07B20]',
+                  gradient: 'from-[#EF4561] to-[#F99F33]',
                   icon: '💡',
                   title: 'Expert Strategy',
                   desc: 'Get a tailored action plan from specialists who work exclusively with hospitality businesses.',
                 },
                 {
-                  gradient: 'from-[#E07B20] to-[#f7b733]',
+                  gradient: 'from-[#F99F33] to-[#F99F33]',
                   icon: '✅',
                   title: '100% Free, No Obligation',
                   desc: "You'll walk away with clarity and a roadmap — whether we work together or not.",
@@ -86,7 +86,7 @@ export default function ContactPage() {
                 hello@eventspheresolutions.com
               </a>
               <a href="tel:+16028263834"
-                className="flex items-center justify-center gap-2 bg-[#E07B20] text-white font-semibold text-sm px-5 py-3 rounded-full hover:opacity-90 transition-all">
+                className="flex items-center justify-center gap-2 bg-[#F99F33] text-[#222123] font-semibold text-sm px-5 py-3 rounded-full hover:opacity-90 transition-all">
                 <span className="text-base">📞</span>
                 +1 (602) 826-3834
               </a>

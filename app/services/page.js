@@ -71,14 +71,14 @@ export default function ServicesPage() {
         <div className="absolute inset-0">
           <Image src="/images/dinner-table.jpg" alt="Private event" fill className="object-cover object-center" />
           <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(26,15,64,0.92) 0%, rgba(45,27,107,0.85) 100%)' }} />
-          <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle at 60% 50%, #E07B20 0%, transparent 55%)' }} />
+          <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle at 60% 50%, #F99F33 0%, transparent 55%)' }} />
         </div>
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-          <div className="inline-block bg-[#E07B20] text-white text-xs font-bold px-4 py-1.5 rounded-full mb-6 uppercase tracking-widest">
+          <div className="inline-block bg-[#F99F33] text-[#222123] text-xs font-bold px-4 py-1.5 rounded-full mb-6 uppercase tracking-widest">
             The Platform
           </div>
           <h1 className="text-3xl md:text-5xl font-extrabold font-display tracking-tight text-white mb-6 leading-tight">
-            <span className="text-[#E07B20]">Sphere</span> — Your Private Event Sales Platform
+            <span className="text-[#F99F33]">Sphere</span> — Your Private Event Sales Platform
           </h1>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto mb-8">
             Start with Sphere and run your entire private event operation from one platform. Then add a dedicated sales team or AI automation when you're ready to scale.
@@ -87,7 +87,7 @@ export default function ServicesPage() {
             Start Free
           </a>
           <div className="mt-4">
-            <span className="inline-flex items-center gap-2 bg-[#E07B20]/15 border border-[#E07B20]/50 text-[#F99F33] text-xs font-bold px-4 py-2 rounded-full">
+            <span className="inline-flex items-center gap-2 bg-[#F99F33]/15 border border-[#F99F33]/50 text-[#F99F33] text-xs font-bold px-4 py-2 rounded-full">
               🎁 Free bonus — The Private Event Lead Generation Marketing Playbook
             </span>
           </div>
@@ -98,11 +98,11 @@ export default function ServicesPage() {
       {/* Intro */}
       <section className="py-16 bg-white border-b border-gray-100">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <p className="text-[#E07B20] text-xs font-bold uppercase tracking-[0.2em] mb-3">Sphere + Add-Ons</p>
+          <p className="text-[#F99F33] text-xs font-bold uppercase tracking-[0.2em] mb-3">Sphere + Add-Ons</p>
           <h2 className="text-3xl md:text-4xl font-bold font-display tracking-tight text-[#6a256f] mb-3">
             Start with Sphere.<br />Enhance When You're Ready.
           </h2>
-          <div className="w-16 h-0.5 bg-[#E07B20] mx-auto mt-4 mb-4"></div>
+          <div className="w-16 h-0.5 bg-[#F99F33] mx-auto mt-4 mb-4"></div>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Every venue starts with Sphere. Add a dedicated expert sales team or AI automation to take your event sales to the next level.
           </p>
@@ -122,12 +122,12 @@ export default function ServicesPage() {
             <div className="relative z-10 flex flex-col md:flex-row h-full p-10 md:p-14 items-end md:items-center gap-8">
               <div className="flex-1">
                 <span className="inline-block bg-white text-[#6a256f] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5">The Platform</span>
-                <h3 className="font-display font-extrabold text-4xl md:text-5xl tracking-tight mb-4 leading-tight" style={{ background: 'linear-gradient(90deg, #6a256f, #EF4561, #E07B20)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Sphere</h3>
+                <h3 className="font-display font-extrabold text-4xl md:text-5xl tracking-tight mb-4 leading-tight" style={{ background: 'linear-gradient(90deg, #6a256f, #EF4561, #F99F33)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Sphere</h3>
                 <p className="text-white/70 text-base leading-relaxed mb-6 max-w-lg">Your complete private event sales platform. Capture leads, send proposals, manage your calendar, run email campaigns, and track every booking — all in one place.</p>
                 <div className="grid grid-cols-2 gap-2 mb-8 max-w-md">
                   {['Lead capture & pipeline', 'Proposals, BEOs & invoices', 'Smart calendar', 'Email campaigns', 'Online payments', 'Smart Dashboard'].map(f => (
                     <div key={f} className="flex items-center gap-2 text-white/80 text-sm">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#E07B20] shrink-0" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#F99F33] shrink-0" />
                       {f}
                     </div>
                   ))}
@@ -136,7 +136,7 @@ export default function ServicesPage() {
                   Start Free →
                 </a>
                 <div className="mt-3">
-                  <span className="inline-flex items-center gap-2 bg-[#E07B20]/15 border border-[#E07B20]/50 text-[#F99F33] text-xs font-bold px-4 py-2 rounded-full">
+                  <span className="inline-flex items-center gap-2 bg-[#F99F33]/15 border border-[#F99F33]/50 text-[#F99F33] text-xs font-bold px-4 py-2 rounded-full">
                     🎁 Free bonus — The Private Event Lead Generation Marketing Playbook
                   </span>
                 </div>
@@ -156,18 +156,18 @@ export default function ServicesPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/20" />
               </div>
               <div className="relative z-10 flex flex-col h-full p-8 justify-end">
-                <span className="inline-block bg-[#E07B20] text-black text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4 w-fit">Add-On</span>
+                <span className="inline-block bg-[#F99F33] text-black text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4 w-fit">Add-On</span>
                 <h3 className="text-white font-display font-extrabold text-2xl md:text-3xl tracking-tight mb-3 leading-tight">Sphere +<br />Sales Team</h3>
                 <p className="text-white/70 text-sm leading-relaxed mb-5">Add a dedicated expert sales team that handles every inquiry, follow-up, proposal, and close — while you focus on running your venue.</p>
                 <div className="space-y-2 mb-6">
                   {['Dedicated sales team', 'Lead-to-close management', 'Full Sphere access included'].map(f => (
                     <div key={f} className="flex items-center gap-2 text-white/80 text-sm">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#E07B20] shrink-0" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#F99F33] shrink-0" />
                       {f}
                     </div>
                   ))}
                 </div>
-                <Link href="/contact" className="inline-block bg-[#E07B20] text-black font-bold text-sm px-6 py-3 rounded-full hover:opacity-90 transition-all w-fit">
+                <Link href="/contact" className="inline-block bg-[#F99F33] text-black font-bold text-sm px-6 py-3 rounded-full hover:opacity-90 transition-all w-fit">
                   Contact Us →
                 </Link>
               </div>
@@ -181,7 +181,7 @@ export default function ServicesPage() {
               </div>
               <div className="relative z-10 flex flex-col h-full p-8 justify-end">
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="inline-block bg-gradient-to-r from-[#EF4561] to-[#E07B20] text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full">Add-On</span>
+                  <span className="inline-block bg-gradient-to-r from-[#EF4561] to-[#F99F33] text-[#222123] text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full">Add-On</span>
                   <span className="inline-block bg-white/15 text-white text-xs font-bold px-3 py-1 rounded-full">Coming Soon</span>
                 </div>
                 <h3 className="text-white font-display font-extrabold text-2xl md:text-3xl tracking-tight mb-3 leading-tight">Sphere AI</h3>
@@ -189,12 +189,12 @@ export default function ServicesPage() {
                 <div className="space-y-2 mb-6">
                   {['AI lead capture & follow-up', 'Automated booking workflows', 'Full Sphere access included'].map(f => (
                     <div key={f} className="flex items-center gap-2 text-white/80 text-sm">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#E07B20] shrink-0" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#F99F33] shrink-0" />
                       {f}
                     </div>
                   ))}
                 </div>
-                <Link href="/contact" className="inline-block bg-gradient-to-r from-[#EF4561] to-[#E07B20] text-white font-bold text-sm px-6 py-3 rounded-full hover:opacity-90 transition-all w-fit">
+                <Link href="/contact" className="inline-block bg-gradient-to-r from-[#EF4561] to-[#F99F33] text-[#222123] font-bold text-sm px-6 py-3 rounded-full hover:opacity-90 transition-all w-fit">
                   Join the Waitlist →
                 </Link>
               </div>
@@ -211,7 +211,7 @@ export default function ServicesPage() {
         <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
 
           <div className="relative mx-auto md:mx-0 w-full max-w-xs">
-            <div className="absolute -inset-4 bg-gradient-to-br from-[#6a256f]/10 to-[#E07B20]/10 rounded-3xl rotate-3" />
+            <div className="absolute -inset-4 bg-gradient-to-br from-[#6a256f]/10 to-[#F99F33]/10 rounded-3xl rotate-3" />
             <div className="relative rounded-2xl overflow-hidden shadow-2xl -rotate-2 border-4 border-white">
               <Image
                 src="/images/playbook-cover-food-photo.jpg"
@@ -220,14 +220,14 @@ export default function ServicesPage() {
                 height={650}
                 className="w-full h-auto object-cover"
               />
-              <div className="absolute top-3 left-3 bg-[#E07B20] text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">
+              <div className="absolute top-3 left-3 bg-[#F99F33] text-[#222123] text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">
                 Sphere Bonus
               </div>
             </div>
           </div>
 
           <div>
-            <p className="text-[#E07B20] text-xs font-bold uppercase tracking-widest mb-3">A Sphere Subscriber Bonus</p>
+            <p className="text-[#F99F33] text-xs font-bold uppercase tracking-widest mb-3">A Sphere Subscriber Bonus</p>
             <h2 className="text-2xl md:text-3xl font-bold font-display text-[#6a256f] mb-4">
               The Private Event Lead Generation Marketing Playbook
             </h2>
@@ -237,7 +237,7 @@ export default function ServicesPage() {
             <ul className="space-y-2 mb-7">
               {['PR & media outreach', 'Social content + CTA system', 'Email & SEO tactics', 'Exposure partner list'].map((item) => (
                 <li key={item} className="flex items-center gap-2 text-gray-700 text-sm">
-                  <span className="text-[#E07B20] font-bold">✓</span> {item}
+                  <span className="text-[#F99F33] font-bold">✓</span> {item}
                 </li>
               ))}
             </ul>

@@ -27,7 +27,7 @@ export default function PlaybookPage() {
     <main className="pt-28 pb-20 bg-white">
       <section className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-start">
         <div>
-          <span className="inline-block bg-[#E07B20] text-white text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full mb-6">
+          <span className="inline-block bg-[#F99F33] text-[#222123] text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full mb-6">
             Sphere Subscriber Bonus
           </span>
           <h1 className="font-display text-4xl sm:text-5xl font-extrabold text-[#222123] leading-tight mb-6">
@@ -53,7 +53,7 @@ export default function PlaybookPage() {
 
         <div className="md:sticky md:top-28">
           <div className="bg-white border border-gray-100 rounded-2xl p-8 shadow-xl shadow-black/5 text-center">
-            <div className="w-16 h-16 bg-gradient-to-br from-[#6a256f] to-[#E07B20] rounded-full flex items-center justify-center text-white text-2xl mb-6 mx-auto">
+            <div className="w-16 h-16 bg-gradient-to-br from-[#6a256f] to-[#F99F33] rounded-full flex items-center justify-center text-white text-2xl mb-6 mx-auto">
               📘
             </div>
             <h2 className="text-xl font-bold text-[#222123] mb-3">Included with Sphere</h2>

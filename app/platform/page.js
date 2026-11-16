@@ -66,8 +66,8 @@ const pillars = [
     stat: '20hrs',
     statLabel: 'saved per week per team',
     title: 'Less Manual Work',
-    accent: 'from-[#E07B20] to-[#F99F33]',
-    iconBg: 'bg-[#E07B20]/10',
+    accent: 'from-[#F99F33] to-[#F99F33]',
+    iconBg: 'bg-[#F99F33]/10',
     points: [
       'Proposals, contracts & BEOs auto-generated',
       'Follow-ups and campaigns run automatically',
@@ -79,7 +79,7 @@ const pillars = [
     stat: '4.9★',
     statLabel: 'average guest review score',
     title: 'Happier Guests',
-    accent: 'from-[#EF4561] to-[#E07B20]',
+    accent: 'from-[#EF4561] to-[#F99F33]',
     iconBg: 'bg-[#EF4561]/10',
     points: [
       'Seamless booking experience from first inquiry',
@@ -104,9 +104,9 @@ export default function PlatformPage() {
             <div className="inline-flex items-center gap-2 bg-[#6a256f]/10 text-[#6a256f] text-xs font-bold px-4 py-1.5 rounded-full mb-6 uppercase tracking-widest">
               Built for Restaurants, Bars & Venues
             </div>
-            <p className="text-[#E07B20] text-xs font-bold uppercase tracking-[0.2em] mb-4">Sphere — Private Event Platform by Event Sphere Solutions</p>
+            <p className="text-[#F99F33] text-xs font-bold uppercase tracking-[0.2em] mb-4">Sphere — Private Event Platform by Event Sphere Solutions</p>
             <h1 className="text-4xl md:text-5xl font-extrabold font-display tracking-tight text-[#6a256f] leading-tight mb-5">
-              <span className="text-[#E07B20]">Sphere</span> — Your private event<br />sales platform
+              <span className="text-[#F99F33]">Sphere</span> — Your private event<br />sales platform
             </h1>
             <p className="text-gray-500 text-lg leading-relaxed mb-8">
               Sphere gives your hospitality business the expert sales team and software to turn empty calendars into consistent, high-performing event sales programs — without the overhead.
@@ -120,7 +120,7 @@ export default function PlatformPage() {
               </Link>
             </div>
             <div className="mt-4">
-              <span className="inline-flex items-center gap-2 bg-[#E07B20]/10 border border-[#E07B20]/40 text-[#E07B20] text-xs font-bold px-4 py-2 rounded-full">
+              <span className="inline-flex items-center gap-2 bg-[#F99F33]/10 border border-[#F99F33]/40 text-[#F99F33] text-xs font-bold px-4 py-2 rounded-full">
                 🎁 Free bonus — The Private Event Lead Generation Marketing Playbook
               </span>
             </div>
@@ -153,7 +153,7 @@ export default function PlatformPage() {
       <section className="py-28 bg-[#6a256f]">
         <div className="max-w-6xl mx-auto px-6">
           <div className="mb-16">
-            <p className="text-[#ee6603] text-xs font-bold uppercase tracking-[0.25em] mb-4">Built Exclusively For</p>
+            <p className="text-[#F99F33] text-xs font-bold uppercase tracking-[0.25em] mb-4">Built Exclusively For</p>
             <h2 className="text-3xl md:text-5xl font-extrabold font-display tracking-tight text-white leading-tight max-w-2xl">
               The hospitality industry,<br className="hidden md:block" /> and no one else.
             </h2>
@@ -198,7 +198,7 @@ export default function PlatformPage() {
               },
             ].map((c) => (
               <div key={c.label} className="flex flex-col items-center text-center py-10 px-6">
-                <div className="w-12 h-12 mb-6 text-[#ee6603]">{c.icon}</div>
+                <div className="w-12 h-12 mb-6 text-[#F99F33]">{c.icon}</div>
                 <div className="font-bold text-white text-base mb-1.5">{c.label}</div>
                 <div className="text-white/50 text-sm leading-relaxed">{c.sub}</div>
               </div>
@@ -211,7 +211,7 @@ export default function PlatformPage() {
       <section className="py-24 bg-[#f4f0f5] border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <p className="text-[#E07B20] text-xs font-bold uppercase tracking-[0.2em] mb-3">Why Sphere</p>
+            <p className="text-[#F99F33] text-xs font-bold uppercase tracking-[0.2em] mb-3">Why Sphere</p>
             <h2 className="text-3xl md:text-5xl font-extrabold font-display tracking-tight text-[#111827] mb-4">
               One system. Three results.
             </h2>
@@ -260,7 +260,7 @@ export default function PlatformPage() {
       <section className="py-24 bg-white border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-14">
-            <p className="text-[#E07B20] text-xs font-bold uppercase tracking-[0.2em] mb-3">Sphere Pricing</p>
+            <p className="text-[#F99F33] text-xs font-bold uppercase tracking-[0.2em] mb-3">Sphere Pricing</p>
             <h2 className="text-3xl md:text-4xl font-extrabold font-display tracking-tight text-[#111827] mb-4">
               Simple pricing. Real results.
             </h2>
@@ -289,9 +289,9 @@ export default function PlatformPage() {
             </div>
 
             {/* Sphere Growth */}
-            <div className="relative bg-white border-2 border-[#E07B20] rounded-3xl p-8 flex flex-col shadow-xl shadow-[#E07B20]/10">
-              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#E07B20] text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-widest whitespace-nowrap">Most Popular</div>
-              <p className="text-xs font-bold uppercase tracking-widest text-[#E07B20] mb-2">Sphere Growth</p>
+            <div className="relative bg-white border-2 border-[#F99F33] rounded-3xl p-8 flex flex-col shadow-xl shadow-[#F99F33]/10">
+              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#F99F33] text-[#222123] text-xs font-bold px-4 py-1 rounded-full uppercase tracking-widest whitespace-nowrap">Most Popular</div>
+              <p className="text-xs font-bold uppercase tracking-widest text-[#F99F33] mb-2">Sphere Growth</p>
 
               <div className="flex items-end gap-1 mb-1">
                 <span className="text-4xl font-extrabold font-display text-[#111827]">$259</span>
@@ -301,7 +301,7 @@ export default function PlatformPage() {
               <ul className="space-y-2 mb-8 flex-1">
                 {['Everything in Sphere Essentials', 'Automated email follow-up', 'Branded client portal', 'Sales forecasting dashboard', 'Conversion tracking (lead → booked)', 'Priority support'].map((f) => (
                   <li key={f} className="flex items-start gap-2 text-gray-600 text-sm">
-                    <span className="text-[#E07B20] font-bold mt-0.5">✓</span> {f}
+                    <span className="text-[#F99F33] font-bold mt-0.5">✓</span> {f}
                   </li>
                 ))}
               </ul>
@@ -377,7 +377,7 @@ export default function PlatformPage() {
               className="w-full max-w-sm md:max-w-md h-auto object-contain drop-shadow-2xl rounded-3xl"
             />
             {/* Badge */}
-            <div className="absolute -bottom-4 -right-4 bg-[#F99F33] text-white font-extrabold font-display text-xl px-8 py-4 rounded-full shadow-lg shadow-[#F99F33]/30">
+            <div className="absolute -bottom-4 -right-4 bg-[#F99F33] text-[#222123] font-extrabold font-display text-xl px-8 py-4 rounded-full shadow-lg shadow-[#F99F33]/30">
               360° Immersive
             </div>
           </div>
@@ -390,7 +390,7 @@ export default function PlatformPage() {
         {/* Multi-layer glows */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[600px] h-[600px] rounded-full"
-            style={{ background: 'radial-gradient(circle, #E07B20 0%, #EF4561 40%, transparent 70%)', filter: 'blur(80px)', opacity: 0.5 }} />
+            style={{ background: 'radial-gradient(circle, #F99F33 0%, #EF4561 40%, transparent 70%)', filter: 'blur(80px)', opacity: 0.5 }} />
           <div className="absolute top-1/2 right-1/3 -translate-y-1/2 w-[400px] h-[400px] rounded-full"
             style={{ background: 'radial-gradient(circle, #EF4561 0%, #6a256f 50%, transparent 70%)', filter: 'blur(60px)', opacity: 0.6 }} />
           <div className="absolute bottom-0 left-0 w-[300px] h-[300px] rounded-full"
@@ -408,13 +408,13 @@ export default function PlatformPage() {
             {/* Launch badge */}
             <div className="inline-flex items-center gap-2 mb-8"
               style={{ background: 'linear-gradient(135deg, rgba(239,69,97,0.2), rgba(249,159,51,0.2))', border: '1px solid rgba(249,159,51,0.4)', borderRadius: '999px', padding: '6px 16px' }}>
-              <span className="w-2 h-2 rounded-full bg-[#E07B20] animate-pulse" />
-              <span className="text-[#E07B20] text-xs font-bold uppercase tracking-[0.2em]">Launching Soon</span>
+              <span className="w-2 h-2 rounded-full bg-[#F99F33] animate-pulse" />
+              <span className="text-[#F99F33] text-xs font-bold uppercase tracking-[0.2em]">Launching Soon</span>
             </div>
 
             <h2 className="font-display font-extrabold text-5xl md:text-6xl lg:text-[72px] tracking-tight text-white leading-[1.0] mb-6">
               Your Events.<br />Your Sales.<br />
-              <span style={{ background: 'linear-gradient(90deg, #E07B20, #EF4561)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+              <span style={{ background: 'linear-gradient(90deg, #F99F33, #EF4561)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
                 Anywhere.
               </span>
             </h2>
@@ -434,7 +434,7 @@ export default function PlatformPage() {
             <div className="flex flex-col sm:flex-row gap-4 items-start">
               <Link href="/contact"
                 className="inline-flex items-center gap-2 font-bold text-sm px-7 py-4 rounded-full transition-all hover:opacity-90"
-                style={{ background: 'linear-gradient(135deg, #E07B20, #EF4561)', color: 'white' }}>
+                style={{ background: 'linear-gradient(135deg, #F99F33, #EF4561)', color: '#222123' }}>
                 Get Early Access →
               </Link>
               <div className="flex items-center gap-2 text-white/40 text-sm pt-1">
