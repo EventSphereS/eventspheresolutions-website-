@@ -19,7 +19,7 @@ export async function POST(request) {
       from: 'Event Sphere Website <hello@eventspheresolutions.com>',
       to: 'hello@eventspheresolutions.com',
       replyTo: email,
-      subject: `🏆 New Founding Partner Application — ${businessName} (${city || 'Location TBD'})`,
+      subject: `🏆 New Founding Partner Application: ${businessName} (${city || 'Location TBD'})`,
       html: `
         <div style="font-family: Inter, sans-serif; max-width: 620px; margin: 0 auto; color: #222123;">
           <div style="background: linear-gradient(135deg, #222123, #6a256f); padding: 28px 32px;">
@@ -115,15 +115,15 @@ export async function POST(request) {
             <!-- What happens next -->
             <div style="background: #faf7ff; border-radius: 12px; padding: 24px 28px; margin-bottom: 28px; border-left: 4px solid #6a256f;">
               <p style="margin: 0 0 14px; font-weight: 700; font-size: 13px; color: #6a256f; text-transform: uppercase; letter-spacing: 0.08em;">What happens next</p>
-              ${['We review your application (within 48 hours)', 'You receive an acceptance email from our team', 'We schedule your 30-min onboarding call', 'Your account goes live — free for 90 days'].map((step, i) => `
+              ${['We review your application (within 48 hours)', 'You receive an acceptance email from our team', 'We schedule your 30-min onboarding call', 'Your account goes live, free for 90 days'].map((step, i) => `
               <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px;">
                 <div style="width: 24px; height: 24px; border-radius: 50%; background: #E07B20; color: white; font-size: 12px; font-weight: 700; text-align: center; line-height: 24px; flex-shrink: 0;">${i + 1}</div>
                 <span style="color: #444; font-size: 14px; line-height: 1.6; padding-top: 3px;">${step}</span>
               </div>`).join('')}
             </div>
 
-            <p style="color: #555; font-size: 14px; margin: 0 0 4px;">Questions? Just reply to this email — we read everything.</p>
-            <p style="color: #555; font-size: 14px; margin: 0;">— <strong style="color: #222123;">The Event Sphere Solutions Team</strong></p>
+            <p style="color: #555; font-size: 14px; margin: 0 0 4px;">Questions? Just reply to this email. We read everything.</p>
+            <p style="color: #555; font-size: 14px; margin: 0;"><strong style="color: #222123;">The Event Sphere Solutions Team</strong></p>
           </div>
 
           <!-- Footer -->

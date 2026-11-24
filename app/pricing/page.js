@@ -13,7 +13,7 @@ const faqSchema = {
       name: 'Is the 30-day trial really free?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. No credit card required. You get full access to your chosen tier for 30 days. If you love it, you stay. If not, you walk away with no charge.',
+        text: 'Yes. You get full access to your chosen tier for 30 days. If you love it, you stay. If not, you walk away with no charge.',
       },
     },
     {
@@ -45,7 +45,7 @@ const faqSchema = {
       name: 'Do you help migrate our existing data?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes — full migration is completely free on every plan. We move your contacts, leads, events, and history from Tripleseat, Gather, spreadsheets, or wherever you currently live. You don\'t lift a finger.',
+        text: 'Yes, full migration is completely free on every plan. We move your contacts, leads, events, and history from Tripleseat, Gather, spreadsheets, or wherever you currently live. You don\'t lift a finger.',
       },
     },
     {
@@ -53,7 +53,7 @@ const faqSchema = {
       name: 'How are payments processed?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'We partner with Stripe, the industry-leading payment platform, to process all payments securely. Your subscription billing and the online payments and deposits you collect from your clients are handled through Stripe — so card data is encrypted and PCI-compliant, and you never have to manage sensitive payment information yourself.',
+        text: 'We partner with Stripe, the industry-leading payment platform, to process all payments securely. Your subscription billing and the online payments and deposits you collect from your clients are handled through Stripe, so card data is encrypted and PCI-compliant, and you never have to manage sensitive payment information yourself.',
       },
     },
   ],
@@ -61,16 +61,16 @@ const faqSchema = {
 
 export const metadata = {
   title: 'Pricing | Sphere Private Event Sales Platform',
-  description: 'Simple, transparent pricing for restaurants, bars, and venues. Start free — 3 months for Founding Partners. Plans that scale with your private event sales.',
+  description: 'Simple, transparent pricing for restaurants, bars, and venues. Start free: 3 months for Founding Partners. Plans that scale with your private event sales.',
   openGraph: {
     title: 'Pricing | Sphere Private Event Sales Platform',
-    description: 'Simple pricing for restaurants, bars, and venues. Start free — 3 months for Founding Partners.',
+    description: 'Simple pricing for restaurants, bars, and venues. Start free: 3 months for Founding Partners.',
     images: [{ url: '/feature-image.png', width: 1200, height: 630, alt: 'Sphere Pricing' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Pricing | Sphere Private Event Sales Platform',
-    description: 'Simple pricing for restaurants, bars, and venues. Start free — 3 months for Founding Partners.',
+    description: 'Simple pricing for restaurants, bars, and venues. Start free: 3 months for Founding Partners.',
     images: ['/feature-image.png'],
   },
 }
@@ -160,7 +160,7 @@ export default function PricingPage() {
         <div className="max-w-4xl mx-auto px-6">
           {/* BETA Badge */}
           <span className="inline-block bg-[#E07B20] text-white text-xs font-bold px-4 py-1.5 rounded-full mb-6 uppercase tracking-widest">
-            Beta — Limited Spots Available
+            Beta · Limited Spots Available
           </span>
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold font-display tracking-tight mb-6">
             Pricing That Pays For Itself
@@ -211,7 +211,7 @@ export default function PricingPage() {
                 </div>
                 <p className="text-gray-300 mb-6 leading-relaxed">
                   Let clients explore your venue before they ever visit. Immersive 360° tours embedded directly
-                  in your booking flow — so prospects can walk every room, visualize their event, and book with
+                  in your booking flow, so prospects can walk every room, visualize their event, and book with
                   confidence. Available for any tier.
                 </p>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-gray-300 mb-8">
@@ -322,11 +322,11 @@ export default function PricingPage() {
           <h2 className="section-title font-display tracking-tight text-center mb-12">Frequently Asked Questions</h2>
           <div className="space-y-4">
             {[
-              { q: 'Do you help migrate our existing data?', a: "Yes — full migration is completely free on every plan. We move your contacts, leads, events, and history from Tripleseat, Gather, spreadsheets, or wherever you currently live. You don't lift a finger." },
-              { q: 'Is the 30-day trial really free?', a: 'Yes. No credit card required. You get full access to your chosen tier for 30 days. If you love it, you stay. If not, you walk away with no charge.' },
+              { q: 'Do you help migrate our existing data?', a: "Yes, full migration is completely free on every plan. We move your contacts, leads, events, and history from Tripleseat, Gather, spreadsheets, or wherever you currently live. You don't lift a finger." },
+              { q: 'Is the 30-day trial really free?', a: 'Yes. You get full access to your chosen tier for 30 days. If you love it, you stay. If not, you walk away with no charge.' },
               { q: 'Can I change plans later?', a: 'Absolutely. You can upgrade or downgrade at any time. Upgrades take effect immediately. Downgrades take effect at the next billing cycle.' },
               { q: 'What does "per location" mean?', a: 'Each physical venue or location is billed separately. If you have multiple locations, each gets its own dashboard and tools. The Sphere Hospitality tier gives you a centralized view across all of them.' },
-              { q: 'How are payments processed?', a: 'We partner with Stripe, the industry-leading payment platform, to process all payments securely. Your subscription billing and the online payments and deposits you collect from your clients are handled through Stripe — so card data is encrypted and PCI-compliant, and you never have to manage sensitive payment information yourself.' },
+              { q: 'How are payments processed?', a: 'We partner with Stripe, the industry-leading payment platform, to process all payments securely. Your subscription billing and the online payments and deposits you collect from your clients are handled through Stripe, so card data is encrypted and PCI-compliant, and you never have to manage sensitive payment information yourself.' },
             ].map((item) => (
               <div key={item.q} className="bg-white rounded-xl p-6 shadow-sm">
                 <h3 className="font-bold text-[#222123] mb-2">{item.q}</h3>
@@ -345,7 +345,7 @@ export default function PricingPage() {
               Start with Sphere. Add What You Need.
             </h2>
             <p className="text-gray-300 text-lg">
-              Sphere is the platform every venue starts with — then enhance it with a sales team or AI.
+              Sphere is the platform every venue starts with, then enhance it with a sales team or AI.
             </p>
           </div>
 
@@ -359,7 +359,7 @@ export default function PricingPage() {
                 <h3 className="text-3xl font-extrabold font-display text-[#1a0f40] mb-1">Sphere</h3>
                 <p className="text-[#6a256f] font-semibold text-sm mb-3">Your complete private event sales platform.</p>
                 <p className="text-gray-500 text-sm leading-relaxed mb-4 line-clamp-2">
-                  Everything your venue needs to capture leads, send proposals, manage your calendar, run email campaigns, and track every booking — all in one place.
+                  Everything your venue needs to capture leads, send proposals, manage your calendar, run email campaigns, and track every booking, all in one place.
                 </p>
                 <ul className="grid grid-cols-2 gap-2">
                   {['Lead capture & pipeline', 'Proposals, BEOs & invoices', 'Smart calendar & conflict prevention', 'Email campaigns & promo codes', 'Online payments & e-signatures', 'Smart Dashboard'].map((f) => (
@@ -376,7 +376,7 @@ export default function PricingPage() {
                 </Link>
                 <p className="text-gray-400 text-xs mt-2">Cancel anytime</p>
                 <p className="text-[#E07B20] font-bold text-xs mt-1">
-                  <Link href="/founding-partner" className="hover:underline">3 months free — Founding Partner Program</Link>
+                  <Link href="/founding-partner" className="hover:underline">3 months free with the Founding Partner Program</Link>
                 </p>
               </div>
             </div>
@@ -398,7 +398,7 @@ export default function PricingPage() {
                   <span className="bg-[#E07B20] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">Add-On</span>
                 </div>
                 <h4 className="text-xl font-extrabold font-display text-white mb-2">Sphere + Sales Team</h4>
-                <p className="text-white/60 text-sm leading-relaxed mb-5">A dedicated expert sales team handles every inquiry, follow-up, proposal, and close — on your behalf.</p>
+                <p className="text-white/60 text-sm leading-relaxed mb-5">A dedicated expert sales team handles every inquiry, follow-up, proposal, and close, on your behalf.</p>
                 <ul className="space-y-2 mb-6 flex-1">
                   {['Every lead captured & followed up', 'Proposals written & sent for you', 'Closes deals while you run your venue'].map(f => (
                     <li key={f} className="flex items-center gap-2 text-white/80 text-sm">
@@ -427,7 +427,7 @@ export default function PricingPage() {
                   </div>
                 </div>
                 <h4 className="text-xl font-extrabold font-display text-white mb-2">Sphere AI</h4>
-                <p className="text-white/60 text-sm leading-relaxed mb-5">Layer AI automation on Sphere — so your venue captures leads, follows up, and books events 24/7 without lifting a finger.</p>
+                <p className="text-white/60 text-sm leading-relaxed mb-5">Layer AI automation on Sphere, so your venue captures leads, follows up, and books events 24/7 without lifting a finger.</p>
                 <ul className="space-y-2 mb-6 flex-1">
                   {['Automated lead capture & replies', 'Smart follow-up sequences', '24/7 booking workflows'].map(f => (
                     <li key={f} className="flex items-center gap-2 text-white/80 text-sm">

@@ -24,7 +24,7 @@ export default function ContactPage() {
             Every empty date is<br />lost sales <span className="text-[#E07B20]">walking out the door.</span>
           </h1>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-            Book a free call and we'll show you exactly how much your venue is leaving on the table — and how to fix it.
+            Book a free call and we'll show you exactly how much your venue is leaving on the table, and how to fix it.
           </p>
         </div>
       </section>
@@ -63,7 +63,7 @@ export default function ContactPage() {
                   gradient: 'from-[#E07B20] to-[#f7b733]',
                   icon: '✅',
                   title: '100% Free, No Obligation',
-                  desc: "You'll walk away with clarity and a roadmap — whether we work together or not.",
+                  desc: "You'll walk away with clarity and a roadmap, whether we work together or not.",
                 },
               ].map((item) => (
                 <div key={item.title} className="flex items-start gap-4 p-5 rounded-2xl bg-gray-50 border border-gray-100 hover:border-[#6a256f]/20 hover:shadow-md transition-all group">

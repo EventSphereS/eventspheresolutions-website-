@@ -10,7 +10,7 @@ const faqSchema = {
       name: 'Can clients sign a private event contract online?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes — Sphere sends a branded proposal with a built-in e-signature, so a client can review and sign a private event contract from their phone or laptop without printing, scanning or a separate e-signature tool.',
+        text: 'Yes, Sphere sends a branded proposal with a built-in e-signature, so a client can review and sign a private event contract from their phone or laptop without printing, scanning or a separate e-signature tool.',
       },
     },
     {
@@ -26,7 +26,7 @@ const faqSchema = {
       name: 'Is the e-signature legally binding?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: "Sphere's e-signature captures a timestamped, attributable signature on the exact document the client reviewed. For questions about what's enforceable in your state, check with your own counsel — we don't give legal advice.",
+        text: "Sphere's e-signature captures a timestamped, attributable signature on the exact document the client reviewed. For questions about what's enforceable in your state, check with your own counsel, we don't give legal advice.",
       },
     },
   ],
@@ -34,10 +34,10 @@ const faqSchema = {
 
 export const metadata = {
   title: 'Digital Event Contracts & E-Signatures | Sphere by Event Sphere Solutions',
-  description: 'Send a branded private event contract, collect the e-signature and process the deposit — all in one link. No printing, no separate e-signature tool.',
+  description: 'Send a branded private event contract, collect the e-signature and process the deposit, all in one link. No printing, no separate e-signature tool.',
   openGraph: {
     title: 'Digital Event Contracts & E-Signatures | Sphere',
-    description: 'One link: a branded contract, an e-signature, and the deposit — done.',
+    description: 'One link: a branded contract, an e-signature, and the deposit, done.',
     images: [{ url: '/feature-image.png', width: 1200, height: 630, alt: 'Sphere digital contracts and e-signatures' }],
   },
 }
@@ -49,12 +49,12 @@ export default function DigitalContractsPage() {
 
       <section className="pt-28 pb-20 bg-white">
         <div className="max-w-4xl mx-auto px-6">
-          <p className="text-[#E07B20] text-xs font-bold uppercase tracking-[0.2em] mb-4">Sphere — Proposals &amp; Payments</p>
+          <p className="text-[#E07B20] text-xs font-bold uppercase tracking-[0.2em] mb-4">Sphere: Proposals &amp; Payments</p>
           <h1 className="text-4xl md:text-5xl font-extrabold font-display tracking-tight text-[#6a256f] leading-tight mb-6">
             Digital contracts and e-signatures for private events.
           </h1>
           <p className="text-gray-500 text-lg leading-relaxed mb-8 max-w-2xl">
-            Send a stunning, branded proposal, collect the e-signature, and process the deposit — all in a single link. No back-and-forth, no chasing down a printed contract. Payments run through Stripe, so every transaction is secure and PCI-compliant.
+            Send a stunning, branded proposal, collect the e-signature, and process the deposit, all in a single link. No back-and-forth, no chasing down a printed contract. Payments run through Stripe, so every transaction is secure and PCI-compliant.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a href="https://crm.eventspheresolutions.com/signup" target="_blank" rel="noopener noreferrer" className="btn-primary text-base px-8 py-3.5">
@@ -74,7 +74,7 @@ export default function DigitalContractsPage() {
           </h2>
           <div className="grid md:grid-cols-2 gap-x-10 gap-y-6">
             {[
-              'One branded link — proposal, contract and payment together',
+              'One branded link: proposal, contract and payment together',
               'Client signs from any device, no account needed',
               'Deposit collected the moment the contract is signed',
               'Signed contract and payment status sync automatically to the booking',

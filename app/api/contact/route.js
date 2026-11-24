@@ -23,7 +23,7 @@ export async function POST(request) {
       from: 'Event Sphere Website <hello@eventspheresolutions.com>',
       to: 'hello@eventspheresolutions.com',
       replyTo: email,
-      subject: `New Consultation Request — ${businessName} (${businessType || 'Unknown type'})`,
+      subject: `New Consultation Request: ${businessName} (${businessType || 'Unknown type'})`,
       html: `
         <div style="font-family: Inter, -apple-system, sans-serif; max-width: 600px; margin: 0 auto; color: #222123; background: #ffffff;">
           <!-- Header -->

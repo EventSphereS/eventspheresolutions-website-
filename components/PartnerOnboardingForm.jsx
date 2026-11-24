@@ -256,7 +256,7 @@ export default function PartnerOnboardingForm() {
         <div className="space-y-6">
           <div>
             <label className={labelClass}>Event Spaces</label>
-            <p className="text-xs text-gray-400 mb-2">Name, capacity, and minimum spend for each room/area — separate minimums for off-peak (low time) and peak (high time), if they differ. Leave blank if it doesn't apply.</p>
+            <p className="text-xs text-gray-400 mb-2">Name, capacity, and minimum spend for each room/area. Separate minimums for off-peak (low time) and peak (high time), if they differ. Leave blank if it doesn't apply.</p>
             <div className="space-y-4">
               {form.spaces.map((space, i) => (
                 <div key={i} className="border border-gray-200 rounded-xl p-3 space-y-2">
@@ -272,9 +272,9 @@ export default function PartnerOnboardingForm() {
                   </div>
                   <div className="flex gap-2">
                     <input type="text" value={space.minimumSpendLowTime} onChange={(e) => updateSpace(i, 'minimumSpendLowTime', e.target.value)}
-                      placeholder="Min. spend — off-peak" className={inputClass} />
+                      placeholder="Min. spend (off-peak)" className={inputClass} />
                     <input type="text" value={space.minimumSpendHighTime} onChange={(e) => updateSpace(i, 'minimumSpendHighTime', e.target.value)}
-                      placeholder="Min. spend — peak" className={inputClass} />
+                      placeholder="Min. spend (peak)" className={inputClass} />
                   </div>
                 </div>
               ))}
@@ -283,13 +283,13 @@ export default function PartnerOnboardingForm() {
           </div>
 
           <PartnerFileUpload label="Space Photos (optional, if any)" accept="image/png,image/jpeg,image/webp" multiple
-            hint="Photos of your event spaces — you can select multiple" onUploaded={(urls) => setForm((p) => ({ ...p, spacePhotosUrls: urls }))} />
+            hint="Photos of your event spaces. You can select multiple" onUploaded={(urls) => setForm((p) => ({ ...p, spacePhotosUrls: urls }))} />
 
           <PartnerFileUpload label="Logo" accept="image/png,image/jpeg,image/webp,application/pdf"
             hint="PNG, JPG, WebP, or PDF" onUploaded={(url) => setForm((p) => ({ ...p, logoUrl: url }))} />
 
           <PartnerFileUpload label="Cover Photo" accept="image/png,image/jpeg,image/webp"
-            hint="A photo of your venue — e.g. the dining room or event space" onUploaded={(url) => setForm((p) => ({ ...p, coverPhotoUrl: url }))} />
+            hint="A photo of your venue, e.g. the dining room or event space" onUploaded={(url) => setForm((p) => ({ ...p, coverPhotoUrl: url }))} />
 
           <PartnerFileUpload label="Terms & Conditions / Policies Document" accept="application/pdf,image/jpeg,image/png"
             hint="PDF, JPG, or PNG" onUploaded={(url) => setForm((p) => ({ ...p, policiesUrl: url }))} />
@@ -352,13 +352,13 @@ export default function PartnerOnboardingForm() {
 
           <div>
             <label className={labelClass}>Upcoming Events List</label>
-            <p className="text-xs text-gray-400 mb-2">Let us know where these currently live — e.g. PDF BEOs, Toast, Google Calendar, a spreadsheet...</p>
+            <p className="text-xs text-gray-400 mb-2">Let us know where these currently live, e.g. PDF BEOs, Toast, Google Calendar, a spreadsheet...</p>
             <textarea name="upcomingEvents" value={form.upcomingEvents} onChange={handleChange} rows={3}
               placeholder="Where your bookings are tracked, plus any already-booked events with dates and client names" className={`${inputClass} resize-none`} />
           </div>
 
           <PartnerFileUpload label="Upcoming Events File (optional)" accept=".csv,.xls,.xlsx,.pdf,.ics"
-            hint="BEO PDFs, a calendar export, or a spreadsheet of upcoming bookings — whatever's easiest"
+            hint="BEO PDFs, a calendar export, or a spreadsheet of upcoming bookings, whatever's easiest"
             onUploaded={(url) => setForm((p) => ({ ...p, upcomingEventsFileUrl: url }))} />
 
           <PartnerFileUpload label="Proposal & Contract Confirmed (if any)" accept=".pdf,.doc,.docx" multiple
@@ -366,7 +366,7 @@ export default function PartnerOnboardingForm() {
             onUploaded={(urls) => setForm((p) => ({ ...p, bookedEventContractsUrls: urls }))} />
 
           <PartnerFileUpload label="Proposal & Contract Templates" accept=".pdf,.doc,.docx" multiple
-            hint="Blank templates you use for new proposals — PDF or Word docs, you can select multiple" onUploaded={(urls) => setForm((p) => ({ ...p, templatesUrls: urls }))} />
+            hint="Blank templates you use for new proposals. PDF or Word docs, you can select multiple" onUploaded={(urls) => setForm((p) => ({ ...p, templatesUrls: urls }))} />
 
           <div>
             <label className={labelClass}>Anything else we should know?</label>

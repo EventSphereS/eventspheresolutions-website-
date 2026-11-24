@@ -7,17 +7,17 @@ const questions = [
     id: 'team',
     question: 'Do you have someone in-house handling private event sales?',
     options: [
-      { label: "No — it's mostly me or we're stretched thin", points: { salesTeam: 2 } },
-      { label: 'Yes — we have a coordinator or sales person', points: { sphere: 2 } },
+      { label: "No, it's mostly me or we're stretched thin", points: { salesTeam: 2 } },
+      { label: 'Yes, we have a coordinator or sales person', points: { sphere: 2 } },
     ],
   },
   {
     id: 'volume',
     question: 'How many private event inquiries do you receive per month?',
     options: [
-      { label: 'A lot — we can barely keep up', points: { ai: 2 } },
-      { label: 'A moderate amount — manageable but growing', points: { sphere: 1, ai: 1 } },
-      { label: 'Not many yet — we want to grow', points: { salesTeam: 1, sphere: 1 } },
+      { label: 'A lot, we can barely keep up', points: { ai: 2 } },
+      { label: 'A moderate amount, manageable but growing', points: { sphere: 1, ai: 1 } },
+      { label: 'Not many yet, we want to grow', points: { salesTeam: 1, sphere: 1 } },
     ],
   },
   {
@@ -25,17 +25,17 @@ const questions = [
     question: "What's your biggest challenge right now?",
     options: [
       { label: "I don't have the bandwidth to chase and close leads", points: { salesTeam: 2 } },
-      { label: 'Too much manual work — follow-ups, emails, admin', points: { ai: 2 } },
-      { label: 'No system — everything is scattered across emails and spreadsheets', points: { sphere: 2 } },
+      { label: 'Too much manual work: follow-ups, emails, admin', points: { ai: 2 } },
+      { label: 'No system, everything is scattered across emails and spreadsheets', points: { sphere: 2 } },
     ],
   },
   {
     id: 'response',
     question: 'How quickly do you typically respond to a new event inquiry?',
     options: [
-      { label: 'Within the hour — we\'re on it', points: { sphere: 2 } },
+      { label: 'Within the hour, we\'re on it', points: { sphere: 2 } },
       { label: 'Same day, usually', points: { sphere: 1, ai: 1 } },
-      { label: 'It varies — sometimes days go by', points: { salesTeam: 1, ai: 1 } },
+      { label: 'It varies, sometimes days go by', points: { salesTeam: 1, ai: 1 } },
       { label: 'Honestly, some fall through the cracks', points: { salesTeam: 2 } },
     ],
   },
@@ -52,9 +52,9 @@ const questions = [
     id: 'hours',
     question: 'How many hours per week does your team spend on event admin (emails, proposals, follow-ups)?',
     options: [
-      { label: 'Less than 5 hours — it\'s under control', points: { sphere: 2 } },
-      { label: '5–10 hours — it\'s eating into our time', points: { ai: 1, sphere: 1 } },
-      { label: 'More than 10 hours — it\'s a real problem', points: { ai: 2 } },
+      { label: 'Less than 5 hours, it\'s under control', points: { sphere: 2 } },
+      { label: '5 to 10 hours, it\'s eating into our time', points: { ai: 1, sphere: 1 } },
+      { label: 'More than 10 hours, it\'s a real problem', points: { ai: 2 } },
       { label: 'We don\'t have anyone dedicated to it at all', points: { salesTeam: 2 } },
     ],
   },
@@ -75,7 +75,7 @@ const questions = [
       { label: 'I want full control and visibility over every booking', points: { sphere: 2 } },
       { label: 'I want to grow but need the right team to make it happen', points: { salesTeam: 2 } },
       { label: 'I want to scale efficiently with software and automation', points: { ai: 2 } },
-      { label: 'I want a bit of everything — tools, support, and efficiency', points: { sphere: 1, salesTeam: 1, ai: 1 } },
+      { label: 'I want a bit of everything: tools, support, and efficiency', points: { sphere: 1, salesTeam: 1, ai: 1 } },
     ],
   },
 ]
@@ -85,8 +85,8 @@ const results = {
     label: 'Sphere',
     badge: 'The Platform',
     badgeColor: 'bg-[#6a256f] text-white',
-    headline: 'Start with Sphere — your complete event sales platform.',
-    desc: 'You have the team and the drive. You just need the right system. Sphere gives you everything to capture leads, send proposals, manage your calendar, and run campaigns — all in one place.',
+    headline: 'Start with Sphere, your complete event sales platform.',
+    desc: 'You have the team and the drive. You just need the right system. Sphere gives you everything to capture leads, send proposals, manage your calendar, and run campaigns, all in one place.',
     perks: ['Lead pipeline & proposals', 'Smart calendar & payments', 'Email campaigns', '3 months free'],
     cta: 'Get Sphere Free →',
     href: '/founding-partner',
@@ -96,8 +96,8 @@ const results = {
     label: 'Sphere + Sales Team',
     badge: 'Full Service',
     badgeColor: 'bg-[#E07B20] text-white',
-    headline: 'Sphere + Sales Team — we handle everything for you.',
-    desc: "You're running a busy venue without the bandwidth to chase every lead and close every deal. Our expert sales team does it all — while you focus on your guests.",
+    headline: 'Sphere + Sales Team. We handle everything for you.',
+    desc: "You're running a busy venue without the bandwidth to chase every lead and close every deal. Our expert sales team does it all, while you focus on your guests.",
     perks: ['Full Sphere platform included', 'Dedicated sales team', 'Lead-to-close management', 'First month free'],
     cta: 'Contact Us →',
     href: '/contact',
@@ -107,8 +107,8 @@ const results = {
     label: 'Sphere AI',
     badge: 'Coming Soon',
     badgeColor: 'bg-gradient-to-r from-[#EF4561] to-[#E07B20] text-white',
-    headline: 'Sphere AI — automate the repetitive, focus on what matters.',
-    desc: 'High volume, not enough hours. Sphere AI layers automation on top of Sphere — AI lead capture, smart follow-ups, and 24/7 booking workflows that never sleep.',
+    headline: 'Sphere AI: automate the repetitive, focus on what matters.',
+    desc: 'High volume, not enough hours. Sphere AI layers automation on top of Sphere: AI lead capture, smart follow-ups, and 24/7 booking workflows that never sleep.',
     perks: ['Full Sphere platform included', 'AI lead capture & follow-up', 'Automated booking workflows', 'Join the waitlist'],
     cta: 'Join the Waitlist →',
     href: '/contact',
@@ -231,7 +231,7 @@ export default function V1V2CTA() {
           )
         })()}
 
-        <p className="text-gray-400 text-xs mt-10">Cancel anytime · No credit card required</p>
+        <p className="text-gray-400 text-xs mt-10">Cancel anytime</p>
       </div>
     </section>
   )

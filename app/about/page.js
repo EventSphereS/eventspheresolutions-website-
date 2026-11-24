@@ -2,10 +2,10 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 export const metadata = {
-  title: 'About | Event Sphere Solutions — Built for Hospitality',
-  description: 'Event Sphere Solutions was built by a hospitality operator who lived the chaos. Sphere is the private event sales platform we wished existed — built for restaurants, bars, and venues.',
+  title: 'About | Event Sphere Solutions | Built for Hospitality',
+  description: 'Event Sphere Solutions was built by a hospitality operator who lived the chaos. Sphere is the private event sales platform we wished existed, built for restaurants, bars, and venues.',
   openGraph: {
-    title: 'About | Event Sphere Solutions — Built for Hospitality',
+    title: 'About | Event Sphere Solutions | Built for Hospitality',
     description: 'Built by a hospitality operator who lived the chaos. Sphere is the private event sales platform we wished existed.',
     images: [{ url: '/feature-image.png', width: 1200, height: 630, alt: 'About Event Sphere Solutions' }],
   },
@@ -62,7 +62,7 @@ const values = [
       </svg>
     ),
     title: 'True Partnership',
-    desc: 'We embed ourselves in your team. Your success is our success — and we operate with that mindset every single day.',
+    desc: 'We embed ourselves in your team. Your success is our success, and we operate with that mindset every single day.',
   },
   {
     icon: (
@@ -126,7 +126,7 @@ export default function AboutPage() {
             We're Built for <span className="text-[#E07B20]">Hospitality</span>
           </h1>
           <p className="text-gray-300 text-lg leading-relaxed max-w-2xl mx-auto">
-            Event Sphere Solutions is a full-service event company dedicated exclusively to the hospitality industry — because the best results come from specialists who truly understand your world.
+            Event Sphere Solutions is a full-service event company dedicated exclusively to the hospitality industry, because the best results come from specialists who truly understand your world.
           </p>
         </div>
       </section>
@@ -138,7 +138,7 @@ export default function AboutPage() {
           <h2 className="text-3xl md:text-4xl font-bold font-display tracking-tight text-[#6a256f] mb-6">Our Story</h2>
           <div className="space-y-4 text-gray-600 leading-relaxed">
             <p>
-              Event Sphere Solutions started with frustration, not a business plan. Our founder spent 18 years selling private events on three continents and could never find the right tool — not for event planners, but for event sales people inside hospitality businesses. Spreadsheets. Missed inquiries. Leads lost across three different inboxes.
+              Event Sphere Solutions started with frustration, not a business plan. Our founder spent 18 years selling private events on three continents and could never find the right tool, not for event planners, but for event sales people inside hospitality businesses. Spreadsheets. Missed inquiries. Leads lost across three different inboxes.
             </p>
             <p>
               So we built Sphere: the private event sales platform made for event sales people, not around them. One pipeline. Follow-up that never forgets. No revenue left behind.
@@ -166,16 +166,16 @@ export default function AboutPage() {
               <h2 className="text-3xl font-bold font-display tracking-tight text-[#6a256f] mb-4">Samia Kohler</h2>
               <div className="space-y-4 text-gray-600 leading-relaxed text-sm">
                 <p>
-                  Originally from France, I bring over 18 years of hands-on experience in hospitality — not just selling private events, but operating them — across China, Hong Kong, France, and the U.S. My background spans the full spectrum of the hospitality business — restaurants, bars, nightclubs, luxury hotels, private yacht clubs, event venues, and catering — giving me a deep understanding of both sides of the business: driving event sales and running the operations that deliver five-star guest experiences.
+                  Originally from France, I bring over 18 years of hands-on experience in hospitality, not just selling private events, but operating them, across China, Hong Kong, France, and the U.S. My background spans the full spectrum of the hospitality business, restaurants, bars, nightclubs, luxury hotels, private yacht clubs, event venues, and catering, giving me a deep understanding of both sides of the business: driving event sales and running the operations that deliver five-star guest experiences.
                 </p>
                 <p>
-                  My expertise lies in building and leading sales teams, running day-to-day venue operations, and developing strategic sales systems that convert inquiries into booked events. From concept to close — and through execution on the floor — I specialize in creating sales-driven solutions that streamline the process for venues and provide clients with a seamless, elevated experience.
+                  My expertise lies in building and leading sales teams, running day-to-day venue operations, and developing strategic sales systems that convert inquiries into booked events. From concept to close, and through execution on the floor, I specialize in creating sales-driven solutions that streamline the process for venues and provide clients with a seamless, elevated experience.
                 </p>
                 <p>
-                  Resourceful, detail-obsessed, and passionate about hospitality, I launched Event Sphere Solutions to help venues unlock their full potential. We don't just manage leads — we turn them into lasting relationships and profitable results.
+                  Resourceful, detail-obsessed, and passionate about hospitality, I launched Event Sphere Solutions to help venues unlock their full potential. We don't just manage leads. We turn them into lasting relationships and profitable results.
                 </p>
                 <p>
-                  With Sphere — our powerful platform — and an experienced sales team behind the scenes, Event Sphere Solutions offers a smarter, more profitable way to run private events — designed by industry pros, for industry pros.
+                  With Sphere, our powerful platform, and an experienced sales team behind the scenes, Event Sphere Solutions offers a smarter, more profitable way to run private events, designed by industry pros, for industry pros.
                 </p>
               </div>
             </div>
@@ -217,7 +217,7 @@ export default function AboutPage() {
             {[
               { label: 'Your Sales', desc: 'More bookings, fuller calendars, higher spend per event. Events become your most reliable sales channel.' },
               { label: 'Your Guests', desc: 'Experiences they share, remember, and come back for. Loyalty that outlasts any single night.' },
-              { label: 'Your Brand', desc: 'Every event makes your venue the place to be. Reputation compounds — we help you build it.' },
+              { label: 'Your Brand', desc: 'Every event makes your venue the place to be. Reputation compounds. We help you build it.' },
             ].map((item) => (
               <div key={item.label} className="flex-1 py-8 md:py-0 md:px-10 first:md:pl-0 last:md:pr-0">
                 <div className="text-[#F99F33] font-extrabold font-display text-2xl mb-3">{item.label}</div>

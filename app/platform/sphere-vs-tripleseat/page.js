@@ -10,7 +10,7 @@ const faqSchema = {
       name: 'Is there an alternative to Tripleseat for restaurants and venues?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes — Sphere by Event Sphere Solutions is a private event sales platform built for restaurants, bars, boutique hotels and sports venues, with the option to add a dedicated sales team on top of the software.',
+        text: 'Yes, Sphere by Event Sphere Solutions is a private event sales platform built for restaurants, bars, boutique hotels and sports venues, with the option to add a dedicated sales team on top of the software.',
       },
     },
     {
@@ -18,7 +18,7 @@ const faqSchema = {
       name: "How does Sphere's pricing compare to Tripleseat?",
       acceptedAnswer: {
         '@type': 'Answer',
-        text: "Sphere publishes its pricing: $149/month for Essentials, $259/month for Growth. Tripleseat doesn't publish pricing publicly — quotes we've seen start around $300/month, so confirm directly with their sales team for a current number.",
+        text: "Sphere publishes its pricing: $149/month for Essentials, $259/month for Growth. Tripleseat doesn't publish pricing publicly. Quotes we've seen start around $300/month, so confirm directly with their sales team for a current number.",
       },
     },
     {
@@ -26,7 +26,7 @@ const faqSchema = {
       name: 'Does Sphere help migrate from Tripleseat?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: "Yes, free on every plan — Sphere moves your contacts, leads, events and history over from Tripleseat (or anywhere else) so you don't start from zero.",
+        text: "Yes, free on every plan. Sphere moves your contacts, leads, events and history over from Tripleseat (or anywhere else) so you don't start from zero.",
       },
     },
   ],
@@ -41,7 +41,7 @@ const rows = [
   {
     label: 'Starting price',
     sphere: '$149/mo (Essentials), published',
-    tripleseat: "Not published — quotes we've seen start around $300/mo, confirm directly with their sales team",
+    tripleseat: "Not published. Quotes we've seen start around $300/mo, confirm directly with their sales team",
   },
   {
     label: 'Proposals, BEOs & contracts',
@@ -56,11 +56,11 @@ const rows = [
   {
     label: 'Lead generation',
     sphere: "Every venue gets a free listing on privateeventvenue.com, Event Sphere Solutions' own lead-gen directory",
-    tripleseat: '—',
+    tripleseat: 'Not included',
   },
   {
     label: 'Client-facing portal',
-    sphere: 'Live client-branded portal — view and download BEOs, sign, and pay',
+    sphere: 'Live client-branded portal: view and download BEOs, sign, and pay',
     tripleseat: 'Client planning portal for viewing BEOs, signing, and paying',
   },
   {
@@ -71,7 +71,7 @@ const rows = [
   {
     label: 'Data migration',
     sphere: 'Free migration from Tripleseat, spreadsheets or anywhere else',
-    tripleseat: '—',
+    tripleseat: 'Not included',
   },
   {
     label: 'Scale',
@@ -82,7 +82,7 @@ const rows = [
 
 export const metadata = {
   title: 'Event Sphere Solutions vs. Tripleseat: Private Event Software Compared',
-  description: "How Event Sphere Solutions' Sphere platform compares to Tripleseat for restaurants, bars and venues — pricing, features and what's different. Last checked November 2026.",
+  description: "How Event Sphere Solutions' Sphere platform compares to Tripleseat for restaurants, bars and venues: pricing, features and what's different. Last checked November 2026.",
   openGraph: {
     title: 'Sphere vs. Tripleseat: Private Event Software Compared',
     description: "Pricing, features and what's different between Sphere and Tripleseat for restaurants, bars and venues.",
@@ -102,7 +102,7 @@ export default function SphereVsTripleseatPage() {
             Sphere vs. Tripleseat
           </h1>
           <p className="text-gray-400 text-sm italic">
-            Last checked November 2026. Pricing and features are based on each company's own published pages — contact either company directly to confirm current details before you decide.
+            Last checked November 2026. Pricing and features are based on each company's own published pages. Contact either company directly to confirm current details before you decide.
           </p>
         </div>
       </section>

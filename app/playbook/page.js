@@ -1,14 +1,14 @@
 export const metadata = {
-  title: 'Private Event Lead Generation Marketing Playbook — A Sphere Subscriber Bonus | Event Sphere Solutions',
-  description: 'Subscribe to Sphere and get the Private Event Lead Generation Marketing Playbook — a step-by-step system covering PR, social content, email, SEO, and exposure partners for restaurants, bars, breweries, and hospitality venues.',
+  title: 'Private Event Lead Generation Marketing Playbook | A Sphere Subscriber Bonus | Event Sphere Solutions',
+  description: 'Subscribe to Sphere and get the Private Event Lead Generation Marketing Playbook: a step-by-step system covering PR, social content, email, SEO, and exposure partners for restaurants, bars, breweries, and hospitality venues.',
   openGraph: {
-    title: 'Private Event Lead Generation Marketing Playbook — A Sphere Subscriber Bonus',
+    title: 'Private Event Lead Generation Marketing Playbook | A Sphere Subscriber Bonus',
     description: 'Subscribe to Sphere and get this step-by-step system for generating qualified private-event inquiries every day.',
     images: [{ url: '/feature-image.png', width: 1200, height: 630, alt: 'Private Event Lead Generation Marketing Playbook' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Private Event Lead Generation Marketing Playbook — A Sphere Subscriber Bonus',
+    title: 'Private Event Lead Generation Marketing Playbook | A Sphere Subscriber Bonus',
     description: 'Subscribe to Sphere and get this step-by-step system for generating qualified private-event inquiries every day.',
     images: ['/feature-image.png'],
   },
@@ -34,7 +34,7 @@ export default function PlaybookPage() {
             The Private Event Lead Generation Marketing Playbook
           </h1>
           <p className="text-gray-500 text-lg leading-relaxed mb-8">
-            A step-by-step system for restaurants, bars, breweries, boutique hotels, country clubs, and other hospitality venues to generate qualified private-event inquiries — every day. Included as a bonus when you subscribe to Sphere.
+            A step-by-step system for restaurants, bars, breweries, boutique hotels, country clubs, and other hospitality venues to generate qualified private-event inquiries, every day. Included as a bonus when you subscribe to Sphere.
           </p>
           <div className="space-y-4">
             {pillars.map((p) => (

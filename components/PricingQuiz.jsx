@@ -7,15 +7,15 @@ const questions = [
     id: 'team',
     question: 'Do you have someone handling private event sales in-house?',
     options: [
-      { label: "No — it's mostly me or we're stretched thin", value: 'no', points: 'sales-team' },
-      { label: 'Yes — we have a sales person or coordinator', value: 'yes', points: 'sphere' },
+      { label: "No, it's mostly me or we're stretched thin", value: 'no', points: 'sales-team' },
+      { label: 'Yes, we have a sales person or coordinator', value: 'yes', points: 'sphere' },
     ],
   },
   {
     id: 'involvement',
     question: 'How involved do you want to be in the day-to-day sales process?',
     options: [
-      { label: 'As little as possible — I want it handled for me', value: 'low', points: 'sales-team' },
+      { label: 'As little as possible, I want it handled for me', value: 'low', points: 'sales-team' },
       { label: 'I want full control with the right tools', value: 'high', points: 'sphere' },
     ],
   },
@@ -24,7 +24,7 @@ const questions = [
     question: "What's your biggest challenge right now?",
     options: [
       { label: "I don't have the time or team to chase leads", value: 'time', points: 'sales-team' },
-      { label: 'I need a better system — the process is scattered', value: 'system', points: 'sphere' },
+      { label: 'I need a better system, the process is scattered', value: 'system', points: 'sphere' },
     ],
   },
 ]
@@ -32,13 +32,13 @@ const questions = [
 const results = {
   sphere: {
     label: 'Sphere',
-    headline: 'Start with Sphere — your complete event sales platform.',
-    desc: 'You have the team or the drive — you just need the right system. Sphere gives you everything to capture leads, send proposals, manage your calendar, and run email campaigns, all in one place.',
+    headline: 'Start with Sphere, your complete event sales platform.',
+    desc: 'You have the team or the drive. You just need the right system. Sphere gives you everything to capture leads, send proposals, manage your calendar, and run email campaigns, all in one place.',
     perks: [
-      'Full platform access — all features',
+      'Full platform access, all features',
       'Lead pipeline, proposals, BEOs & invoices',
       'Smart calendar & email campaigns',
-      '3 months free — Founding Partner Program',
+      '3 months free with the Founding Partner Program',
     ],
     cta: 'Get Sphere Free',
     href: '/founding-partner',
@@ -47,8 +47,8 @@ const results = {
   },
   'sales-team': {
     label: 'Sphere + Sales Team',
-    headline: 'You need Sphere + Sales Team — we handle everything.',
-    desc: "You're running a busy venue and don't have the bandwidth to chase every lead, follow up on every inquiry, and close every deal. That's exactly what our expert sales team does — so you can focus on your guests.",
+    headline: 'You need Sphere + Sales Team. We handle everything.',
+    desc: "You're running a busy venue and don't have the bandwidth to chase every lead, follow up on every inquiry, and close every deal. That's exactly what our expert sales team does, so you can focus on your guests.",
     perks: [
       'Full Sphere platform included',
       'Dedicated sales team handles events end-to-end',
@@ -175,7 +175,7 @@ export default function PricingQuiz() {
                 href={r.href}
                 className={`bg-gradient-to-r ${r.color} text-white font-bold px-8 py-4 rounded-full hover:opacity-90 transition-all shadow-lg inline-block`}
               >
-                {r.cta} — {r.free} →
+                {r.cta} · {r.free} →
               </Link>
               <button
                 onClick={reset}

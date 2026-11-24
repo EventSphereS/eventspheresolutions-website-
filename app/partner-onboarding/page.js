@@ -15,7 +15,7 @@ export default function PartnerOnboardingPage() {
           Let's get your venue set up on Sphere
         </h1>
         <p className="text-gray-500 leading-relaxed">
-          This should take about 10 minutes. Share your venue details, branding, and existing data below, and our team will handle the full migration — your account will be live within 2 business days.
+          This should take about 10 minutes. Share your venue details, branding, and existing data below, and our team will handle the full migration. Your account will be live within 2 business days.
         </p>
       </div>
       <PartnerOnboardingForm />

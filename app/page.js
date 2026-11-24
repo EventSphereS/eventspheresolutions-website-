@@ -6,7 +6,7 @@ import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import ProcessSteps from '@/components/ProcessSteps'
 
 export const metadata = {
-  title: { absolute: 'Event Sphere Solutions | Sphere — Private Event Sales Platform for Hospitality' },
+  title: { absolute: 'Event Sphere Solutions | Sphere: Private Event Sales Platform for Hospitality' },
 }
 
 const partners = [
@@ -54,11 +54,11 @@ export default function Home() {
             <span className="text-[#E07B20]">Hospitality</span>
           </h1>
           <p className="text-gray-300 text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-10">
-            Event Sphere Solutions gives hospitality businesses <span className="text-white font-semibold">Sphere</span> — the expert sales team and software to turn empty calendars into consistent, high-performing event sales programs.
+            Event Sphere Solutions gives hospitality businesses <span className="text-white font-semibold">Sphere</span>, the expert sales team and software to turn empty calendars into consistent, high-performing event sales programs.
           </p>
           <Link href="/founding-partner"
             className="inline-block bg-gradient-to-r from-[#6a256f] via-[#EF4561] to-[#E07B20] text-white font-bold text-base md:text-lg px-8 md:px-10 py-4 rounded-full hover:opacity-90 transition-all shadow-2xl">
-            Start Free — Founding Partner Program →
+            Start Free: Founding Partner Program →
           </Link>
           <p className="text-gray-500 text-sm mt-3">3 months free*</p>
         </div>
@@ -204,7 +204,7 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
             {[
-              { step: '01', title: 'We set everything up', desc: 'We migrate all your existing data for free, then configure your pipeline, proposals, lead forms, and campaigns — fully ready in a single onboarding call.' },
+              { step: '01', title: 'We set everything up', desc: 'We migrate all your existing data for free, then configure your pipeline, proposals, lead forms, and campaigns, fully ready in a single onboarding call.' },
               { step: '02', title: 'You start taking bookings', desc: 'Leads come in, follow-ups go out automatically, and your calendar fills with confirmed events.' },
               { step: '03', title: 'Sales grow', desc: 'Track every lead, booking, and dollar in one dashboard. Watch your event sales compound month after month.' },
             ].map((item) => (

@@ -71,7 +71,7 @@ export async function POST(request) {
     const address = [streetAddress, city, state, zip, country].filter(Boolean).join(', ')
 
     const hoursRows = (businessHours || [])
-      .map((r) => `${r.day}: ${r.closed ? 'Closed' : `${r.open} – ${r.close}`}`)
+      .map((r) => `${r.day}: ${r.closed ? 'Closed' : `${r.open} to ${r.close}`}`)
       .join('<br>')
 
     const spacesRows = (spaces || [])
@@ -106,7 +106,7 @@ export async function POST(request) {
       from: 'Event Sphere Website <hello@eventspheresolutions.com>',
       to: 'hello@eventspheresolutions.com',
       replyTo: adminEmail,
-      subject: `🚀 Partner Onboarding — ${businessName}`,
+      subject: `🚀 Partner Onboarding: ${businessName}`,
       html: `
         <div style="font-family: Inter, sans-serif; max-width: 640px; margin: 0 auto; color: #222123;">
           <div style="background: linear-gradient(135deg, #222123, #6a256f); padding: 28px 32px;">
@@ -194,7 +194,7 @@ export async function POST(request) {
               We've received everything we need to migrate <strong style="color: #222123;">${businessName}</strong> onto Sphere. Your account will be live within <strong style="color: #222123;">2 business days</strong>.
             </p>
             <p style="color: #555; font-size: 14px; margin: 0 0 4px;">Questions in the meantime? Just reply to this email.</p>
-            <p style="color: #555; font-size: 14px; margin: 0;">— <strong style="color: #222123;">The Event Sphere Solutions Team</strong></p>
+            <p style="color: #555; font-size: 14px; margin: 0;"><strong style="color: #222123;">The Event Sphere Solutions Team</strong></p>
           </div>
           <div style="padding: 20px 40px; background: #1a0f40; border-radius: 0 0 12px 12px; text-align: center;">
             <p style="color: rgba(255,255,255,0.4); font-size: 12px; margin: 0;">

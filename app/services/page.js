@@ -1,13 +1,14 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import V1V2CTA from '@/components/V1V2CTA'
+import GenerateSellConvert from '@/components/GenerateSellConvert'
 
 export const metadata = {
   title: 'Services | Private Event Sales Solutions for Hospitality',
-  description: 'Three ways to protect and grow your private event sales — fully managed event sales team, Sphere platform, or AI-powered automation. Built for restaurants, bars, and venues.',
+  description: 'Three ways to protect and grow your private event sales: fully managed event sales team, Sphere platform, or AI-powered automation. Built for restaurants, bars, and venues.',
   openGraph: {
     title: 'Services | Private Event Sales Solutions for Hospitality',
-    description: 'Fully managed event sales, Sphere platform, or AI automation — three ways to protect and grow your private event sales.',
+    description: 'Fully managed event sales, Sphere platform, or AI automation. Three ways to protect and grow your private event sales.',
     images: [{ url: '/feature-image.png', width: 1200, height: 630, alt: 'Sphere Services' }],
   },
   twitter: {
@@ -36,12 +37,12 @@ const services = [
   {
     id: 'v2',
     version: 'V2.',
-    title: 'Sphere — Event Sales Platform',
+    title: 'Sphere: Event Sales Platform',
     subtitle: 'Technology built specifically for hospitality event sales.',
     desc: 'This service provides your venue with full access to Sphere, enabling your team to manage private events efficiently and independently.',
     ideal: 'Venues with an internal sales team that need a better system.',
     includes: [
-      { icon: '🛠️', title: 'Complete Tool', desc: 'Full access to Sphere — our event booking & management platform.' },
+      { icon: '🛠️', title: 'Complete Tool', desc: 'Full access to Sphere, our event booking & management platform.' },
       { icon: '🌟', title: 'Special Features', desc: 'Tools with special features to promote, tour the space, and more.' },
       { icon: '🎓', title: 'Sales Training', desc: 'Onboarding and training for your in-house event sales team.' },
     ],
@@ -50,12 +51,12 @@ const services = [
   {
     id: 'v3',
     version: 'V3.',
-    title: 'Sphere AI — Platform with AI Automation',
+    title: 'Sphere AI: Platform with AI Automation',
     subtitle: 'Automated event sales workflows designed to save time.',
     desc: 'This service enhances Sphere with AI-driven automation to reduce manual work while maintaining sales momentum.',
     ideal: 'High-volume or busy team members needing speed, efficiency, and scalability.',
     includes: [
-      { icon: '🛠️', title: 'Complete Tool', desc: 'Full access to Sphere — our event booking & management platform.' },
+      { icon: '🛠️', title: 'Complete Tool', desc: 'Full access to Sphere, our event booking & management platform.' },
       { icon: '🤖', title: 'AI Powered', desc: 'AI-powered lead capture, follow-ups, and booking automation.' },
       { icon: '⚡', title: 'Easy & Quick', desc: 'Faster response times, fewer manual tasks, and smarter sales workflows.' },
     ],
@@ -75,11 +76,14 @@ export default function ServicesPage() {
         </div>
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <div className="inline-block bg-[#E07B20] text-white text-xs font-bold px-4 py-1.5 rounded-full mb-6 uppercase tracking-widest">
-            The Platform
+            Our Services
           </div>
-          <h1 className="text-3xl md:text-5xl font-extrabold font-display tracking-tight text-white mb-6 leading-tight">
-            <span className="text-[#E07B20]">Sphere</span> — Your Private Event Sales Platform
+          <h1 className="text-3xl md:text-5xl font-extrabold font-display tracking-tight text-white mb-5 leading-tight">
+            <span className="text-[#E07B20]">We do it all.</span> From lead generation to revenue.
           </h1>
+          <p className="text-white font-semibold text-sm md:text-base uppercase tracking-[0.15em] mb-6">
+            Generate <span className="text-[#E07B20]">→</span> Capture <span className="text-[#E07B20]">→</span> Sell <span className="text-[#E07B20]">→</span> Convert
+          </p>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto mb-8">
             Start with Sphere and run your entire private event operation from one platform. Then add a dedicated sales team or AI automation when you're ready to scale.
           </p>
@@ -88,12 +92,14 @@ export default function ServicesPage() {
           </a>
           <div className="mt-4">
             <span className="inline-flex items-center gap-2 bg-[#E07B20]/15 border border-[#E07B20]/50 text-[#F99F33] text-xs font-bold px-4 py-2 rounded-full">
-              🎁 Free bonus — The Private Event Lead Generation Marketing Playbook
+              🎁 Free bonus: The Private Event Lead Generation Marketing Playbook
             </span>
           </div>
           <p className="text-gray-400 text-sm mt-3">No credit card required</p>
         </div>
       </section>
+
+      <GenerateSellConvert />
 
       {/* Intro */}
       <section className="py-16 bg-white border-b border-gray-100">
@@ -123,7 +129,7 @@ export default function ServicesPage() {
               <div className="flex-1">
                 <span className="inline-block bg-white text-[#6a256f] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5">The Platform</span>
                 <h3 className="font-display font-extrabold text-4xl md:text-5xl tracking-tight mb-4 leading-tight" style={{ background: 'linear-gradient(90deg, #6a256f, #EF4561, #E07B20)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Sphere</h3>
-                <p className="text-white/70 text-base leading-relaxed mb-6 max-w-lg">Your complete private event sales platform. Capture leads, send proposals, manage your calendar, run email campaigns, and track every booking — all in one place.</p>
+                <p className="text-white/70 text-base leading-relaxed mb-6 max-w-lg">Your complete private event sales platform. Capture leads, send proposals, manage your calendar, run email campaigns, and track every booking, all in one place.</p>
                 <div className="grid grid-cols-2 gap-2 mb-8 max-w-md">
                   {['Lead capture & pipeline', 'Proposals, BEOs & invoices', 'Smart calendar', 'Email campaigns', 'Online payments', 'Smart Dashboard'].map(f => (
                     <div key={f} className="flex items-center gap-2 text-white/80 text-sm">
@@ -137,7 +143,7 @@ export default function ServicesPage() {
                 </a>
                 <div className="mt-3">
                   <span className="inline-flex items-center gap-2 bg-[#E07B20]/15 border border-[#E07B20]/50 text-[#F99F33] text-xs font-bold px-4 py-2 rounded-full">
-                    🎁 Free bonus — The Private Event Lead Generation Marketing Playbook
+                    🎁 Free bonus: The Private Event Lead Generation Marketing Playbook
                   </span>
                 </div>
                 <p className="text-white/40 text-xs mt-2">No credit card required</p>
@@ -158,7 +164,7 @@ export default function ServicesPage() {
               <div className="relative z-10 flex flex-col h-full p-8 justify-end">
                 <span className="inline-block bg-[#E07B20] text-black text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4 w-fit">Add-On</span>
                 <h3 className="text-white font-display font-extrabold text-2xl md:text-3xl tracking-tight mb-3 leading-tight">Sphere +<br />Sales Team</h3>
-                <p className="text-white/70 text-sm leading-relaxed mb-5">Add a dedicated expert sales team that handles every inquiry, follow-up, proposal, and close — while you focus on running your venue.</p>
+                <p className="text-white/70 text-sm leading-relaxed mb-5">Add a dedicated expert sales team that handles every inquiry, follow-up, proposal, and close, while you focus on running your venue.</p>
                 <div className="space-y-2 mb-6">
                   {['Dedicated sales team', 'Lead-to-close management', 'Full Sphere access included'].map(f => (
                     <div key={f} className="flex items-center gap-2 text-white/80 text-sm">
@@ -185,7 +191,7 @@ export default function ServicesPage() {
                   <span className="inline-block bg-white/15 text-white text-xs font-bold px-3 py-1 rounded-full">Coming Soon</span>
                 </div>
                 <h3 className="text-white font-display font-extrabold text-2xl md:text-3xl tracking-tight mb-3 leading-tight">Sphere AI</h3>
-                <p className="text-white/70 text-sm leading-relaxed mb-5">Layer AI automation on top of Sphere — automated lead capture, smart follow-ups, and 24/7 booking workflows with zero manual work.</p>
+                <p className="text-white/70 text-sm leading-relaxed mb-5">Layer AI automation on top of Sphere: automated lead capture, smart follow-ups, and 24/7 booking workflows with zero manual work.</p>
                 <div className="space-y-2 mb-6">
                   {['AI lead capture & follow-up', 'Automated booking workflows', 'Full Sphere access included'].map(f => (
                     <div key={f} className="flex items-center gap-2 text-white/80 text-sm">
@@ -232,7 +238,7 @@ export default function ServicesPage() {
               The Private Event Lead Generation Marketing Playbook
             </h2>
             <p className="text-gray-600 mb-6">
-              A step-by-step system covering PR, social content, email, SEO, and exposure partners — included as a bonus when you subscribe to Sphere.
+              A step-by-step system covering PR, social content, email, SEO, and exposure partners, included as a bonus when you subscribe to Sphere.
             </p>
             <ul className="space-y-2 mb-7">
               {['PR & media outreach', 'Social content + CTA system', 'Email & SEO tactics', 'Exposure partner list'].map((item) => (

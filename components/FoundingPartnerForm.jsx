@@ -2,8 +2,8 @@
 import { useState } from 'react'
 
 const businessTypes = ['Restaurant', 'Bar / Nightlife', 'Venue', 'Boutique Hotels', 'Multiple locations']
-const eventFrequency = ['< 1/month', '1–3/month', '4–8/month', '8+/month']
-const currentTools = ['Spreadsheets / email', 'Tripleseat', 'Gather', 'Planning Pod', 'Another CRM', 'Nothing — we wing it']
+const eventFrequency = ['< 1/month', '1 to 3/month', '4 to 8/month', '8+/month']
+const currentTools = ['Spreadsheets / email', 'Tripleseat', 'Gather', 'Planning Pod', 'Another CRM', 'Nothing, we wing it']
 const sphereNeeds = [
   'Lead capture & follow-up',
   'Proposals & BEOs',
@@ -96,7 +96,7 @@ export default function FoundingPartnerForm() {
             <li>We review your application</li>
             <li>You get an email from our team</li>
             <li>We schedule a 30-min onboarding call</li>
-            <li>Your account goes live — free for 90 days</li>
+            <li>Your account goes live, free for 90 days</li>
           </ol>
         </div>
 
@@ -251,7 +251,7 @@ export default function FoundingPartnerForm() {
         <div>
           <label className={labelClass}>If your results are strong, would you be open to a case study?</label>
           <div className="flex flex-wrap gap-2">
-            {['Yes, absolutely', 'Maybe — depends on results', 'Prefer to stay private'].map((opt) => (
+            {['Yes, absolutely', 'Maybe, depends on results', 'Prefer to stay private'].map((opt) => (
               <button key={opt} type="button" onClick={() => handleSelect('canProvideTestimonial', opt)}
                 className={`px-4 py-2 rounded-full text-sm font-medium border transition-all ${
                   form.canProvideTestimonial === opt
@@ -272,7 +272,7 @@ export default function FoundingPartnerForm() {
             {loading ? 'Submitting...' : 'Submit My Application →'}
           </button>
         </div>
-        <p className="text-xs text-gray-400 text-center">We review every application personally and respond within 48 hours. No credit card ever required.</p>
+        <p className="text-xs text-gray-400 text-center">We review every application personally and respond within 48 hours.</p>
       </div>
     </form>
   )

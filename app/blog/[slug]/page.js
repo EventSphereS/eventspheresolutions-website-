@@ -203,7 +203,7 @@ export default function BlogPostPage({ params }) {
       <section className="py-16 bg-[#6a256f] text-white text-center">
         <div className="max-w-2xl mx-auto px-6">
           <h2 className="font-display font-extrabold text-3xl mb-4">Ready to grow your private event revenue?</h2>
-          <p className="text-white/70 mb-8">Join Sphere as a Founding Partner — 3 months free, pricing locked for life. Limited spots.</p>
+          <p className="text-white/70 mb-8">Join Sphere as a Founding Partner: 3 months free, pricing locked for life. Limited spots.</p>
           <Link href="/founding-partner" className="inline-block bg-gradient-to-r from-[#EF4561] to-[#E07B20] text-white font-bold px-8 py-4 rounded-full hover:opacity-90 transition-all shadow-xl">
             Claim Your Founding Partner Spot →
           </Link>

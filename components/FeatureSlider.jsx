@@ -5,64 +5,55 @@ import Link from 'next/link'
 
 const slides = [
   {
-    number: '01',
+    tag: 'Lead Capture',
+    title: 'Never miss an inquiry again.',
+    desc: 'Guests reach you three ways: your website inquiry form, a text message, or a call answered by Sarah, your optional sales concierge. Day or night, weekday or weekend.',
+    timeline: [
+      { when: 'Fri, 9:00 PM', what: 'A large group inquiry comes in.' },
+      { when: 'Mon, 10:00 AM', what: 'You finally reply.' },
+      { when: 'Sat', what: "They've already booked somewhere else." },
+    ],
+    closer: 'Speed wins large group events.',
+    image: '/images/demo-lead-capture.png',
+  },
+  {
+    tag: '360° Tours',
+    title: 'Let them walk the room before they visit.',
+    desc: 'A 360° tour of every space, right inside the inquiry flow. Sarah shortlists the spaces that fit the party, and the guest goes straight to an express proposal.',
+    image: '/images/demo-360-tours.png',
+  },
+  {
     tag: 'Proposals & Payments',
     title: 'One link closes the deal.',
-    desc: 'Send a stunning branded proposal, collect the e-signature, and process the deposit — all in a single link. No back-and-forth, no chasing. Payments are powered by Stripe, so every transaction is secure and PCI-compliant.',
-    image: '/images/slide-proposal-new.png',
-    objectFit: 'contain',
-    objectPosition: 'center center',
-    scale: 1.0,
+    desc: 'A branded proposal they can read on their phone. They review it, sign the contract and pay the deposit in one tap. Payments run on Stripe, secure and PCI-compliant.',
+    image: '/images/demo-proposals.png',
     href: '/platform/digital-contracts',
   },
   {
-    number: '02',
-    tag: 'Team Communication',
-    title: 'Your whole team, finally in sync.',
-    desc: 'Stop losing event details across texts and emails. Every conversation, lead note, and team message lives in one place — visible to everyone who needs it.',
-    image: '/images/slide-chat.png',
-    objectFit: 'contain',
-    scale: 1.0,
-  },
-  {
-    number: '03',
-    tag: 'Document Generation',
-    title: 'Proposals, BEOs, Invoices — one click.',
-    desc: 'Generate polished, on-brand documents in seconds. No copy-pasting, no formatting headaches — just professional docs that impress every client.',
-    image: '/images/slide-beo.png',
-    scale: 0.95,
-    objectFit: 'cover',
-    objectPosition: '100% 20%',
-    transformOrigin: 'right center',
+    tag: 'Leads & BEOs',
+    title: 'Every lead tracked. Every BEO ready.',
+    desc: 'See every lead by stage, from new to booked, with your pipeline value at a glance. Once it books, the staff BEO is ready: timeline, kitchen prep and special requests for the whole team.',
+    image: '/images/demo-leads-beo.png',
     href: '/platform/banquet-event-orders',
   },
   {
-    number: '04',
-    tag: 'Calendar & Leads',
-    title: 'Zero double bookings. Zero missed leads.',
-    desc: 'A smart calendar that protects every slot and a pipeline that captures every inquiry. Nothing slips through the cracks — ever.',
-    image: '/images/platform-calendar.png',
-    scale: 1.0,
-    objectPosition: 'center top',
+    tag: 'Calendar',
+    title: 'Zero double bookings.',
+    desc: 'Every space on one calendar, color-coded by room. Try to book the patio twice and SPHERE stops you before it becomes a problem.',
+    image: '/images/demo-calendar.png',
     href: '/platform/venue-calendar',
   },
   {
-    number: '05',
     tag: 'Marketing & Campaigns',
     title: 'Fill slow seasons before they hit.',
-    desc: 'Launch targeted email campaigns, drop promo codes, and drive repeat bookings — all from inside Sphere. No third-party tools needed.',
-    image: '/images/platform-campaigns.png',
-    scale: 1.0,
-    objectPosition: 'center center',
+    desc: 'Branded campaigns for holiday parties, graduations and summer buyouts. Pick the audience, schedule the send, and the inquiries come back into your pipeline.',
+    image: '/images/demo-campaigns.png',
   },
   {
-    number: '06',
-    tag: 'AI Assistant',
-    title: 'Your venue sells itself — 24/7.',
-    desc: 'Sphere\'s AI assistant responds to leads in real time, captures event details, and moves prospects toward a booking — even while you sleep.',
-    image: '/images/slide-ai-assistant.png',
-    objectFit: 'contain',
-    scale: 1,
+    tag: 'Dashboard & Reporting',
+    title: 'Your event sales at a glance.',
+    desc: 'Revenue, conversion rate and average event value up top. Confirmed, in process and lost deals, a 3-month revenue forecast, and follow-up reminders on your phone so no deal goes quiet.',
+    image: '/images/demo-dashboard.png',
   },
 ]
 
@@ -108,7 +99,7 @@ export default function FeatureSlider() {
 
         {/* Header */}
         <div className="text-center mb-14">
-          <p className="text-[#E07B20] text-xs font-bold uppercase tracking-[0.25em] mb-4">Inside Sphere</p>
+          <p className="text-[#E07B20] text-xs font-bold uppercase tracking-[0.25em] mb-4">Inside SPHERE</p>
           <h2 className="text-3xl md:text-5xl font-extrabold font-display tracking-tight text-white mb-4">
             Every tool your team needs<br />
             <span style={{ background: 'linear-gradient(90deg, #E07B20, #EF4561)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
@@ -116,7 +107,7 @@ export default function FeatureSlider() {
             </span>
           </h2>
           <p className="text-white/40 text-base max-w-lg mx-auto">
-            From the first inquiry to the signed contract — Sphere handles every step of your private event sales process.
+            From the first inquiry to the signed contract, SPHERE handles every step of the large group event sales process.
           </p>
         </div>
 
@@ -149,18 +140,14 @@ export default function FeatureSlider() {
           <div className="grid md:grid-cols-[60%_40%] min-h-[520px]">
 
             {/* Left — screenshot */}
-            <div className="relative min-h-[300px] md:min-h-0 overflow-hidden" style={{ background: '#f0edf6' }}>
-              <div className="absolute inset-x-0 top-0 h-12 z-10 pointer-events-none"
-                style={{ background: 'linear-gradient(to bottom, #f0edf6, transparent)' }} />
-              <div className="absolute inset-x-0 bottom-0 h-16 z-10 pointer-events-none"
-                style={{ background: 'linear-gradient(to top, #f0edf6, transparent)' }} />
+            <div className="relative min-h-[300px] md:min-h-0 overflow-hidden" style={{ background: 'transparent' }}>
               <Image
                 src={slide.image}
                 alt={slide.title}
                 fill
                 quality={100}
                 sizes="(max-width: 768px) 100vw, 50vw"
-                className={slide.objectFit === 'contain' ? 'object-contain' : 'object-cover'}
+                className="object-contain p-4"
                 style={{
                   objectPosition: slide.objectPosition || 'center center',
                   transform: `scale(${slide.scale || 1})`,
@@ -182,7 +169,7 @@ export default function FeatureSlider() {
 
               {/* Big slide number watermark */}
               <div className="absolute bottom-4 right-6 text-white/[0.04] font-display font-extrabold text-[100px] leading-none select-none pointer-events-none">
-                {slide.number}
+                {String(current + 1).padStart(2, '0')}
               </div>
 
               <div className="relative z-10">
@@ -194,7 +181,7 @@ export default function FeatureSlider() {
                   {slide.title}
                 </h3>
 
-                <p className="text-white/55 text-base leading-relaxed mb-6 max-w-sm">
+                <p className={`text-white/55 text-base leading-relaxed max-w-sm ${slide.timeline ? 'mb-6' : 'mb-10'}`}>
                   {slide.desc}
                 </p>
 
@@ -202,6 +189,24 @@ export default function FeatureSlider() {
                   <Link href={slide.href} className="inline-block text-[#E07B20] font-semibold text-sm mb-6 hover:underline">
                     Learn more →
                   </Link>
+                )}
+
+                {slide.timeline && (
+                  <div className="mb-8">
+                    <ol className="relative border-l border-white/15 ml-1.5 space-y-3 mb-4">
+                      {slide.timeline.map((t, i) => {
+                        const last = i === slide.timeline.length - 1
+                        return (
+                          <li key={t.when} className="pl-5 relative">
+                            <span className={`absolute -left-[5px] top-1.5 w-2.5 h-2.5 rounded-full ${last ? 'bg-[#EF4561]' : 'bg-white/40'}`} />
+                            <span className="text-white/35 text-[11px] font-bold uppercase tracking-widest mr-2">{t.when}</span>
+                            <span className={`text-sm font-semibold ${last ? 'text-[#EF4561]' : 'text-white/80'}`}>{t.what}</span>
+                          </li>
+                        )
+                      })}
+                    </ol>
+                    <p className="text-white font-bold">{slide.closer}</p>
+                  </div>
                 )}
 
                 {/* Progress dots */}

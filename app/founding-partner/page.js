@@ -3,16 +3,16 @@ import Image from 'next/image'
 import FoundingPartnerForm from '@/components/FoundingPartnerForm'
 
 export const metadata = {
-  title: 'Founding Partner Program | 3 Months Free — Sphere',
-  description: 'Join Sphere as a Founding Partner — 3 months completely free, pricing locked for life. Limited spots for restaurants, bars, and venues ready to protect and grow their private event sales.',
+  title: 'Founding Partner Program | 3 Months Free | Sphere',
+  description: 'Join Sphere as a Founding Partner, 3 months completely free, pricing locked for life. Limited spots for restaurants, bars, and venues ready to protect and grow their private event sales.',
   openGraph: {
-    title: 'Founding Partner Program | 3 Months Free — Sphere',
+    title: 'Founding Partner Program | 3 Months Free | Sphere',
     description: '3 months free, pricing locked for life. Limited spots for hospitality venues ready to grow private event revenue.',
     images: [{ url: '/feature-image.png', width: 1200, height: 630, alt: 'Sphere Founding Partner Program' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Founding Partner Program | 3 Months Free — Sphere',
+    title: 'Founding Partner Program | 3 Months Free | Sphere',
     description: '3 months free, pricing locked for life. Limited spots.',
     images: ['/feature-image.png'],
   },
@@ -23,19 +23,19 @@ const perks = [
     icon: '🎁',
     gradient: 'from-[#6a256f] to-[#8a3a8f]',
     title: '3 Months Free Access',
-    desc: 'Full Sphere Sales Growth tier — automated follow-ups, sales forecasting, branded portal, email campaigns, and more. Zero cost for 90 days.',
+    desc: 'Full Sphere Sales Growth tier: automated follow-ups, sales forecasting, branded portal, email campaigns, and more. Zero cost for 90 days.',
   },
   {
     icon: '🔒',
     gradient: 'from-[#EF4561] to-[#E07B20]',
-    title: 'Founder Pricing — Locked In Forever',
-    desc: 'After your free period, you keep a permanently discounted rate that never increases. Regular price is $259/mo — you pay less, always.',
+    title: 'Founder Pricing: Locked In Forever',
+    desc: 'After your free period, you keep a permanently discounted rate that never increases. Regular price is $259/mo. You pay less, always.',
   },
   {
     icon: '⚡',
     gradient: 'from-[#E07B20] to-[#f7b733]',
     title: 'First Access to Every New Feature',
-    desc: 'Early access to every feature we build — including OpenTable integration and upcoming AI tools — before anyone else.',
+    desc: 'Early access to every feature we build, including OpenTable integration and upcoming AI tools, before anyone else.',
   },
   {
     icon: '🏆',
@@ -47,7 +47,7 @@ const perks = [
     icon: '🎯',
     gradient: 'from-[#EF4561] to-[#6a256f]',
     title: 'Dedicated Onboarding Support',
-    desc: 'We set everything up with you — pipeline, proposal templates, lead capture forms, and campaigns — fully configured in your first week.',
+    desc: 'We set everything up with you: pipeline, proposal templates, lead capture forms, and campaigns. Fully configured in your first week.',
   },
   {
     icon: '📊',
@@ -89,7 +89,7 @@ export default function FoundingPartnerPage() {
           </h1>
 
           <p className="text-gray-300 text-xl leading-relaxed max-w-2xl mx-auto mb-8">
-            Get 3 months of Sphere completely free — in exchange for your honest feedback. We build better. You grow faster. Everyone wins.
+            Get 3 months of Sphere completely free, in exchange for your honest feedback. We build better. You grow faster. Everyone wins.
           </p>
 
           {/* Stats Row */}
@@ -125,7 +125,7 @@ export default function FoundingPartnerPage() {
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-10">
             <h2 className="section-title">What Founding Partners Get</h2>
-            <p className="section-subtitle">This isn't a standard free trial. It's a partnership — and we treat it like one.</p>
+            <p className="section-subtitle">This isn't a standard free trial. It's a partnership, and we treat it like one.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {perks.map((perk) => (
@@ -166,7 +166,7 @@ export default function FoundingPartnerPage() {
             <div className="bg-[#6a256f] rounded-2xl p-8 text-white">
               <div className="text-4xl mb-4">🤝</div>
               <h3 className="text-xl font-extrabold font-display tracking-tight mb-3">A partnership, not a pitch.</h3>
-              <p className="text-white/60 text-sm leading-relaxed mb-5">We're selective. We want venues serious about growing event sales — and willing to be honest with us.</p>
+              <p className="text-white/60 text-sm leading-relaxed mb-5">We're selective. We want venues serious about growing event sales, and willing to be honest with us.</p>
               <div className="bg-white/10 rounded-xl p-4 border border-white/15">
                 <p className="text-[#E07B20] font-bold text-xs uppercase tracking-widest mb-2">Not for you if:</p>
                 <ul className="text-white/50 text-sm space-y-1.5">
@@ -183,9 +183,9 @@ export default function FoundingPartnerPage() {
       {/* Spot Counter */}
       <section className="py-16 bg-gradient-to-r from-[#6a256f] via-[#EF4561] to-[#E07B20]">
         <div className="max-w-3xl mx-auto px-6 text-center text-white">
-          <h2 className="text-3xl font-extrabold font-display tracking-tight mb-4">Spots Are Limited — By Design</h2>
+          <h2 className="text-3xl font-extrabold font-display tracking-tight mb-4">Spots Are Limited. By Design.</h2>
           <p className="text-white/90 mb-8 text-lg">
-            We're capping the Founding Partner program at 20 venues total. When they're gone, they're gone — there will be no second cohort at this level.
+            We're capping the Founding Partner program at 20 venues total. When they're gone, they're gone. There will be no second cohort at this level.
           </p>
 
           {/* Progress Bar */}
