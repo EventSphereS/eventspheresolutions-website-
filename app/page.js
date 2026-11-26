@@ -22,7 +22,18 @@ const partners = [
   { name: 'Padeland', logo: '/images/logo-padeland.png' },
   { name: 'Hundred Mile Brewing Co.', logo: '/images/logo-hundredmile.jpeg' },
   { name: 'Course Restaurant', logo: '/images/logo-course.png' },
+  { name: 'Camello', logo: '/images/logo-camello.png', round: true },
+  { name: 'The Mercer', logo: '/images/logo-mercer.png', round: true },
+  { name: '151 Hospitality', logo: '/images/logo-151-hospitality.png', round: true },
+  { name: 'Culinary Gangster', logo: '/images/logo-culinary-gangster.png', round: true },
+  { name: 'PHX Beer Co', logo: '/images/logo-phxbeer.png', round: true },
 ]
+
+function isRoundBadge(partner) {
+  if (partner.round) return true
+  const logo = partner.logo
+  return logo.includes('hundredmile') || logo.includes('tokyolima') || logo.includes('lomas') || logo.includes('shiso') || logo.includes('tamc')
+}
 
 
 export default function Home() {
@@ -67,42 +78,50 @@ export default function Home() {
       {/* ── PARTNERS ── */}
       <section className="py-14 bg-[#6a256f] overflow-hidden">
         <p className="text-white/40 text-xs font-bold uppercase tracking-[0.2em] text-center mb-8">Trusted By</p>
-        <div className="flex items-center animate-marquee gap-16 w-max">
-          {[...partners, ...partners].map((p, i) => (
-            <div key={i} className="flex items-center justify-center shrink-0" style={{ height: 112 }}>
-              {p.logo.includes('hundredmile') || p.logo.includes('tokyolima') || p.logo.includes('lomas') || p.logo.includes('shiso') || p.logo.includes('tamc') ? (
-                <div className="rounded-full overflow-hidden" style={{ width: 112, height: 112 }}>
-                  <Image
-                    src={p.logo}
-                    alt={p.name}
-                    width={112}
-                    height={112}
-                    className="object-cover w-full h-full"
-                  />
+        <div className="flex w-max animate-marquee">
+          {[0, 1].map((copy) => (
+            <div
+              key={copy}
+              className="flex items-center gap-16 pr-16 shrink-0"
+              aria-hidden={copy === 1 ? 'true' : undefined}
+            >
+              {partners.map((p) => (
+                <div key={`${copy}-${p.name}`} className="flex items-center justify-center shrink-0" style={{ height: 112 }}>
+                  {isRoundBadge(p) ? (
+                    <div className="rounded-full overflow-hidden" style={{ width: 112, height: 112 }}>
+                      <Image
+                        src={p.logo}
+                        alt={copy === 0 ? p.name : ''}
+                        width={112}
+                        height={112}
+                        className="object-cover w-full h-full"
+                      />
+                    </div>
+                  ) : p.logo.includes('course') ? (
+                    <div className="bg-white rounded-xl px-6 py-4 flex items-center justify-center">
+                      <Image
+                        src={p.logo}
+                        alt={copy === 0 ? p.name : ''}
+                        width={200}
+                        height={98}
+                        className="object-contain w-auto max-h-[72px]"
+                      />
+                    </div>
+                  ) : (
+                    <Image
+                      src={p.logo}
+                      alt={copy === 0 ? p.name : ''}
+                      width={258}
+                      height={128}
+                      className={`object-contain w-auto drop-shadow-[0_0_20px_rgba(255,255,255,0.85)] drop-shadow-[0_0_8px_rgba(255,255,255,0.6)] ${
+                        p.logo.includes('tipsy') || p.logo.includes('recreo') || p.logo.includes('uncommon')
+                          ? 'max-h-[140px] scale-125'
+                          : 'max-h-[112px]'
+                      }`}
+                    />
+                  )}
                 </div>
-              ) : p.logo.includes('course') ? (
-                <div className="bg-white rounded-xl px-6 py-4 flex items-center justify-center">
-                  <Image
-                    src={p.logo}
-                    alt={p.name}
-                    width={200}
-                    height={98}
-                    className="object-contain w-auto max-h-[72px]"
-                  />
-                </div>
-              ) : (
-                <Image
-                  src={p.logo}
-                  alt={p.name}
-                  width={258}
-                  height={128}
-                  className={`object-contain w-auto drop-shadow-[0_0_20px_rgba(255,255,255,0.85)] drop-shadow-[0_0_8px_rgba(255,255,255,0.6)] ${
-                    p.logo.includes('tipsy') || p.logo.includes('recreo') || p.logo.includes('uncommon')
-                      ? 'max-h-[140px] scale-125'
-                      : 'max-h-[112px]'
-                  }`}
-                />
-              )}
+              ))}
             </div>
           ))}
         </div>

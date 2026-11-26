@@ -23,7 +23,7 @@ module.exports = {
         display: ['Montserrat', 'system-ui', 'sans-serif'],
       },
       animation: {
-        'marquee': 'marquee 30s linear infinite',
+        'marquee': 'marquee 43s linear infinite',
       },
       keyframes: {
         marquee: {
